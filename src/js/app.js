@@ -10,6 +10,8 @@ document.addEventListener("click", (e) => {
   const link = e.target.closest("[data-link]");
   if (!link) return;
 
+  if (link.origin !== location.origin) return
+
   e.preventDefault();
   const path = link.getAttribute("href");
   navigateTo(path);

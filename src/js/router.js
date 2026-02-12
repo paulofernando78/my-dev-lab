@@ -19,9 +19,9 @@ const routes = {
     tag: "wc-about",
     load: () => import("../pages/About.js"),
   },
-  "/contact": {
-    tag: "wc-contact",
-    load: () => import("../pages/Contact.js"),
+  "/html-tags": {
+    tag: "wc-html-tags",
+    load: () => import("../pages/html/Tags.js"),
   },
 };
 
@@ -75,13 +75,13 @@ export async function renderRoute() {
   // Extract the Web Component tag and the loader function for this route
   const { tag, load } = routes[path];
 
-  // Increase token to invalidate older navigations (race condition protection)
+  //! Increase token to invalidate older navigations (race condition protection)
   const token = ++renderToken;
 
   // 1) Fade OUT do conteúdo atual
   app.classList.add("is-fading");
 
-  // aguarda a transição OU 200ms caso transitionend não dispare
+  // Aguarda a transição OU 200ms caso transitionend não dispare
   await Promise.race([
     new Promise((resolve) => {
       const onEnd = () => {

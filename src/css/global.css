@@ -107,6 +107,14 @@ nav a[aria-current="page"] {
   color: var(--slate-5);
 }
 
+summary {
+  font-size: 1.3rem;
+}
+
+.sub-links {
+  font-size: 1rem
+}
+
 main {
   width: 100%;
   border: 1px solid var(--gray-4);
