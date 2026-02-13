@@ -1,0 +1,53 @@
+nav {
+  min-width: 120px;
+  height: 100%;
+  border: 1px solid var(--gray-4);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  background-color: var(--background-color);
+  z-index: 1;
+
+  transition: margin-left 0.5s ease;
+  position: absolute;
+}
+
+.nav-title {
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+nav li {
+  text-transform: uppercase;
+}
+
+li:not(:last-child) {
+  margin-bottom: 0.1rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--slate-4)
+}
+
+nav a[aria-current="page"] {
+  color: var(--slate-5);
+}
+
+summary {
+  font-size: 1.3rem;
+}
+
+.sub-links {
+  font-size: 1.2rem
+}
