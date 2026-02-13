@@ -1,6 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/PageHeader.js";
 
 const style = /* css */ `
   .wrapper {
@@ -23,6 +24,12 @@ const style = /* css */ `
     display: flex;
     gap: 20px
   }
+
+  @media (width < 575px) {
+    .wrapper {
+      grid-template-columns: 1fr
+    }
+  }
 `;
 
 class Tags extends HTMLElement {
@@ -42,8 +49,8 @@ class Tags extends HTMLElement {
       ${styleImports}
       ${style}
     </style>
-    <h1 class="page"><b>HTML</b></h1>
-    <h2 class="page"><b>Tags</b></h2>
+
+    <wc-page-header category="HTML" page="Tags"></wc-page-header>
 
     <wc-section label="input styles" aria-label="Html Tags">
       <div class="wrapper">
@@ -118,35 +125,35 @@ class Tags extends HTMLElement {
       </div>
 
       <div class="wrapper">
-      <wc-code language="html">
-        <input type="radio"/>
-      </wc-code>
-        <div class="radio">
-          <div class="flex">
-            <input type="radio" name="radio" id="radio-1"/>
-            <label for="radio-1">Option 1</label>
+        <wc-code language="html">
+          <input type="radio"/>
+        </wc-code>
+          <div class="radio">
+            <div class="flex">
+              <input type="radio" name="radio" id="radio-1"/>
+              <label for="radio-1">Option 1</label>
+            </div>
+            <div class="flex">
+              <input type="radio" name="radio" id="radio-2"/>
+              <label for="radio-2">Option 2</label>
+            </div>
           </div>
-          <div class="flex">
-            <input type="radio" name="radio" id="radio-2"/>
-            <label for="radio-2">Option 2</label>
-          </div>
-        </div>
       </div>
       
       <div class="wrapper">
-      <wc-code language="html">
-        <input type="checkbox"/>
-      </wc-code>
-        <div class="checkbox">
-          <div class="flex">
-            <input type="checkbox" name="checkbox" value="" id="checkbox-1"/>
-            <label for="checkbox-1">Checkbox 1</label>
+        <wc-code language="html">
+          <input type="checkbox"/>
+        </wc-code>
+          <div class="checkbox">
+            <div class="flex">
+              <input type="checkbox" name="checkbox" value="" id="checkbox-1"/>
+              <label for="checkbox-1">Checkbox 1</label>
+            </div>
+            <div class="flex">
+              <input type="checkbox" name="checkbox" value="" id="checkbox-2"/>
+              <label for="checkbox-2">Checkbox 2</label>
+            </div>
           </div>
-          <div class="flex">
-            <input type="checkbox" name="checkbox" value="" id="checkbox-2"/>
-            <label for="checkbox-2">Checkbox 2</label>
-          </div>
-        </div>
       </div>
       
       <div class="wrapper">
@@ -155,14 +162,17 @@ class Tags extends HTMLElement {
       </wc-code>
         <input type="color"/>
       </div>
-
+      
       <div class="wrapper">
+      <wc-code language="html">
+        <input type="range"/>
+      </wc-code>
         <input type="range"/>
       </div>
       
       <div class="wrapper">
       <wc-code language="html">
-        <input type=""/>
+        <input type="file"/>
       </wc-code>
         <input type="file"/>
       </div>
@@ -176,22 +186,18 @@ class Tags extends HTMLElement {
       
       <div class="wrapper">
       <wc-code language="html">
-        <input type="button"/>
+        <input type="button" value="Button"/>
       </wc-code>
-        <input type="button"/>
+        <input type="button" value="Button"/>
       </div>
       
       <div class="wrapper">
       <wc-code language="html">
-        <input type=""/>
+        <input type="submit"/>
       </wc-code>
         <input type="submit"/>
       </div>
     </wc-section>
-
-          
-          
-  
     `;
   }
 }
