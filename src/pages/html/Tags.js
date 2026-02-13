@@ -61,42 +61,132 @@ class Tags extends HTMLElement {
       </div>
       
       
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="search"/>
+      </wc-code>
       <input type="search"placeholder="search"/>
+      </div>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="date"/>
+      </wc-code>
       <input type="date"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="month"/>
+      </wc-code>
       <input type="month"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="week"/>
+      </wc-code>
       <input type="week"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="time"/>
+      </wc-code>
       <input type="time"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="number"/>
+      </wc-code>
       <input type="number" placeholder="1234"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="email"/>
+      </wc-code>
       <input type="email" placeholder="johndoe@google.com"/>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="url"/>
+      </wc-code>
       <input type="url" placeholder="www.google.com"/>
-      
-      <div class="radio">
-        <div class="flex">
-          <input type="radio" name="radio" id="radio-1"/>
-          <label for="radio-1">Option 1</label>
-        </div>
-        <div class="flex">
-          <input type="radio" name="radio" id="radio-2"/>
-          <label for="radio-2">Option 2</label>
+      </div>
+
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="radio"/>
+      </wc-code>
+        <div class="radio">
+          <div class="flex">
+            <input type="radio" name="radio" id="radio-1"/>
+            <label for="radio-1">Option 1</label>
+          </div>
+          <div class="flex">
+            <input type="radio" name="radio" id="radio-2"/>
+            <label for="radio-2">Option 2</label>
+          </div>
         </div>
       </div>
       
-      <div class="checkbox">
-        <div class="flex">
-          <input type="checkbox" name="checkbox" value="" id="checkbox-1"/>
-          <label for="checkbox-1">Checkbox 1</label>
-        </div>
-        <div class="flex">
-          <input type="checkbox" name="checkbox" value="" id="checkbox-2"/>
-          <label for="checkbox-2">Checkbox 2</label>
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="checkbox"/>
+      </wc-code>
+        <div class="checkbox">
+          <div class="flex">
+            <input type="checkbox" name="checkbox" value="" id="checkbox-1"/>
+            <label for="checkbox-1">Checkbox 1</label>
+          </div>
+          <div class="flex">
+            <input type="checkbox" name="checkbox" value="" id="checkbox-2"/>
+            <label for="checkbox-2">Checkbox 2</label>
+          </div>
         </div>
       </div>
-      <input type="color"/>
-      <input type="range"/>
-      <input type="file"/>
-      <input type="reset"/>
-      <input type="button"/>
-      <input type="submit"/>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="color"/>
+      </wc-code>
+        <input type="color"/>
+      </div>
+
+      <div class="wrapper">
+        <input type="range"/>
+      </div>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type=""/>
+      </wc-code>
+        <input type="file"/>
+      </div>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="reset"/>
+      </wc-code>
+        <input type="reset"/>
+      </div>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type="button"/>
+      </wc-code>
+        <input type="button"/>
+      </div>
+      
+      <div class="wrapper">
+      <wc-code language="html">
+        <input type=""/>
+      </wc-code>
+        <input type="submit"/>
+      </div>
     </wc-section>
 
           
