@@ -1,4 +1,4 @@
-nav {
+.navbar {
   min-width: 120px;
   height: 100%;
   border: 1px solid var(--gray-4);
@@ -14,33 +14,33 @@ nav {
   position: absolute;
 }
 
-.nav-title {
+.navbar-title {
   font-size: 1.3rem;
   display: block;
   margin-top: 1rem;
   font-weight: bold;
 }
 
-nav li {
+/* .navbar li {
   text-transform: uppercase;
-}
+} */
 
-li:not(:last-child) {
+.navbar li:not(:last-child) {
   margin-bottom: 0.1rem;
 }
 
-a {
+.navbar a {
   text-decoration: none;
   font-size: 1.3rem;
   color: inherit;
   transition: color 0.2s ease;
 }
 
-a:hover {
+.navbar a:hover {
   color: var(--slate-4)
 }
 
-nav a[aria-current="page"] {
+.navbar a[aria-current="page"] {
   color: var(--slate-5);
 }
 

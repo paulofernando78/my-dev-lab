@@ -25,7 +25,7 @@ class Home extends HTMLElement {
       </style>
       <section class="line-break home-container" aria-label="Full-stack lab">
           <h1 class="page"><b>My Full-Stack Lab</b> </h1>
-          <p>A personal full-stack learning environment built with Vanilla JavaScript, Web Components, CSS, Node.js, and Vite, using a client-side rendered (CSR) SPA architecture.</p>
+          <p>A personal learning environment built with Vanilla JavaScript and Web Components using a client-side rendered (CSR) SPA architecture.</p>
         
       </section>
     `;

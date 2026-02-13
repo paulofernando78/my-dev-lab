@@ -1,11 +1,15 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
+  :host {
+    scroll-margin-top: 5px
+  }
+
   .label {
     background-color: black;
     color: white;
     border-radius: 5px;
-    padding: 3px 5px;
+    padding: 4px 7px;
     font-weight: bold
   }
 `;
@@ -23,6 +27,7 @@ class Section extends HTMLElement {
   render() {
     const labelAttr = this.getAttribute("label");
     const ariaAttr = this.getAttribute("aria-label");
+    const idAttr = this.getAttribute("id");
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
