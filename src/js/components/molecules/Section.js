@@ -1,10 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-  section {
-    width: 100x;
-    border: 1px solid black;
-  }
+
 `;
 
 class Section extends HTMLElement {
@@ -18,15 +15,21 @@ class Section extends HTMLElement {
   }
 
   render() {
+    const labelAttr = this.getAttribute("label");
+    const ariaAttr = this.getAttribute("aria");
+
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
         ${style}
       </style>
-      <span>Testaaaaaa</span>
-      `;
-    }
+      <section aria-label=${ariaAttr}>
+        <span>${labelAttr}</span>
+        <slot></slot>
+      </section>
+    `;
   }
+}
 
 customElements.define("wc-section", Section);
 export default Section;
