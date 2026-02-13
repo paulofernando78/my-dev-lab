@@ -104,8 +104,7 @@ footer {
 /* --- */
 
 .line-break {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
 }
 

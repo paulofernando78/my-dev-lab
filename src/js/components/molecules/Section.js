@@ -1,7 +1,13 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-
+  .label {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-weight: bold
+  }
 `;
 
 class Section extends HTMLElement {
@@ -16,15 +22,15 @@ class Section extends HTMLElement {
 
   render() {
     const labelAttr = this.getAttribute("label");
-    const ariaAttr = this.getAttribute("aria");
+    const ariaAttr = this.getAttribute("aria-label");
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
         ${style}
       </style>
-      <section aria-label=${ariaAttr}>
-        <span>${labelAttr}</span>
+      <section ${ariaAttr ? `aria-label="${ariaAttr}"` : ""} class="line-break">
+        <span class="label">${labelAttr}</span>
         <slot></slot>
       </section>
     `;

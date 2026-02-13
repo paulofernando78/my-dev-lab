@@ -1,9 +1,17 @@
 import styleImports from "@css/styles.css?inline";
-import "../../js/components/molecules/Section.js";
+import "@/js/components/molecules/Section.js";
+import "@/js/components/molecules/Code.js";
 
 const style = /* css */ `
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
   input {
-    display: block
+    padding: 2px
   }
 
   .radio {
@@ -38,8 +46,21 @@ class Tags extends HTMLElement {
     <h2 class="page"><b>Tags</b></h2>
 
     <wc-section label="input styles" aria-label="Html Tags">
-    <input type="text" placeholder="text"/>
-      <input type="password" placeholder="password"/>
+      <div class="wrapper">
+        <wc-code language="html">
+        <input type="text"/>
+        </wc-code>
+        <input type="text" placeholder="text"/>
+      </div>
+
+      <div class="wrapper">
+        <wc-code language="html">
+        <input type="password"/>
+        </wc-code>
+        <input type="password" placeholder="password"/>
+      </div>
+      
+      
       <input type="search"placeholder="search"/>
       <input type="date"/>
       <input type="month"/>
