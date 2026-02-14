@@ -1,4 +1,4 @@
-import styleImports from "@css/styles.css?inline";
+import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
   .header {
@@ -34,7 +34,7 @@ class PageHeader extends HTMLElement {
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
-        ${styleImports}
+        ${componentStyles}
         ${style}
       </style>
       <div class="header">

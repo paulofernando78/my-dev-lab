@@ -1,4 +1,4 @@
-import styleImports from "@css/styles.css?inline";
+import componentStyles from "@css/imports/component.css?inline";
 
 import { lightMode, darkMode } from "../../../assets/images/svg-imports";
 
@@ -75,7 +75,7 @@ class Button extends HTMLElement {
 
     this.shadowRoot.innerHTML = /* html*/ `
       <style>
-        ${styleImports}
+        ${componentStyles}
         ${style}
       </style>
       <button></button>

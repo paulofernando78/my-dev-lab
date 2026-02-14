@@ -1,5 +1,5 @@
+import componentStyles from "@css/imports/component.css?inline";
 import hljs from "highlight.js";
-import styleImports from "@css/styles.css?inline";
 import hljsTheme from "highlight.js/styles/vs2015.css?inline";
 
 const style = /* css */ `
@@ -7,12 +7,16 @@ const style = /* css */ `
     margin: 0;
     background-color: #252525;
     border-radius: var(--border-radius);
-    overflow-x: auto;
+    overflow: auto;
   }
+
+.hljs,
+.hljs * {
+  font-size: 0.9rem;
+}
 
   code {
     font-family: monospace;
-    font-size: .4rem
   }
 `;
 
@@ -31,7 +35,7 @@ class Code extends HTMLElement {
 
     this.shadowRoot.innerHTML = /* html */ `
       <style>
-        ${styleImports}
+        ${componentStyles}
         ${hljsTheme}
         ${style}
       </style>

@@ -1,4 +1,4 @@
-import styleImports from "@css/styles.css?inline";
+import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
   :host {
@@ -7,12 +7,8 @@ const style = /* css */ `
   .card-container {
     padding: 5px; 
     border: var(--border);
-    border-radius: var(--border-radius)
-    
-  }
-
-  ::slotted(*) {
-    // background-color: red
+    border-radius: var(--border-radius);
+    background-color: var(--slate-3)
   }
 `
 
@@ -25,7 +21,7 @@ class Card extends HTMLElement {
   connectedCallback() {
     this.shadowRoot.innerHTML = /* html */ `
       <style>
-        ${styleImports}
+        ${componentStyles}
         ${style}
 
         

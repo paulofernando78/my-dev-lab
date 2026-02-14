@@ -1,0 +1,22 @@
+.line-break {
+  display: grid;
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+  gap: 5px;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items:start;
+  gap: 5px;
+}
+
+ .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }

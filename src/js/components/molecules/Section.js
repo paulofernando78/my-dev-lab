@@ -1,4 +1,4 @@
-import styleImports from "@css/styles.css?inline";
+import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
   :host {
@@ -10,6 +10,7 @@ const style = /* css */ `
     color: white;
     border-radius: 5px;
     padding: 4px 7px;
+    font-size: 1.1rem;
     font-weight: bold
   }
 `;
@@ -27,11 +28,10 @@ class Section extends HTMLElement {
   render() {
     const labelAttr = this.getAttribute("label");
     const ariaAttr = this.getAttribute("aria-label");
-    const idAttr = this.getAttribute("id");
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
-        ${styleImports}
+        ${componentStyles}
         ${style}
       </style>
       <section ${ariaAttr ? `aria-label="${ariaAttr}"` : ""} class="line-break">
