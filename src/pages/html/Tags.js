@@ -151,7 +151,7 @@ class Tags extends HTMLElement {
         <wc-card>
         <div class="wrapper">
           <wc-code language="html">
-<ul>
+<ul type="**">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
@@ -164,6 +164,16 @@ class Tags extends HTMLElement {
           </ul>
         </div>
         </wc-card>
+        <wc-notes>
+  ** Unordered lists support different bullet styles using
+  <code>list-style-type</code>:
+  <ul>
+    <li><code>disc</code> — filled circle (default)</li>
+    <li><code>circle</code> — hollow circle</li>
+    <li><code>square</code> — square bullet</li>
+    <li><code>none</code> — no marker</li>
+  </ul>
+</wc-notes>
 
       </wc-section>
 
