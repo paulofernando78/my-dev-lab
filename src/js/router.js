@@ -19,9 +19,17 @@ const routes = {
     tag: "wc-about",
     load: () => import("../pages/About.js"),
   },
+  // HTML
   "/html/tags": {
     tag: "wc-html-tags",
     load: () => import("../pages/html/Tags.js"),
+  },
+  //CSS
+
+  // JS
+  "/js/conditional-rendering": {
+    tag: "wc-js-conditional-rendering",
+    load: () => import("../pages/js/ConditionalRendering.js"),
   },
 };
 

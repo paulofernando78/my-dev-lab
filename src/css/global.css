@@ -35,7 +35,6 @@ body {
   background-color: var(--background-color, #fff);
 }
 
-
 header {
   border: 1px solid var(--gray-4);
   border-radius: var(--border-radius);
@@ -79,6 +78,10 @@ footer {
   padding: var(--padding);
   border-radius: var(--border-radius);
   text-align: center;
+}
+
+img {
+  border-radius: 5px;
 }
 
 svg {

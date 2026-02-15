@@ -75,6 +75,7 @@ class Tags extends HTMLElement {
 <footer></footer>
 <div></div>
             </wc-code>
+            <img src="/assets/images/semantic.jpg"/>
           </div>
         </wc-card>
       </wc-section>

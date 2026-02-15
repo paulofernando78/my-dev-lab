@@ -39,7 +39,9 @@ class Card extends HTMLElement {
 
         
       </style>
-      <div class="label">${labelAttr}</div>
+      ${labelAttr ?
+        `<div class="label">${labelAttr}</div>` : ""
+      }
       <div class="card-container">
         <slot></slot>
       </div>

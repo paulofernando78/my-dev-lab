@@ -48,6 +48,10 @@ export const links = [
             href: "/js/logic",
             page: "Logic",
           },
+          {
+            href: "/js/conditional-rendering",
+            page: "Conditional Rendering",
+          },
         ],
       },
     ],
@@ -80,13 +84,15 @@ ul.innerHTML = links
                       <ul>
                       ${
                         item.pages
-                          ? item.pages.map(
-                              (item) => /* html */ `
+                          ? item.pages
+                              .map(
+                                (item) => /* html */ `
                         <li>
                         <a href="${item.href}">${item.page}</a>
                         </li>
                         `,
-                            )
+                              )
+                              .join("")
                           : ""
                       }
                       </ul>
