@@ -178,13 +178,37 @@ class Tags extends HTMLElement {
       </wc-section>
 
       <wc-section id="links" label="Links" aria-label="Links">
-        <wc-card>
-        <div class="wrapper">
-          <wc-code language="html">
-            
-          </wc-code>
-        </div>
+        <wc-card label="Anchor">
+          <div class="wrapper">
+            <wc-code language="html">
+<a href="https://example.com">Visit example</a>
+            </wc-code>
+            <div>
+              <a href="https://example.com">Visit example</a>
+            </div>
+          </div>
         </wc-card>
+
+        <wc-card label="Open in new tab">
+          <div class="wrapper">
+            <wc-code language="html">
+<a href="https://example.com" target="_blank">
+  Open example
+</a>
+            </wc-code>
+            <div>
+              <a href="https://example.com" target="_blank">
+                Open example
+              </a>
+            </div>
+          </div>
+        </wc-card>
+
+        <wc-notes>
+          Links are created using the <code>&lt;a&gt;</code> (anchor) tag.
+          The <code>href</code> attribute defines the destination URL.
+          Use <code>target="_blank"</code> to open links in a new tab.
+        </wc-notes>
       </wc-section>
 
       <wc-section id="input-styles" label="Input styles" aria-label="input styles">

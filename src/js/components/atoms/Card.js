@@ -7,17 +7,17 @@ const style = /* css */ `
   .label {
     width: max-content;
     border: 1px solid var(--slate-3);
-    border-bottom: 0;
     border-radius: 5px 5px 0 0;
     padding: 3px;
-    font-weight: bold
+    font-weight: bold;
+    background-color: var(--slate-3)
   }
 
   .card-container {
     padding: 5px; 
     border: var(--border);
     border-radius: 0 5px 5px 5px;
-    background-color: var(--slate-2)
+    background-color: var(--slate-3)
   }
   
 `

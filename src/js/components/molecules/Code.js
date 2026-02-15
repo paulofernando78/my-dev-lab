@@ -9,12 +9,12 @@ const style = /* css */ `
     border-radius: var(--border-radius);
     white-space: pre-wrap;
   }
-
-.hljs,
-.hljs * {
-  font-size: 0.9rem;
-}
-
+  
+  .hljs,
+  .hljs * {
+    font-size: 0.9rem;
+  }
+  
   code {
     font-family: monospace;
   }
