@@ -3,6 +3,7 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
+import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
 
@@ -21,39 +22,90 @@ class ConditionalRendering extends HTMLElement {
   }
 
   render() {
+    const examples = [
+      {
+        label: "true",
+        value: true,
+        code: `
+const showItem2 = true
+
+<span>Item 1</span>
+<span>Item 2</span>
+        `,
+        preview: (value) => `
+<span>Item 1</span>
+${value ? `<span>Item 2</span>` : ""}
+        `,
+        notes: "..."
+      },
+      {
+        label: "false",
+        value: false,
+        code: `
+const showItem2 = false
+
+<span>Item 1</span>
+<span>Item 2</span>
+        `,
+        preview: (value) => `
+<span>Item 1</span>
+${value ? `<span>Item 2</span>` : ""}
+        `,
+        notes: "..."
+      }
+    ]
+
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
         ${style}
       </style>
-      
-    <wc-page-header category="Javascript" page="Conditional Rendering" aria-label="html tags"/></wc-page-header>
-    <wc-contents></wc-contents>
 
-      <wc-section id="..." label="..." aria-label="...">
-        <wc-card label="...">
-          <div class="wrapper">
+      <wc-page-header
+        category="Javascript"
+        page="Conditional Rendering"
+        aria-label="Conditional Rendering"
+      ></wc-page-header>
+
+      <wc-contents></wc-contents>
+
+      <wc-section
+        id="template-literals"
+        label="Template Literals"
+        aria-label="Template Literals"
+        class="line-break"
+      >
+        ${examples.map(
+          (example) => `
+        <wc-card label="${example.label}">
+        
+          <wc-wrapper>
             <wc-code language="">
-              
+  ${example.code}
             </wc-code>
-          </div>
+            <div>
+              ${example.preview(example.value)}
+            </div>
+          </wc-wrapper>
         </wc-card>
-        <wc-notes>...</wc-notes>
+        <wc-notes>${example.notes}</wc-notes>
+        `,
+        ).join("")}
       </wc-section>
-      `;
+    `;
 
-      const contentsEl = this.shadowRoot.querySelector("wc-contents");
+    const contentsEl = this.shadowRoot.querySelector("wc-contents");
 
     contentsEl.contents = [
       {
-        id: "...",
-        label: "...",
+        id: "template-literals",
+        label: "Template Literals",
       },
     ];
 
     contentsEl.render();
-    }
   }
+}
 
 customElements.define("wc-js-conditional-rendering", ConditionalRendering);
 export default ConditionalRendering;
