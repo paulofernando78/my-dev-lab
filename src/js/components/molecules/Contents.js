@@ -15,6 +15,7 @@ const style = /* css */ `
 
 .contents-navbar a {
   font-size: 1rem;
+  cursor: pointer
 }
 `;
 

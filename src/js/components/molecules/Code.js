@@ -7,7 +7,7 @@ const style = /* css */ `
     margin: 0;
     background-color: #252525;
     border-radius: var(--border-radius);
-    overflow: auto;
+    white-space: pre-wrap;
   }
 
 .hljs,

@@ -12,20 +12,43 @@ export const links = [
   {
     section: "Frontend",
     categories: [
+      // HTML
       {
         category: "HTML",
         pages: [
           {
             href: "/html/tags",
-            page: "Tags"
-          }
-        ]
+            page: "Tags",
+          },
+        ],
       },
+      // CSS
       {
         category: "CSS",
+        pages: [
+          {
+            href: "/css/selectors",
+            page: "Selectors",
+          },
+          {
+            href: "/css/flex",
+            page: "Flex",
+          },
+          {
+            href: "/css/grid",
+            page: "Grid",
+          },
+        ],
       },
+      // JS
       {
         category: "JS",
+        pages: [
+          {
+            href: "/js/logic",
+            page: "Logic",
+          },
+        ],
       },
     ],
   },
@@ -55,11 +78,17 @@ ul.innerHTML = links
                     <details>
                       <summary>${item.category}</summary>
                       <ul>
-                      ${item.pages ? item.pages.map(item => /* html */`
+                      ${
+                        item.pages
+                          ? item.pages.map(
+                              (item) => /* html */ `
                         <li>
                         <a href="${item.href}">${item.page}</a>
                         </li>
-                        `) : ""}
+                        `,
+                            )
+                          : ""
+                      }
                       </ul>
                     </details>
                   </li>

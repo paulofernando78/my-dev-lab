@@ -2,12 +2,22 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
+import "@/js/components/atoms/Card.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Notes.js";
 
 const style = /* css */ `
   h1, h2, h3, h4 {
     margin-bottom: 0.5rem
   }
+
+  ol {
+  padding-left: 1rem;
+}
+
+ul {
+  padding-left: 1rem;
+}
 
   textarea, input {
     padding: 2px 4px
@@ -47,18 +57,12 @@ class Tags extends HTMLElement {
       ${styleImports}
       ${style}
     </style>
-
-    <wc-card>
-          <div class="wrapper">
-            <wc-code language="">
-              
-            </wc-code>
-          </div>
-        </wc-card>
     
-    <wc-page-header category="HTML" page="Tags" /></wc-page-header>
+    <wc-page-header category="HTML" page="Tags" aria-label="html tags"/></wc-page-header>
     <wc-contents></wc-contents>
     <div class="line-break">
+
+    <wc-component></wc-component>
       <wc-section id="layout-semantic" label="Layout / Semantic" aria-label="">
          <wc-card>
           <div class="wrapper">
@@ -75,8 +79,8 @@ class Tags extends HTMLElement {
         </wc-card>
       </wc-section>
 
-      <wc-section id="text" label="text" aria-label="input styles">
-        <wc-card>
+      <wc-section id="text" label="Text" aria-label="input styles">
+        <wc-card label="Headings">
           <div class="wrapper">
             <wc-code language="html">
 <h1>Heading 1</h1>
@@ -93,7 +97,7 @@ class Tags extends HTMLElement {
           </div>
         </wc-card>
 
-        <wc-card>
+        <wc-card  label="Paragraph">
           <div class="wrapper">
             <wc-code language="html">
 <p>This is a paragraph.</p>
@@ -107,15 +111,73 @@ class Tags extends HTMLElement {
         <wc-card>
           <div class="wrapper">
             <wc-code language="">
-              <textarea></textarea>
+              <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
             </wc-code>
             <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
           </div>
         </wc-card>
-          
+      </wc-section>
+      
+      <wc-section id="lists" label="Lists" aria-label="Lists">
+
+        <wc-card>
+        <div class="wrapper">
+          <wc-code language="html">
+<ol type="**">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ol>
+          </wc-code>
+          <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ol>
+        </div>
+        </wc-card>
+        <wc-notes>
+          ** Ordered lists support different numbering types using
+          <code>type=""</code>:
+          <ul>
+            <li><code>1</code> — numbers (default)</li>
+            <li><code>A</code> — uppercase letters</li>
+            <li><code>a</code> — lowercase letters</li>
+            <li><code>I</code> — uppercase Roman numerals</li>
+            <li><code>i</code> — lowercase Roman numerals</li>
+          </ul>
+        </wc-notes>
+
+        <wc-card>
+        <div class="wrapper">
+          <wc-code language="html">
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+          </wc-code>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </div>
+        </wc-card>
+
       </wc-section>
 
-      <wc-section id="input-styles" label="input styles" aria-label="input styles">
+      <wc-section id="links" label="Links" aria-label="Links">
+        <wc-card>
+        <div class="wrapper">
+          <wc-code language="html">
+            
+          </wc-code>
+        </div>
+        </wc-card>
+      </wc-section>
+
+      <wc-section id="input-styles" label="Input styles" aria-label="input styles">
 
         <wc-card>
           <div class="wrapper">
@@ -306,16 +368,24 @@ class Tags extends HTMLElement {
 
     contentsEl.contents = [
       {
-        id: "layout/semantic",
+        id: "layout-semantic",
         label: "Layout / Semantic",
       },
       {
         id: "text",
-        label: "text",
+        label: "Text",
+      },
+      {
+        id: "lists",
+        label: "Lists",
+      },
+      {
+        id: "links",
+        label: "Links",
       },
       {
         id: "input-styles",
-        label: "input styles",
+        label: "Input styles",
       },
     ];
 
