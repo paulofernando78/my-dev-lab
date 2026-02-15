@@ -19,7 +19,7 @@ const routes = {
     tag: "wc-about",
     load: () => import("../pages/About.js"),
   },
-  "/html-tags": {
+  "/html/tags": {
     tag: "wc-html-tags",
     load: () => import("../pages/html/Tags.js"),
   },

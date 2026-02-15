@@ -1,6 +1,7 @@
 import "@js/app.js";
 import "@css/styles.css";
 import "@utils/componentsImport.js";
+import "@js/navbar-links.js"
 
 // Restore Theme on Page Load
 const savedTheme = localStorage.getItem("theme") || "light";

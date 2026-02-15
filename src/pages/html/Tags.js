@@ -47,12 +47,35 @@ class Tags extends HTMLElement {
       ${styleImports}
       ${style}
     </style>
+
+    <wc-card>
+          <div class="wrapper">
+            <wc-code language="">
+              
+            </wc-code>
+          </div>
+        </wc-card>
     
     <wc-page-header category="HTML" page="Tags" /></wc-page-header>
     <wc-contents></wc-contents>
     <div class="line-break">
-      <wc-section id="text" label="text" aria-label="input styles">
+      <wc-section id="layout-semantic" label="Layout / Semantic" aria-label="">
+         <wc-card>
+          <div class="wrapper">
+            <wc-code language="">
+<header></header>
+<main></main>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+<div></div>
+            </wc-code>
+          </div>
+        </wc-card>
+      </wc-section>
 
+      <wc-section id="text" label="text" aria-label="input styles">
         <wc-card>
           <div class="wrapper">
             <wc-code language="html">
@@ -66,6 +89,17 @@ class Tags extends HTMLElement {
               <h2>Heading 2</h2>
               <h3>Heading 3</h3>
               <h4>Heading 4</h4>
+            </div>
+          </div>
+        </wc-card>
+
+        <wc-card>
+          <div class="wrapper">
+            <wc-code language="html">
+<p>This is a paragraph.</p>
+            </wc-code>
+            <div>
+              <p>This is a paragraph.</p>
             </div>
           </div>
         </wc-card>
@@ -253,7 +287,7 @@ class Tags extends HTMLElement {
             <input type="button" value="Button"/>
           </div>
         </wc-card>
-          
+        
         <wc-card>
           <div class="wrapper">
             <wc-code language="html">
@@ -272,6 +306,10 @@ class Tags extends HTMLElement {
 
     contentsEl.contents = [
       {
+        id: "layout/semantic",
+        label: "Layout / Semantic",
+      },
+      {
         id: "text",
         label: "text",
       },
@@ -282,7 +320,6 @@ class Tags extends HTMLElement {
     ];
 
     contentsEl.render();
-    console.log(contentsEl);
   }
 }
 
