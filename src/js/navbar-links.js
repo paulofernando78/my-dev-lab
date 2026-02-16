@@ -10,6 +10,13 @@ export const links = [
     page: "About",
   },
   {
+    section: "Articles",
+  },
+  {
+    href: "/atomic-design",
+    page: "Atomic Design",
+  },
+  {
     section: "Frontend",
     categories: [
       // HTML
@@ -61,6 +68,12 @@ export const links = [
     categories: [
       {
         category: "Node JS",
+        pages: [
+          {
+            href: "/node/...",
+            page: "...",
+          },
+        ],
       },
     ],
   },

@@ -7,6 +7,7 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
+import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
   h1, h2, h3, h4 {
@@ -64,7 +65,6 @@ class Tags extends HTMLElement {
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabel: "...",
             language: "html",
             code: `
 <header></header>
@@ -259,7 +259,7 @@ class Tags extends HTMLElement {
           <input type="password">
           `,
             preview: () => /* html */ `
-          <input type="password">
+          <input type="password" placeholder="•••••">
           `,
           },
           //! search
@@ -325,7 +325,19 @@ class Tags extends HTMLElement {
           <input type="number">
           `,
             preview: () => /* html */ `
-          <input type="number">
+          <input type="number" placeholder="12345">
+          `,
+          },
+          //! phone
+          {
+            cardLabel: "phone",
+            language: "html",
+            code: `
+          <input type="phone">
+          `,
+            preview: () => /* html */ `
+          <label for="phone">Phone No.</label>
+          <input type="phone" placeholder="999-9999" id="phone">
           `,
           },
           //! email
@@ -336,7 +348,7 @@ class Tags extends HTMLElement {
           <input type="email">
           `,
             preview: () => /* html */ `
-          <input type="email">
+          <input type="email" placeholder="john@email.com">
           `,
           },
           //! url
@@ -360,12 +372,12 @@ class Tags extends HTMLElement {
             preview: () => /* html */ `
               <div class="radio">
                 <div class="flex">
-                  <input type="radio" name="radio" id="radio">
-                  <label for="radio">Item 1</label>
+                  <input type="radio" name="radio" id="radio-1">
+                  <label for="radio-1">Item 1</label>
                 </div>
                 <div class="flex">
-                  <input type="radio" name="radio" id="radio">
-                  <label for="radio">Item 2</label>
+                  <input type="radio" name="radio" id="radio-2">
+                  <label for="radio-2">Item 2</label>
                 </div>
               </div>  
           `,
@@ -380,12 +392,12 @@ class Tags extends HTMLElement {
             preview: () => /* html */ `
               <div class="checkbox">
                 <div class="flex">
-                  <input type="checkbox">
-                  <label>Item 1</label>
+                  <input type="checkbox" id="checkbox-1">
+                  <label for="checkbox-1">Item 1</label>
                 </div>
                 <div class="flex">
-                  <input type="checkbox">
-                  <label>Item 2</label>
+                  <input type="checkbox" id="checkbox-2">
+                  <label for="checkbox-2">Item 2</label>
                 </div>
               </div>  
           `,
@@ -439,11 +451,19 @@ class Tags extends HTMLElement {
             cardLabel: "button",
             language: "html",
             code: `
-          <input type="button">
+          <input type="button" value="Click me!">
           `,
             preview: () => /* html */ `
-          <input type="button">
+          <input type="button" value="Click me!">
           `,
+          notes: /* html */`
+          <div class=line-break>
+            <p><strong>&lt;input type="button"&gt;</strong> is an older way to create buttons in HTML. It was originally designed for simple form actions.</p>
+            <p>Unlike the <strong>&lt;button&gt;</strong> element, an input button cannot contain HTML content. Its label must be defined using the <code>value</code> attribute.</p>
+            <p>Because of this limitation, modern web development usually prefers the <strong>&lt;button&gt;</strong> element, which allows text, icons, and other HTML elements inside.</p>
+            <p>Today, <code>&lt;input type="button"&gt;</code> is mainly used in legacy code or very simple cases.</p>
+          </div>
+`
           },
           //! submit
           {
@@ -471,36 +491,7 @@ class Tags extends HTMLElement {
     <wc-contents></wc-contents>
 
     <div class="line-break">
-        ${sections
-          .map(
-            (section) => /* html */ `
-        <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
-          ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
-          ${
-            section.examples
-              ? section.examples
-                  .map(
-                    (example) => /* html */ `
-        <wc-card cardLabel="${example.cardLabel}">
-          <wc-wrapper>
-            <wc-code language="${example.language}">
-              ${example.code}
-            </wc-code>
-            <div>
-              ${example.preview()}
-            </div>
-          </wc-wrapper>
-        </wc-card>
-        ${example.notes ? `<wc-notes>${example.notes}</wc-notes>` : ""}
-        `,
-                  )
-                  .join("")
-              : ""
-          }
-        </wc-section>
-          `,
-          )
-          .join("")}
+        ${renderSections(sections)}
       </div> 
     `;
 
