@@ -5,6 +5,7 @@ import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
+import { setupContents } from "@/js/utils/setupContents.js";
 
 const style = /* css */ `
   h1, h2, h3, h4 {
@@ -12,12 +13,12 @@ const style = /* css */ `
   }
 
   ol {
-  padding-left: 1rem;
-}
+    padding-left: 1rem;
+  }
 
-ul {
-  padding-left: 1rem;
-}
+  ul {
+    padding-left: 1rem;
+  }
 
   textarea, input {
     padding: 2px 4px
@@ -51,6 +52,371 @@ class Tags extends HTMLElement {
   }
 
   render() {
+    const sections = [
+      {
+        sectionId: "whats-it",
+        sectionLabel: "What’s it?",
+        sectionAriaLabel: "What’s it?",
+        description: /* html */ `
+        <p>...</p>
+        `,
+      },
+      {
+        sectionId: "semantic",
+        sectionLabel: "Semantic",
+        sectionAriaLabel: "...",
+        examples: [
+          {
+            cardLabel: "...",
+            language: "html",
+            code: `
+<header></header>
+<main></main>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+<div></div>
+          `,
+            preview: () => `
+          ...
+          `,
+            notes: "...",
+          },
+        ],
+      },
+      {
+        sectionId: "text",
+        sectionLabel: "Text",
+        sectionAriaLabel: "Text",
+        examples: [
+          {
+            cardLabel: "Headings",
+            language: "html",
+            code: `
+          <h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+          `,
+            preview: () => `
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+
+            `,
+            notes: "...",
+          },
+          {
+            cardLabel: "Paragraph",
+            language: "html",
+            code: `
+<p>This is a paragraph.</p>
+          `,
+            preview: () => `
+              <p>This is a paragraph.</p>
+            `,
+            notes: "...",
+          },
+          {
+            cardLabel: "Text Area",
+            language: "html",
+            code: `
+<textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
+          `,
+            preview: () => `
+              <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
+            `,
+            notes: "...",
+          },
+        ],
+      },
+      {
+        sectionId: "...",
+        sectionLabel: "Lists",
+        sectionAriaLabel: "...",
+        examples: [
+          {
+            cardLabel: "Ordered List",
+            language: "html",
+            code: `
+<ol type="**">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ol>
+          `,
+            preview: () => `
+              <ol type="**">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            `,
+            notes: `
+** Ordered lists support different numbering types using
+<ul>
+  <li><code>1</code> — numbers (default)</li>
+  <li><code>A</code> — uppercase letters</li>
+  <li><code>a</code> — lowercase letters</li>
+  <li><code>I</code> — uppercase Roman numerals</li>
+  <li><code>i</code> — lowercase Roman numerals</li>
+</ul>
+              `,
+          },
+          {
+            cardLabel: "Unordered List",
+            language: "html",
+            code: `
+<ul type="**">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+          `,
+            preview: () => `
+              <ul type="**">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            `,
+            notes: `
+** Unordered lists support different bullet styles using
+<code>list-style-type</code>:
+<ul>
+  <li><code>disc</code> — filled circle (default)</li>
+  <li><code>circle</code> — hollow circle</li>
+  <li><code>square</code> — square bullet</li>
+  <li><code>none</code> — no marker</li>
+</ul>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "links",
+        sectionLabel: "Links",
+        sectionAriaLabel: "Links",
+        examples: [
+          {
+            cardLabel: "Default",
+            language: "html",
+            code: `
+<a href="https://example.com">Visit example</a>
+          `,
+            preview: () => `
+              <a href="https://example.com">Visit example</a>
+            `,
+          },
+          {
+            cardLabel: "New Tab",
+            language: "html",
+            code: `
+<a href="https://example.com" target="_blank">
+  Open example
+</a>
+          `,
+            preview: () => `
+              <a href="https://example.com" target="_blank">
+                Open example
+              </a>
+            `,
+            notes:
+              'Links are created using the <a> (anchor) tag. The href attribute defines the destination URL. Use target="_blank" to open links in a new tab.',
+          },
+        ],
+      },
+      {
+        sectionId: "input-styles",
+        sectionLabel: "Input styles",
+        sectionAriaLabel: "Input styles",
+        examples: [
+          {
+            cardLabel: "text",
+            language: "html",
+            code: `
+          <input type="text">
+          `,
+            preview: () => `
+          <input type="text">
+          `,
+          },
+          {
+            cardLabel: "password",
+            language: "html",
+            code: `
+          <input type="password">
+          `,
+            preview: () => `
+          <input type="password">
+          `,
+          },
+          {
+            cardLabel: "search",
+            language: "html",
+            code: `
+          <input type="search">
+          `,
+            preview: () => `
+          <input type="search">
+          `,
+          },
+          {
+            cardLabel: "date",
+            language: "html",
+            code: `
+          <input type="date">
+          `,
+            preview: () => `
+          <input type="date">
+          `,
+          },
+          {
+            cardLabel: "month",
+            language: "html",
+            code: `
+          <input type="month">
+          `,
+            preview: () => `
+          <input type="month">
+          `,
+          },
+          {
+            cardLabel: "week",
+            language: "html",
+            code: `
+          <input type="week">
+          `,
+            preview: () => `
+          <input type="week">
+          `,
+          },
+          {
+            cardLabel: "time",
+            language: "html",
+            code: `
+          <input type="time">
+          `,
+            preview: () => `
+          <input type="time">
+          `,
+          },
+          {
+            cardLabel: "number",
+            language: "html",
+            code: `
+          <input type="number">
+          `,
+            preview: () => `
+          <input type="number">
+          `,
+          },
+          {
+            cardLabel: "email",
+            language: "html",
+            code: `
+          <input type="email">
+          `,
+            preview: () => `
+          <input type="email">
+          `,
+          },
+          {
+            cardLabel: "url",
+            language: "html",
+            code: `
+          <input type="url">
+          `,
+            preview: () => `
+          <input type="url">
+          `,
+          },
+          {
+            cardLabel: "radio",
+            language: "html",
+            code: `
+          <input type="radio">
+          `,
+            preview: () => `
+          <input type="radio">
+          `,
+          },
+          {
+            cardLabel: "checkbox",
+            language: "html",
+            code: `
+          <input type="text">
+          `,
+            preview: () => `
+          <input type="text">
+          `,
+          },
+          {
+            cardLabel: "color",
+            language: "html",
+            code: `
+          <input type="color">
+          `,
+            preview: () => `
+          <input type="color">
+          `,
+          },
+          {
+            cardLabel: "range",
+            language: "html",
+            code: `
+          <input type="range">
+          `,
+            preview: () => `
+          <input type="range">
+          `,
+          },
+          {
+            cardLabel: "file",
+            language: "html",
+            code: `
+          <input type="file">
+          `,
+            preview: () => `
+          <input type="file">
+          `,
+          },
+          {
+            cardLabel: "reset",
+            language: "html",
+            code: `
+          <input type="reset">
+          `,
+            preview: () => `
+          <input type="reset">
+          `,
+          },
+          {
+            cardLabel: "button",
+            language: "html",
+            code: `
+          <input type="button">
+          `,
+            preview: () => `
+          <input type="button">
+          `,
+          },
+          {
+            cardLabel: "submit",
+            language: "html",
+            code: `
+          <input type="submit">
+          `,
+            preview: () => `
+          <input type="submit">
+          `,
+          },
+        ],
+      },
+    ];
+
     /* HTML */
     this.shadowRoot.innerHTML = `
     <style>
@@ -60,371 +426,42 @@ class Tags extends HTMLElement {
     
     <wc-page-header category="HTML" page="Tags" aria-label="html tags"/></wc-page-header>
     <wc-contents></wc-contents>
+
     <div class="line-break">
-
-    <wc-component></wc-component>
-      <wc-section id="layout-semantic" label="Layout / Semantic" aria-label="">
-         <wc-card>
-          <div class="wrapper">
-            <wc-code language="">
-<header></header>
-<main></main>
-<section></section>
-<article></article>
-<aside></aside>
-<footer></footer>
-<div></div>
-            </wc-code>
-            <img src="/assets/images/semantic.jpg"/>
-          </div>
-        </wc-card>
-      </wc-section>
-
-      <wc-section id="text" label="Text" aria-label="input styles">
-        <wc-card label="Headings">
-          <div class="wrapper">
-            <wc-code language="html">
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
+        ${sections
+          .map(
+            (section) => /* html */ `
+        <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
+          ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
+          ${
+            section.examples
+              ? section.examples
+                  .map(
+                    (example) => /* html */ `
+        <wc-card cardLabel="${example.cardLabel}">
+          <wc-wrapper>
+            <wc-code language="${example.language}">
+              ${example.code}
             </wc-code>
             <div>
-              <h1>Heading 1</h1>
-              <h2>Heading 2</h2>
-              <h3>Heading 3</h3>
-              <h4>Heading 4</h4>
+              ${example.preview()}
             </div>
-          </div>
+          </wc-wrapper>
         </wc-card>
-
-        <wc-card  label="Paragraph">
-          <div class="wrapper">
-            <wc-code language="html">
-<p>This is a paragraph.</p>
-            </wc-code>
-            <div>
-              <p>This is a paragraph.</p>
-            </div>
-          </div>
-        </wc-card>
-
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="">
-              <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
-            </wc-code>
-            <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
-          </div>
-        </wc-card>
-      </wc-section>
-      
-      <wc-section id="lists" label="Lists" aria-label="Lists">
-
-        <wc-card>
-        <div class="wrapper">
-          <wc-code language="html">
-<ol type="**">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-</ol>
-          </wc-code>
-          <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ol>
-        </div>
-        </wc-card>
-        <wc-notes>
-          ** Ordered lists support different numbering types using
-          <code>type=""</code>:
-          <ul>
-            <li><code>1</code> — numbers (default)</li>
-            <li><code>A</code> — uppercase letters</li>
-            <li><code>a</code> — lowercase letters</li>
-            <li><code>I</code> — uppercase Roman numerals</li>
-            <li><code>i</code> — lowercase Roman numerals</li>
-          </ul>
-        </wc-notes>
-
-        <wc-card>
-        <div class="wrapper">
-          <wc-code language="html">
-<ul type="**">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-</ul>
-          </wc-code>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </div>
-        </wc-card>
-        <wc-notes>
-  ** Unordered lists support different bullet styles using
-  <code>list-style-type</code>:
-  <ul>
-    <li><code>disc</code> — filled circle (default)</li>
-    <li><code>circle</code> — hollow circle</li>
-    <li><code>square</code> — square bullet</li>
-    <li><code>none</code> — no marker</li>
-  </ul>
-</wc-notes>
-
-      </wc-section>
-
-      <wc-section id="links" label="Links" aria-label="Links">
-        <wc-card label="Anchor">
-          <div class="wrapper">
-            <wc-code language="html">
-<a href="https://example.com">Visit example</a>
-            </wc-code>
-            <div>
-              <a href="https://example.com">Visit example</a>
-            </div>
-          </div>
-        </wc-card>
-
-        <wc-card label="Open in new tab">
-          <div class="wrapper">
-            <wc-code language="html">
-<a href="https://example.com" target="_blank">
-  Open example
-</a>
-            </wc-code>
-            <div>
-              <a href="https://example.com" target="_blank">
-                Open example
-              </a>
-            </div>
-          </div>
-        </wc-card>
-
-        <wc-notes>
-          Links are created using the <code>&lt;a&gt;</code> (anchor) tag.
-          The <code>href</code> attribute defines the destination URL.
-          Use <code>target="_blank"</code> to open links in a new tab.
-        </wc-notes>
-      </wc-section>
-
-      <wc-section id="input-styles" label="Input styles" aria-label="input styles">
-
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-            <input type="text"/>
-            </wc-code>
-            <input type="text" placeholder="text"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-            <input type="password"/>
-            </wc-code>
-            <input type="password" placeholder="password"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="search"/>
-            </wc-code>
-            <input type="search"placeholder="search"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="date"/>
-            </wc-code>
-            <input type="date"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="month"/>
-            </wc-code>
-            <input type="month"/>
-          </div>
-        </wc-card>
-
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="week"/>
-            </wc-code>
-          <input type="week"/>
-          </div>
-        </wc-card>
-
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="time"/>
-            </wc-code>
-            <input type="time"/>
-          </div>
-        </wc-card>      
-
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="number"/>
-            </wc-code>
-            <input type="number" placeholder="1234"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="email"/>
-            </wc-code>
-            <input type="email" placeholder="johndoe@google.com"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="url"/>
-            </wc-code>
-            <input type="url" placeholder="www.google.com"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="radio"/>
-            </wc-code>
-              <div class="radio">
-                <div class="flex">
-                  <input type="radio" name="radio" id="radio-1"/>
-                  <label for="radio-1">Option 1</label>
-                </div>
-                <div class="flex">
-                  <input type="radio" name="radio" id="radio-2"/>
-                  <label for="radio-2">Option 2</label>
-                </div>
-              </div>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="checkbox"/>
-            </wc-code>
-              <div class="checkbox">
-                <div class="flex">
-                  <input type="checkbox" name="checkbox" value="" id="checkbox-1"/>
-                  <label for="checkbox-1">Checkbox 1</label>
-                </div>
-                <div class="flex">
-                  <input type="checkbox" name="checkbox" value="" id="checkbox-2"/>
-                  <label for="checkbox-2">Checkbox 2</label>
-                </div>
-              </div>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="color"/>
-            </wc-code>
-            <input type="color"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="range"/>
-            </wc-code>
-            <input type="range"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="file"/>
-            </wc-code>
-            <input type="file"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-            <input type="reset"/>
-            </wc-code>
-            <input type="reset"/>
-          </div>
-        </wc-card>
-          
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="button" value="Button"/>
-            </wc-code>
-            <input type="button" value="Button"/>
-          </div>
-        </wc-card>
-        
-        <wc-card>
-          <div class="wrapper">
-            <wc-code language="html">
-              <input type="submit"/>
-            </wc-code>
-            <input type="submit"/>
-          </div>
-        </wc-card>
-      
-      </wc-section>
-    </div>
-    
+        ${example.notes ? `<wc-notes>${example.notes}</wc-notes>` : ""}
+        `,
+                  )
+                  .join("")
+              : ""
+          }
+        </wc-section>
+          `,
+          )
+          .join("")}
+      </div> 
     `;
 
-    const contentsEl = this.shadowRoot.querySelector("wc-contents");
-
-    contentsEl.contents = [
-      {
-        id: "layout-semantic",
-        label: "Layout / Semantic",
-      },
-      {
-        id: "text",
-        label: "Text",
-      },
-      {
-        id: "lists",
-        label: "Lists",
-      },
-      {
-        id: "links",
-        label: "Links",
-      },
-      {
-        id: "input-styles",
-        label: "Input styles",
-      },
-    ];
-
-    contentsEl.render();
+    setupContents(this.shadowRoot, sections);
   }
 }
 

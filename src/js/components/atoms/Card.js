@@ -1,9 +1,6 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
-  :host {
-  }
-  
   .label {
     width: max-content;
     border: 1px solid var(--slate-3);
@@ -19,8 +16,7 @@ const style = /* css */ `
     border-radius: 0 5px 5px 5px;
     background-color: var(--slate-3)
   }
-  
-`
+`;
 
 class Card extends HTMLElement {
   constructor() {
@@ -29,8 +25,7 @@ class Card extends HTMLElement {
   }
 
   connectedCallback() {
-
-    const labelAttr = this.getAttribute("label")
+    const cardLabelAttr = this.getAttribute("cardLabel");
 
     this.shadowRoot.innerHTML = /* html */ `
       <style>
@@ -39,9 +34,7 @@ class Card extends HTMLElement {
 
         
       </style>
-      ${labelAttr ?
-        `<div class="label">${labelAttr}</div>` : ""
-      }
+      ${cardLabelAttr ? `<div class="label">${cardLabelAttr}</div>` : ""}
       <div class="card-container">
         <slot></slot>
       </div>
@@ -51,4 +44,3 @@ class Card extends HTMLElement {
 
 customElements.define("wc-card", Card);
 export default Card;
-

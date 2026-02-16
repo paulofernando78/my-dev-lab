@@ -23,37 +23,37 @@ class ConditionalRendering extends HTMLElement {
 
   render() {
     const examples = [
+      //! TRUE
       {
         label: "true",
-        value: true,
+        showItem2: true,
         code: `
 const showItem2 = true
 
 <span>Item 1</span>
-<span>Item 2</span>
+\${showItem2 ? \`<span>Item 2</span>\` : ""}
         `,
-        preview: (value) => `
+        preview: (showItem2) => `
 <span>Item 1</span>
-${value ? `<span>Item 2</span>` : ""}
+${showItem2 ? `<span>Item 2</span>` : ""}
         `,
-        notes: "..."
       },
+      //! FALSE
       {
         label: "false",
-        value: false,
+        showItem2: false,
         code: `
 const showItem2 = false
 
 <span>Item 1</span>
-<span>Item 2</span>
+\${showItem2 ? \`<span>Item 2</span>\` : ""}
         `,
-        preview: (value) => `
+        preview: (showItem2) => `
 <span>Item 1</span>
-${value ? `<span>Item 2</span>` : ""}
+${showItem2 ? `<span>Item 2</span>` : ""}
         `,
-        notes: "..."
-      }
-    ]
+      },
+    ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
@@ -75,8 +75,9 @@ ${value ? `<span>Item 2</span>` : ""}
         aria-label="Template Literals"
         class="line-break"
       >
-        ${examples.map(
-          (example) => `
+        ${examples
+          .map(
+            (example) => /* html */ `
         <wc-card label="${example.label}">
         
           <wc-wrapper>
@@ -84,19 +85,25 @@ ${value ? `<span>Item 2</span>` : ""}
   ${example.code}
             </wc-code>
             <div>
-              ${example.preview(example.value)}
+              ${example.preview(example.showItem2)}
             </div>
           </wc-wrapper>
         </wc-card>
-        <wc-notes>${example.notes}</wc-notes>
+        ${example.notes ? `<wc-notes>${example.notes}</wc-notes>` : ""}
+        
         `,
-        ).join("")}
+          )
+          .join("")}
       </wc-section>
     `;
 
     const contentsEl = this.shadowRoot.querySelector("wc-contents");
 
     contentsEl.contents = [
+      {
+        id: "whats-it",
+        label: "What’s it?",
+      },
       {
         id: "template-literals",
         label: "Template Literals",

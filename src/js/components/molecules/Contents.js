@@ -63,7 +63,7 @@ class Contents extends HTMLElement {
                 viewBox="0 -960 960 960"
                 fill="#999999">
                 <path d="M320-316q-33 0-56.5-23.5T240-396v-364q0-33 23.5-56.5T320-840h480q33 0 56.5 23.5T880-760v364q0 33-23.5 56.5T800-316H320Zm0-80h480v-364H320v364Zm0 0v-364 364Zm80-204h320v-80H400v80Zm0 120h200v-80H400v80Z"/></svg>
-                <a data-target="${item.id}">${item.label}</a> 
+                <a data-target="${item.id}">${item.sectionLabel}</a> 
               </li>
             `,
             )
@@ -75,8 +75,9 @@ class Contents extends HTMLElement {
     this.shadowRoot.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         const id = link.dataset.target;
-        const host = this.getRootNode().host;
-        const target = host.shadowRoot.getElementById(id);
+        const root = this.getRootNode();
+        const target = root.getElementById(id);
+        console.log(target);
 
         target?.scrollIntoView({
           behavior: "smooth",

@@ -7,6 +7,12 @@ const style = /* css */ `
     gap: 12px;
     align-items: start;
   }
+
+  @media (width < 600px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
 `;
 
 class Wrapper extends HTMLElement {
