@@ -87,3 +87,15 @@ img {
 svg {
   filter: invert(var(--icon-invert));
 }
+
+code {
+  border: 1px solid var(--slate-3);
+  border-radius: var(--border-radius);
+  padding: 0 1px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--slate-1);
+}
+
+.code-notes {
+  border: 1px solid;
+}

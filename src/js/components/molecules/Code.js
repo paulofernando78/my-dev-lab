@@ -14,10 +14,6 @@ const style = /* css */ `
   .hljs * {
     font-size: 0.9rem;
   }
-  
-  code {
-    font-family: monospace;
-  }
 `;
 
 class Code extends HTMLElement {

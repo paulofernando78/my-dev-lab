@@ -156,16 +156,22 @@ class Tags extends HTMLElement {
                 <li>Item 3</li>
               </ol>
             `,
-            notes: `
-** Ordered lists support different numbering types using
-<ul>
-  <li><code>1</code> — numbers (default)</li>
-  <li><code>A</code> — uppercase letters</li>
-  <li><code>a</code> — lowercase letters</li>
-  <li><code>I</code> — uppercase Roman numerals</li>
-  <li><code>i</code> — lowercase Roman numerals</li>
-</ul>
-              `,
+            notes: /* html */ `
+              <div class="line-break">
+                <p><strong>Ordered lists</strong> support different numbering types using the <code>type</code> attribute:</p>
+                <ul>
+                  <li><code>1</code> — numbers (default)</li>
+                  <li><code>A</code> — uppercase letters</li>
+                  <li><code>a</code> — lowercase letters</li>
+                  <li><code>I</code> — uppercase Roman numerals</li>
+                  <li><code>i</code> — lowercase Roman numerals</li>
+                </ul>
+                <p>The <code>start</code> attribute defines the starting number of the list. By default, ordered lists begin at <code>1</code>.</p>
+                <p>Example:</p>
+                <pre><code>&lt;ol start="3"&gt;</code></pre>
+                <p>This will start the list numbering at 3 instead of 1.</p>
+              </div>
+`,
           },
           //! Unordered List
           {
@@ -185,15 +191,14 @@ class Tags extends HTMLElement {
                 <li>Item 3</li>
               </ul>
             `,
-            notes: `
-** Unordered lists support different bullet styles using
-<code>list-style-type</code>:
-<ul>
-  <li><code>disc</code> — filled circle (default)</li>
-  <li><code>circle</code> — hollow circle</li>
-  <li><code>square</code> — square bullet</li>
-  <li><code>none</code> — no marker</li>
-</ul>
+            notes: /* html */ `
+              <p>** Unordered lists support different bullet styles using:</p>
+              <ul>
+                <li><code>disc</code> — filled circle (default)</li>
+                <li><code>circle</code> — hollow circle</li>
+                <li><code>square</code> — square bullet</li>
+                <li><code>none</code> — no marker</li>
+              </ul>
             `,
           },
         ],
