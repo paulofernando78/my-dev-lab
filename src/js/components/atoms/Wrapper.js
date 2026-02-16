@@ -1,15 +1,13 @@
-import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-  .wrapper {
+  :host {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 12px;
-    align-items: start;
+    gap: 12px;    align-items: start;
   }
 
   @media (width < 600px) {
-    .wrapper {
+    :host {
       grid-template-columns: 1fr;
     }
   }
@@ -27,13 +25,10 @@ class Wrapper extends HTMLElement {
 
   render() {
     this.shadowRoot.innerHTML = /* HTML */ `
-      <style>
-        ${styleImports}
-        ${style}
-      </style>
-      <div class="wrapper">
-        <slot></slot>
-      </div>
+    <style>
+      ${style}
+    </style>
+    <slot></slot>
     `;
   }
 }

@@ -3,6 +3,7 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
+import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
@@ -24,12 +25,7 @@ const style = /* css */ `
     padding: 2px 4px
   }
 
-  .radio {
-    display: flex;
-    gap: 20px
-  }
-
-  .checkbox {
+  .radio, .checkbox {
     display: flex;
     gap: 20px
   }
@@ -61,6 +57,7 @@ class Tags extends HTMLElement {
         <p>...</p>
         `,
       },
+      //! Semantic
       {
         sectionId: "semantic",
         sectionLabel: "Semantic",
@@ -78,18 +75,20 @@ class Tags extends HTMLElement {
 <footer></footer>
 <div></div>
           `,
-            preview: () => `
-          ...
+            preview: () => /* html */ `
+          <img src="/assets/images/semantic.jpg"/>
           `,
             notes: "...",
           },
         ],
       },
+      //! Text
       {
         sectionId: "text",
         sectionLabel: "Text",
         sectionAriaLabel: "Text",
         examples: [
+          //! Headings
           {
             cardLabel: "Headings",
             language: "html",
@@ -99,7 +98,7 @@ class Tags extends HTMLElement {
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
               <h3>Heading 3</h3>
@@ -108,13 +107,14 @@ class Tags extends HTMLElement {
             `,
             notes: "...",
           },
+          //! Paragraph
           {
             cardLabel: "Paragraph",
             language: "html",
             code: `
 <p>This is a paragraph.</p>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <p>This is a paragraph.</p>
             `,
             notes: "...",
@@ -125,18 +125,20 @@ class Tags extends HTMLElement {
             code: `
 <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
             `,
             notes: "...",
           },
         ],
       },
+      //! Lists
       {
         sectionId: "...",
         sectionLabel: "Lists",
         sectionAriaLabel: "...",
         examples: [
+          //! Ordered List
           {
             cardLabel: "Ordered List",
             language: "html",
@@ -147,7 +149,7 @@ class Tags extends HTMLElement {
   <li>Item 3</li>
 </ol>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <ol type="**">
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -165,6 +167,7 @@ class Tags extends HTMLElement {
 </ul>
               `,
           },
+          //! Unordered List
           {
             cardLabel: "Unordered List",
             language: "html",
@@ -175,7 +178,7 @@ class Tags extends HTMLElement {
   <li>Item 3</li>
 </ul>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <ul type="**">
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -195,21 +198,24 @@ class Tags extends HTMLElement {
           },
         ],
       },
+      //! Links
       {
         sectionId: "links",
         sectionLabel: "Links",
         sectionAriaLabel: "Links",
         examples: [
+          //! Default
           {
             cardLabel: "Default",
             language: "html",
             code: `
 <a href="https://example.com">Visit example</a>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <a href="https://example.com">Visit example</a>
             `,
           },
+          //! New Tab
           {
             cardLabel: "New Tab",
             language: "html",
@@ -218,7 +224,7 @@ class Tags extends HTMLElement {
   Open example
 </a>
           `,
-            preview: () => `
+            preview: () => /* html */ `
               <a href="https://example.com" target="_blank">
                 Open example
               </a>
@@ -228,188 +234,225 @@ class Tags extends HTMLElement {
           },
         ],
       },
+      //! Input Styles
       {
         sectionId: "input-styles",
         sectionLabel: "Input styles",
         sectionAriaLabel: "Input styles",
         examples: [
+          //! text
           {
             cardLabel: "text",
             language: "html",
             code: `
           <input type="text">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="text">
           `,
           },
+          //! password
           {
             cardLabel: "password",
             language: "html",
             code: `
           <input type="password">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="password">
           `,
           },
+          //! search
           {
             cardLabel: "search",
             language: "html",
             code: `
           <input type="search">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="search">
           `,
           },
+          //! date
           {
             cardLabel: "date",
             language: "html",
             code: `
           <input type="date">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="date">
           `,
           },
+          //! month
           {
             cardLabel: "month",
             language: "html",
             code: `
           <input type="month">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="month">
           `,
           },
+          //! week
           {
             cardLabel: "week",
             language: "html",
             code: `
           <input type="week">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="week">
           `,
           },
+          //! time
           {
             cardLabel: "time",
             language: "html",
             code: `
           <input type="time">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="time">
           `,
           },
+          //! number
           {
             cardLabel: "number",
             language: "html",
             code: `
           <input type="number">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="number">
           `,
           },
+          //! email
           {
             cardLabel: "email",
             language: "html",
             code: `
           <input type="email">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="email">
           `,
           },
+          //! url
           {
             cardLabel: "url",
             language: "html",
             code: `
           <input type="url">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="url">
           `,
           },
+          //! radio
           {
             cardLabel: "radio",
             language: "html",
             code: `
           <input type="radio">
           `,
-            preview: () => `
-          <input type="radio">
+            preview: () => /* html */ `
+              <div class="radio">
+                <div class="flex">
+                  <input type="radio" name="radio" id="radio">
+                  <label for="radio">Item 1</label>
+                </div>
+                <div class="flex">
+                  <input type="radio" name="radio" id="radio">
+                  <label for="radio">Item 2</label>
+                </div>
+              </div>  
           `,
           },
+          //! checkbox
           {
             cardLabel: "checkbox",
             language: "html",
             code: `
           <input type="text">
           `,
-            preview: () => `
-          <input type="text">
+            preview: () => /* html */ `
+              <div class="checkbox">
+                <div class="flex">
+                  <input type="checkbox">
+                  <label>Item 1</label>
+                </div>
+                <div class="flex">
+                  <input type="checkbox">
+                  <label>Item 2</label>
+                </div>
+              </div>  
           `,
           },
+          //! color
           {
             cardLabel: "color",
             language: "html",
             code: `
           <input type="color">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="color">
           `,
           },
+          //! range
           {
             cardLabel: "range",
             language: "html",
             code: `
           <input type="range">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="range">
           `,
           },
+          //! file
           {
             cardLabel: "file",
             language: "html",
             code: `
           <input type="file">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="file">
           `,
           },
+          //! reset
           {
             cardLabel: "reset",
             language: "html",
             code: `
           <input type="reset">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="reset">
           `,
           },
+          //! button
           {
             cardLabel: "button",
             language: "html",
             code: `
           <input type="button">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="button">
           `,
           },
+          //! submit
           {
             cardLabel: "submit",
             language: "html",
             code: `
           <input type="submit">
           `,
-            preview: () => `
+            preview: () => /* html */ `
           <input type="submit">
           `,
           },

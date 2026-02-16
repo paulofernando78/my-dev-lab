@@ -43,7 +43,7 @@ class Template extends HTMLElement {
             code: `
           ...
           `,
-            preview: () => `
+            preview: () => /* html */`
           ...
           `,
             notes: `...`,
