@@ -23,6 +23,12 @@ const routes = {
     tag: "wc-about",
     load: () => import("../pages/About.js"),
   },
+  // Frontend
+  // HTML
+  "/frontend/architecture/atomic-design": {
+    tag: "wc-atomic-design",
+    load: () => import("../pages/frontend/architecture/AtomicDesign.js"),
+  },
   // HTML
   "/html/tags": {
     tag: "wc-html-tags",

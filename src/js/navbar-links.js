@@ -10,15 +10,18 @@ export const links = [
     page: "About",
   },
   {
-    section: "Articles",
-  },
-  {
-    href: "/atomic-design",
-    page: "Atomic Design",
-  },
-  {
     section: "Frontend",
     categories: [
+      // Architecture
+      {
+        category: "Architecture",
+        pages: [
+          {
+            href: "/frontend/architecture/atomic-design",
+            page: "Atomic Design",
+          },
+        ],
+      },
       // HTML
       {
         category: "HTML",
