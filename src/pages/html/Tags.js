@@ -4,6 +4,7 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/TextBlock.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
@@ -55,14 +56,24 @@ class Tags extends HTMLElement {
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-        <p>...</p>
+          <wc-text-block>
+            <p><strong>HTML tags</strong> are the building blocks of a web page. They define the structure and meaning of content, such as headings, paragraphs, links, images, and sections.</p>
+            <p>Most tags have an opening tag and a closing tag, and the content goes between them.</p>
+          </wc-text-block>
         `,
       },
       //! Semantic
       {
         sectionId: "semantic",
         sectionLabel: "Semantic",
-        sectionAriaLabel: "...",
+        sectionAriaLabel: "Semantic",
+        description: /* html */ `
+          <wc-text-block>
+            <p><strong>Semantic HTML tags</strong> describe the meaning and purpose of content, not just its appearance. They help browsers, search engines, and assistive technologies understand the structure of a page.</p>
+
+            <p>Instead of using generic containers like <code>&lt;div&gt;</code>, semantic elements clearly define sections such as headers, main content, articles, sidebars, and footers.</p>
+          </wc-text-block> 
+        `,
         examples: [
           {
             language: "html",
@@ -76,9 +87,8 @@ class Tags extends HTMLElement {
 <div></div>
           `,
             preview: () => /* html */ `
-          <img src="/assets/images/semantic.jpg"/>
+              <img src="/assets/images/semantic.jpg"/>
           `,
-            notes: "...",
           },
         ],
       },
@@ -105,7 +115,6 @@ class Tags extends HTMLElement {
               <h4>Heading 4</h4>
 
             `,
-            notes: "...",
           },
           //! Paragraph
           {
@@ -117,8 +126,8 @@ class Tags extends HTMLElement {
             preview: () => /* html */ `
               <p>This is a paragraph.</p>
             `,
-            notes: "...",
           },
+          //! Text Area
           {
             cardLabel: "Text Area",
             language: "html",
@@ -128,7 +137,23 @@ class Tags extends HTMLElement {
             preview: () => /* html */ `
               <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem officia veniam minima ut. Sint laboriosam nemo dolorum neque labore recusandae totam, ea dolorem quae modi ipsum suscipit? Expedita, culpa!</textarea>
             `,
-            notes: "...",
+            notes: /* html */ `
+              <wc-text-block>
+                <p>The <code>&lt;textarea&gt;</code> element is used for multi-line text input, such as comments, messages, or longer descriptions.</p>
+
+                <p>Unlike <code>&lt;input&gt;</code> elements, a textarea does not use a <code>value</code> attribute. The initial text is written between the opening and closing tags.</p>
+
+                <p>Common attributes include:</p>
+                <ul>
+                  <li><code>rows</code> and <code>cols</code> — define the visible size of the textarea</li>
+                  <li><code>placeholder</code> — shows helper text when empty</li>
+                  <li><code>maxlength</code> — limits the number of characters</li>
+                  <li><code>readonly</code> and <code>disabled</code> — control user interaction</li>
+                </ul>
+
+                <p>Textareas are resizable by default in most browsers and can be controlled using CSS.</p>
+              </wc-text-block>
+            `,
           },
         ],
       },
@@ -234,8 +259,15 @@ class Tags extends HTMLElement {
                 Open example
               </a>
             `,
-            notes:
-              'Links are created using the <a> (anchor) tag. The href attribute defines the destination URL. Use target="_blank" to open links in a new tab.',
+            notes: /* html */ `
+    <wc-text-block>
+      <p>Links are created using the <code>&lt;a&gt;</code> (anchor) tag. The <code>href</code> attribute defines the destination URL.</p>
+
+      <p>Using <code>target="_blank"</code> opens the link in a new browser tab.</p>
+
+      <p>When opening links in a new tab, it is recommended to also use <code>rel="noopener noreferrer"</code> for security and performance reasons.</p>
+    </wc-text-block>
+  `,
           },
         ],
       },
@@ -461,14 +493,14 @@ class Tags extends HTMLElement {
             preview: () => /* html */ `
           <input type="button" value="Click me!">
           `,
-          notes: /* html */`
+            notes: /* html */ `
           <div class=line-break>
             <p><strong>&lt;input type="button"&gt;</strong> is an older way to create buttons in HTML. It was originally designed for simple form actions.</p>
             <p>Unlike the <strong>&lt;button&gt;</strong> element, an input button cannot contain HTML content. Its label must be defined using the <code>value</code> attribute.</p>
             <p>Because of this limitation, modern web development usually prefers the <strong>&lt;button&gt;</strong> element, which allows text, icons, and other HTML elements inside.</p>
             <p>Today, <code>&lt;input type="button"&gt;</code> is mainly used in legacy code or very simple cases.</p>
           </div>
-`
+`,
           },
           //! submit
           {

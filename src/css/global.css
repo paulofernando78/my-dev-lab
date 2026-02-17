@@ -95,7 +95,3 @@ code {
   font-family: 'Courier New', Courier, monospace;
   background-color: var(--slate-1);
 }
-
-.code-notes {
-  border: 1px solid;
-}
