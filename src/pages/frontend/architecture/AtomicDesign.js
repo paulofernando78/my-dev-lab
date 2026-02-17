@@ -37,11 +37,13 @@ const style = /* css */ `
     height:80px;
   }
 
-  .header {
+  .template-header {
+    display: grid;
+
     margin-bottom:8px;
   }
 
-  .footer {
+  .template-footer {
     margin-top:8px;
   }
 `;
@@ -58,6 +60,7 @@ class AtomicDesign extends HTMLElement {
 
   render() {
     const sections = [
+      //! What’s it?
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
@@ -70,7 +73,7 @@ class AtomicDesign extends HTMLElement {
           </wc-text-block>
         `,
       },
-
+      //! Why use it?
       {
         sectionId: "why",
         sectionLabel: "Why use it?",
@@ -83,7 +86,7 @@ class AtomicDesign extends HTMLElement {
           </wc-text-block>
         `,
       },
-
+      //! Atoms
       {
         sectionId: "atoms",
         sectionLabel: "Atoms",
@@ -118,7 +121,7 @@ class AtomicDesign extends HTMLElement {
           },
         ],
       },
-
+      //! Molecules
       {
         sectionId: "molecules",
         sectionLabel: "Molecules",
@@ -186,6 +189,7 @@ class AtomicDesign extends HTMLElement {
           },
         ],
       },
+      //! Templates
       {
         sectionId: "templates",
         sectionLabel: "Templates",
@@ -211,18 +215,18 @@ class AtomicDesign extends HTMLElement {
             `,
             preview: () => /* html */ `
               <div>
-                <div class="header">Header</div>
+                <div class="template-header">Header</div>
                 <div class="template-main">
                   <div class="template-section-aside">Section</div>
                   <div class="template-section-aside">Aside</div>
                 </div>
-                <div class="footer">Footer</div>
+                <div class="template-footer">Footer</div>
               </div>
             `,
           },
         ],
       },
-
+      //! Pages
       {
         sectionId: "pages",
         sectionLabel: "Pages",

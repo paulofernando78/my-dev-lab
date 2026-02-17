@@ -1,4 +1,6 @@
 import componentStyles from "@css/imports/component.css?inline";
+import { contents as contentsIcon } from "../../../assets/images/svg-imports";
+import { content as contentIcon } from "../../../assets/images/svg-imports";
 
 const style = /* css */ `
 .contents-navbar {
@@ -36,17 +38,7 @@ class Contents extends HTMLElement {
       </style>
 
       <div class="flex-align-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25px"
-          height="25px"
-          viewBox="0 -960 960 960"
-          fill="#999999"
-        >
-          <path
-            d="M130-189 81-546q-5-32 15.5-58t52.5-31l61 435 283-40h267q-8 21-24.5 35.5T695-187l-477 66q-33 5-58-15t-30-53Zm190-127q-33 0-56.5-23.5T240-396v-364q0-33 23.5-56.5T320-840h480q33 0 56.5 23.5T880-760v364q0 33-23.5 56.5T800-316H320Zm0-80h480v-364H320v364Zm0 0v-364 364ZM210-200Zm190-400h320v-80H400v80Zm0 120h200v-80H400v80Z"
-          />
-        </svg>
+        ${contentsIcon()}
         <span class="contents-navbar-title">Contents</span>
       </div>
 
@@ -56,13 +48,7 @@ class Contents extends HTMLElement {
             .map(
               (item) => /* html */ `
               <li class="flex-align-center">
-                <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="25px"
-                height="25px"
-                viewBox="0 -960 960 960"
-                fill="#999999">
-                <path d="M320-316q-33 0-56.5-23.5T240-396v-364q0-33 23.5-56.5T320-840h480q33 0 56.5 23.5T880-760v364q0 33-23.5 56.5T800-316H320Zm0-80h480v-364H320v364Zm0 0v-364 364Zm80-204h320v-80H400v80Zm0 120h200v-80H400v80Z"/></svg>
+                ${contentIcon()}
                 <a data-target="${item.id}">${item.sectionLabel}</a> 
               </li>
             `,
