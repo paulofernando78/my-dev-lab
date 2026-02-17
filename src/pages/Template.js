@@ -3,6 +3,7 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
+import "@/js/components/atoms/TextBlock.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
@@ -30,7 +31,10 @@ class Template extends HTMLElement {
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-        <p>...</p>
+        <wc-text-block>
+          <p>...</p>
+          <p>...</p>
+        </wc-text-block>
         `,
       },
       {

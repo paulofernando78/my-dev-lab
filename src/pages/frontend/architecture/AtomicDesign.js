@@ -3,6 +3,8 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
+import "@/js/components/atoms/TextBlock.js";
+import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Notes.js";
@@ -10,7 +12,38 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
+  .organisms-header {
+    padding: 5px
+  }
+  
+  .organisms-nav {
+    display: flex;
+    gap:12px;
+  }
 
+  .template-header, .template-footer {
+    background:#ddd; height:40px;
+    display: grid;
+    display: grid;
+  }
+
+  .template-main {
+    display:grid; grid-template-columns:2fr 1fr;
+    gap:8px;
+  }
+
+  .template-section-aside {
+    background:#eee;
+    height:80px;
+  }
+
+  .header {
+    margin-bottom:8px;
+  }
+
+  .footer {
+    margin-top:8px;
+  }
 `;
 
 class AtomicDesign extends HTMLElement {
@@ -28,30 +61,179 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
+        sectionAriaLabel: "What is Atomic Design?",
         description: /* html */ `
-        <p>...</p>
+          <wc-text-block>
+            <p><strong>Atomic Design</strong> is a methodology for building user interfaces by breaking them into small, reusable components.</p>
+
+            <p>Instead of designing entire pages at once, interfaces are built from small pieces that combine together to form larger structures.</p>
+          </wc-text-block>
         `,
       },
+
       {
-        sectionId: "...",
-        sectionLabel: "...",
-        sectionAriaLabel: "...",
+        sectionId: "why",
+        sectionLabel: "Why use it?",
+        sectionAriaLabel: "Why use Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Atomic Design helps create consistent interfaces, improves reusability, and makes large applications easier to maintain.</p>
+
+            <p>By separating UI into clear layers, teams can scale design systems more easily.</p>
+          </wc-text-block>
+        `,
+      },
+
+      {
+        sectionId: "atoms",
+        sectionLabel: "Atoms",
+        sectionAriaLabel: "Atoms in Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Atoms are the smallest building blocks of an interface. They cannot be broken down further without losing meaning.</p>
+
+            <p>Examples include buttons, inputs, labels, and icons.</p>
+          </wc-text-block>
+        `,
         examples: [
           {
-            cardLabel: "...",
-            language: "",
+            cardLabel: "button",
+            language: "html",
             code: `
-          ...
-          `,
-            preview: () => /* html */`
-              <span>...</span>
-          `,
-            notes: /* html */`
-              <span>...</span>
+<button>Click me!</button>
+            `,
+            preview: () => /* html */ `
+              <button>Click me!</button>
+            `,
+          },
+          {
+            cardLabel: "input",
+            language: "html",
+            code: `
+              <input type="text" placeholder="Write something here.."/>
+            `,
+            preview: () => /* html */ `
+              <input type="text" placeholder="Write something here.."/>
             `,
           },
         ],
+      },
+
+      {
+        sectionId: "molecules",
+        sectionLabel: "Molecules",
+        sectionAriaLabel: "Molecules in Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Molecules are groups of atoms working together as a single functional unit.</p>
+
+            <p>For example, a search bar made of an input and a button.</p>
+          </wc-text-block>
+        `,
+        examples: [
+          {
+            cardLabel: "Search bar",
+            language: "html",
+            code: `
+<div>
+  <input type="text" placeholder="Search..." />
+  <button>Search</button>
+</div>
+            `,
+            preview: () => /* html */ `
+              <div style="flex">
+                <input type="text" placeholder="Search..." />
+                <button>Search</button>
+              </div>
+            `,
+          },
+        ],
+      },
+      //! Organisms
+      {
+        sectionId: "organisms",
+        sectionLabel: "Organisms",
+        sectionAriaLabel: "Organisms in Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Organisms are complex components made from molecules and atoms combined together.</p>
+
+            <p>Examples include headers, navigation bars, or cards with multiple elements.</p>
+          </wc-text-block>
+        `,
+        examples: [
+          {
+            cardLabel: "Header",
+            language: "html",
+            code: `
+<header>
+  <h1>Logo</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+            `,
+            preview: () => /* html */ `
+              <header class="organisms-header">
+                <strong>Logo</strong>
+                <nav style="organisms-nav">
+                  <a href="#">Home</a>
+                  <a href="#">About</a>
+                </nav>
+              </header>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "templates",
+        sectionLabel: "Templates",
+        sectionAriaLabel: "Templates in Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Templates define page structure and layout without real content.</p>
+
+            <p>They focus on placement and composition rather than final data.</p>
+          </wc-text-block>
+        `,
+        examples: [
+          {
+            cardLabel: "Page template",
+            language: "html",
+            code: `
+<header></header>
+<main>
+  <section></section>
+  <aside></aside>
+</main>
+<footer></footer>
+            `,
+            preview: () => /* html */ `
+              <div>
+                <div class="header">Header</div>
+                <div class="template-main">
+                  <div class="template-section-aside">Section</div>
+                  <div class="template-section-aside">Aside</div>
+                </div>
+                <div class="footer">Footer</div>
+              </div>
+            `,
+          },
+        ],
+      },
+
+      {
+        sectionId: "pages",
+        sectionLabel: "Pages",
+        sectionAriaLabel: "Pages in Atomic Design",
+        description: /* html */ `
+          <wc-text-block>
+            <p>Pages are specific instances of templates filled with real content.</p>
+
+            <p>This is where the final UI appears to users.</p>
+          </wc-text-block>
+        `,
       },
     ];
 
@@ -69,9 +251,7 @@ class AtomicDesign extends HTMLElement {
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
     `;
 
     setupContents(this.shadowRoot, sections);

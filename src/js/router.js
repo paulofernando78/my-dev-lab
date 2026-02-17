@@ -24,7 +24,7 @@ const routes = {
     load: () => import("../pages/About.js"),
   },
   // Frontend
-  // HTML
+  // Atomic Design
   "/frontend/architecture/atomic-design": {
     tag: "wc-atomic-design",
     load: () => import("../pages/frontend/architecture/AtomicDesign.js"),
