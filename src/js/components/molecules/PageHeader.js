@@ -10,10 +10,12 @@ const style = /* css */ `
   }
 
   h1 {
+    color: var(--surface-text-color);
     margin-bottom: 0.8rem;
   }
 
   h2 {
+    color: var(--surface-text-color);
     margin-bottom: 0.3rem;
   }
 `;
@@ -47,7 +49,10 @@ class PageHeader extends HTMLElement {
       }
     }
 
-    const config = categoryStyles[categoryAttr] ?? {color: "var(--slate-4)"}
+    const config = categoryStyles[categoryAttr] ?? {
+      color: "var(--slate-4)",
+      background: "var(--slate-2)"
+    }
 
     this.style.setProperty("--category-border-color", config.color);
     this.style.setProperty("--category-bg-color", config.background);

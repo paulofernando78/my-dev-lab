@@ -4,6 +4,7 @@
   /* Light Mode */
   --background-color: var(--slate-1);
   --text-color: var(--slate-8);
+  --surface-text-color: #111;
   --menu-button: var(--slate-8);
   --icon-invert: 0;
 
@@ -22,6 +23,7 @@
 [data-theme="dark"] {
   --background-color: #18191f;
   --text-color: #fff;
+  --surface-text-color: #111;
   --menu-button: var(--slate-2);
   --icon-invert: 1;
 }
