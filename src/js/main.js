@@ -1,7 +1,8 @@
 import "@js/app.js";
 import "@css/styles.css";
 import "@utils/componentsImport.js";
-import "@js/navbar-links.js"
+import "@js/navbar-links.js";
+// import "@/component/atoms/Icon.js";
 
 // Restore Theme on Page Load
 const savedTheme = localStorage.getItem("theme") || "light";
@@ -75,3 +76,25 @@ function initBreakpoints() {
 initTheme();
 initMenu();
 initBreakpoints();
+
+const scrollToTop = document.querySelector("wc-icon[name='scrollToTop']");
+
+function handleScroll() {
+  if (!scrollToTop) return;
+
+  if (window.scrollY > 300) {
+    scrollToTop.classList.add("visible");
+  } else {
+    scrollToTop.classList.remove("visible");
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+handleScroll();
+
+scrollToTop?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

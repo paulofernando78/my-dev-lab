@@ -2,7 +2,6 @@ import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
   img {
-    width: 80%;
     border-radius: var(--border-radius);
     margin: 30px auto
   }

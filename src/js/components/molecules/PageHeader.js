@@ -3,7 +3,7 @@ import componentStyles from "@css/imports/component.css?inline";
 const style = /* css */ `
   .header {
     background-color: var(--category-bg-color);
-    border: 5px solid var(--category-border-color);
+    border: 3px solid var(--category-border-color);
     border-radius: 5px;
     margin-bottom: 30px;
     padding: 5px;

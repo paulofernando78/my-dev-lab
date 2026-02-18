@@ -99,6 +99,26 @@ code {
   border: 1px solid var(--slate-3);
   border-radius: var(--border-radius);
   padding: 0 1px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: var(--slate-1);
+}
+
+wc-icon[name="scrollToTop"] {
+  position: fixed;
+  right: 20px;
+  bottom: 5px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+wc-icon[name="scrollToTop"].visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
