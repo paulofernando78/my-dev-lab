@@ -27,7 +27,7 @@ export const links = [
         category: "HTML",
         pages: [
           {
-            href: "/html/tags",
+            href: "/frontend/html/tags",
             page: "Tags",
           },
         ],
@@ -37,15 +37,15 @@ export const links = [
         category: "CSS",
         pages: [
           {
-            href: "/css/selectors",
+            href: "/frontend/css/selectors",
             page: "Selectors",
           },
           {
-            href: "/css/flex",
+            href: "/frontend/css/flex",
             page: "Flex",
           },
           {
-            href: "/css/grid",
+            href: "/frontend/css/grid",
             page: "Grid",
           },
         ],
@@ -55,12 +55,20 @@ export const links = [
         category: "JS",
         pages: [
           {
-            href: "/js/logic",
+            href: "/frontend/js/logic",
             page: "Logic",
           },
           {
-            href: "/js/conditional-rendering",
+            href: "/frontend/js/dom",
+            page: "DOM",
+          },
+          {
+            href: "/frontend/js/conditional-rendering",
             page: "Conditional Rendering",
+          },
+          {
+            href: "/frontend/js/scroll-behavior",
+            page: "Scroll Behavior",
           },
         ],
       },

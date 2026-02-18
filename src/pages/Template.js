@@ -43,7 +43,7 @@ class Template extends HTMLElement {
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabel: "Card 1",
+            cardLabel: "Code Block 1",
             language: "",
             code: `
           ...
@@ -63,8 +63,7 @@ class Template extends HTMLElement {
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabelId: "card-2",
-            cardLabel: "Card 2",
+            cardLabel: "Code Block 2",
             language: "",
             code: `
           ...
@@ -84,8 +83,7 @@ class Template extends HTMLElement {
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabelId: "card-3",
-            cardLabel: "Card 3",
+            cardLabel: "Code Block 3",
             language: "",
             code: `
           ...
@@ -108,7 +106,8 @@ class Template extends HTMLElement {
       </style>
 
       <wc-page-header
-        category="Test"
+        category="Random
+        "
         page="..."
         aria-label="..."
       ></wc-page-header>

@@ -30,16 +30,16 @@ const routes = {
     load: () => import("../pages/frontend/architecture/AtomicDesign.js"),
   },
   // HTML
-  "/html/tags": {
+  "/frontend/html/tags": {
     tag: "wc-html-tags",
-    load: () => import("../pages/html/Tags.js"),
+    load: () => import("../pages/frontend/html/Tags.js"),
   },
   //CSS
 
   // JS
-  "/js/conditional-rendering": {
+  "/frontend/js/conditional-rendering": {
     tag: "wc-js-conditional-rendering",
-    load: () => import("../pages/js/ConditionalRendering.js"),
+    load: () => import("../pages/frontend/js/ConditionalRendering.js"),
   },
 };
 
