@@ -2,7 +2,7 @@
   min-width: 125px;
   height: 100%;
   border: 1px solid var(--gray-4);
-  padding: var(--padding);
+  padding: var(--p5);
   border-radius: var(--border-radius);
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.4rem;

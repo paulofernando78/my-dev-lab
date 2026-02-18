@@ -5,7 +5,7 @@ export function setupContents(root, sections) {
     id: section.sectionId,
     sectionLabel: section.sectionLabel,
     content: (section.examples || []).map((example, index) => ({
-      id: example.subSectionId || `${section.sectionId}-${index}`,
+      id: example.sectionId || `${section.sectionId}-card-${index}`,
       subSectionLabel: example.cardLabel,
     })),
   }));

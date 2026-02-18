@@ -1,6 +1,10 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
+  :host {
+    scroll-margin-top: 5px
+  }  
+
   .label {
     width: max-content;
     border: 1px solid var(--slate-3);

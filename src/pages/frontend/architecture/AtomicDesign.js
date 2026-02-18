@@ -13,6 +13,7 @@ import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
   .organisms-header {
+    background-color: #EEEEEE;
     padding: 5px
   }
   
@@ -32,14 +33,18 @@ const style = /* css */ `
     gap:8px;
   }
 
-  .template-section-aside {
+  .template-section, .template-aside {
     background:#eee;
     height:80px;
   }
 
-  .template-header {
+  .template-header, .template-section, .template-aside, .template-footer {
     display: grid;
+    place-items: center;
+    border-radius: 5px
+  }
 
+  .template-header, .template-section, .template-aside, .template-footer {
     margin-bottom:8px;
   }
 
@@ -217,8 +222,8 @@ class AtomicDesign extends HTMLElement {
               <div>
                 <div class="template-header">Header</div>
                 <div class="template-main">
-                  <div class="template-section-aside">Section</div>
-                  <div class="template-section-aside">Aside</div>
+                  <div class="template-section">Section</div>
+                  <div class="template-aside">Aside</div>
                 </div>
                 <div class="template-footer">Footer</div>
               </div>

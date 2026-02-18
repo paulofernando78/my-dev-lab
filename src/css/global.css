@@ -8,7 +8,8 @@
   --icon-invert: 0;
 
   /* Spacing */
-  --padding: 0.3125rem;
+  --p3: 0.1875rem;
+  --p5: 0.3125rem;
   --gap: 0.3125rem;
 
   /* Borders */
@@ -86,6 +87,10 @@ img {
 
 svg {
   filter: invert(var(--icon-invert));
+}
+
+input {
+  padding: 3px;
 }
 
 code {

@@ -24,6 +24,10 @@ const style = /* css */ `
   font-size: 1rem;
   cursor: pointer
 }
+
+.code-block {
+  transform: translateY(-1.6px)
+}
 `;
 
 class Contents extends HTMLElement {
@@ -59,7 +63,7 @@ class Contents extends HTMLElement {
                   ${section.content ? section.content.map((subSection) => /* html */`
                     <li>
                       <div class="flex-align-center">
-                        ${codeBlock()}
+                        <span class="code-block">${codeBlock()}</span>
                         <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
                       </div>
                     </li>

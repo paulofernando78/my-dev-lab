@@ -2,11 +2,11 @@ import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
   .header {
-    border: 1px solid var(--slate-4);
+    background-color: var(--category-bg-color);
+    border: 5px solid var(--category-border-color);
     border-radius: 5px;
     margin-bottom: 30px;
     padding: 5px;
-    background-color: white
   }
 
   h1 {
@@ -31,6 +31,26 @@ class PageHeader extends HTMLElement {
   render() {
     const categoryAttr = this.getAttribute("category")
     const pageAttr = this.getAttribute("page")
+
+    const categoryStyles = {
+      HTML: {
+        color: "#F5470C",
+        background: "#FFF3EF"
+      },
+      CSS: {
+        color: "#6C3B9D",
+        background: "#F4ECFA"
+      },
+      Javascript: {
+        color: "#FFDF01",
+        background: "#FFFCE5"
+      }
+    }
+
+    const config = categoryStyles[categoryAttr] ?? {color: "var(--slate-4)"}
+
+    this.style.setProperty("--category-border-color", config.color);
+    this.style.setProperty("--category-bg-color", config.background);
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
