@@ -4,6 +4,10 @@ export function setupContents(root, sections) {
   contentsEl.contents = sections.map((section) => ({
     id: section.sectionId,
     sectionLabel: section.sectionLabel,
+    content: (section.examples || []).map((example, index) => ({
+      id: example.subSectionId || `${section.sectionId}-${index}`,
+      subSectionLabel: example.cardLabel,
+    })),
   }));
 
   contentsEl.render();

@@ -38,12 +38,52 @@ class Template extends HTMLElement {
         `,
       },
       {
-        sectionId: "...",
-        sectionLabel: "...",
+        sectionId: "section-1",
+        sectionLabel: "Section 1",
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabel: "...",
+            cardLabel: "Card 1",
+            language: "",
+            code: `
+          ...
+          `,
+            preview: () => /* html */`
+              <span>...</span>
+          `,
+            notes: /* html */`
+              <span>...</span>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "section-2",
+        sectionLabel: "Section 2",
+        sectionAriaLabel: "...",
+        examples: [
+          {
+            cardLabel: "Card 2",
+            language: "",
+            code: `
+          ...
+          `,
+            preview: () => /* html */`
+              <span>...</span>
+          `,
+            notes: /* html */`
+              <span>...</span>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "section-3",
+        sectionLabel: "Section 3",
+        sectionAriaLabel: "...",
+        examples: [
+          {
+            cardLabel: "Card 3",
             language: "",
             code: `
           ...
