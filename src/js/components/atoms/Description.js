@@ -1,8 +1,11 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
-  
-`
+  :host {
+    display: grid;
+    gap: 1rem;
+  }
+`;
 
 class Description extends HTMLElement {
   constructor() {
@@ -14,14 +17,12 @@ class Description extends HTMLElement {
     this.shadowRoot.innerHTML = /* html */ `
       <style>
         ${componentStyles}
+        ${style}
       </style>
-      <div>
         <slot></slot>
-      </div>
     `;
   }
 }
 
 customElements.define("wc-description", Description);
 export default Description;
-

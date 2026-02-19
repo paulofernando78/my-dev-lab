@@ -3,11 +3,18 @@ import styleImports from "@css/styles.css?inline";
 const style = /* css */ `
   :host {
     display: grid;
-    gap: 1rem
+    gap: 1rem;
+    border: 1px solid var(--yellow-4);
+    border-radius: var(--border-radius);
+    background-color: var(--yellow-1)
+  }
+  
+  .content {
+    padding: 5px;
   }
 `;
 
-class TextBlock extends HTMLElement {
+class Notes extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -23,10 +30,12 @@ class TextBlock extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <slot></slot>
-    `;
+      <div class="content">
+        <slot></slot>
+      </div>
+      `;
+    }
   }
-}
 
-customElements.define("wc-text-block", TextBlock);
-export default TextBlock;
+customElements.define("wc-notes", Notes);
+export default Notes;

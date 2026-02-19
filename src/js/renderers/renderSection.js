@@ -6,6 +6,25 @@ export function renderSections(sections) {
           ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
           ${section.examples ? section.examples.map((example, index) => /* html */ `
             <wc-card ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
+
+            
+            ${(example.type ?? "code") === "snippet"
+              // if type missing → use "code" then compare to "snippet" 
+              ?
+              /* image + text mode */ /* html */
+              `
+              <wc-wrapper>
+                <div>
+                  <img src="${example.image}" alt="snippet"/>
+                </div>
+                <div>
+                  ${example.text ?? ""}
+                </div>
+              </wc-wrapper>
+              `
+              :
+              /* code + preview mode */ /* html */
+              `
               <wc-wrapper>
                 <wc-code language="${example.language}">
                   ${example.code}
@@ -14,8 +33,14 @@ export function renderSections(sections) {
                   ${example.preview()}
                 </div>
               </wc-wrapper>
+              `
+              
+            }
             </wc-card>
-            ${example.notes ? `<wc-notes>${example.notes}</wc-notes>` : ""}
+            
+            ${example.notes ? /* html */`
+              <wc-notes>${example.notes}</wc-notes>
+              ` : ""}
             `,
               ).join("") : ""}
             </wc-section>

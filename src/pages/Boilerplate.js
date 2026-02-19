@@ -3,15 +3,19 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
-import "@/js/components/atoms/TextBlock.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
-import "@/js/components/molecules/Notes.js";
+import "@/js/components/atoms/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
-
+  .box {
+    background-color: blue;
+    width: 100px;
+    height: 100px
+  }
 `;
 
 class Boilerplate extends HTMLElement {
@@ -31,68 +35,90 @@ class Boilerplate extends HTMLElement {
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-        <wc-text-block>
-          <p>...</p>
-          <p>...</p>
-        </wc-text-block>
+            <p>Description</p>
+            <p>Description</p>
         `,
       },
       {
-        sectionId: "section-1",
-        sectionLabel: "Section 1",
-        sectionAriaLabel: "...",
+        sectionId: "html",
+        sectionLabel: "HTML",
+        sectionAriaLabel: "HTML block",
         examples: [
           {
-            cardLabel: "Code Block 1",
-            language: "",
+            type: "code",
+            cardLabel: "HTML",
+            language: "html",
             code: `
-          ...
-          `,
+<span>...</span>
+            `,
             preview: () => /* html */`
               <span>...</span>
-          `,
+            `,
             notes: /* html */`
-              <span>...</span>
+                <p>Notes</p>
+                <p>Notes</p>
             `,
           },
         ],
       },
       {
-        sectionId: "section-2",
-        sectionLabel: "Section 2",
-        sectionAriaLabel: "...",
+        sectionId: "css",
+        sectionLabel: "CSS",
+        sectionAriaLabel: "CSS block",
         examples: [
           {
-            cardLabel: "Code Block 2",
-            language: "",
+            type: "code",
+            cardLabel: "CSS",
+            language: "css",
             code: `
-          ...
-          `,
+.box {
+  background-color: blue;
+  width: 100px;
+  height: 100px
+}
+            `,
             preview: () => /* html */`
-              <span>...</span>
-          `,
+              <div class="box">
+              </div>
+            `,
             notes: /* html */`
-              <span>...</span>
+              <p>Notes</p>
             `,
           },
         ],
       },
       {
-        sectionId: "section-3",
-        sectionLabel: "Section 3",
+        sectionId: "javascript",
+        sectionLabel: "Javascript",
+        sectionAriaLabel: "Javascript block",
+        examples: [
+          {
+            type: "code",
+            cardLabel: "Javascript",
+            language: "js",
+            code: `
+console.log(...)
+            `,
+            preview: () => /* js */`
+              console.log(...)
+            `,
+            notes: /* html */`
+              <p>Notes</p>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "snippet",
+        sectionLabel: "Snippet",
         sectionAriaLabel: "...",
         examples: [
           {
-            cardLabel: "Code Block 3",
-            language: "",
-            code: `
-          ...
-          `,
-            preview: () => /* html */`
-              <span>...</span>
-          `,
-            notes: /* html */`
-              <span>...</span>
+            type: "snippet",
+            cardLabel: "Snippet (Image + Text)",
+            image: "/assets/images/semantic.jpg",
+            text: /* html */`
+              <p>text</p>
             `,
           },
         ],
