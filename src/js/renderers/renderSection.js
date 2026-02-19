@@ -18,7 +18,7 @@ export function renderSections(sections) {
                   <img src="${example.image}" alt="snippet"/>
                 </div>
                 <div>
-                  ${example.text ?? ""}
+                  ${example.description ?? ""}
                 </div>
               </wc-wrapper>
               `

@@ -117,8 +117,8 @@ console.log(...)
             type: "snippet",
             cardLabel: "Snippet (Image + Text)",
             image: "/assets/images/semantic.jpg",
-            text: /* html */`
-              <p>text</p>
+            description: /* html */`
+              <p>Description</p>
             `,
           },
         ],
