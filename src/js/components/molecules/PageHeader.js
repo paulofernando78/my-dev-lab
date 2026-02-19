@@ -1,6 +1,10 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
+  :host([compact]) .header {
+    margin-bottom: 0
+  }
+
   .header {
     background-color: var(--category-bg-color);
     border: 3px solid var(--category-border-color);
@@ -10,6 +14,10 @@ const style = /* css */ `
   }
 
   h1 {
+    color: var(--surface-text-color);
+  }
+
+  h1:has(+ h2) {
     color: var(--surface-text-color);
     margin-bottom: 0.8rem;
   }
@@ -36,16 +44,20 @@ class PageHeader extends HTMLElement {
 
     const categoryStyles = {
       HTML: {
-        color: "#F5470C",
-        background: "#FFF3EF"
+        color: "var(--orange-6)",
+        background: "var(--orange-1)"
       },
       CSS: {
-        color: "#6C3B9D",
-        background: "#F4ECFA"
+        color: "var(--purple-6)",
+        background: "var(--purple-1)"
       },
       Javascript: {
-        color: "#FFDF01",
-        background: "#FFFCE5"
+        color: "var(--yellow-3)",
+        background: "var(--yellow-1)"
+      },
+      "Node JS": {
+        color: "var(--green-7)",
+        background: "var(--green-1)"
       }
     }
 
@@ -64,7 +76,7 @@ class PageHeader extends HTMLElement {
       </style>
       <div class="header">
         <h1><b>${categoryAttr}</b></h1>
-        <h2><b>${pageAttr}</b></h2>
+        ${pageAttr ? `<h2><b>${pageAttr}</b></h2>` : ""}
       </div>
       `;
     }

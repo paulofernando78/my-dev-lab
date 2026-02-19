@@ -72,3 +72,13 @@ details[open] > summary::before {
 .navbar a.page-link {
   font-size: 1.1rem
 }
+
+@media (max-width: 700px) {
+  .navbar {
+    margin-left: -150px;
+  }
+
+  .navbar.visible {
+    margin-left: 0;
+  }
+}
