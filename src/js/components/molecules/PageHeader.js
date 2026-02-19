@@ -18,13 +18,20 @@ const style = /* css */ `
   }
 
   h1:has(+ h2) {
-    color: var(--surface-text-color);
     margin-bottom: 0.8rem;
   }
-
+  
   h2 {
     color: var(--surface-text-color);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h2:has(+ h3) {
+    margin-bottom: 0.7rem;
+  }
+  
+  h3 {
+    margin-bottom: 0.07rem;
   }
 `;
 
