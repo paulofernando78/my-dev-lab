@@ -1,5 +1,6 @@
 .navbar {
-  min-width: 125px;
+  /* min-width: 125px; */
+  width: 145px;
   height: 100%;
   border: 1px solid var(--gray-4);
   padding: var(--p5);
@@ -68,6 +69,6 @@ details[open] > summary::before {
   transform: rotate(90deg);
 }
 
-.page-link {
-  font-size: .5rem
+.navbar a.page-link {
+  font-size: 1.1rem
 }
