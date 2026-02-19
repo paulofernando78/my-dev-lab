@@ -4,7 +4,7 @@ import "@/js/components/molecules/PageHeader.js";
 const style = /* css */ `
   img {
     border-radius: var(--border-radius);
-    margin: 30px auto
+    margin-bottom: 30px
   }
 
   .categories {

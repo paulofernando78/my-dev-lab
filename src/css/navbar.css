@@ -69,6 +69,12 @@ details[open] > summary::before {
   transform: rotate(90deg);
 }
 
+.navbar li.page-list {
+  border-left: 3px solid var(--slate-4);
+  padding-left: 6px;
+  margin-bottom: 8px;
+}
+
 .navbar a.page-link {
   font-size: 1.1rem
 }

@@ -19,21 +19,52 @@ const routes = {
     tag: "wc-home",
     load: () => import("../pages/Home.js"),
   },
-  "/about": {
-    tag: "wc-about",
-    load: () => import("../pages/About.js"),
-  },
-  // Frontend
+  //! Frontend
+
   // Atomic Design
   "/frontend/architecture/atomic-design": {
     tag: "wc-atomic-design",
     load: () => import("../pages/frontend/architecture/AtomicDesign.js"),
   },
+
   // HTML
-  "/frontend/html/tags": {
-    tag: "wc-html-tags",
-    load: () => import("../pages/frontend/html/Tags.js"),
+
+  // Module • 1
+  "/frontend/html/module-1": {
+    tag: "wc-html-module-one",
+    load: () => import("../pages/frontend/html/ModuleOne.js"),
   },
+
+  // Module • 2
+  "/frontend/html/module-2": {
+    tag: "wc-html-module-two",
+    load: () => import("../pages/frontend/html/ModuleTwo.js"),
+  },
+
+  // Module • 3
+  "/frontend/html/module-3": {
+    tag: "wc-html-module-three",
+    load: () => import("../pages/frontend/html/ModuleThree.js"),
+  },
+
+  // Module • 4
+  "/frontend/html/module-4": {
+    tag: "wc-html-module-four",
+    load: () => import("../pages/frontend/html/ModuleFour.js"),
+  },
+
+  // Module • 5
+  "/frontend/html/module-5": {
+    tag: "wc-html-module-five",
+    load: () => import("../pages/frontend/html/ModuleFive.js"),
+  },
+
+  // Module • 6
+  "/frontend/html/module-6": {
+    tag: "wc-html-module-six",
+    load: () => import("../pages/frontend/html/ModuleSix.js"),
+  },
+
   //CSS
 
   // JS
@@ -41,6 +72,12 @@ const routes = {
     tag: "wc-js-conditional-rendering",
     load: () => import("../pages/frontend/js/ConditionalRendering.js"),
   },
+  //! Backend
+  // Node JS
+  // "/backend/nodejs/...": {
+  //   tag: "wc-nodejs-",
+  //   load: () => import("../pages/backend/nodejs/")
+  // }
 };
 
 /*

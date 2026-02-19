@@ -60,7 +60,10 @@ class Contents extends HTMLElement {
                   <a data-target="${section.id}">${section.sectionLabel}</a>
                 </div> 
                 <ul>
-                  ${section.content ? section.content.map((subSection) => /* html */`
+                  ${section.content
+                    ? section.content
+                    .filter((subSection) => subSection.subSectionLabel)
+                    .map((subSection) => /* html */`
                     <li>
                       <div class="flex-align-center">
                         <span class="code-block">${codeBlock()}</span>

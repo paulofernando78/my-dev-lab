@@ -6,10 +6,6 @@ export const links = [
     page: "Home",
   },
   {
-    href: "/about",
-    page: "About",
-  },
-  {
     section: "Frontend",
     categories: [
       // Architecture
@@ -27,8 +23,28 @@ export const links = [
         category: "HTML",
         pages: [
           {
-            href: "/frontend/html/tags",
-            page: "Tags",
+            href: "/frontend/html/module-1",
+            page: "Module 1 • Document Foundations",
+          },
+          {
+            href: "/frontend/html/module-2",
+            page: "Module 2 • Text and Content Structure",
+          },
+          {
+            href: "/frontend/html/module-3",
+            page: "Module 3 • Lists, Links & Navigation",
+          },
+          {
+            href: "/frontend/html/module-4",
+            page: "Module 4 • Media & Embedded Content",
+          },
+          {
+            href: "/frontend/html/module-5",
+            page: "Module 5 • Semantic Layout",
+          },
+          {
+            href: "/frontend/html/module-6",
+            page: "Module 6 • Forms & Data Submission",
           },
         ],
       },
@@ -37,16 +53,24 @@ export const links = [
         category: "CSS",
         pages: [
           {
-            href: "/frontend/css/selectors",
-            page: "Selectors",
+            href: "/frontend/css/module-1",
+            page: "Module 1 • Core Fundamentals",
           },
           {
-            href: "/frontend/css/flex",
-            page: "Flex",
+            href: "/frontend/css/module-2",
+            page: "Module 2 • Layout Systems",
           },
           {
-            href: "/frontend/css/grid",
-            page: "Grid",
+            href: "/frontend/css/module-3",
+            page: "Module 3 • Responsive Design",
+          },
+          {
+            href: "/frontend/css/module-3",
+            page: "Module 4 • Architecture & Organization",
+          },
+          {
+            href: "/frontend/css/module-3",
+            page: "Module 5 • Transitions & Animation",
           },
         ],
       },
@@ -55,20 +79,24 @@ export const links = [
         category: "JS",
         pages: [
           {
-            href: "/frontend/js/logic",
-            page: "Logic",
+            href: "/frontend/js/module-1",
+            page: "Module 1 • Core Language",
           },
           {
-            href: "/frontend/js/dom",
-            page: "DOM",
+            href: "/frontend/js/module-2",
+            page: "Module 2 • DOM Manipulation",
           },
           {
-            href: "/frontend/js/conditional-rendering",
-            page: "Conditional Rendering",
+            href: "/frontend/js/module-3",
+            page: "Module 3 • State & Architecture",
           },
           {
-            href: "/frontend/js/scroll-behavior",
-            page: "Scroll Behavior",
+            href: "/frontend/js/module-3",
+            page: "Module 4 • Asynchronous JavaScript",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 5 • SPA & Application Architecture",
           },
         ],
       },
@@ -92,16 +120,10 @@ export const links = [
 
 const ul = document.querySelector("#navbar-links");
 
-ul.innerHTML = links
-  .map(
-    (link) => /* html */ `
+ul.innerHTML = links.map((link) => /* html */ `
     ${link.page ? /* html */ `<li><a href="${link.href}">${link.page}</a></li>` : ""}
       ${link.section ? /* html */ ` <li class="navbar-section">${link.section}</li>` : ""}
-        ${
-          link.categories
-            ? link.categories
-                .map(
-                  (item) => /* html */ `
+        ${link.categories ? link.categories.map((item) => /* html */ `
                   <li>
                     <details>
                       <summary>${item.category}</summary>
@@ -111,7 +133,7 @@ ul.innerHTML = links
                           ? item.pages
                               .map(
                                 (item) => /* html */ `
-                        <li>
+                        <li class="page-list">
                         <a href="${item.href}" class="page-link">${item.page}</a>
                         </li>
                         `,
