@@ -7,9 +7,9 @@ import "../js/components/atoms/Loading.js";
  * This enables code-splitting and lazy loading.
  */
 const routes = {
-  "/template": {
-    tag: "wc-template",
-    load: () => import("../pages/Template.js"),
+  "/boilerplate": {
+    tag: "wc-boilerplate",
+    load: () => import("../pages/Boilerplate.js"),
   },
   404: {
     tag: "wc-404",

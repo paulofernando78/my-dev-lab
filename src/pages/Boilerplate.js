@@ -14,7 +14,7 @@ const style = /* css */ `
 
 `;
 
-class Template extends HTMLElement {
+class Boilerplate extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -138,5 +138,5 @@ class Template extends HTMLElement {
   }
 }
 
-customElements.define("wc-template", Template);
-export default Template;
+customElements.define("wc-boilerplate", Boilerplate);
+export default Boilerplate;

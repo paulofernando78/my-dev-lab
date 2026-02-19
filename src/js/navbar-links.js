@@ -112,7 +112,7 @@ ul.innerHTML = links
                               .map(
                                 (item) => /* html */ `
                         <li>
-                        <a href="${item.href}">${item.page}</a>
+                        <a href="${item.href}" class="page-link">${item.page}</a>
                         </li>
                         `,
                               )

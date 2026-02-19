@@ -26,7 +26,7 @@ footer {
 
 @media (max-width: 700px) {
   .navbar {
-    margin-left: -131px;
+    margin-left: -135px;
   }
 
   .navbar.visible {
@@ -44,7 +44,7 @@ footer {
   }
 
   main {
-    margin-left: 131px;
+    margin-left: 135px;
   }
 }
 
