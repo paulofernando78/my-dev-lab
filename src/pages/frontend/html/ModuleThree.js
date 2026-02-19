@@ -106,7 +106,8 @@ class ModuleThree extends HTMLElement {
 
       <wc-page-header
         category="HTML"
-        page="Module 3 • Lists, Links & Navigation"
+        page="Module 3"
+        unit="Lists, Links & Navigation"
         aria-label="HTML Module 3 Lists Links Navigation"
       ></wc-page-header>
 

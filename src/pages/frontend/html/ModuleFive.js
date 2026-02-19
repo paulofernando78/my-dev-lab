@@ -65,7 +65,8 @@ class ModuleFive extends HTMLElement {
 
       <wc-page-header
         category="HTML"
-        page="Module 5 • Semantic Layout"
+        page="Module 5"
+        unit="Semantic Layout"
         aria-label="..."
       ></wc-page-header>
 

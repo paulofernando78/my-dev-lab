@@ -17,7 +17,7 @@ export function renderSections(sections) {
                 <div>
                   <img src="${example.image}" alt="snippet"/>
                 </div>
-                <div>
+                <div class="line-break">
                   ${example.description ?? ""}
                 </div>
               </wc-wrapper>

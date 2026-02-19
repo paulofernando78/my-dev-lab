@@ -40,6 +40,7 @@ class PageHeader extends HTMLElement {
 
   render() {
     const categoryAttr = this.getAttribute("category")
+    const unitAttr = this.getAttribute("unit")
     const pageAttr = this.getAttribute("page")
 
     const categoryStyles = {
@@ -76,7 +77,8 @@ class PageHeader extends HTMLElement {
       </style>
       <div class="header">
         <h1><b>${categoryAttr}</b></h1>
-        ${pageAttr ? `<h2><b>${pageAttr}</b></h2>` : ""}
+        ${pageAttr ? /* html */`<h2><b>${pageAttr}</b></h2>` : ""}
+        ${unitAttr ? `<h3><b>${unitAttr}</b></h3>` : ""}
       </div>
       `;
     }

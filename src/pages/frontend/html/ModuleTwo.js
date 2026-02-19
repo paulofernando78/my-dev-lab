@@ -96,7 +96,8 @@ class ModuleTwo extends HTMLElement {
 
       <wc-page-header
         category="HTML"
-        page="Module 2 • Text and Content Structure"
+        page="Module 2"
+        unit="Text and Content Structure"
         aria-label="HTML Module 2 Text and Content Structure"
       ></wc-page-header>
 

@@ -279,7 +279,8 @@ class ModuleSix extends HTMLElement {
 
       <wc-page-header
         category="HTML"
-        page="Module 6 • Forms & Data Submission"
+        page="Module 6"
+        unit="Forms & Data Submission"
         aria-label="..."
       ></wc-page-header>
 

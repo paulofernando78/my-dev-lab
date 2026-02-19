@@ -53,131 +53,24 @@ class ModuleOne extends HTMLElement {
     const sections = [
       {
         sectionId: "boilerplate",
-        sectionLabel: "Basic HTML Boilerplate",
-        sectionAriaLabel: "Basic HTML Boilerplate",
-        description: /* html */ `
-      <wc-text-block>
-        <p>This is the minimal structure of a valid HTML document.</p>
-      </wc-text-block>
-    `,
+        sectionLabel: "Basic HTML",
+        sectionAriaLabel: "Basic HTML",
         examples: [
           {
-            language: "html",
-            code: `
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-<body>
-
-</body>
-</html>
-        `,
-            preview: () => /* html */ `
-...
-        `,
-          },
-        ],
-      },
-      //! <!doctype html>
-      {
-        sectionId: "doctype",
-        sectionLabel: "DOCTYPE Declaration",
-        sectionAriaLabel: "DOCTYPE Declaration",
-        description: /* html */ `
-      <wc-text-block>
-        <p>The <code>&lt;!doctype html&gt;</code> declaration tells the browser that the document uses HTML5.</p>
-        <p>It must always be the first line of an HTML document to ensure standards mode rendering.</p>
-      </wc-text-block>
-    `,
-        examples: [
-          {
-            language: "html",
-            code: `
-<!doctype html>
-        `,
-            preview: () => /* html */ `
-...
-        `,
-          },
-        ],
-      },
-      {
-        sectionId: "html-root",
-        sectionLabel: "The HTML Root Element",
-        sectionAriaLabel: "The HTML Root Element",
-        description: /* html */ `
-      <wc-text-block>
-        <p>The <code>&lt;html&gt;</code> element is the root of the document and contains all other elements.</p>
-        <p>The <code>lang</code> attribute defines the language of the page for accessibility and SEO.</p>
-      </wc-text-block>
-    `,
-        examples: [
-          {
-            language: "html",
-            code: `
-<html lang="en"></html>
-`,
-            preview: () => /* html */ `
-...
-        `,
-          },
-        ],
-      },
-      {
-        sectionId: "head",
-        sectionLabel: "The Head Element",
-        sectionAriaLabel: "The Head Element",
-        description: /* html */ `
-      <wc-text-block>
-        <p>The <code>&lt;head&gt;</code> contains metadata and configuration for the page.</p>
-        <p>Content inside the head is not displayed directly in the browser.</p>
-      </wc-text-block>
-    `,
-        examples: [
-          {
-            language: "html",
-            code: `
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-        `,
-            preview: () => `
-<code>&lt;head&gt;...&lt;/head&gt;</code>
-        `,
-          },
-        ],
-      },
-      {
-        sectionId: "body",
-        sectionLabel: "The Body Element",
-        sectionAriaLabel: "The Body Element",
-        description: /* html */ `
-      <wc-text-block>
-        <p>The <code>&lt;body&gt;</code> contains all visible content of the webpage.</p>
-      </wc-text-block>
-    `,
-        examples: [
-          {
-            language: "html",
-            code: `
-<body>
-  <span>Hello World</span>
-</body>
+            type: "snippet",
+            cardLabel: "Boilerplate",
+            image: "/assets/images/html/module-1/basic-structure.png",
+            description: /* html */ `
+              <p>This is the minimal structure of a valid HTML document.</p>
+              <p><mark>The <code>&lt;!doctype html&gt;</code> declaration</mark> tells the browser that the document uses HTML5.</p>
+              <p>It must always be the first line of an HTML document to ensure standards mode rendering.</p>
+              <p><mark>The <code>&lt;html&gt;</code> element</mark> is the root of the document and contains all other elements. The <code>lang</code> attribute defines the language of the page for accessibility and SEO.</p>
+              <p><mark>The <code>&lt;head&gt;</code> contains metadata and configuration</mark> for the page. Content inside the head is not displayed directly in the browser.</p>
+              <p><mark>The <code>&lt;body&gt;</code> contains all visible content</mark> of the webpage.</p>
             `,
-            preview: () => `
-<body>
-  <span>Hello World</span>
-</body>
-`
           },
         ],
-      },
+      }
     ];
 
     /* HTML */
@@ -187,7 +80,7 @@ class ModuleOne extends HTMLElement {
       ${style}
     </style>
     
-    <wc-page-header category="HTML" page="Module 1 • Document Foundations" aria-label="HTML Module 1 Document Foundations"/></wc-page-header>
+    <wc-page-header category="HTML" page="Module 1" unit="Document Foundations"aria-label="HTML Module 1 Document Foundations"/></wc-page-header>
     <wc-contents></wc-contents>
 
     <div class="line-break">
