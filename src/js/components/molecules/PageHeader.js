@@ -20,7 +20,7 @@ const style = /* css */ `
   }
   
   .headings {
-    margin: 25px 0 20px 0;
+    margin: 32px 0 20px 0;
   }
 
   h1:has(+ h2) {
@@ -36,7 +36,7 @@ const style = /* css */ `
   }
 
   hr {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     margin-inline: 10px;
     border-color: var(--slate-6)
   }

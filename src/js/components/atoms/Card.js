@@ -19,7 +19,7 @@ const style = /* css */ `
   .card-container {
     padding: 5px; 
 
-    color: var(--surface-text-color);
+    color: #fff;
     background-color: var(--gray-7);
     border-radius: 0 5px 5px 5px;
   }

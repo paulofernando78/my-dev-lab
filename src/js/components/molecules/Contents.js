@@ -3,7 +3,7 @@ import { contents as contentsIcon, section as sectionIcon, codeBlock } from "../
 
 const style = /* css */ `
 .contents-navbar {
-  margin-bottom: 30px
+  margin-bottom: 16px
 }
 
 .contents-navbar-title {
