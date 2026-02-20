@@ -4,7 +4,7 @@ import "@/js/components/molecules/PageHeader.js";
 const style = /* css */ `
   img {
     border-radius: var(--border-radius);
-    margin-bottom: 30px
+    margin-bottom: 10px
   }
 
   .categories {
@@ -33,7 +33,6 @@ class Home extends HTMLElement {
       </style>
       <section class="line-break home-container" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
-          <h1 class="page"><b>My Dev Den</b> </h1>
           <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. This project is organized into the following categories:</p>
           <div class="categories">
             <wc-page-header category="HTML" compact></wc-page-header>

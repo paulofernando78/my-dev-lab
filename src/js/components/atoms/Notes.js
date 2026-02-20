@@ -4,7 +4,8 @@ const style = /* css */ `
   :host {
     border: 1px solid var(--yellow-4);
     border-radius: var(--border-radius);
-    background-color: var(--yellow-1)
+    background-color: var(--yellow-1);
+    color: var(--surface-text-color);
   }
   
   .content {

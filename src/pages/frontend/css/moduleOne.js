@@ -18,7 +18,7 @@ const style = /* css */ `
   }
 `;
 
-class Boilerplate extends HTMLElement {
+class ModuleOne extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -38,28 +38,6 @@ class Boilerplate extends HTMLElement {
             <p>Description</p>
             <p>Description</p>
         `,
-      },
-      {
-        sectionId: "html",
-        sectionLabel: "HTML",
-        sectionAriaLabel: "HTML block",
-        examples: [
-          {
-            type: "code",
-            cardLabel: "HTML",
-            language: "html",
-            code: `
-<span>...</span>
-            `,
-            preview: () => /* html */`
-              <span>...</span>
-            `,
-            notes: /* html */`
-                <p>Notes</p>
-                <p>Notes</p>
-            `,
-          },
-        ],
       },
       {
         sectionId: "css",
@@ -86,43 +64,7 @@ class Boilerplate extends HTMLElement {
             `,
           },
         ],
-      },
-      {
-        sectionId: "javascript",
-        sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
-        examples: [
-          {
-            type: "code",
-            cardLabel: "Javascript",
-            language: "js",
-            code: `
-console.log(...)
-            `,
-            preview: () => /* js */`
-              console.log(...)
-            `,
-            notes: /* html */`
-              <p>Notes</p>
-            `,
-          },
-        ],
-      },
-      {
-        sectionId: "snippet",
-        sectionLabel: "Snippet",
-        sectionAriaLabel: "...",
-        examples: [
-          {
-            type: "snippet",
-            cardLabel: "Snippet (Image + Text)",
-            image: "/assets/images/semantic.jpg",
-            description: /* html */`
-              <p>Description</p>
-            `,
-          },
-        ],
-      },
+      }
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -130,29 +72,10 @@ console.log(...)
         ${styleImports}
         ${style}
       </style>
-
-      <wc-page-header
-        category="Random"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
-      <wc-page-header
-        category="HTML"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
       <wc-page-header
         category="CSS"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
-      <wc-page-header
-        category="Javascript"
-        page="..."
-        unit="..."
+        page="Module 1"
+        unit="Core Fundamentals"
         aria-label="..."
       ></wc-page-header>
 
@@ -167,5 +90,5 @@ console.log(...)
   }
 }
 
-customElements.define("wc-boilerplate", Boilerplate);
-export default Boilerplate;
+customElements.define("wc-css-module-one", ModuleOne);
+export default ModuleOne;

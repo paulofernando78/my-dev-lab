@@ -1,20 +1,24 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
-  :host([compact]) .header {
-    margin-bottom: 0
-  }
-
-  .header {
+  .ribbon {
     background-color: var(--category-bg-color);
-    border: 3px solid var(--category-border-color);
     border-radius: 5px;
-    margin-bottom: 30px;
-    padding: 5px;
+    height: 60px;
+    position: relative;
+    width: 100%
   }
-
-  h1 {
-    color: var(--surface-text-color);
+  
+  .icons {
+    position: absolute;
+    bottom: -15px;
+    left: 10px;
+    width: 40px;
+    height: auto
+  }
+  
+  .headings {
+    margin: 25px 0 20px 0;
   }
 
   h1:has(+ h2) {
@@ -22,17 +26,15 @@ const style = /* css */ `
   }
   
   h2 {
-    color: var(--surface-text-color);
     margin-bottom: 0.4rem;
   }
 
   h2:has(+ h3) {
     margin-bottom: 0.7rem;
   }
-  
-  h3 {
-    color: var(--surface-text-color);
-    margin-bottom: 0.07rem;
+
+  hr {
+    margin-bottom: 1rem
   }
 `;
 
@@ -53,29 +55,28 @@ class PageHeader extends HTMLElement {
 
     const categoryStyles = {
       HTML: {
-        color: "var(--orange-6)",
-        background: "var(--orange-1)"
+        background: "var(--orange-6)",
+        icon: "/assets/images/icons/html5.svg"
       },
       CSS: {
-        color: "var(--purple-6)",
-        background: "var(--purple-1)"
+        background: "var(--purple-6)",
+        icon: "/assets/images/icons/css.svg"
       },
       Javascript: {
-        color: "var(--yellow-3)",
-        background: "var(--yellow-1)"
+        background: "var(--yellow-3)",
+        icon: "/assets/images/icons/javascript.svg"
       },
       "Node JS": {
-        color: "var(--green-7)",
-        background: "var(--green-1)"
+        background: "var(--green-7)",
+        icon: "/assets/images/icons/nodejs.svg"
       }
     }
 
     const config = categoryStyles[categoryAttr] ?? {
-      color: "var(--slate-4)",
-      background: "var(--slate-2)"
+      background: "var(--slate-2)",
+      icon: ""
     }
 
-    this.style.setProperty("--category-border-color", config.color);
     this.style.setProperty("--category-bg-color", config.background);
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -83,11 +84,20 @@ class PageHeader extends HTMLElement {
         ${componentStyles}
         ${style}
       </style>
-      <div class="header">
+      <div class="ribbon">
+      ${config.icon
+        ? /* html */`
+          <img src="${config.icon}" class="icons"/>
+        `
+        : ""
+      }
+      </div>
+      <div class="headings">
         <h1><b>${categoryAttr}</b></h1>
         ${pageAttr ? /* html */`<h2><b>${pageAttr}</b></h2>` : ""}
-        ${unitAttr ? `<h3><b>${unitAttr}</b></h3>` : ""}
+        ${unitAttr ? /* html */`<h3><b>${unitAttr}</b></h3>` : ""}
       </div>
+      <hr />
       `;
     }
   }

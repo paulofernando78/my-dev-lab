@@ -34,7 +34,6 @@ export function renderSections(sections) {
                 </div>
               </wc-wrapper>
               `
-              
             }
             </wc-card>
             
@@ -43,8 +42,8 @@ export function renderSections(sections) {
               ` : ""}
             `,
               ).join("") : ""}
-            </wc-section>
-          `,
+        </wc-section>
+      `,
     )
     .join("");
 }

@@ -66,6 +66,7 @@ header {
   align-items: center;
   gap: 10px;
   font-family: 'Courier New', Courier, monospace;
+  
 }
 
 #menu {
@@ -77,23 +78,20 @@ header {
   display: flex;
   position: relative;
   min-height: 0;
+  width: 100%;
+  
 }
 
 main {
   flex: 1;
-  width: 100%;
+  min-width: 0;
   overflow-y: auto;
   min-height: 0;
 
   transition: margin-left 0.5s ease;
 }
 
-#app {
-  /* height: 100%; */
-}
-
 #app > .page {
-  /* height: 100%; */
   opacity: 1;
   transition: opacity 1s ease;
 }

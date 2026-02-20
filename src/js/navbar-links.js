@@ -62,15 +62,19 @@ export const links = [
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 3 • Responsive Design",
+            page: "Module 3 • Positiong & Layering",
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 4 • Architecture & Organization",
+            page: "Module 4 • Responsive Design",
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 5 • Transitions & Animation",
+            page: "Module 5 • Architecture & Organization",
+          },
+          {
+            href: "/frontend/css/module-3",
+            page: "Module 6 • Transitions & Animation",
           },
         ],
       },
