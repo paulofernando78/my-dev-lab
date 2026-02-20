@@ -40,16 +40,14 @@ const style = /* css */ `
   .template-header, .template-section, .template-aside, .template-footer {
     display: grid;
     place-items: center;
-    border-radius: 5px
+    border-radius: 5px;
+    border: 2px solid var(--slate-4)
   }
 
-  .template-header, .template-section, .template-aside, .template-footer {
-    margin-bottom:8px;
+  .template-header, .template-section, .template-aside {
+    margin-bottom: 8px;
   }
-
-  .template-footer {
-    margin-top:8px;
-  }
+ 
 `;
 
 class AtomicDesign extends HTMLElement {

@@ -34,7 +34,7 @@ class Home extends HTMLElement {
       <section class="line-break home-container" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
           <h1 class="page"><b>My Dev Den</b> </h1>
-          <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The project is organized into the following categories:</p>
+          <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. This project is organized into the following categories:</p>
           <div class="categories">
             <wc-page-header category="HTML" compact></wc-page-header>
             <wc-page-header category="CSS" compact></wc-page-header>

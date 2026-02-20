@@ -62,6 +62,10 @@ header {
 
 .header-logo {
   transform: translate(5px, 1px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #menu {
@@ -124,6 +128,7 @@ code {
   padding: 0 1px;
   font-family: "Courier New", Courier, monospace;
   background-color: var(--slate-1);
+  color: var(--surface-text-color);
 }
 
 wc-icon[name="scrollToTop"] {

@@ -31,6 +31,7 @@ const style = /* css */ `
   }
   
   h3 {
+    color: var(--surface-text-color);
     margin-bottom: 0.07rem;
   }
 `;

@@ -11,14 +11,16 @@ const style = /* css */ `
     border-radius: 5px 5px 0 0;
     padding: 3px;
     font-weight: bold;
-    background-color: var(--slate-3)
+    background-color: var(--slate-2);
+    color: var(--surface-text-color);
   }
 
   .card-container {
     padding: 5px; 
     border: var(--border);
     border-radius: 0 5px 5px 5px;
-    background-color: var(--slate-3)
+    background-color: var(--slate-2);
+    color: var(--surface-text-color);
   }
 `;
 
