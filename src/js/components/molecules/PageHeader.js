@@ -14,7 +14,9 @@ const style = /* css */ `
     bottom: -15px;
     left: 10px;
     width: 40px;
-    height: auto
+    height: auto;
+
+    filter: drop-shadow(0px 0px 1px black);
   }
   
   .headings {
@@ -34,7 +36,9 @@ const style = /* css */ `
   }
 
   hr {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    margin-inline: 10px;
+    border-color: var(--slate-6)
   }
 `;
 

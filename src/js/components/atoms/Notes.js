@@ -1,17 +1,22 @@
 import styleImports from "@css/styles.css?inline";
+import { attention } from "../../../assets/images/svg-imports";
 
 const style = /* css */ `
   :host {
-    border: 1px solid var(--yellow-4);
+    background-color: var(--gray-7);
     border-radius: var(--border-radius);
-    background-color: var(--yellow-1);
-    color: var(--surface-text-color);
+    color: #fff;
   }
   
+  .icon {
+    padding: 5px 5px 5px 8px
+  }
+
   .content {
     display: grid;
     gap: 1rem;
     padding: 5px;
+    color:
   }
 `;
 
@@ -31,8 +36,11 @@ class Notes extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <div class="content">
-        <slot></slot>
+      <div class="flex-align-center icon">
+        ${attention()}
+        <div class="content">
+          <slot></slot>
+        </div>
       </div>
       `;
     }

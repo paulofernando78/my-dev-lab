@@ -75,9 +75,9 @@ const routes = {
 
   // JS
 
-  "/frontend/js/conditional-rendering": {
-    tag: "wc-js-conditional-rendering",
-    load: () => import("../pages/frontend/js/ConditionalRendering.js"),
+  "/frontend/js/module-1": {
+    tag: "wc-js-module-one",
+    load: () => import("../pages/frontend/js/ModuleOne.js"),
   },
 
   //! Backend
