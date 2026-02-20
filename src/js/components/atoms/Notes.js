@@ -8,7 +8,7 @@ const style = /* css */ `
     color: #fff;
   }
   
-  .icon {page
+  .icon {
     padding: 5px 5px 5px 8px
   }
 

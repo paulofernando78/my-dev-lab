@@ -71,7 +71,7 @@ console.log(...)
       <wc-page-header
         category="Javascript"
         page="Module 1"
-        unit="..."
+        unit="Core Language"
         aria-label="..."
       ></wc-page-header>
 
