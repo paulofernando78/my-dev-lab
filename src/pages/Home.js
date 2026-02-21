@@ -14,7 +14,8 @@ const style = /* css */ `
 
   .category-icons img {
     width: 40px;
-    height: auto
+    height: auto;
+    margin-top: 3px
   }
 
   .category-icons-overview {
@@ -29,16 +30,11 @@ const style = /* css */ `
   }
 
   .category-label {
-    font-size: 1.4rem;
     margin-top: 2px
   }
 
   .modules:not(:last-child) {
     margin-bottom: 1rem;
-  }
-
-  .module {
-    font-size: 1rem;
   }
 
   .description {
@@ -224,13 +220,13 @@ class Home extends HTMLElement {
             <img src="/assets/images/icons/javascript.svg"/>
             <img src="/assets/images/icons/nodejs.svg"/>
           </div>
-          <p>Overview</p>
+          <h2>Overview</h2>
           ${categories.map(
             (category) => /* html */ `
             <div class="card">
               <div class="flex-align-center">
                 <img src="${category.icon}" class="category-icons-overview"/>
-                <h1 class="category-label" >${category.name} • ${category.modules} Modules</h1>
+                <h3 class="category-label" >${category.name} • ${category.modules} Modules</h3>
               </div>
               <hr />
               <ul>
@@ -238,7 +234,7 @@ class Home extends HTMLElement {
                   .map(
                     (lesson) => /* html */ `
                   <li class="modules">
-                    <h2 class="module" >${lesson.title}</h2>
+                    <h4>${lesson.title}</h4>
                     <p class="description">${lesson.description}</p>
                   </li>
                   `,
