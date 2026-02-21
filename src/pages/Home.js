@@ -1,6 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/atoms/Card.js";
+import { module } from "../assets/images/svg-imports"
 
 const style = /* css */ `
   .category-icons {
@@ -229,7 +230,7 @@ class Home extends HTMLElement {
             <div class="card">
               <div class="flex-align-center">
                 <img src="${category.icon}" class="category-icons-overview"/>
-                <h1 class="category-label" >${category.name} ${category.modules} Modules</h1>
+                <h1 class="category-label" >${category.name} • ${category.modules} Modules</h1>
               </div>
               <hr />
               <ul>
