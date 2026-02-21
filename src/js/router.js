@@ -86,6 +86,14 @@ const routes = {
   //   tag: "wc-nodejs-",
   //   load: () => import("../pages/backend/nodejs/")
   // }
+
+  // Tools
+
+  // Module 1
+  // "/tools/git/module-1": {
+  //   tag: "wc-git-module-one",
+  //   load: () => import("../pages/tools/git/ModuleOne.js"),
+  // },
 };
 
 /*

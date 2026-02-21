@@ -135,7 +135,7 @@ export const links = [
             page: "Module 11 • SPA & Application Architecture",
           },
         ],
-      },
+      }
     ],
   },
   {
@@ -147,6 +147,32 @@ export const links = [
           {
             href: "/node/...",
             page: "...",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    section: "Tools",
+    categories: [
+      {
+        category: "Git",
+        pages: [
+          {
+            href: "/git/basics",
+            page: "Module 1 • Basics",
+          },
+          {
+            href: "/git/branching",
+            page: "Module 2 • Branching",
+          },
+          {
+            href: "/git/remote-repositories",
+            page: "Module 3 • Remote Repositories",
+          },
+          {
+            href: "/git/github-workflow",
+            page: "Module 4 • Github Workflow",
           },
         ],
       },
