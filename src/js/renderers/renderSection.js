@@ -4,15 +4,18 @@ export function renderSections(sections) {
       (section) => /* html */ `
         <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
           ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
-          ${section.examples ? section.examples.map((example, index) => /* html */ `
+          ${
+            section.examples
+              ? section.examples
+                  .map(
+                    (example, index) => /* html */ `
             <wc-card-code ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
 
-            
-            ${(example.type ?? "code") === "snippet"
-              // if type missing → use "code" then compare to "snippet" 
-              ?
-              /* image + text mode */ /* html */
-              `
+            ${
+              (example.type ?? "code") === "snippet"
+                ? // if type missing → use "code" then compare to "snippet"
+                  /* image + text mode */ /* html */
+                  `
               <wc-wrapper>
                 <div>
                   <img src="${example.image}" alt="snippet"/>
@@ -22,9 +25,8 @@ export function renderSections(sections) {
                 </div>
               </wc-wrapper>
               `
-              :
-              /* code + preview mode */ /* html */
-              `
+                : /* code + preview mode */ /* html */
+                  `
               <wc-wrapper>
                 <wc-code language="${example.language}">
                   ${example.code}
@@ -37,11 +39,19 @@ export function renderSections(sections) {
             }
             </wc-card-code>
             
-            ${example.notes ? /* html */`
+            ${
+              example.notes
+                ? /* html */ `
               <wc-notes>${example.notes}</wc-notes>
-              ` : ""}
-            `,
-              ).join("") : ""}
+              `
+                : ""
+            }
+              `,
+                  )
+                  .join("")
+              : ""
+          }
+            <wc-links data-links="${encodeURIComponent(JSON.stringify(section.links))}"></wc-links>
         </wc-section>
       `,
     )

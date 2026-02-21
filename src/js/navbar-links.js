@@ -5,6 +5,7 @@ export const links = [
     href: "/",
     page: "Home",
   },
+  //! Frontend
   {
     section: "Frontend",
     categories: [
@@ -23,8 +24,8 @@ export const links = [
         category: "HTML",
         pages: [
           {
-            href: "/frontend/html/module-1",
-            page: "Module 1 • Document Foundations",
+            href: "/frontend/html/resouces",
+            page: "Resources",
           },
           {
             href: "/frontend/html/module-2",
@@ -52,6 +53,10 @@ export const links = [
       {
         category: "CSS",
         pages: [
+          {
+            href: "/frontend/css/resources",
+            page: "Resources",
+          },
           {
             href: "/frontend/css/module-1",
             page: "Module 1 • Core Fundamentals",
@@ -138,6 +143,7 @@ export const links = [
       }
     ],
   },
+  //! Backend
   {
     section: "Backend",
     categories: [
@@ -145,13 +151,14 @@ export const links = [
         category: "Node JS",
         pages: [
           {
-            href: "/node/...",
-            page: "...",
+            href: "backend/node-js/module-1",
+            page: "Module 1 • ...",
           },
         ],
       },
     ],
   },
+  //! Tools
   {
     section: "Tools",
     categories: [

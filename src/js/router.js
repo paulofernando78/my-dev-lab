@@ -29,37 +29,31 @@ const routes = {
   },
 
   // HTML
-
   // Module 1
   "/frontend/html/module-1": {
     tag: "wc-html-module-one",
     load: () => import("../pages/frontend/html/ModuleOne.js"),
   },
-
   // Module 2
   "/frontend/html/module-2": {
     tag: "wc-html-module-two",
     load: () => import("../pages/frontend/html/ModuleTwo.js"),
   },
-
   // Module 3
   "/frontend/html/module-3": {
     tag: "wc-html-module-three",
     load: () => import("../pages/frontend/html/ModuleThree.js"),
   },
-
   // Module 4
   "/frontend/html/module-4": {
     tag: "wc-html-module-four",
     load: () => import("../pages/frontend/html/ModuleFour.js"),
   },
-
   // Module 5
   "/frontend/html/module-5": {
     tag: "wc-html-module-five",
     load: () => import("../pages/frontend/html/ModuleFive.js"),
   },
-
   // Module 6
   "/frontend/html/module-6": {
     tag: "wc-html-module-six",
@@ -67,14 +61,16 @@ const routes = {
   },
 
   // CSS
-
+  "/frontend/css/resources": {
+    tag: "wc-css-resources",
+    load: () => import("../pages/frontend/css/Resources.js"),
+  },
   "/frontend/css/module-1": {
     tag: "wc-css-module-one",
     load: () => import("../pages/frontend/css/ModuleOne.js"),
   },
 
   // JS
-
   "/frontend/js/module-1": {
     tag: "wc-js-module-one",
     load: () => import("../pages/frontend/js/ModuleOne.js"),
@@ -82,13 +78,14 @@ const routes = {
 
   //! Backend
   // Node JS
-  // "/backend/nodejs/...": {
-  //   tag: "wc-nodejs-",
-  //   load: () => import("../pages/backend/nodejs/")
-  // }
+  "/backend/node-js/module-1": {
+    tag: "wc-node-js-module-one",
+    load: () => import("../pages/backend/node-js/ModuleOne.js")
+  }
 
-  // Tools
+  //! Tools
 
+  // Git
   // Module 1
   // "/tools/git/module-1": {
   //   tag: "wc-git-module-one",

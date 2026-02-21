@@ -6,6 +6,7 @@ import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/atoms/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -122,6 +123,17 @@ console.log(...)
             `,
           },
         ],
+      },
+      {
+        sectionId: "links",
+        sectionLabel: "Links",
+        sectionAriaLabel: "Links",
+        links: [
+          {
+            href: "www.google.com",
+            title: "link"
+          }
+        ]
       },
     ];
 
