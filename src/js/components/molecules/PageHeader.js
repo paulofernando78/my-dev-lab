@@ -6,9 +6,9 @@ const style = /* css */ `
     border-radius: 5px;
     color: var(--category-color);
     width: 100%;
+    margin-bottom: 32px;
     padding: 12px;
     position: relative;
-    margin-bottom: 16px
   }
   
   .icons {
