@@ -5,7 +5,7 @@ export function renderSections(sections) {
         <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
           ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
           ${section.examples ? section.examples.map((example, index) => /* html */ `
-            <wc-card ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
+            <wc-card-code ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
 
             
             ${(example.type ?? "code") === "snippet"
@@ -35,7 +35,7 @@ export function renderSections(sections) {
               </wc-wrapper>
               `
             }
-            </wc-card>
+            </wc-card-code>
             
             ${example.notes ? /* html */`
               <wc-notes>${example.notes}</wc-notes>

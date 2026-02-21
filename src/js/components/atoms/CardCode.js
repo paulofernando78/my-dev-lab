@@ -5,15 +5,27 @@ const style = /* css */ `
     scroll-margin-top: 5px
   }  
 
-  .card-container {
-    padding: 10px; 
+  .label {
+    width: max-content;
+    padding: 5px 6px 5px 5px;
+    font-weight: bold;
+
     color: #fff;
     background-color: var(--gray-7);
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 0px;
+  }
+
+  .card-container {
+    padding: 5px; 
+
+    color: #fff;
+    background-color: var(--gray-7);
+    border-radius: 0 5px 5px 5px;
   }
 `;
 
-class Card extends HTMLElement {
+class CardCode extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -37,5 +49,5 @@ class Card extends HTMLElement {
   }
 }
 
-customElements.define("wc-card", Card);
-export default Card;
+customElements.define("wc-card-code", CardCode);
+export default CardCode;

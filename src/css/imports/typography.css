@@ -39,6 +39,7 @@ h6 {
   /* text-box-edge: cap alphabetic; */
   text-box: trim-both cap alphabetic;
   padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
   line-height: 1.3;
 }
 

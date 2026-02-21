@@ -58,19 +58,27 @@ export const links = [
           },
           {
             href: "/frontend/css/module-2",
-            page: "Module 2 • Layout Systems",
+            page: "Module 2 • Box Model & Spacing",
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 3 • Positiong & Layering",
+            page: "Module 3 • Typography & Color",
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 4 • Responsive Design",
+            page: "Module 4 • Flexbox",
           },
           {
             href: "/frontend/css/module-3",
-            page: "Module 5 • Architecture & Organization",
+            page: "Module 5 • Grid",
+          },
+          {
+            href: "/frontend/css/module-3",
+            page: "Module 6 • Positioning & Layering",
+          },
+          {
+            href: "/frontend/css/module-3",
+            page: "Module 5 • Responsive Design",
           },
           {
             href: "/frontend/css/module-3",
@@ -84,23 +92,47 @@ export const links = [
         pages: [
           {
             href: "/frontend/js/module-1",
-            page: "Module 1 • Core Language",
+            page: "Module 1 • Language Basics",
           },
           {
             href: "/frontend/js/module-2",
-            page: "Module 2 • DOM Manipulation",
+            page: "Module 2 • Control Flow",
           },
           {
             href: "/frontend/js/module-3",
-            page: "Module 3 • State & Architecture",
+            page: "Module 3 • Functions",
           },
           {
             href: "/frontend/js/module-3",
-            page: "Module 4 • Asynchronous JavaScript",
+            page: "Module 4 • Data Structures",
           },
           {
             href: "/frontend/js/module-3",
-            page: "Module 5 • SPA & Application Architecture",
+            page: "Module 5 • DOM Manipulation",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 6 • Events",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 7 • Asynchronous JS",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 8 • APIs & Fetch",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 9 • Modern JS & Modules",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 10 • State & Architecture",
+          },
+          {
+            href: "/frontend/js/module-3",
+            page: "Module 11 • SPA & Application Architecture",
           },
         ],
       },
