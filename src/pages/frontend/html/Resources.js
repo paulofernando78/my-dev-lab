@@ -33,13 +33,9 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Sites",
         links: [
           {
-            href: "https://www.joshwcomeau.com/",
-            title: "Josh Comeau"
+            href: "",
+            title: ""
           },
-          {
-            href: "https://lea.verou.me/",
-            title: "Lea Verou"
-          }
         ]
       },
       {
@@ -48,8 +44,8 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Youtube Channels",
         links: [
           {
-            href: "https://www.youtube.com/watch?v=kINNs4uYYnY&list=PLj-4DlPRT48kQD-jzqfkutO5OvMUXLcNP",
-            title: "Lama Dev"
+            href: "",
+            title: ""
           }
         ]
       },
@@ -59,24 +55,8 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Practice",
         links: [
           {
-            href: "https://cssbattle.dev/",
-            title: "CSS Battle"
-          },
-          {
-            href: "https://flexboxfroggy.com",
-            title: "Flexbox Froggy"
-          },
-          {
-            href: "https://flukeout.github.io/",
-            title: "CSS Diner"
-          },
-          {
-            href: "https://cssgridgarden.com",
-            title: "Grid Garden"
-          },
-          {
-            href: "https://codepen.io/challenges",
-            title: "CODEPEN Challenges"
+            href: "",
+            title: ""
           },
         ]
       },
@@ -88,9 +68,9 @@ class Resources extends HTMLElement {
         ${style}
       </style>
       <wc-page-header
-        category="CSS"
+        category="HTML"
         page="Resources"
-        aria-label="CSS Resources"
+        aria-label="HTML Resources"
       ></wc-page-header>
 
       <wc-contents></wc-contents>
@@ -104,5 +84,5 @@ class Resources extends HTMLElement {
   }
 }
 
-customElements.define("wc-css-resources", Resources);
+customElements.define("wc-html-resources", Resources);
 export default Resources;

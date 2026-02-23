@@ -29,6 +29,11 @@ const routes = {
   },
 
   // HTML
+  // Resources
+  "/frontend/html/resources": {
+    tag: "wc-html-resources",
+    load: () => import("../pages/frontend/html/Resources.js"),
+  },
   // Module 1
   "/frontend/html/module-1": {
     tag: "wc-html-module-one",
@@ -61,6 +66,7 @@ const routes = {
   },
 
   // CSS
+  // Resources
   "/frontend/css/resources": {
     tag: "wc-css-resources",
     load: () => import("../pages/frontend/css/Resources.js"),
@@ -71,6 +77,11 @@ const routes = {
   },
 
   // JS
+  // Resources
+  "/frontend/js/resources": {
+    tag: "wc-js-resources",
+    load: () => import("../pages/frontend/js/Resources.js"),
+  },
   "/frontend/js/module-1": {
     tag: "wc-js-module-one",
     load: () => import("../pages/frontend/js/ModuleOne.js"),

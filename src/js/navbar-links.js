@@ -28,8 +28,12 @@ export const links = [
         category: "HTML",
         pages: [
           {
-            href: "/frontend/html/resouces",
+            href: "/frontend/html/resources",
             page: "Resources",
+          },
+          {
+            href: "/frontend/html/module-",
+            page: "Module 1 • ",
           },
           {
             href: "/frontend/html/module-2",
@@ -99,6 +103,10 @@ export const links = [
       {
         category: "JS",
         pages: [
+          {
+            href: "/frontend/js/resources",
+            page: "Resources",
+          },
           {
             href: "/frontend/js/module-1",
             page: "Module 1 • Language Basics",
