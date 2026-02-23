@@ -11,7 +11,9 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
-
+  ol, ul {
+    
+  }
 `;
 
 class ModuleThree extends HTMLElement {
@@ -27,12 +29,12 @@ class ModuleThree extends HTMLElement {
   render() {
     const sections = [
       {
-        sectionId: "lists",
-        sectionLabel: "Lists",
-        sectionAriaLabel: "Lists",
+        sectionId: "ordered-lists",
+        sectionLabel: "Ordered Lists",
+        sectionAriaLabel: "Ordered Lists",
         examples: [
           {
-            cardLabel: "Ordered List",
+            cardLabel: "default (numbers)",
             language: "html",
             code: `
 <ol>
@@ -40,11 +42,27 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ol>
         `,
-            preview: () => `
+            preview: () => /* html */`
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ol>
+        `,
+          },
+          {
+            cardLabel: "letters",
+            language: "html",
+            code: `
 <ol>
   <li>Item 1</li>
   <li>Item 2</li>
 </ol>
+        `,
+            preview: () => /* html */`
+              <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ol>
         `,
           },
           {
@@ -56,11 +74,34 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ul>
         `,
-            preview: () => `
+            preview: () => /* html */`
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ul>
+        `,
+          },
+        ],
+      },
+      {
+        sectionId: "unordered-lists",
+        sectionLabel: "Unordered Lists",
+        sectionAriaLabel: "Unordered Lists",
+        examples: [
+          {
+            cardLabel: "Unordered List",
+            language: "html",
+            code: `
 <ul>
   <li>Item 1</li>
   <li>Item 2</li>
 </ul>
+        `,
+            preview: () => /* html */`
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+              </ul>
         `,
           },
         ],
@@ -76,8 +117,8 @@ class ModuleThree extends HTMLElement {
             code: `
 <a href="https://example.com">Visit example</a>
         `,
-            preview: () => `
-<a href="https://example.com">Visit example</a>
+            preview: () => /* html */`
+              <a href="https://example.com">Visit example</a>
         `,
           },
           {
@@ -88,10 +129,10 @@ class ModuleThree extends HTMLElement {
   Open example
 </a>
         `,
-            preview: () => `
-<a href="https://example.com" target="_blank" rel="noopener noreferrer">
-  Open example
-</a>
+            preview: () => /* html */`
+              <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                Open example
+              </a>
         `,
           },
         ],

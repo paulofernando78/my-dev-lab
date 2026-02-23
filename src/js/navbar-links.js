@@ -5,6 +5,10 @@ export const links = [
     href: "/",
     page: "Home",
   },
+  {
+    href: "/resources",
+    page: "Resources",
+  },
   //! Frontend
   {
     section: "Frontend",
@@ -181,6 +185,29 @@ export const links = [
             href: "/git/github-workflow",
             page: "Module 4 • Github Workflow",
           },
+        ],
+      },
+    ],
+  },
+  //! Misc
+  {
+    section: "Misc",
+    categories: [
+      {
+        category: "Jobs",
+        pages: [
+          {
+          href: "/jobs/common-questions-and-answers",
+          page: "Common Questions & Answers",
+        },
+        {
+          href: "/jobs/javascript",
+          page: "JavaScript Interviews",
+        },
+        {
+          href: "/jobs/react",
+          page: "React Interviews",
+        },
         ],
       },
     ],

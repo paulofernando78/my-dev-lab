@@ -6,16 +6,13 @@ import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/atoms/Notes.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
+  
 `;
 
 class Resources extends HTMLElement {
@@ -33,10 +30,56 @@ class Resources extends HTMLElement {
       {
         sectionId: "sites",
         sectionLabel: "Sites",
-        sectionAriaLabel: "Sites654",
-        description: /* html */ `
-        `,
-      }
+        sectionAriaLabel: "Sites",
+        links: [
+          {
+            href: "https://www.joshwcomeau.com/",
+            title: "Josh Comeau"
+          },
+          {
+            href: "https://lea.verou.me/",
+            title: "Lea Verou"
+          }
+        ]
+      },
+      {
+        sectionId: "youtube-channels",
+        sectionLabel: "Youtube Channels",
+        sectionAriaLabel: "Youtube Channels",
+        links: [
+          {
+            href: "https://www.youtube.com/watch?v=kINNs4uYYnY&list=PLj-4DlPRT48kQD-jzqfkutO5OvMUXLcNP",
+            title: "Lama Dev"
+          }
+        ]
+      },
+      {
+        sectionId: "practice",
+        sectionLabel: "Practice",
+        sectionAriaLabel: "Practice",
+        links: [
+          {
+            href: "https://cssbattle.dev/",
+            title: "CSS Battle"
+          },
+          {
+            href: "https://flexboxfroggy.com",
+            title: "Flexbox Froggy"
+          },
+          {
+            href: "https://flukeout.github.io/",
+            title: "CSS Diner"
+          },
+          {
+            href: "https://cssgridgarden.com",
+            title: "Grid Garden"
+          },
+          {
+            href: "https://codepen.io/challenges",
+            title: "CODEPEN Challenges"
+          },
+        ]
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -47,7 +90,6 @@ class Resources extends HTMLElement {
       <wc-page-header
         category="CSS"
         page="Resources"
-        unit="..."
         aria-label="..."
       ></wc-page-header>
 

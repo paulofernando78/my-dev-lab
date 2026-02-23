@@ -1,7 +1,11 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-
+  a {
+    text-decoration: none;
+    padding-left: 1px;
+    color: var(--text-color);
+  }
 `;
 
 class Links extends HTMLElement {

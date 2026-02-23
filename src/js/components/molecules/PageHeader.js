@@ -53,12 +53,12 @@ class PageHeader extends HTMLElement {
   render() {
     const categoryStyles = {
       HTML: {
-        background: "var(--orange-6)",
+        background: "#E44D25",
         color: "#fff",
         icon: "/assets/images/icons/html5.svg",
       },
       CSS: {
-        background: "var(--purple-6)",
+        background: "#673299",
         color: "#fff",
         icon: "/assets/images/icons/css.svg",
       },

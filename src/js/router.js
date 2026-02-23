@@ -81,16 +81,25 @@ const routes = {
   "/backend/node-js/module-1": {
     tag: "wc-node-js-module-one",
     load: () => import("../pages/backend/node-js/ModuleOne.js")
-  }
+  },
 
   //! Tools
 
   // Git
   // Module 1
-  // "/tools/git/module-1": {
-  //   tag: "wc-git-module-one",
-  //   load: () => import("../pages/tools/git/ModuleOne.js"),
-  // },
+  "/tools/git/module-1": {
+    tag: "wc-git-module-one",
+    load: () => import("../pages/tools/git/ModuleOne.js"),
+  },
+
+  //! Misc
+
+  // Jobs
+  // Regular Questions and Answers
+  "/jobs/common-questions-and-answers": {
+    tag: "wc-jobs-common-questions-answers",
+    load: () => import("../pages/misc/jobs/CommonQuestionsAndAnswers.js"),
+  },
 };
 
 /*

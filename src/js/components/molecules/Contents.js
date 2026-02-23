@@ -15,7 +15,7 @@ const style = /* css */ `
 }
 
 .contents-navbar ul ul {
-  padding-left: 2.5rem;
+  padding-left: 1.9rem;
   list-style: none;
   margin-bottom: 0.2rem
 }
@@ -48,7 +48,7 @@ class Contents extends HTMLElement {
 
       <div class="flex-align-center">
         ${contentsIcon()}
-        <span class="contents-navbar-title">Contents</span>
+        <span class="contents-navbar-title">Table of Contents</span>
       </div>
 
       <nav class="contents-navbar">

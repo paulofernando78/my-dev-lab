@@ -16,8 +16,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-li {
-  /* list-style-type: none; */
+ol, ul {
+  list-style: none;
 }
 
 img,
