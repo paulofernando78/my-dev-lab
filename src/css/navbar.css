@@ -53,7 +53,7 @@
   color: var(--slate-5);
 }
 
-summary {
+.navbar summary {
   list-style: none;
   cursor: pointer;
   display: flex;
@@ -61,19 +61,19 @@ summary {
   font-size: 1.3rem;
 }
 
-summary::webkit-details-marker {
+.navbar summary::-webkit-details-marker {
   display: none;
 }
 
-summary::before {
-  font-family: "material Symbols Outlined";
+.navbar summary::before {
+  font-family: "Material Symbols Outlined";
   content: "keyboard_arrow_right";
   font-size: 1.5rem;
 
   transition: transform 0.2s ease;
 }
 
-details[open] > summary::before {
+.navbar details[open] > summary::before {
   transform: rotate(90deg);
 }
 

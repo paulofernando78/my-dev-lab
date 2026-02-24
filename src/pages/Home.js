@@ -4,7 +4,7 @@ import "@/js/components/atoms/Card.js";
 import {curriculum } from "../data/curriculum"
 
 const style = /* css */ `
-  .category-icons {
+  .home__category-icons {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -12,18 +12,18 @@ const style = /* css */ `
     margin-inline: 20px
   }
 
-  .category-icons img {
+  .home__category-icons img {
     width: 40px;
     height: auto;
     margin-top: 3px
   }
 
-  .category-icons-overview {
+  .home__category-icons-overview {
     width: 25px;
     height: auto
   }
 
-  .card-header {
+  .home__card-header {
     border: 1px solid var(--slate-4);
     border-bottom: 0;
     border-radius: 5px 5px 0 0 ;
@@ -31,26 +31,26 @@ const style = /* css */ `
     padding: 10px;
   }
 
-  .card {
+  .home__card {
     border: 1px solid var(--slate-4);
     border-radius: 0 0 5px 5px;
     padding: 10px;
   }
 
-  .category-label {
+  .home__category-label {
     margin-top: 2px
   }
 
-  .description {
+  .home__description {
     // font-size: 1rem;
   }
 
-  hr {
+  .home__hr {
     margin-block: 3px;
     border-color: var(--slate-1);
   }
 
-  .card hr:last-of-type {
+  .home__card hr:last-of-type {
     display: none
   }
 `;
@@ -72,7 +72,7 @@ class Home extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <section class="line-break home-container" aria-label="My Dev Den">
+      <section class="line-break" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
           <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. This project is organized into the following categories:</p>
           <h2>Overview</h2>
@@ -81,20 +81,20 @@ class Home extends HTMLElement {
           
             ${curriculum.map((section) => /* html */ `
               <div>
-                <h3 class="card-header">${section.section}</h3>
-                <div class="card line-break">
+                <h3 class="home__card-header">${section.section}</h3>
+                <div class="home__card line-break">
                   ${section.categories.map(category => /* html */`
     
-                  <div class="flex-align-center category">
-                    <img src="${category.icon}" class="category-icons-overview"/>
-                    <h4 class="category-label" >${category.category} • ${category.modulesNumber} Modules</h4>
+                  <div class="flex-align-center home__category">
+                    <img src="${category.icon}" class="home__category-icons-overview"/>
+                    <h4 class="home__category-label" >${category.category} • ${category.modulesNumber} Modules</h4>
                   </div>
     
                   <ul class="line-break">
                     ${category.modules.map((module) => /* html */ `
-                      <li class="modules">
+                      <li class="home__modules">
                         <h4>${module.module}</h4>
-                        <p class="description">${module.description}</p>
+                        <p class="home__description">${module.description}</p>
                       </li>
                     `,).join("")}
                   </ul>
