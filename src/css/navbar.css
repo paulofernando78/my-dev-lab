@@ -15,16 +15,24 @@
   position: absolute;
 }
 
-.navbar-section {
-  font-size: 1.3rem;
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
+.navbar__section {
+  font-size: 1.5rem;
 }
 
-/* .navbar li {
-  text-transform: uppercase;
-} */
+.navbar__icon__category-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.navbar__category {
+  font-size: 1.3rem;
+  transform: translateY(1px);
+}
+
+.navbar__icon__size {
+  width: 20px;
+}
 
 .navbar li:not(:last-child) {
   margin-bottom: 0.1rem;
@@ -38,7 +46,7 @@
 }
 
 .navbar a:hover {
-  color: var(--slate-4)
+  color: var(--slate-4);
 }
 
 .navbar a[aria-current="page"] {
@@ -61,8 +69,7 @@ summary::before {
   font-family: "material Symbols Outlined";
   content: "keyboard_arrow_right";
   font-size: 1.5rem;
-  margin-right: 2px;
-  padding-bottom: 1px;
+
   transition: transform 0.2s ease;
 }
 
@@ -70,14 +77,16 @@ details[open] > summary::before {
   transform: rotate(90deg);
 }
 
-.navbar li.page-list {
-  border-left: 3px solid var(--slate-4);
-  padding-left: 6px;
-  margin-bottom: 8px;
+.navbar__modules {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.navbar a.page-link {
-  font-size: 1.1rem
+.navbar__module {
+  border-left: 3px solid var(--slate-4);
+  padding-left: 5px;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 700px) {

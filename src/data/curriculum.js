@@ -1,5 +1,6 @@
 export const curriculum = [
   {
+    icon: "/assets/images/icons/frontend.svg",
     section: "Frontend",
     categories: [
       // HTML
@@ -28,15 +29,15 @@ export const curriculum = [
           },
           {
             href: "/frontend/html/module-4",
-            module: "Module 4 • Media & Embedded Content",
+            module: "Module 4 • Semantic Layout",
             description:
-              "Add images, audio, video, and external content to webpages while maintaining accessibility and performance.",
+              "Build meaningful page layouts using semantic elements that improve structure, SEO, and accessibility.",
           },
           {
             href: "/frontend/html/module-5",
-            module: "Module 5 • Semantic Layout",
+            module: "Module 5 • Media & Embedded Content",
             description:
-              "Build meaningful page layouts using semantic elements that improve structure, SEO, and accessibility.",
+              "Add images, audio, video, and external content to webpages while maintaining accessibility and performance.",
           },
           {
             href: "/frontend/html/module-6",
@@ -77,21 +78,21 @@ export const curriculum = [
           },
           {
             href: "/frontend/css/module-4",
-            module: "Module 4 • Flexbox",
+            module: "Module 4 • Positioning & Layering",
+            description:
+              "Control element positioning using relative, absolute, fixed, and stacking context concepts.",
+          },
+          {
+            href: "/frontend/css/module-5",
+            module: "Module 5 • Flexbox",
             description:
               "Build flexible one‑dimensional layouts using alignment, distribution, and responsive flex properties.",
           },
           {
-            href: "/frontend/css/module-5",
-            module: "Module 5 • Grid",
+            href: "/frontend/css/module-6",
+            module: "Module 6 • Grid",
             description:
               "Create complex two‑dimensional layouts using CSS Grid for precise placement and responsive design.",
-          },
-          {
-            href: "/frontend/css/module-6",
-            module: "Module 6 • Positioning & Layering",
-            description:
-              "Control element positioning using relative, absolute, fixed, and stacking context concepts.",
           },
           {
             href: "/frontend/css/module-7",
@@ -112,11 +113,6 @@ export const curriculum = [
           },
         ],
       },
-    ],
-  },
-  {
-    section: "Backend",
-    categories: [
       // JS
       {
         icon: "/assets/images/icons/javascript.svg",
@@ -149,39 +145,40 @@ export const curriculum = [
           },
           {
             href: "/frontend/js/module-5",
-            module: "Module 5 • DOM Manipulation",
+            module: "Module 5 • Modern JS & Modules",
+            description:
+              "Organize applications using ES modules, imports, exports, and modern JavaScript syntax.",
+          },
+          {
+            href: "/frontend/js/module-6",
+            module: "Module 6 • DOM Manipulation",
             description:
               "Interact with webpage elements by selecting, creating, and updating the DOM dynamically.",
           },
           {
-            href: "/frontend/js/module-6",
-            module: "Module 6 • Events",
+            href: "/frontend/js/module-7",
+            module: "Module 7 • Events",
             description:
               "Handle user interactions using event listeners and event‑driven programming concepts.",
           },
           {
-            href: "/frontend/js/module-7",
-            module: "Module 7 • Browser Environment & Event Loop",
+            href: "/frontend/js/module-8",
+            module: "Module 8 • Browser Environment & Event Loop",
             description: "...",
           },
           {
-            href: "/frontend/js/module-8",
-            module: "Module 8 • Asynchronous JS",
+            href: "/frontend/js/module-9",
+            module: "Module 9 • Asynchronous JS",
             description:
               "Manage asynchronous behavior using callbacks, promises, and async/await.",
           },
           {
-            href: "/frontend/js/module-9",
-            module: "Module 9 • APIs & Fetch",
+            href: "/frontend/js/module-10",
+            module: "Module 10 • APIs & Fetch",
             description:
               "Retrieve and send data using HTTP requests and the Fetch API.",
           },
-          {
-            href: "/frontend/js/module-10",
-            module: "Module 10 • Modern JS & Modules",
-            description:
-              "Organize applications using ES modules, imports, exports, and modern JavaScript syntax.",
-          },
+          
           {
             href: "/frontend/js/module-11",
             module: "Module 11 • State & Architecture",
@@ -191,6 +188,26 @@ export const curriculum = [
             href: "/frontend/js/module-12",
             module: "Module 12 • SPA & Application Architecture",
             description: "...",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    icon: "/assets/images/icons/backend.svg",
+    section: "Backend",
+    categories: [
+      // Node JS
+      {
+        icon: "/assets/images/icons/nodejs.svg",
+        category: "Node JS",
+        modulesNumber: 10,
+        modules: [
+          {
+            href: "/frontend/js/module-1",
+            module: "Module 1 • ...",
+            description:
+              "...",
           },
         ],
       },
