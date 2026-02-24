@@ -46,6 +46,7 @@ ul.innerHTML = /* html */ `
     <li><a href="/resources">Resources</a></li>
   </div>
 
+  
   ${curriculum.map((section) => /* html */ `
     <span class="section">${section.section}</span>
     ${section.categories.map((category) => /* html */ `
@@ -59,18 +60,20 @@ ul.innerHTML = /* html */ `
           </div>
 
         <ul class="modules">
-          ${category.modules.map((module) => /* html */ `
+          ${category.modules
+            .map(
+              (module) => /* html */ `
             <li class="module"><a href="${module.href}"></a>${module.module}
           </li>
           `,
-            ).join("")}
+            )
+            .join("")}
         </ul>
       </details>
     </li>
     `,
-    ).join("")}
-  `,
-    ).join("")}`;
+    ).join("")}`,
+  ).join("")}`;
 
 // ul.innerHTML = curriculum.map((link) => /* html */ `
 //     ${link.page ? /* html */ `<li><a href="${link.href}">${link.page}</a></li>` : "" }
