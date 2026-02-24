@@ -3,7 +3,7 @@ const style = /* css */ `
   :host {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 12px;    align-items: start;
+    gap: 5px;    align-items: start;
   }
 
   @media (width < 600px) {

@@ -128,6 +128,10 @@ export const curriculum = [
         modulesNumber: 10,
         modules: [
           {
+            href: "/frontend/js/resources",
+            module: "Resources",
+          },
+          {
             href: "/frontend/js/module-1",
             module: "Module 1 • Language Basics",
             description:
