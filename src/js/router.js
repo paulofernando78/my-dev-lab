@@ -19,6 +19,10 @@ const routes = {
     tag: "wc-home",
     load: () => import("../pages/Home.js"),
   },
+  "/resources": {
+    tag: "wc-resources",
+    load: () => import("../pages/Resources.js"),
+  },
 
   //! Frontend
 
@@ -64,6 +68,11 @@ const routes = {
     tag: "wc-html-module-six",
     load: () => import("../pages/frontend/html/ModuleSix.js"),
   },
+  // Module 7
+  "/frontend/html/module-7": {
+    tag: "wc-html-module-seven",
+    load: () => import("../pages/frontend/html/ModuleSeven.js"),
+  },
 
   // CSS
   // Resources
@@ -74,6 +83,38 @@ const routes = {
   "/frontend/css/module-1": {
     tag: "wc-css-module-one",
     load: () => import("../pages/frontend/css/ModuleOne.js"),
+  },
+  "/frontend/css/module-2": {
+    tag: "wc-css-module-two",
+    load: () => import("../pages/frontend/css/ModuleTwo.js"),
+  },
+  "/frontend/css/module-3": {
+    tag: "wc-css-module-three",
+    load: () => import("../pages/frontend/css/ModuleThree.js"),
+  },
+  "/frontend/css/module-4": {
+    tag: "wc-css-module-four",
+    load: () => import("../pages/frontend/css/ModuleFour.js"),
+  },
+  "/frontend/css/module-5": {
+    tag: "wc-css-module-five",
+    load: () => import("../pages/frontend/css/ModuleFive.js"),
+  },
+  "/frontend/css/module-6": {
+    tag: "wc-css-module-six",
+    load: () => import("../pages/frontend/css/ModuleSix.js"),
+  },
+  "/frontend/css/module-7": {
+    tag: "wc-css-module-seven",
+    load: () => import("../pages/frontend/css/ModuleSeven.js"),
+  },
+  "/frontend/css/module-8": {
+    tag: "wc-css-module-eight",
+    load: () => import("../pages/frontend/css/ModuleEight.js"),
+  },
+  "/frontend/css/module-9": {
+    tag: "wc-css-module-nine",
+    load: () => import("../pages/frontend/css/ModuleNine.js"),
   },
 
   // JS
@@ -91,7 +132,7 @@ const routes = {
   // Node JS
   "/backend/node-js/module-1": {
     tag: "wc-node-js-module-one",
-    load: () => import("../pages/backend/node-js/ModuleOne.js")
+    load: () => import("../pages/backend/node-js/ModuleOne.js"),
   },
 
   //! Tools
@@ -231,7 +272,7 @@ document.addEventListener(
     const link = e.target.closest("[data-link]");
     if (link) prefetch(link.getAttribute("href"));
   },
-  true // capture
+  true, // capture
 );
 
 // Keyboard/mobile accessibility prefetch: triggers on focus

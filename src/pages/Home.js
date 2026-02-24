@@ -1,7 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/atoms/Card.js";
-import {curriculum } from "../data/curriculum"
+import { curriculum } from "../data/curriculum";
 
 const style = /* css */ `
   .home__category-icons {
@@ -18,17 +18,12 @@ const style = /* css */ `
     margin-top: 3px
   }
 
-  .home__category-icons-overview {
-    width: 25px;
-    height: auto
-  }
-
   .home__card-header {
     border: 1px solid var(--slate-4);
     border-bottom: 0;
     border-radius: 5px 5px 0 0 ;
     background-color: var(--slate-6);
-    padding: 10px;
+    padding: 11px 9px;
   }
 
   .home__card {
@@ -37,20 +32,27 @@ const style = /* css */ `
     padding: 10px;
   }
 
-  .home__category-label {
-    margin-top: 2px
+  .home__card-icon-category--wrapper {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  
+  .home__card-icon-category {
+    width: 25px;
+  }
+  
+  .home__card-module-border {
+    border-left: 3px solid var(--slate-4);
+    padding-left: 5px
   }
 
-  .home__description {
-    // font-size: 1rem;
-  }
-
-  .home__hr {
+  .home__category-separator {
     margin-block: 3px;
-    border-color: var(--slate-1);
+    border-color: var(--slate-4);
   }
 
-  .home__card hr:last-of-type {
+  .home__category-separator:last-of-type {
     display: none
   }
 `;
@@ -74,35 +76,54 @@ class Home extends HTMLElement {
       </style>
       <section class="line-break" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
-          <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. This project is organized into the following categories:</p>
-          <h2>Overview</h2>
+          <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
+          <h2>Learning Path</h2>
 
           <div class="line-break">
           
-            ${curriculum.map((section) => /* html */ `
+            ${curriculum
+              .map(
+                (section) => /* html */ `
               <div>
                 <h3 class="home__card-header">${section.section}</h3>
                 <div class="home__card line-break">
-                  ${section.categories.map(category => /* html */`
-    
-                  <div class="flex-align-center home__category">
-                    <img src="${category.icon}" class="home__category-icons-overview"/>
-                    <h4 class="home__category-label" >${category.category} • ${category.modulesNumber} Modules</h4>
+                  ${section.categories
+                    .map((category) => {
+                      const moduleCount = category.modules.filter((m) =>
+                        m.module?.startsWith("Module"),
+                      ).length;
+
+                      return /* html */ `
+                  <div class="home__card-icon-category--wrapper">
+                    <img src="${category.icon}" class="home__card-icon-category"/>
+                    <h4>${category.category} • ${moduleCount} Modules</h4>
                   </div>
     
                   <ul class="line-break">
-                    ${category.modules.map((module) => /* html */ `
-                      <li class="home__modules">
+                    ${category.modules
+                      .map(
+                        (module) => /* html */ `
+                      <li class="home__card-module-border">
                         <h4>${module.module}</h4>
-                        <p class="home__description">${module.description}</p>
+                        ${
+                          module.description
+                            ? /* html */ `<p>${module.description}</p>`
+                            : ""
+                        }
                       </li>
-                    `,).join("")}
+                    `,
+                      )
+                      .join("")}
                   </ul>
-                  <hr />
-                  `).join("")}
+                  <hr class="home__category-separator"/>
+                  `;
+                    })
+                    .join("")}
                 </div>
               </div>
-              `,).join("")}
+              `,
+              )
+              .join("")}
           </div>
       </section>
     `;

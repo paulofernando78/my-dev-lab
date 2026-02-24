@@ -10,6 +10,10 @@ export const curriculum = [
         modulesNumber: 6,
         modules: [
           {
+            href: "/frontend/html/resources",
+            module: "Resources",
+          },
+          {
             href: "/frontend/html/module-1",
             module: "Module 1 • Document Foundations",
             description:
@@ -58,6 +62,10 @@ export const curriculum = [
         category: "CSS",
         modulesNumber: 8,
         modules: [
+          {
+            href: "/frontend/css/resources",
+            module: "Resources",
+          },
           {
             href: "/frontend/css/module-1",
             module: "Module 1 • Core Fundamentals",

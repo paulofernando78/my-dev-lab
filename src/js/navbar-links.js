@@ -29,7 +29,7 @@ ul.innerHTML = /* html */ `
               ${category.modules
                 .map(
                   (module) => /* html */ `
-                <li class="navbar__module"><a href="${module.href}"></a>${module.module}
+                <li class="navbar__module"><a href="${module.href}">${module.module}</a>
               </li>
               `,
                 )

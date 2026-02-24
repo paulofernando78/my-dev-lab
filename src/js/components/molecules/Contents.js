@@ -46,7 +46,7 @@ class Contents extends HTMLElement {
         ${style}
       </style>
 
-      <div class="flex-align-center">
+      <div class="flex">
         ${contentsIcon()}
         <span class="contents-navbar-title">Table of Contents</span>
       </div>
@@ -55,7 +55,7 @@ class Contents extends HTMLElement {
         <ul>
           ${contents.map((section) => /* html */ `
               <li>
-                <div class="flex-align-center">
+                <div class="flex">
                   ${sectionIcon()}
                   <a data-target="${section.id}">${section.sectionLabel}</a>
                 </div> 
