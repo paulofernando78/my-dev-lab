@@ -8,15 +8,10 @@ const style = /* css */ `
     color: #fff;
   }
   
-  .icon {
-    padding: 5px 5px 5px 8px
-  }
-
-  .content {
-    display: grid;
-    gap: 1rem;
-    padding: 5px;
-    color:
+  .container {
+    padding: 10px;
+    display: flex;
+    gap: 10px
   }
 `;
 
@@ -36,9 +31,9 @@ class Notes extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <div class="flex-align-center icon">
+      <div class="container">
         ${attention()}
-        <div class="content">
+        <div class="line-break">
           <slot></slot>
         </div>
       </div>

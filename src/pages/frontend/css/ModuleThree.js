@@ -18,7 +18,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleTwo extends HTMLElement {
+class ModuleThree extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -74,7 +74,7 @@ class ModuleTwo extends HTMLElement {
       </style>
       <wc-page-header
         category="CSS"
-        page="Module 2"
+        page="Module 3"
         unit="Box Model & Spacing"
         aria-label="..."
       ></wc-page-header>
@@ -90,5 +90,5 @@ class ModuleTwo extends HTMLElement {
   }
 }
 
-customElements.define("wc-css-module-two", ModuleTwo);
-export default ModuleTwo;
+customElements.define("wc-css-module-three", ModuleThree);
+export default ModuleThree;

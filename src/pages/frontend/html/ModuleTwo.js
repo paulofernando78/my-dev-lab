@@ -7,6 +7,7 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/atoms/Notes.js";
+import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -32,6 +33,7 @@ class ModuleTwo extends HTMLElement {
         sectionAriaLabel: "Text and Content Structure",
         examples: [
           {
+            type: "code",
             cardLabel: "Headings",
             language: "html",
             code: `
@@ -40,11 +42,11 @@ class ModuleTwo extends HTMLElement {
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
         `,
-            preview: () => `
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
+            preview: () => /* html */`
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
         `,
           },
           {
@@ -53,8 +55,8 @@ class ModuleTwo extends HTMLElement {
             code: `
 <p>This is a paragraph.</p>
         `,
-            preview: () => `
-<p>This is a paragraph.</p>
+            preview: () => /* html */`
+              <p>This is a paragraph.</p>
         `,
           },
           {
@@ -63,11 +65,11 @@ class ModuleTwo extends HTMLElement {
             code: `
 <textarea>Lorem ipsum...</textarea>
         `,
-            preview: () => `
-<textarea>Lorem ipsum...</textarea>
+            preview: () => /* html */`
+              <textarea>Lorem ipsum...</textarea>
         `,
-            notes: `
-<wc-text-block>
+            notes: /* html */`
+              <wc-text-block>
                 <p>The <code>&lt;textarea&gt;</code> element is used for multi-line text input, such as comments, messages, or longer descriptions.</p>
 
                 <p>Unlike <code>&lt;input&gt;</code> elements, a textarea does not use a <code>value</code> attribute. The initial text is written between the opening and closing tags.</p>
@@ -106,9 +108,12 @@ class ModuleTwo extends HTMLElement {
       <div class="line-break">
         ${renderSections(sections)}
       </div>
+
+      <wc-lesson-nav></wc-lesson-nav>
     `;
 
     setupContents(this.shadowRoot, sections);
+
   }
 }
 

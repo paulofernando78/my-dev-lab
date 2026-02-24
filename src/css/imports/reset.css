@@ -40,6 +40,10 @@ select {
   font: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* :focus {
   outline: 2px solid #000;
   outline-offset: 2px;

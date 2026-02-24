@@ -17,3 +17,8 @@
   align-items: center;
   gap: 5px;
 }
+
+hr {
+  border-color: var(--slate-5);
+  margin: 15px
+}
