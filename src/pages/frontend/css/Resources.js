@@ -8,6 +8,7 @@ import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/atoms/Notes.js";
+import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -98,6 +99,8 @@ class Resources extends HTMLElement {
       <div class="line-break">
         ${renderSections(sections)}
       </div>
+
+      <wc-lesson-nav></wc-lesson-nav>
     `;
 
     setupContents(this.shadowRoot, sections);

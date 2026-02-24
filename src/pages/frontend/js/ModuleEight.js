@@ -7,6 +7,7 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/atoms/Notes.js";
+import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -18,7 +19,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleOne extends HTMLElement {
+class ModuleEight extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -70,7 +71,7 @@ console.log(...)
 
       <wc-page-header
         category="Javascript"
-        page="Module 1"
+        page="Module 8"
         unit="Core Language"
         aria-label="..."
       ></wc-page-header>
@@ -80,11 +81,13 @@ console.log(...)
       <div class="line-break">
         ${renderSections(sections)}
       </div>
+
+      <wc-lesson-nav></wc-lesson-nav>
     `;
 
     setupContents(this.shadowRoot, sections);
   }
 }
 
-customElements.define("wc-js-module-one", ModuleOne);
-export default ModuleOne;
+customElements.define("wc-js-module-eight", ModuleEight);
+export default ModuleEight;

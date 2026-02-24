@@ -7,6 +7,7 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/atoms/Notes.js";
+import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -18,7 +19,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleTwo extends HTMLElement {
+class ModuleSeven extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -84,11 +85,13 @@ class ModuleTwo extends HTMLElement {
       <div class="line-break">
         ${renderSections(sections)}
       </div>
+
+      <wc-lesson-nav></wc-lesson-nav>
     `;
 
     setupContents(this.shadowRoot, sections);
   }
 }
 
-customElements.define("wc-css-module-two", ModuleTwo);
-export default ModuleTwo;
+customElements.define("wc-css-module-seven", ModuleSeven);
+export default ModuleSeven;

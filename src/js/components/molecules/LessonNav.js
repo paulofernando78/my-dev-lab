@@ -1,4 +1,5 @@
 import styleImports from "@css/styles.css?inline";
+import { curriculum } from "@/data/curriculum.js";
 
 const style = /* css */ `
   nav {
@@ -53,12 +54,24 @@ class LessonNav extends HTMLElement {
   }
 
   connectedCallback() {
-    const path = window.location.pathname
+    const path = window.location.pathname;
     this.render(path);
-    console.log(path)
+    console.log(path);
   }
 
-  render() {
+  render(path) {
+    //! Build orders list of all modules
+    const modules = curriculum
+      .flatMap((section) => section.categories ?? [])
+      .flatMap((category) => category.modules ?? [])
+      .filter((m) => m.href);
+
+    //! Find current module index
+    const index = modules.findIndex((m) => m.href === path);
+
+    const prev = modules[index - 1];
+    const next = modules[index + 1];
+
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
@@ -66,24 +79,32 @@ class LessonNav extends HTMLElement {
       </style>
       <hr />
       <nav>
-        <a href="" class="previous">
-          <img src="/assets/images/icons/arrow-back.svg"/>
+        ${prev
+          ? /* html */ `
+          <a href="${prev.href}" class="previous">
+          <img src="/assets/images/icons/arrow-back.svg" />
           <div>
             <span>Previous</span>
-            <span>...</span>
+            <span>${prev.module}</span>
           </div>
         </a>
-        <a href="" class="next">
+        `
+          : /* html */ `<span></span>`}
+        ${next
+          ? /* html */ `
+          <a href="${next.href}" class="next">
           <div>
             <span>Next</span>
-            <span>...</span>
+            <span>${next.module}</span>
           </div>
-          <img src="/assets/images/icons/arrow-forward.svg"/>
+          <img src="/assets/images/icons/arrow-forward.svg" />
         </a>
+        `
+          : /* html */ `<span></span>`}
       </nav>
-      `;
-    }
+    `;
   }
+}
 
 customElements.define("wc-lesson-nav", LessonNav);
 export default LessonNav;

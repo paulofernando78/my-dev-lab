@@ -127,6 +127,50 @@ const routes = {
     tag: "wc-js-module-one",
     load: () => import("../pages/frontend/js/ModuleOne.js"),
   },
+  "/frontend/js/module-2": {
+    tag: "wc-js-module-two",
+    load: () => import("../pages/frontend/js/ModuleTwo.js"),
+  },
+  "/frontend/js/module-3": {
+    tag: "wc-js-module-three",
+    load: () => import("../pages/frontend/js/ModuleThree.js"),
+  },
+  "/frontend/js/module-4": {
+    tag: "wc-js-module-four",
+    load: () => import("../pages/frontend/js/ModuleFour.js"),
+  },
+  "/frontend/js/module-5": {
+    tag: "wc-js-module-five",
+    load: () => import("../pages/frontend/js/ModuleFive.js"),
+  },
+  "/frontend/js/module-6": {
+    tag: "wc-js-module-six",
+    load: () => import("../pages/frontend/js/ModuleSix.js"),
+  },
+  "/frontend/js/module-7": {
+    tag: "wc-js-module-seven",
+    load: () => import("../pages/frontend/js/ModuleSeven.js"),
+  },
+  "/frontend/js/module-8": {
+    tag: "wc-js-module-eight",
+    load: () => import("../pages/frontend/js/ModuleEight.js"),
+  },
+  "/frontend/js/module-9": {
+    tag: "wc-js-module-nine",
+    load: () => import("../pages/frontend/js/ModuleNine.js"),
+  },
+  "/frontend/js/module-10": {
+    tag: "wc-js-module-ten",
+    load: () => import("../pages/frontend/js/ModuleTen.js"),
+  },
+  "/frontend/js/module-11": {
+    tag: "wc-js-module-eleven",
+    load: () => import("../pages/frontend/js/ModuleEleven.js"),
+  },
+  "/frontend/js/module-12": {
+    tag: "wc-js-module-twelve",
+    load: () => import("../pages/frontend/js/ModuleTwelve.js"),
+  },
 
   //! Backend
   // Node JS

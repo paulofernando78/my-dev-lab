@@ -19,7 +19,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleSix extends HTMLElement {
+class ModuleTwelve extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -71,8 +71,8 @@ console.log(...)
 
       <wc-page-header
         category="Javascript"
-        page="Module 6"
-        unit="DOM Manipulation"
+        page="Module 12"
+        unit="SPA & Application Architecture"
         aria-label="..."
       ></wc-page-header>
 
@@ -89,5 +89,5 @@ console.log(...)
   }
 }
 
-customElements.define("wc-js-module-six", ModuleSix);
-export default ModuleSix;
+customElements.define("wc-js-module-twelve", ModuleTwelve);
+export default ModuleTwelve;
