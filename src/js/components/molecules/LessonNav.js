@@ -5,10 +5,9 @@ import { categoryStyles } from "@/data/categoryStyles.js";
 
 const style = /* css */ `
   nav {
-    
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
   }
 
   nav a {
@@ -25,16 +24,15 @@ const style = /* css */ `
 
   .previous, .next {
     display: flex;
-    gap: 10px;
+    gap: 5px;
   }
   
-  .next > div {
-    text-align: right 
+  .next {
+  justify-self: end
   }
 
-  .previous,
-  .next {
-    margin-inline: 10px
+  .next > div {
+    text-align: right
   }
   
   .previous span,
@@ -42,16 +40,26 @@ const style = /* css */ `
     display: block;
   }
 
-  .previous span:first-child,
-  .next span:first-child {
+  .previous span:first-child {
     font-size: 0.9rem;
     color: var(--slate-4);
+    margin-bottom: 8px
+  }
+
+  .next span:first-child {
+    font-weight: bold;
     margin-bottom: 8px
   }
 
   .previous span:last-child,
   .next span:last-child {
     font-weight: bold;
+  }
+
+  .icon-alighment {
+    display: flex;
+    align-items: start;
+    gap: 10px;
   }
 
   img {
@@ -128,7 +136,7 @@ class LessonNav extends HTMLElement {
           <img src="/assets/images/icons/arrow-back.svg" />
           <div>
             <span>Previous</span>
-              <div class="flex-align-center">
+              <div class="icon-alighment">
                 ${prevConfig?.icon ? /* html */`<img src="${prevConfig.icon}"/>` : ""}
                 <span>${formatLabel(prev)}</span>
               </div>
@@ -141,9 +149,9 @@ class LessonNav extends HTMLElement {
           <a href="${next.href}" class="next">
           <div>
             <span>Next</span>
-              <div class="flex-align-center">
-                ${prevConfig?.icon ? /* html */`<img src="${prevConfig.icon}"/>` : ""}
-                <span>${formatLabel(next)}</span>
+              <div class="icon-alighment">
+              <span>${formatLabel(next)}</span>
+                ${nextConfig?.icon ? /* html */`<img src="${nextConfig.icon}"/>` : ""}
               </div>
           </div>
           <img src="/assets/images/icons/arrow-forward.svg" />
