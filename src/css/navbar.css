@@ -39,7 +39,7 @@
 }
 
 .navbar li:not(:last-child) {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
 }
 
 .navbar a {
@@ -84,7 +84,8 @@
 .navbar__modules {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
+  margin-block: 10px
 }
 
 .navbar__module {
