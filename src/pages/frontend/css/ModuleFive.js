@@ -73,12 +73,8 @@ class ModuleFive extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <wc-page-header
-        category="CSS"
-        page="Module 5"
-        unit="Flexbox"
-        aria-label="..."
-      ></wc-page-header>
+      
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

@@ -1,5 +1,5 @@
 import "../css/navbar.css";
-import { curriculum } from "../data/curriculum";
+import { curriculum } from "@/data/curriculum";
 
 const ul = document.querySelector("#navbar-links");
 

@@ -68,11 +68,8 @@ class Resources extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <wc-page-header
-        category="HTML"
-        page="Resources"
-        aria-label="HTML Resources"
-      ></wc-page-header>
+      
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

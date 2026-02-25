@@ -102,12 +102,7 @@ class ModuleFour extends HTMLElement {
         ${style}
       </style>
 
-      <wc-page-header
-        category="HTML"
-        page="Module 4"
-        unit="Media & Embedded Content"
-        aria-label="..."
-      ></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

@@ -73,12 +73,8 @@ class ModuleThree extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <wc-page-header
-        category="CSS"
-        page="Module 3"
-        unit="Box Model & Spacing"
-        aria-label="..."
-      ></wc-page-header>
+      
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

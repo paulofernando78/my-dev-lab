@@ -73,12 +73,8 @@ class ModuleFour extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <wc-page-header
-        category="CSS"
-        page="Module 4"
-        unit="Positioning & Layering"
-        aria-label="..."
-      ></wc-page-header>
+      
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

@@ -71,7 +71,7 @@ class ModuleOne extends HTMLElement {
             `,
           },
         ],
-      }
+      },
     ];
 
     /* HTML */
@@ -81,7 +81,8 @@ class ModuleOne extends HTMLElement {
       ${style}
     </style>
     
-    <wc-page-header category="HTML" page="Module 1" unit="Document Foundations"aria-label="HTML Module 1 Document Foundations"/></wc-page-header>
+    <wc-page-header></wc-page-header>
+    
     <wc-contents></wc-contents>
 
     <div class="line-break">

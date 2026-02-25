@@ -73,12 +73,8 @@ class ModuleOne extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <wc-page-header
-        category="CSS"
-        page="Module 1"
-        unit="Core Fundamentals"
-        aria-label="..."
-      ></wc-page-header>
+      
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

@@ -1,5 +1,7 @@
 import styleImports from "@css/styles.css?inline";
+
 import { curriculum } from "@/data/curriculum.js";
+import { categoryStyles } from "@/data/categoryStyles.js";
 
 const style = /* css */ `
   nav {
@@ -43,12 +45,17 @@ const style = /* css */ `
   .previous span:first-child,
   .next span:first-child {
     font-size: 0.9rem;
-    color: var(--slate-4)
+    color: var(--slate-4);
+    margin-bottom: 8px
   }
 
   .previous span:last-child,
   .next span:last-child {
     font-weight: bold;
+  }
+
+  img {
+    width: 20px
   }
 `;
 
@@ -64,32 +71,49 @@ class LessonNav extends HTMLElement {
   }
 
   render(path) {
-    // Build orders list of all modules
+    // Build ordered list of all modules, each with its category
     const modules = curriculum
       .flatMap((section) => section.categories ?? [])
-      .flatMap((category) => category.modules ?? [])
+      .flatMap((category) =>
+        (category.modules ?? []).map((m) => ({
+          ...m,
+          category: category.category,
+        })),
+      )
       .filter((m) => m.href);
 
-    // Create lessons-only list (ignore Resources)
-    const lessons = modules.filter((m) => m.module !== "Resources");
-    // -> [Module1, Module2, Module3...]
+    // Find current module
+    const current = modules.find((m) => m.href === path);
+    if (!current) return;
 
-    // Create function to get number
-    const getModuleNumber = (mod) =>
-      lessons.findIndex((l) => l.href === mod.href) + 1;
+    // Helper: lessons within a given category (ignore Resources)
+    const lessonsByCategory = (category) =>
+      modules.filter(
+        (m) => m.category === category && m.module !== "Resources",
+      );
+
+    // Create function to get number per its OWN category
+    const moduleNumber = (mod) =>
+      lessonsByCategory(mod.category).findIndex(
+        (l) => l.href === mod.href,
+      ) + 1;
+
+    // Find current module index (global order for prev/next)
+    const index = modules.findIndex((m) => m.href === current.href);
+
+    const prev = modules[index - 1];
+    const next = modules[index + 1];
 
     const formatLabel = (mod) =>
       mod.module === "Resources"
         ? mod.module
-        : `Module ${getModuleNumber(mod)} • ${mod.module}`
+        : `Module ${moduleNumber(mod)} • ${mod.module}`;
 
-    // Find current module index
-    const index = modules.findIndex((m) => m.href === path);
+    const getCategoryConfig = (mod) =>
+      categoryStyles[mod.category] ?? {}
 
-    if (index === -1) return;
-
-    const prev = modules[index - 1];
-    const next = modules[index + 1];
+    const prevConfig = prev ? getCategoryConfig(prev) : null
+    const nextConfig = next ? getCategoryConfig(next) : null
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
@@ -104,8 +128,10 @@ class LessonNav extends HTMLElement {
           <img src="/assets/images/icons/arrow-back.svg" />
           <div>
             <span>Previous</span>
-            <span>${formatLabel(prev)}</span>
-
+              <div class="flex-align-center">
+                ${prevConfig?.icon ? /* html */`<img src="${prevConfig.icon}"/>` : ""}
+                <span>${formatLabel(prev)}</span>
+              </div>
           </div>
         </a>
         `
@@ -115,7 +141,10 @@ class LessonNav extends HTMLElement {
           <a href="${next.href}" class="next">
           <div>
             <span>Next</span>
-            <span>${formatLabel(next)}</span>
+              <div class="flex-align-center">
+                ${prevConfig?.icon ? /* html */`<img src="${prevConfig.icon}"/>` : ""}
+                <span>${formatLabel(next)}</span>
+              </div>
           </div>
           <img src="/assets/images/icons/arrow-forward.svg" />
         </a>

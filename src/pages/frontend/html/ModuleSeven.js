@@ -71,12 +71,7 @@ class ModuleSeven extends HTMLElement {
         ${style}
       </style>
 
-      <wc-page-header
-        category="HTML"
-        page="Module 7"
-        unit="Accessibility & SEO"
-        aria-label="..."
-      ></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

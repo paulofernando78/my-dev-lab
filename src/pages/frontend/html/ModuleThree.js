@@ -43,7 +43,7 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ol>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <ol>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -59,7 +59,7 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ol>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <ol>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -75,7 +75,7 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ul>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -98,7 +98,7 @@ class ModuleThree extends HTMLElement {
   <li>Item 2</li>
 </ul>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -118,7 +118,7 @@ class ModuleThree extends HTMLElement {
             code: `
 <a href="https://example.com">Visit example</a>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <a href="https://example.com">Visit example</a>
         `,
           },
@@ -130,7 +130,7 @@ class ModuleThree extends HTMLElement {
   Open example
 </a>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <a href="https://example.com" target="_blank" rel="noopener noreferrer">
                 Open example
               </a>
@@ -146,18 +146,11 @@ class ModuleThree extends HTMLElement {
         ${style}
       </style>
 
-      <wc-page-header
-        category="HTML"
-        page="Module 3"
-        unit="Lists, Links & Navigation"
-        aria-label="HTML Module 3 Lists Links Navigation"
-      ></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;
