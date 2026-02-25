@@ -3,7 +3,7 @@ import { curriculum } from "@/data/curriculum.js";
 
 const style = /* css */ `
   nav {
-    margin-inline: 10px;
+    
     padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
@@ -28,6 +28,11 @@ const style = /* css */ `
   
   .next > div {
     text-align: right 
+  }
+
+  .previous,
+  .next {
+    margin-inline: 10px
   }
   
   .previous span,
@@ -56,18 +61,32 @@ class LessonNav extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
     this.render(path);
-    console.log(path);
   }
 
   render(path) {
-    //! Build orders list of all modules
+    // Build orders list of all modules
     const modules = curriculum
       .flatMap((section) => section.categories ?? [])
       .flatMap((category) => category.modules ?? [])
       .filter((m) => m.href);
 
-    //! Find current module index
+    // Create lessons-only list (ignore Resources)
+    const lessons = modules.filter((m) => m.module !== "Resources");
+    // -> [Module1, Module2, Module3...]
+
+    // Create function to get number
+    const getModuleNumber = (mod) =>
+      lessons.findIndex((l) => l.href === mod.href) + 1;
+
+    const formatLabel = (mod) =>
+      mod.module === "Resources"
+        ? mod.module
+        : `Module ${getModuleNumber(mod)} • ${mod.module}`
+
+    // Find current module index
     const index = modules.findIndex((m) => m.href === path);
+
+    if (index === -1) return;
 
     const prev = modules[index - 1];
     const next = modules[index + 1];
@@ -85,7 +104,8 @@ class LessonNav extends HTMLElement {
           <img src="/assets/images/icons/arrow-back.svg" />
           <div>
             <span>Previous</span>
-            <span>${prev.module}</span>
+            <span>${formatLabel(prev)}</span>
+
           </div>
         </a>
         `
@@ -95,7 +115,7 @@ class LessonNav extends HTMLElement {
           <a href="${next.href}" class="next">
           <div>
             <span>Next</span>
-            <span>${next.module}</span>
+            <span>${formatLabel(next)}</span>
           </div>
           <img src="/assets/images/icons/arrow-forward.svg" />
         </a>

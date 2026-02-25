@@ -10,13 +10,17 @@ ul.innerHTML = /* html */ `
       <li><a href="/resources">Resources</a></li>
     </div>
     <div>
-      ${curriculum.map((section) => /* html */ `
+      ${curriculum
+        .map(
+          (section) => /* html */ `
         <div class="line-break-item">
           <div class="flex-align-center">
             <img src="${section.icon}"/>
             <span class="navbar__section">${section.section}</span>
           </div>
-          ${section.categories.map((category) => /* html */ `
+          ${section.categories
+            .map(
+              (category) => /* html */ `
           <li>
             <details>
               <summary>
@@ -27,22 +31,38 @@ ul.innerHTML = /* html */ `
               </summary>
       
               <ul class="navbar__modules">
-                ${category.modules
-                  .map(
-                    (module) => /* html */ `
-                  <li class="navbar__module"><a href="${module.href}">${module.module}</a>
-                </li>
-                `,
-                  )
-                  .join("")}
+                ${category.modules.map((module, index) => {
+                  const number = index
+
+                    return /* html */ `
+                    ${number == 0
+                      ? /* html */ `
+                        <li class="navbar__module">
+                        <a href="${module.href}"> ${module.module}
+                        </a>
+                      </li>
+                      `
+                      : /* html */ `
+                        <li class="navbar__module">
+                          <a href="${module.href}"> Module ${number} • ${module.module}
+                        </a>
+                      </li>`
+                    }
+                  
+                `;
+                  }).join("")}
               </ul>
             </details>
           </li>
-          `,).join("")}
+          `,
+            )
+            .join("")}
         </div>
         
 
-      `,).join("")}
+      `,
+        )
+        .join("")}
     </div>
   </div>
     `;

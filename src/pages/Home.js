@@ -47,6 +47,10 @@ const style = /* css */ `
     padding-left: 5px
   }
 
+  .home__card-module {
+    font-size: 1.1rem
+  }
+
   .home__category-separator {
     margin-block: 3px;
     border-color: var(--slate-4);
@@ -81,39 +85,42 @@ class Home extends HTMLElement {
 
           <div class="line-break">
           
-            ${curriculum
-              .map(
-                (section) => /* html */ `
+            ${curriculum.map((section) => /* html */ `
               <div>
                 <h3 class="home__card-header">${section.section}</h3>
                 <div class="home__card line-break">
-                  ${section.categories
-                    .map((category) => {
+                  ${section.categories.map((category) => {
                       const moduleCount = category.modules.filter((m) =>
-                        m.module?.startsWith("Module"),
-                      ).length;
+                        m.module
+                      ).length -1;
 
                       return /* html */ `
                   <div class="home__card-icon-category--wrapper">
                     <img src="${category.icon}" class="home__card-icon-category"/>
-                    <h4>${category.category} • ${moduleCount} Modules</h4>
+                    <h4 class="home__card-category">${category.category} • ${moduleCount} Modules</h4>
                   </div>
     
                   <ul class="line-break">
-                    ${category.modules
-                      .map(
-                        (module) => /* html */ `
+                    ${category.modules.map((module, index) => {
+                      const number = index;
+
+            
+
+                      return /* html */`
                       <li class="home__card-module-border">
-                        <h4>${module.module}</h4>
-                        ${
-                          module.description
-                            ? /* html */ `<p>${module.description}</p>`
-                            : ""
+                          ${number == 0
+                            ? /* html */`<h5 class="home__card-module">${module.module}</h5>`
+                            :
+                            /* html */`<h5 class="home__card-module">Module ${number} • ${module.module}</h5>`
+                        }
+                        ${module.description
+                          ? /* html */ `
+                          <p>${module.description}</p>`
+                          : ""
                         }
                       </li>
-                    `,
-                      )
-                      .join("")}
+                      `    
+                    }).join("")}
                   </ul>
                   <hr class="home__category-separator"/>
                   `;
