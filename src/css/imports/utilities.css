@@ -9,7 +9,13 @@
 
 .flex {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+}
+
+.flex-align-start {
+  display: flex;
+  align-items: start;
+  gap: 10px;
 }
 
 .flex-align-center {

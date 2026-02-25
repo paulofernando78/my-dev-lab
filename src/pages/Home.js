@@ -4,21 +4,7 @@ import "@/js/components/atoms/Card.js";
 import { curriculum } from "../data/curriculum";
 
 const style = /* css */ `
-  .home__category-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-inline: 20px
-  }
-
-  .home__category-icons img {
-    width: 40px;
-    height: auto;
-    margin-top: 3px
-  }
-
-  .home__card-header {
+    .home__card-header {
     border: 1px solid var(--slate-4);
     border-bottom: 0;
     border-radius: 5px 5px 0 0 ;
@@ -81,7 +67,11 @@ class Home extends HTMLElement {
       <section class="line-break" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
           <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
-          <h2>Learning Path</h2>
+          
+          <div class="flex-align-center">
+            <img src="/assets/images/icons/roadmap.svg"/>
+            <h2>Roadmap</h2>
+          </div>
 
           <div class="line-break">
           

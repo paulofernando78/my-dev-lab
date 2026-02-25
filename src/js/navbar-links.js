@@ -10,22 +10,24 @@ ul.innerHTML = /* html */ `
       <li><a href="/resources">Resources</a></li>
     </div>
     <div>
-      ${curriculum
-        .map(
-          (section) => /* html */ `
+      ${curriculum.map((section) => /* html */ `
         <div class="line-break-item">
           <div class="flex-align-center">
             <img src="${section.icon}"/>
             <span class="navbar__section">${section.section}</span>
           </div>
-          ${section.categories
-            .map(
-              (category) => /* html */ `
+          ${section.categories.map((category) => /* html */ `
           <li>
             <details>
               <summary>
                 <div class="navbar__icon__category-wrapper">
-                  <img src="${category.icon}" class="navbar__icon__size"/>
+                  ${category.icon
+                    ?
+                    /* html */`<img src="${category.icon}" class="navbar__icon__size
+                    ${category.category === "Three JS" ? "invert" : ""}" />`
+                    :
+                    ""
+                  }
                   <span class="navbar__category">${category.category}</span>
                 </div>
               </summary>

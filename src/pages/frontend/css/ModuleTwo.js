@@ -50,22 +50,20 @@ class ModuleTwo extends HTMLElement {
             cardLabel: "CSS",
             language: "css",
             code: `
-.box {
-  background-color: blue;
-  width: 100px;
-  height: 100px
-}
+
             `,
-            preview: () => /* html */`
-              <div class="box">
-              </div>
+            preview: () => /* html */ `
+
             `,
-            notes: /* html */`
-              <p>Notes</p>
+            notes: /* html */ `
+              <p><code>fixed</code> and <code>absolute</code> are taken out of the normal document flow:</p>
+              <p>They do not take up space in the layout.</p>
+              <p>Other elements act as if they don’t exist in terms of positioning.</p>
+              <p>You can't use margin/padding to push other content around them like you do with <code>static</code> or <code>relative</code> elements.</p>
             `,
           },
         ],
-      }
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -73,14 +71,12 @@ class ModuleTwo extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      
+
       <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

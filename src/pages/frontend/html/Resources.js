@@ -6,7 +6,6 @@ import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
-import "@/js/components/molecules/Links.js";
 import "@/js/components/atoms/Notes.js";
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";

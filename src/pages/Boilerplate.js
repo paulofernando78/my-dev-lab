@@ -144,30 +144,7 @@ console.log(...)
         ${style}
       </style>
 
-      <wc-page-header
-        category="Random"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
-      <wc-page-header
-        category="HTML"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
-      <wc-page-header
-        category="CSS"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
-      <wc-page-header
-        category="Javascript"
-        page="..."
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 

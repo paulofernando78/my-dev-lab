@@ -11,7 +11,7 @@ export const curriculum = [
           {
             href: "/frontend/html/resources",
             module: "Resources",
-          },
+        },
           {
             href: "/frontend/html/module-1",
             module: "Document Foundations",
@@ -203,18 +203,30 @@ export const curriculum = [
     ],
   },
   {
-    icon: "/assets/images/icons/backend.svg",
-    section: "Backend",
+    icon: "/assets/images/icons/motion-3d.svg",
+    section: "Motion & 3D",
     categories: [
-      // Node JS
+      // GSAP
       {
-        icon: "/assets/images/icons/nodejs.svg",
-        category: "Node JS",
-        modulesNumber: 10,
+        icon: "/assets/images/icons/gsap.gif",
+        category: "GSAP",
         modules: [
           {
             href: "/frontend/js/module-1",
-            module: "Module 1 • ...",
+            module: "...",
+            description:
+              "...",
+          },
+        ],
+      },
+      // Three JS
+      {
+        icon: "/assets/images/icons/threejs.svg",
+        category: "Three JS",
+        modules: [
+          {
+            href: "/frontend/js/module-1",
+            module: "...",
             description:
               "...",
           },
@@ -222,4 +234,24 @@ export const curriculum = [
       },
     ],
   },
+  {
+    icon: "/assets/images/icons/backend.svg",
+    section: "Backend",
+    categories: [
+      // Node JS
+      {
+        icon: "/assets/images/icons/nodejs.svg",
+        category: "Node JS",
+        modules: [
+          {
+            href: "/frontend/js/module-1",
+            module: "...",
+            description:
+              "...",
+          },
+        ],
+      },
+    ],
+  },
+  
 ];
