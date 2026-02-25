@@ -51,7 +51,7 @@ export const curriculum = [
           {
             href: "/frontend/html/module-7",
             module: "Accessibility & SEO",
-            description: "...",
+            description: "Learn how to build accessible webpages using semantic HTML, ARIA roles, and SEO best practices to improve usability, discoverability, and overall user experience.",
           },
         ],
       },
@@ -109,7 +109,7 @@ export const curriculum = [
           {
             href: "/frontend/css/module-8",
             module: "CSS Architecture & Methodologies",
-            description: "",
+            description: "Organize scalable styles using methodologies like BEM and utility patterns, understanding how to structure CSS for maintainability and large applications.",
           },
           {
             href: "/frontend/css/module-9",
@@ -173,7 +173,7 @@ export const curriculum = [
           {
             href: "/frontend/js/module-8",
             module: "Browser Environment & Event Loop",
-            description: "...",
+            description: "Understand how JavaScript runs inside the browser, including the call stack, task queues, and the event loop that powers asynchronous behavior.",
           },
           {
             href: "/frontend/js/module-9",
@@ -191,12 +191,12 @@ export const curriculum = [
           {
             href: "/frontend/js/module-11",
             module: "State & Architecture",
-            description: "...",
+            description: "Learn how to manage application state and organize code structure using modular patterns and architectural principles for scalable interfaces.",
           },
           {
             href: "/frontend/js/module-12",
             module: "SPA & Application Architecture",
-            description: "...",
+            description: "Build a client-side rendered Single Page Application, understanding routing, layout composition, and how application pieces work together as a cohesive system."
           },
         ],
       },

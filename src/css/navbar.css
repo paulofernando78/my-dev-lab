@@ -19,8 +19,10 @@
   position: absolute;
 }
 
-.navbar__section {
-  font-size: 1.5rem;
+.navbar__section,
+.navbar__category
+{
+  font-size: 1.3rem;
 }
 
 .navbar__icon__category-wrapper {
@@ -30,8 +32,7 @@
 }
 
 .navbar__category {
-  font-size: 1.3rem;
-  transform: translateY(1px);
+  transform: translateY(0.5px);
 }
 
 .navbar__icon__size {
