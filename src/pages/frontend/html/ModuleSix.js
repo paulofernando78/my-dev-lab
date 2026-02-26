@@ -4,9 +4,9 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
-import "@/js/components/atoms/Notes.js";
+
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -255,7 +255,7 @@ class ModuleSix extends HTMLElement {
             <p>Because of this limitation, modern web development usually prefers the <strong>&lt;button&gt;</strong> element, which allows text, icons, and other HTML elements inside.</p>
             <p>Today, <code>&lt;input type="button"&gt;</code> is mainly used in legacy code or very simple cases.</p>
           </div>
-`
+`,
           },
           //! submit
           {
@@ -282,9 +282,7 @@ class ModuleSix extends HTMLElement {
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

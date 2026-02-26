@@ -4,9 +4,9 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
-import "@/js/components/atoms/Notes.js";
+
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -34,9 +34,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
+            title: "",
           },
-        ]
+        ],
       },
       {
         sectionId: "youtube-channels",
@@ -45,9 +45,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
-          }
-        ]
+            title: "",
+          },
+        ],
       },
       {
         sectionId: "practice",
@@ -56,9 +56,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
+            title: "",
           },
-        ]
+        ],
       },
     ];
 
@@ -67,14 +67,12 @@ class Resources extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      
+
       <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

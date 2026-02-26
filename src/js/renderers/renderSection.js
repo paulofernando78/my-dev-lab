@@ -3,7 +3,9 @@ export function renderSections(sections) {
     .map(
       (section) => /* html */ `
         <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
-          ${section.description ? /* html*/`<wc-description>${section.description}</wc-description>` : ""}
+          ${section.description ? /* html*/`<wc-card-icon variant="description">${section.description}</wc-card-icon>` : ""}
+          ${section.sampleAnswer ? /* html*/`<wc-card-icon variant="sample-answer">${section.sampleAnswer}</wc-card-icon>` : ""}
+          ${section.notes ? /* html*/`<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
           ${section.examples ? section.examples.map((example, index) => /* html */ `
             <wc-card-code ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
               ${(example.type ?? "code") === "snippet"

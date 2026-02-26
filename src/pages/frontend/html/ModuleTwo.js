@@ -4,9 +4,9 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
-import "@/js/components/atoms/Notes.js";
+
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -42,7 +42,7 @@ class ModuleTwo extends HTMLElement {
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
               <h3>Heading 3</h3>
@@ -55,7 +55,7 @@ class ModuleTwo extends HTMLElement {
             code: `
 <p>This is a paragraph.</p>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <p>This is a paragraph.</p>
         `,
           },
@@ -65,10 +65,10 @@ class ModuleTwo extends HTMLElement {
             code: `
 <textarea>Lorem ipsum...</textarea>
         `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <textarea>Lorem ipsum...</textarea>
         `,
-            notes: /* html */`
+            notes: /* html */ `
               <wc-text-block>
                 <p>The <code>&lt;textarea&gt;</code> element is used for multi-line text input, such as comments, messages, or longer descriptions.</p>
 
@@ -96,19 +96,16 @@ class ModuleTwo extends HTMLElement {
         ${style}
       </style>
 
-     <wc-page-header></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
     setupContents(this.shadowRoot, sections);
-
   }
 }
 

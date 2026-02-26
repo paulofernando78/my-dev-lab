@@ -4,10 +4,10 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
-import "@/js/components/atoms/Notes.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -52,10 +52,10 @@ class ModuleOne extends HTMLElement {
             code: `
 <span>...</span>
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <span>...</span>
             `,
-            notes: /* html */`
+            notes: /* html */ `
                 <p>Notes</p>
                 <p>Notes</p>
             `,
@@ -78,11 +78,11 @@ class ModuleOne extends HTMLElement {
   height: 100px
 }
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <div class="box">
               </div>
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
@@ -100,10 +100,10 @@ class ModuleOne extends HTMLElement {
             code: `
 console.log(...)
             `,
-            preview: () => /* js */`
+            preview: () => /* js */ `
               console.log(...)
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
@@ -118,7 +118,7 @@ console.log(...)
             type: "snippet",
             cardLabel: "Snippet (Image + Text)",
             image: "/assets/images/semantic.jpg",
-            description: /* html */`
+            description: /* html */ `
               <p>Description</p>
             `,
           },
@@ -131,9 +131,9 @@ console.log(...)
         links: [
           {
             href: "www.google.com",
-            title: "link"
-          }
-        ]
+            title: "link",
+          },
+        ],
       },
     ];
 
@@ -170,9 +170,7 @@ console.log(...)
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
     `;
 
     setupContents(this.shadowRoot, sections);

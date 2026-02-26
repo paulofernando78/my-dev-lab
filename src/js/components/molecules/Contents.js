@@ -1,27 +1,52 @@
 import componentStyles from "@css/imports/component.css?inline";
-import { contents as contentsIcon, section as sectionIcon, codeBlock } from "../../../assets/images/svg-imports";
 
 const style = /* css */ `
 .contents-navbar {
-  margin-bottom: 32px
+  margin-block: 20px
 }
 
 .contents-navbar-title {
   font-weight: bold;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 1rem;
-  transform: translateY(3px)
+}
+
+.contents-navbar ul {
+  padding-inline-start: 1.6rem;
 }
 
 .contents-navbar a {
   font-size: 1rem;
-  cursor: pointer
+  cursor: pointer;
 }
 
-.code-block {
-  transform: translateY(-1.6px)
+li {
+  list-style: none;
 }
+
+.section::before,
+.content::before {
+  transform: translateY(-2px)
+}
+
+.section::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background: url("/assets/images/icons/section.svg");
+}
+
+.content::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background: url("/assets/images/icons/code.svg");
+}
+
 `;
 
 class Contents extends HTMLElement {
@@ -40,35 +65,38 @@ class Contents extends HTMLElement {
         ${style}
       </style>
 
-      <div class="flex">
-        ${contentsIcon()}
+      <div class="flex-align-center">
+        <img src="/assets/images/icons/contents.svg" />
         <span class="contents-navbar-title">Table of Contents</span>
       </div>
 
       <nav class="contents-navbar">
         <ul>
-          ${contents.map((section) => /* html */ `
-              <li>
-                <div class="flex">
-                  ${sectionIcon()}
+          ${contents
+            .map(
+              (section) => /* html */ `
+              <li class="section">
                   <a data-target="${section.id}">${section.sectionLabel}</a>
-                </div> 
                 <ul>
-                  ${section.content
-                    ? section.content
-                    .filter((subSection) => subSection.subSectionLabel)
-                    .map((subSection) => /* html */`
-                    <li>
-                      <div class="flex-align-center">
-                        <span class="code-block">${codeBlock()}</span>
+                  ${
+                    section.content
+                      ? section.content
+                          .filter((subSection) => subSection.subSectionLabel)
+                          .map(
+                            (subSection) => /* html */ `
+                      <li class="content">
                         <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
-                      </div>
                     </li>
-                  `).join("") : ""}
+                  `,
+                          )
+                          .join("")
+                      : ""
+                  }
                 </ul>
               </li>
             `,
-            ).join("")}
+            )
+            .join("")}
         </ul>
       </nav>
     `;

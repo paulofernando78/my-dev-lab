@@ -4,10 +4,10 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
-import "@/js/components/atoms/Notes.js";
+
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -48,9 +48,9 @@ class ModuleEight extends HTMLElement {
         links: [
           {
             href: "https://bradfrost.com/",
-            label: "Brad Frost | Atomic Design"
-          }
-        ]
+            label: "Brad Frost | Atomic Design",
+          },
+        ],
       },
       {
         sectionId: "css",
@@ -68,16 +68,16 @@ class ModuleEight extends HTMLElement {
   height: 100px
 }
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <div class="box">
               </div>
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
         ],
-      }
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -85,14 +85,12 @@ class ModuleEight extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      
+
       <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

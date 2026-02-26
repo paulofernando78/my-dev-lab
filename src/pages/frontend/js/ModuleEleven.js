@@ -4,9 +4,9 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
-import "@/js/components/atoms/Notes.js";
+
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -52,15 +52,15 @@ class ModuleEleven extends HTMLElement {
             code: `
 console.log(...)
             `,
-            preview: () => /* js */`
+            preview: () => /* js */ `
               console.log(...)
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
         ],
-      }
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -78,9 +78,7 @@ console.log(...)
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

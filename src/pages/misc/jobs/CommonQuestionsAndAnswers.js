@@ -4,10 +4,10 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
-import "@/js/components/atoms/Description.js";
+
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
-import "@/js/components/atoms/Notes.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -37,14 +37,21 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionAriaLabel: "Tell me about yourself interview question",
         description: /* html */ `
           <p>
-            I’m a frontend developer focused on building structured and accessible
-            web applications using modern JavaScript and Web Components. Recently,
-            I’ve been developing a personal learning platform where I apply SPA
-            architecture, component design, and performance best practices.
-            I enjoy solving problems by designing clean, maintainable systems and
-            continuously improving my skills through real-world projects.
+            This question is used as an icebreaker and to evaluate how clearly you summarize your professional story.
           </p>
-  `,
+        `,
+        sampleAnswer: /* html */ `
+          <p>
+            I’m a frontend developer focused on building structured and accessible web applications using modern JavaScript and Web Components. Recently, I’ve been developing a personal learning platform where I apply SPA architecture, component design, and performance best practices. I enjoy solving problems by designing clean, maintainable systems and continuously improving my skills through real-world projects.
+          </p>
+        `,
+        notes: /* html */ `
+          <ul>
+            <li>Keep it under 60 seconds</li>
+            <li>Focus on professional experience</li>
+            <li>Avoid personal life details</li>
+          </ul>
+      `,
       },
       {
         sectionId: "q2",
