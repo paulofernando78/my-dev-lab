@@ -11,6 +11,10 @@ export const misc = [
           {
             href: "/misc/jobs/common-questions-and-answers",
             label: "Common Questions & Answers",
+          },
+          {
+            href: "/misc/jobs/javascript",
+            label: "Javascript",
           }
         ],
       }
