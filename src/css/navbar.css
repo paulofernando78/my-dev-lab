@@ -19,11 +19,17 @@
   position: absolute;
 }
 
+.section-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px
+}
+
 .navbar__section,
 .navbar__category
 {
   font-size: 1.3rem;
-  
 }
 
 .navbar__icon__category-wrapper {
@@ -32,16 +38,16 @@
   gap: 7px;
 }
 
-.navbar__category {
-  transform: translateY(1px);
-}
-
 .navbar__icon__size {
   width: 20px;
 }
 
 .navbar li:not(:last-child) {
   margin-bottom: 0.2rem;
+}
+
+.navbar__category {
+  transform: translateY(1px);
 }
 
 .navbar a {

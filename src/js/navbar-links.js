@@ -29,7 +29,7 @@ ul.innerHTML = /* html */ `
       .map(
         (section) => /* html */ `
         <div class="line-break-item">
-          <div class="flex-align-center">
+          <div class="section-icon">
             <img src="${section.icon}" />
             <span class="navbar__section">${section.section}</span>
           </div>
