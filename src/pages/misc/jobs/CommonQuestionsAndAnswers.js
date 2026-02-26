@@ -2,6 +2,7 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
+import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
 
@@ -57,7 +58,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q2",
         sectionLabel: "2. Why do you want to work here?",
         sectionAriaLabel: "Why do you want to work here interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             I’m interested in this company because of its focus on building quality
             products and using modern technologies. I value environments that
@@ -71,7 +72,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q3",
         sectionLabel: "3. What are your strengths?",
         sectionAriaLabel: "Strengths interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             One of my main strengths is organization and architectural thinking.
             I like structuring applications in a way that makes them scalable and
@@ -84,7 +85,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q4",
         sectionLabel: "4. What is your biggest weakness?",
         sectionAriaLabel: "Weakness interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             Earlier in my learning process, I sometimes spent too much time refining
             details before moving forward. I’ve improved this by adopting an
@@ -97,7 +98,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q5",
         sectionLabel: "5. Why should we hire you?",
         sectionAriaLabel: "Why should we hire you interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             I bring strong fundamentals combined with practical project experience.
             I focus on writing maintainable code, understanding browser behavior,
@@ -110,7 +111,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q6",
         sectionLabel: "6. Describe a challenge you faced",
         sectionAriaLabel: "Challenge interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             While building a SPA project, I faced challenges coordinating navigation,
             routing, and component state. I solved this by centralizing the data
@@ -124,7 +125,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q7",
         sectionLabel: "7. Where do you see yourself in five years?",
         sectionAriaLabel: "Career goals interview question",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             I see myself growing into a senior developer role with strong
             architectural skills, contributing to complex projects and mentoring
@@ -136,7 +137,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q8",
         sectionLabel: "8. Do you have any questions for us?",
         sectionAriaLabel: "Questions for interviewer",
-        description: /* html */ `
+        sampleAnswer: /* html */ `
           <p>
             Yes. I’d like to know how the team approaches code reviews and knowledge
             sharing, and what success looks like for someone in this role during the

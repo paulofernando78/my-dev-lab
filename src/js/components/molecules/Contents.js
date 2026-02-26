@@ -2,7 +2,7 @@ import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
 .contents-navbar {
-  margin-block: 20px
+  margin-block: 10px
 }
 
 .contents-navbar-title {
