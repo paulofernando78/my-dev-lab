@@ -1,0 +1,19 @@
+export const misc = [
+  {
+    icon: "/assets/images/icons/misc.svg",
+    section: "Miscellaneous",
+    categories: [
+      // HTML
+      {
+        icon: "/assets/images/icons/job.svg",
+        category: "Jobs",
+        labels: [
+          {
+            href: "/misc/jobs/common-questions-and-answers",
+            label: "Common Questions & Answers",
+          }
+        ],
+      }
+    ],
+  }
+];

@@ -132,7 +132,7 @@ console.log(...)
         links: [
           {
             href: "www.google.com",
-            title: "link"
+            label: "link"
           }
         ]
       },

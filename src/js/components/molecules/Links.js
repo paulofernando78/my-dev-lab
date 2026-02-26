@@ -1,9 +1,13 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
+  li {
+    margin-bottom: 0.4rem
+  }
+
   a {
     text-decoration: none;
-    padding-left: 1px;
+    padding-left: 2px;
     color: var(--text-color);
   }
 `;
@@ -41,7 +45,7 @@ class Links extends HTMLElement {
           .map(
             (link) => /* html */ `
           <li>
-            <a href="${link.href}" target="_blank" rel="noopener"><b>${link.title}</b></a>
+            <a href="${link.href}" target="_blank" rel="noopener"><b>${link.label}</b></a>
           </li>
         `,
           )

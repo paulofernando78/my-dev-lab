@@ -1,4 +1,4 @@
-export const curriculum = [
+export const roadmap = [
   {
     icon: "/assets/images/icons/frontend.svg",
     section: "Frontend",
@@ -11,7 +11,7 @@ export const curriculum = [
           {
             href: "/frontend/html/resources",
             module: "Resources",
-        },
+          },
           {
             href: "/frontend/html/module-1",
             module: "Document Foundations",
@@ -51,7 +51,8 @@ export const curriculum = [
           {
             href: "/frontend/html/module-7",
             module: "Accessibility & SEO",
-            description: "Learn how to build accessible webpages using semantic HTML, ARIA roles, and SEO best practices to improve usability, discoverability, and overall user experience.",
+            description:
+              "Learn how to build accessible webpages using semantic HTML, ARIA roles, and SEO best practices to improve usability, discoverability, and overall user experience.",
           },
         ],
       },
@@ -109,7 +110,8 @@ export const curriculum = [
           {
             href: "/frontend/css/module-8",
             module: "CSS Architecture & Methodologies",
-            description: "Organize scalable styles using methodologies like BEM and utility patterns, understanding how to structure CSS for maintainability and large applications.",
+            description:
+              "Organize scalable styles using methodologies like BEM and utility patterns, understanding how to structure CSS for maintainability and large applications.",
           },
           {
             href: "/frontend/css/module-9",
@@ -173,7 +175,8 @@ export const curriculum = [
           {
             href: "/frontend/js/module-8",
             module: "Browser Environment & Event Loop",
-            description: "Understand how JavaScript runs inside the browser, including the call stack, task queues, and the event loop that powers asynchronous behavior.",
+            description:
+              "Understand how JavaScript runs inside the browser, including the call stack, task queues, and the event loop that powers asynchronous behavior.",
           },
           {
             href: "/frontend/js/module-9",
@@ -191,44 +194,14 @@ export const curriculum = [
           {
             href: "/frontend/js/module-11",
             module: "State & Architecture",
-            description: "Learn how to manage application state and organize code structure using modular patterns and architectural principles for scalable interfaces.",
+            description:
+              "Learn how to manage application state and organize code structure using modular patterns and architectural principles for scalable interfaces.",
           },
           {
             href: "/frontend/js/module-12",
             module: "SPA & Application Architecture",
-            description: "Build a client-side rendered Single Page Application, understanding routing, layout composition, and how application pieces work together as a cohesive system."
-          },
-        ],
-      },
-    ],
-  },
-  {
-    icon: "/assets/images/icons/motion-3d.svg",
-    section: "Motion & 3D",
-    categories: [
-      // GSAP
-      {
-        icon: "/assets/images/icons/gsap.gif",
-        category: "GSAP",
-        modules: [
-          {
-            href: "/frontend/js/module-1",
-            module: "...",
             description:
-              "...",
-          },
-        ],
-      },
-      // Three JS
-      {
-        icon: "/assets/images/icons/threejs.svg",
-        category: "Three JS",
-        modules: [
-          {
-            href: "/frontend/js/module-1",
-            module: "...",
-            description:
-              "...",
+              "Build a client-side rendered Single Page Application, understanding routing, layout composition, and how application pieces work together as a cohesive system.",
           },
         ],
       },
@@ -246,12 +219,40 @@ export const curriculum = [
           {
             href: "/frontend/js/module-1",
             module: "...",
-            description:
-              "...",
+            description: "...",
           },
         ],
       },
     ],
   },
-  
+  {
+    icon: "/assets/images/icons/motion-3d.svg",
+    section: "Motion & 3D",
+    categories: [
+      // GSAP
+      {
+        icon: "/assets/images/icons/gsap.gif",
+        category: "GSAP",
+        modules: [
+          {
+            href: "/frontend/js/module-1",
+            module: "...",
+            description: "...",
+          },
+        ],
+      },
+      // Three JS
+      {
+        icon: "/assets/images/icons/threejs.svg",
+        category: "Three JS",
+        modules: [
+          {
+            href: "/frontend/js/module-1",
+            module: "...",
+            description: "...",
+          },
+        ],
+      },
+    ],
+  },
 ];

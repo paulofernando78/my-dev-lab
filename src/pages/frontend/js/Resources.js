@@ -35,9 +35,24 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
+            label: "",
           },
-        ]
+        ],
+      },
+      {
+        sectionId: "paid-courses",
+        sectionLabel: "Paid Courses",
+        sectionAriaLabel: "Best Paid Courses",
+        links: [
+          {
+            href: "https://www.jschallenger.com/",
+            label: "JS Challenger",
+          },
+          {
+            href: "https://firt.dev/vanilla-js/",
+            label: "Vanilla-JS, You Might Not Need a Framework",
+          },
+        ],
       },
       {
         sectionId: "youtube-channels",
@@ -46,9 +61,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
-          }
-        ]
+            label: "",
+          },
+        ],
       },
       {
         sectionId: "practice",
@@ -57,9 +72,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://runjs.app/play",
-            title: "Run JS"
+            label: "Run JS",
           },
-        ]
+        ],
       },
     ];
 
@@ -76,9 +91,7 @@ class Resources extends HTMLElement {
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

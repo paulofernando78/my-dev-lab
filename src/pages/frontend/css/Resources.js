@@ -35,13 +35,13 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://www.joshwcomeau.com/",
-            title: "Josh Comeau"
+            label: "Josh Comeau",
           },
           {
             href: "https://lea.verou.me/",
-            title: "Lea Verou"
-          }
-        ]
+            label: "Lea Verou",
+          },
+        ],
       },
       {
         sectionId: "youtube-channels",
@@ -50,9 +50,13 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://www.youtube.com/watch?v=kINNs4uYYnY&list=PLj-4DlPRT48kQD-jzqfkutO5OvMUXLcNP",
-            title: "Lama Dev"
-          }
-        ]
+            label: "Lama Dev",
+          },
+          {
+            href: "https://www.youtube.com/watch?v=UFwu9gxMLvM",
+            label: "Voicu Apostol | Design A 3D Button in Figma",
+          },
+        ],
       },
       {
         sectionId: "practice",
@@ -61,25 +65,25 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://cssbattle.dev/",
-            title: "CSS Battle"
+            label: "CSS Battle",
           },
           {
             href: "https://flexboxfroggy.com",
-            title: "Flexbox Froggy"
+            label: "Flexbox Froggy",
           },
           {
             href: "https://flukeout.github.io/",
-            title: "CSS Diner"
+            label: "CSS Diner",
           },
           {
             href: "https://cssgridgarden.com",
-            title: "Grid Garden"
+            label: "Grid Garden",
           },
           {
             href: "https://codepen.io/challenges",
-            title: "CODEPEN Challenges"
+            label: "CODEPEN Challenges",
           },
-        ]
+        ],
       },
     ];
 
@@ -96,9 +100,7 @@ class Resources extends HTMLElement {
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

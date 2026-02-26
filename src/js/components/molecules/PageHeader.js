@@ -1,7 +1,9 @@
 import componentStyles from "@css/imports/component.css?inline";
-
-import { curriculum } from "@/data/curriculum.js";
 import { categoryStyles } from "@/data/categoryStyles.js";
+
+import { global } from "@/data/global.js";
+import { roadmap } from "@/data/roadmap.js";
+import { misc } from "@/data/misc.js";
 
 const style = /* css */ `
   .page-header {
@@ -12,28 +14,11 @@ const style = /* css */ `
     padding: 12px;
     position: relative;
   }
-
+  
   .page-header h2, h3, h4 {
-     background: var(--heading-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  h1:has(+ h2) {
-    margin-bottom: 0.8rem;
-  }
-  
-  h2 {
-    margin-bottom: 0.4rem;
-  }
-
-  h2:has(+ h3) {
-    margin-bottom: 0.7rem;
-  }
-  
-  h3:has( + h4) {
-    margin-bottom: 0.5rem;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 500;
+    color: var(--category-color);
   }
 
   .icons {
@@ -57,7 +42,7 @@ class PageHeader extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-  }
+}
 
   connectedCallback() {
     this.render();
@@ -66,8 +51,78 @@ class PageHeader extends HTMLElement {
   render() {
     const path = window.location.pathname;
 
-    // Flatten curriculum to find current page
-    const modules = curriculum
+    //! SiteMap
+    const globalPage = global.find(p => p.href === path)
+
+    if (globalPage) {
+      const globalConfig = {
+        background: "var(--slate-2)",
+        color: "#18191F",
+      };
+
+      this.style.setProperty("--category-bg-color", globalConfig.background);
+      this.style.setProperty("--category-color", globalConfig.color);
+
+      this.shadowRoot.innerHTML = /* html */`
+        <style>
+          ${componentStyles}
+          ${style}
+        </style>
+        <div class="page-header">
+          <div>
+            <h2>${globalPage.label}</h2>
+          </div>
+        </div>
+      `;
+
+      return;
+    }
+
+    //! Misc
+    // Flatten misc to find current page
+    const miscPages = misc
+      .flatMap((section) => section.categories ?? [])
+      .flatMap((category) =>
+        (category.labels ?? []).map((l) => ({
+          ...l,
+          category: category.category,
+          icon: category.icon,
+        })),
+      )
+      .filter((p) => p.href);
+
+    const miscCurrent = miscPages.find((p) => p.href === path);
+
+    if (miscCurrent) {
+      const config = categoryStyles[miscCurrent.category] ?? {
+        background: "var(--slate-2)",
+      };
+
+      this.style.setProperty("--category-bg-color", config.background);
+      this.style.setProperty("--category-color", config.color ?? "#18191F");
+
+      this.shadowRoot.innerHTML = /* html */ `
+        <style>
+          ${componentStyles}
+          ${style}
+        </style>
+        <div class="page-header">
+          <div>
+            <h2>${miscCurrent.category}</h2>
+            <h3>${miscCurrent.label}</h3>
+          </div>
+          ${config.icon
+            ? /* html */ `<img src="${config.icon}" class="icons"/>`
+            : ""}
+        </div>
+      `;
+
+      return;
+    }
+
+    //! Roadmap
+    // Flatten roadmap to find current page
+    const modules = roadmap
       .flatMap((section) => section.categories ?? [])
       .flatMap((category) =>
         (category.modules ?? []).map((m) => ({
@@ -106,13 +161,6 @@ class PageHeader extends HTMLElement {
 
     this.style.setProperty("--category-bg-color", config.background);
     this.style.setProperty("--category-color", config.color ?? "#18191F");
-
-    const headingGradient =
-      current.category === "Javascript"
-        ? "linear-gradient(#000000 70%, #cedfdf)"
-        : "linear-gradient(#fff, #cedfdf)";
-
-    this.style.setProperty("--heading-gradient", headingGradient);
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>

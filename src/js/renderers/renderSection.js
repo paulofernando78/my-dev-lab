@@ -3,7 +3,7 @@ export function renderSections(sections) {
     .map(
       (section) => /* html */ `
         <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
-          ${section.description ? `<wc-description>${section.description}</wc-description>` : ""}
+          ${section.description ? /* html*/`<wc-description>${section.description}</wc-description>` : ""}
           ${section.examples ? section.examples.map((example, index) => /* html */ `
             <wc-card-code ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
               ${(example.type ?? "code") === "snippet"

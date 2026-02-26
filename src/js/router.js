@@ -192,7 +192,7 @@ const routes = {
 
   // Jobs
   // Regular Questions and Answers
-  "/jobs/common-questions-and-answers": {
+  "/misc/jobs/common-questions-and-answers": {
     tag: "wc-jobs-common-questions-answers",
     load: () => import("../pages/misc/jobs/CommonQuestionsAndAnswers.js"),
   },

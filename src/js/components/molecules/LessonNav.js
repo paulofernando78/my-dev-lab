@@ -1,6 +1,6 @@
 import styleImports from "@css/styles.css?inline";
 
-import { curriculum } from "@/data/curriculum.js";
+import { roadmap } from "@/data/roadmap.js";
 import { categoryStyles } from "@/data/categoryStyles.js";
 
 const style = /* css */ `
@@ -80,7 +80,7 @@ class LessonNav extends HTMLElement {
 
   render(path) {
     // Build ordered list of all modules, each with its category
-    const modules = curriculum
+    const modules = roadmap
       .flatMap((section) => section.categories ?? [])
       .flatMap((category) =>
         (category.modules ?? []).map((m) => ({

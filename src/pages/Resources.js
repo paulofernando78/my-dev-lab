@@ -6,6 +6,7 @@ import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/atoms/Notes.js";
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
@@ -33,10 +34,64 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Sites",
         links: [
           {
-            href: "",
-            title: ""
+            href: "https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",
+            label: "Daily Dev | Where developers suffer together",
           },
-        ]
+          {
+            href: "https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",
+            label: "Google Drive | PDF Books",
+          },
+        ],
+      },
+      {
+        sectionId: "free-courses",
+        sectionLabel: "Free Courses",
+        sectionAriaLabel: "Free Courses",
+        links: [
+          {
+            href: "https://www.freecodecamp.org/",
+            label: "Free Code Camp",
+          },
+          {
+            href: "https://www.theodinproject.com/",
+            label: "The Odin Project",
+          },
+          {
+            href: "https://exercism.org/",
+            label: "Exercism",
+          },
+        ],
+      },
+      {
+        sectionId: "paid-courses",
+        sectionLabel: "Paid Courses",
+        sectionAriaLabel: "Best Paid Courses",
+        links: [
+          {
+            href: "https://www.coursera.org/professional-certificates/meta-front-end-developer/",
+            label: "Coursera | Meta Front-End Developer",
+          },
+          {
+            href: "https://web.dev/",
+            label: "Web Dev | Google Chrome Developers",
+          },
+          {
+            href: "https://frontendmasters.com/",
+            label: "Frontend Masters",
+          },
+          {
+            href: "https://www.boot.dev/",
+            label: "Boot.Dev",
+          },
+          {
+            href: "https://scrimba.com/home",
+            label: "Scrimba",
+          },
+          {
+            href: "https://www.origamid.com/",
+            label: "Origamid | BR",
+          },
+        ],
       },
       {
         sectionId: "youtube-channels",
@@ -45,9 +100,9 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: ""
-          }
-        ]
+            label: "",
+          },
+        ],
       },
       {
         sectionId: "practice",
@@ -55,10 +110,10 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Practice",
         links: [
           {
-            href: "",
-            title: ""
+            href: "https://codepen.io/",
+            label: "CodePen",
           },
-        ]
+        ],
       },
     ];
 
@@ -67,14 +122,12 @@ class Resources extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      
+
       <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

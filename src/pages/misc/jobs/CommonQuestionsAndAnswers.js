@@ -36,17 +36,24 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionLabel: "Questions & Answers",
         sectionAriaLabel: "...",
         description: /* html */ `
-            <p>Description</p>
+            <p>1.</p>
+            <p>2.</p>
+            <p>4.</p>
+            <p>5.</p>
         `,
       },
       {
-        sectionId: "links",
-        sectionLabel: "Links",
-        sectionAriaLabel: "Links",
+        sectionId: "youtube",
+        sectionLabel: "Youtube",
+        sectionAriaLabel: "Youtube",
         links: [
           {
             href: "https://www.youtube.com/@TheCompaniesExpert",
-            title: "The Companies Expert"
+            label: "The Companies Expert"
+          },
+          {
+            href: "https://www.youtube.com/watch?v=biGUPJy92Z0",
+            label: "Fernanda Kipper | NÃO VÁ para sua ENTREVISTA DEV JUNIOR sem saber essas perguntas"
           }
         ]
       },
@@ -58,12 +65,7 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         ${style}
       </style>
 
-      <wc-page-header
-        category="Jobs"
-        page="Common Questions & Answers"
-        unit="..."
-        aria-label="..."
-      ></wc-page-header>
+      <wc-page-header></wc-page-header>
 
       <wc-contents></wc-contents>
 
@@ -76,5 +78,5 @@ class CommonQuestionsAndAnswers extends HTMLElement {
   }
 }
 
-customElements.define("wc-jobs-common.questions-answers", CommonQuestionsAndAnswers);
+customElements.define("wc-jobs-common-questions-answers", CommonQuestionsAndAnswers);
 export default CommonQuestionsAndAnswers;

@@ -7,6 +7,7 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Description.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/atoms/Notes.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -65,7 +66,18 @@ class ModuleFour extends HTMLElement {
             `,
           },
         ],
-      }
+      },
+      {
+        sectionId: "links",
+        sectionLabel: "Links",
+        sectionAriaLabel: "Links",
+        links: [
+          {
+            href: "https://www.youtube.com/watch?v=radgOh1F8o0",
+            label: "Austin Davis | CSS Positioning - The Only Guide You Will Ever Need"
+          }
+        ]
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `

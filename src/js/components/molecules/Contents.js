@@ -14,12 +14,6 @@ const style = /* css */ `
   transform: translateY(3px)
 }
 
-.contents-navbar ul ul {
-  padding-left: 1.9rem;
-  list-style: none;
-  margin-bottom: 0.2rem
-}
-
 .contents-navbar a {
   font-size: 1rem;
   cursor: pointer
