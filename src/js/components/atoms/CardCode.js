@@ -1,6 +1,6 @@
 import componentStyles from "@css/imports/component.css?inline";
 
-import "@/js/components/organisms/SandBox.js";
+import "@/js/components/organisms/Sandbox.js";
 
 const style = /* css */ `
   :host {
