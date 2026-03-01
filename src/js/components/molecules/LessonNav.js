@@ -1,6 +1,6 @@
 import styleImports from "@css/styles.css?inline";
 
-import { fullstackRoadmap } from "@/data/fullstackroadmap.js";
+import { fullstackRoadmap } from "@/data/fullstackRoadmap.js";
 import { categoryStyles } from "@/data/categoryStyles.js";
 
 const style = /* css */ `
