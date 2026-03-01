@@ -48,19 +48,7 @@ class Boilerplate extends HTMLElement {
           <p>...</p>
         `,
       },
-      //! Sandbox
-      {
-        sectionId: "sandbox",
-        sectionLabel: "Sandbox",
-        sectionAriaLabel: "Sandbox",
-        examples: [
-          {
-            type: "sandbox",
-            cardLabel: "Sandbox",
-          }
-        ]
-      },
-      //! Code
+      //! HTML
       {
         sectionId: "html",
         sectionLabel: "HTML",
@@ -83,7 +71,7 @@ class Boilerplate extends HTMLElement {
           },
         ],
       },
-      //! Code
+      //! CSS
       {
         sectionId: "css",
         sectionLabel: "CSS",
@@ -110,7 +98,7 @@ class Boilerplate extends HTMLElement {
           },
         ],
       },
-      //! Code
+      //! Javascript
       {
         sectionId: "javascript",
         sectionLabel: "Javascript",
@@ -126,6 +114,20 @@ console.log(...)
             preview: () => /* js */ `
               console.log(...)
             `,
+            sandbox: [
+              {
+                html: true,
+              },
+              {
+                html: true,
+                css: true,
+              },
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
             notes: /* html */ `
               <p>Notes</p>
             `,

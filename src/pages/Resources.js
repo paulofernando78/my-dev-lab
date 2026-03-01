@@ -114,6 +114,10 @@ class Resources extends HTMLElement {
             href: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
             label: "SuperSimpleDev | HTML & CSS Full Course - Beginner to Pro (6:31:23)",
           },
+          {
+            href: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
+            label: "Boot dev | Math Every Programmer ACTUALLY Needs (21:56)",
+          },
         ],
       },
       {

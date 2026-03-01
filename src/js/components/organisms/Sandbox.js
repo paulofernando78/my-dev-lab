@@ -30,15 +30,31 @@ const style = /* css */ `
     height: calc(100% - 1.7rem);
     background-color: var(--gray-8);
     font-family: 'Courier New', Courier, monospace;
-    min-height: 200px;
+    min-height: 100px;
 
   }
 
+  label {
+    font-weight: bold;
+  }
+
+  .output-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   iframe {
+    flex: 1;
+    margin-top: 5px;
     width: 100%;
-    height: 100%;
     border-radius: 5px;
-    background-color: white
+    background-color: white;
+  }
+
+  @media (width < 600px) {
+    .container {
+      grid-template-columns: 1fr
+    }
   }
 `;
 
@@ -55,6 +71,7 @@ class Sandbox extends HTMLElement {
   // 5️⃣ innerHTML updated inside iframe
 
   connectedCallback() {
+     this.instanceId = this.getAttribute("id") || crypto.randomUUID();
     this.render();
     this.setup();
   }
@@ -89,23 +106,30 @@ class Sandbox extends HTMLElement {
   setup() {
     const output = this.shadowRoot.querySelector("#output");
 
-    this.editors.forEach((editor) => {
-      const textarea = this.shadowRoot.querySelector(`#${editor.id}`);
-      const saved = localStorage.getItem(`sandbox-${editor.key}`);
+    this.editors
+      .filter((editor) => this.hasAttribute(editor.key))
+      .forEach((editor) => {
+        const textarea = this.shadowRoot.querySelector(`#${editor.id}`);
+        const saved = localStorage.getItem(
+          `sandbox-${this.instanceId}-${editor.key}`,
+        );
 
-      if (saved) {
-        this.state[editor.key] = saved;
-        textarea.value = saved;
-      }
+        if (saved) {
+          this.state[editor.key] = saved;
+          textarea.value = saved;
+        }
 
-      textarea.addEventListener("input", () => {
-        this.state[editor.key] = textarea.value;
-        localStorage.setItem(`sandbox-${editor.key}`, textarea.value);
-        this.updatePreview();
+        textarea.addEventListener("input", () => {
+          this.state[editor.key] = textarea.value;
+          localStorage.setItem(
+            `sandbox-${this.instanceId}-${editor.key}`,
+            textarea.value,
+          );
+          this.updatePreview();
+        });
       });
-    });
 
-    output.srcdoc = this.buildDocument();
+    this.updatePreview();
   }
 
   buildDocument() {
@@ -125,7 +149,9 @@ class Sandbox extends HTMLElement {
     <body>
       ${this.state.html}
       <script>
-        ${this.state.js}
+        window.addEventListener("DOMContentLoaded", () => {
+          ${this.state.js}
+        })
       </script>
     </body>
     </html>
@@ -139,25 +165,37 @@ class Sandbox extends HTMLElement {
         ${style}
       </style>
       <div class="container">
+
         <!-- Left Column -->
         <div class="cards-code-container">
-          ${this.editors.map((editor) => /* html */ `
+          ${this.editors
+            .filter((editor) => this.hasAttribute(editor.key))
+            .map(
+              (editor) => /* html */ `
             <wc-card-code cardLabelIcon="${editor.cardLabelIcon}" cardLabel="${editor.cardLabel}">
               <textarea spellcheck="false" id="${editor.id}"></textarea>
             </wc-card-code>
-          `,).join("")}
+          `,
+            )
+            .join("")}
         </div>
 
         <!-- Right Column -->
-        <iframe id="output" sandbox="allow-scripts allow-same-origin"></iframe>
+        <div class="output-container">
+          <label>Output</label>
+          <iframe id="output" sandbox="allow-scripts allow-same-origin"></iframe>
+        </div>
+        
       </div>
     `;
   }
 
   updatePreview() {
     const output = this.shadowRoot.querySelector("#output");
+    if (!output) return;
     output.srcdoc = this.buildDocument();
   }
 }
 
+customElements.define("wc-sandbox", Sandbox);
 export default Sandbox;

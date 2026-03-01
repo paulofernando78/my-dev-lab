@@ -8,7 +8,7 @@ const style = /* css */ `
   }  
 
   .icon {
-    width: 20px
+    width: 18px
   }
 
   .label {
@@ -17,7 +17,7 @@ const style = /* css */ `
     gap: 5px;
 
     width: max-content;
-    padding: 5px 6px 5px 5px;
+    padding: 5px 8px 0 5px;
     font-weight: bold;
 
     color: #fff;
