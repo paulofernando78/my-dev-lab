@@ -173,6 +173,7 @@ const routes = {
   },
 
   //! Backend
+
   // Node JS
   "/backend/node-js/module-1": {
     tag: "wc-node-js-module-one",
@@ -181,16 +182,25 @@ const routes = {
 
   //! Tools
 
-  // Git
+  //! Git
   // Module 1
   "/tools/git/module-1": {
     tag: "wc-git-module-one",
     load: () => import("../pages/tools/git/ModuleOne.js"),
   },
 
-  //! Misc
+  //! AI
 
-  // Jobs
+  //! Prompts
+  // Dev Prompts
+  "/ai/prompts/dev-prompts": {
+    tag: "wc-dev-prompts",
+    load: () => import("../pages/ai/prompts/DevPrompts.js"),
+  },
+
+  //! Miscellaneous
+
+  //! Jobs
   // Regular Questions and Answers
   "/misc/jobs/common-questions-and-answers": {
     tag: "wc-jobs-common-questions-answers",

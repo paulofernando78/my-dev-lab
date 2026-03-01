@@ -35,7 +35,11 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://www.joshwcomeau.com/",
-            label: "Josh Comeau",
+            label: "Josh W. Comeau",
+          },
+          {
+            href: "https://www.joshwcomeau.com/css/center-a-div/?from=newsletter",
+            label: "Josh W. Comeau | How to center a DIV",
           },
           {
             href: "https://lea.verou.me/",
@@ -51,6 +55,10 @@ class Resources extends HTMLElement {
           {
             href: "https://www.youtube.com/watch?v=kINNs4uYYnY&list=PLj-4DlPRT48kQD-jzqfkutO5OvMUXLcNP",
             label: "Lama Dev",
+          },
+          {
+            href: "https://www.youtube.com/watch?v=ZPTVr2pS0XE",
+            label: "Web Conferences Amsterdam | How to Teach CSS | Josh Comeau | CSS Day 2024",
           },
           {
             href: "https://www.youtube.com/watch?v=UFwu9gxMLvM",

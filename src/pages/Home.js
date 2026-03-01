@@ -1,7 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/atoms/Card.js";
-import { roadmap } from "@/data/roadmap";
+import { fullstackRoadmap } from "@/data/fullstackRoadmap";
 
 const style = /* css */ `
 
@@ -69,17 +69,17 @@ class Home extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
+      <wc-sandbox></wc-sandbox>
       <section class="line-break" aria-label="My Dev Den">
           <img src="/assets/images/my-dev-den.png"/>
           <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
           <div class="flex-align-center">
             <img src="/assets/images/icons/roadmap.svg" class="roadmap__icon"/>
-            <h2>Roadmap</h2>
+            <h2>Full-Stack Roadmap</h2>
           </div>
 
           <div class="line-break">
-          
-            ${roadmap.map((section) => /* html */ `
+            ${fullstackRoadmap.map((section) => /* html */ `
               <div>
                 <h3 class="home__card-header">${section.section}</h3>
                 <div class="home__card line-break">

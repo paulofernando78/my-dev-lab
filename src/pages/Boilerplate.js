@@ -6,8 +6,11 @@ import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/molecules/Code.js";
+
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/organisms/SandBox.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -31,6 +34,7 @@ class Boilerplate extends HTMLElement {
 
   render() {
     const sections = [
+      //! Description / Sample Answer / Notes
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
@@ -45,6 +49,19 @@ class Boilerplate extends HTMLElement {
           <p>...</p>
         `,
       },
+      //! Sandbox
+      {
+        sectionId: "sandbox",
+        sectionLabel: "Sandbox",
+        sectionAriaLabel: "Sandbox",
+        examples: [
+          {
+            type: "sandbox",
+            cardLabel: "Sandbox",
+          }
+        ]
+      },
+      //! Code
       {
         sectionId: "html",
         sectionLabel: "HTML",
@@ -57,16 +74,17 @@ class Boilerplate extends HTMLElement {
             code: `
 <span>...</span>
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <span>...</span>
             `,
-            notes: /* html */`
+            notes: /* html */ `
                 <p>Notes</p>
                 <p>Notes</p>
             `,
           },
         ],
       },
+      //! Code
       {
         sectionId: "css",
         sectionLabel: "CSS",
@@ -83,16 +101,17 @@ class Boilerplate extends HTMLElement {
   height: 100px
 }
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <div class="box">
               </div>
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
         ],
       },
+      //! Code
       {
         sectionId: "javascript",
         sectionLabel: "Javascript",
@@ -105,15 +124,16 @@ class Boilerplate extends HTMLElement {
             code: `
 console.log(...)
             `,
-            preview: () => /* js */`
+            preview: () => /* js */ `
               console.log(...)
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
         ],
       },
+      //! Snippet + Image
       {
         sectionId: "snippet",
         sectionLabel: "Snippet",
@@ -123,12 +143,13 @@ console.log(...)
             type: "snippet",
             cardLabel: "Snippet (Image + Text)",
             image: "/assets/images/semantic.jpg",
-            description: /* html */`
+            description: /* html */ `
               <p>Description</p>
             `,
           },
         ],
       },
+      //! Links
       {
         sectionId: "links",
         sectionLabel: "Links",
@@ -136,9 +157,9 @@ console.log(...)
         links: [
           {
             href: "www.google.com",
-            label: "link"
-          }
-        ]
+            label: "link",
+          },
+        ],
       },
     ];
 
@@ -152,9 +173,7 @@ console.log(...)
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

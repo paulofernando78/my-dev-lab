@@ -58,7 +58,7 @@ class CardIcon extends HTMLElement {
         label = "Description";
         break;
       case "sample-answer":
-        icon = "/assets/images/icons/sample-answer.svg";
+        icon = "/assets/images/icons/text.svg";
         label = "Sample answer";
         break;
       case "notes":

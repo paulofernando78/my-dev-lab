@@ -19,7 +19,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleThree extends HTMLElement {
+class Boilerplate extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -36,9 +36,36 @@ class ModuleThree extends HTMLElement {
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-            <p>Description</p>
-            <p>Description</p>
+          <p>...</p>
         `,
+        sampleAnswer: /* html */ `
+          <p>...</p>
+        `,
+        notes: /* html */ `
+          <p>...</p>
+        `,
+      },
+      {
+        sectionId: "html",
+        sectionLabel: "HTML",
+        sectionAriaLabel: "HTML block",
+        examples: [
+          {
+            type: "code",
+            cardLabel: "HTML",
+            language: "html",
+            code: `
+<span>...</span>
+            `,
+            preview: () => /* html */`
+              <span>...</span>
+            `,
+            notes: /* html */`
+                <p>Notes</p>
+                <p>Notes</p>
+            `,
+          },
+        ],
       },
       {
         sectionId: "css",
@@ -56,25 +83,60 @@ class ModuleThree extends HTMLElement {
   height: 100px
 }
             `,
-            preview: () => /* html */ `
+            preview: () => /* html */`
               <div class="box">
               </div>
             `,
-            notes: /* html */ `
+            notes: /* html */`
               <p>Notes</p>
             `,
           },
         ],
       },
-      //! Links
+      {
+        sectionId: "javascript",
+        sectionLabel: "Javascript",
+        sectionAriaLabel: "Javascript block",
+        examples: [
+          {
+            type: "code",
+            cardLabel: "Javascript",
+            language: "js",
+            code: `
+console.log(...)
+            `,
+            preview: () => /* js */`
+              console.log(...)
+            `,
+            notes: /* html */`
+              <p>Notes</p>
+            `,
+          },
+        ],
+      },
+      {
+        sectionId: "snippet",
+        sectionLabel: "Snippet",
+        sectionAriaLabel: "...",
+        examples: [
+          {
+            type: "snippet",
+            cardLabel: "Snippet (Image + Text)",
+            image: "/assets/images/semantic.jpg",
+            description: /* html */`
+              <p>Description</p>
+            `,
+          },
+        ],
+      },
       {
         sectionId: "links",
         sectionLabel: "Links",
         sectionAriaLabel: "Links",
         links: [
           {
-            href: "https://gwfh.mranftl.com/fonts",
-            label: "Mario Ranftl google webfonts helper"
+            href: "www.google.com",
+            label: "link"
           }
         ]
       },
@@ -90,7 +152,9 @@ class ModuleThree extends HTMLElement {
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">${renderSections(sections)}</div>
+      <div class="line-break">
+        ${renderSections(sections)}
+      </div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;
@@ -99,5 +163,5 @@ class ModuleThree extends HTMLElement {
   }
 }
 
-customElements.define("wc-css-module-three", ModuleThree);
-export default ModuleThree;
+customElements.define("wc-boilerplate", Boilerplate);
+export default Boilerplate;

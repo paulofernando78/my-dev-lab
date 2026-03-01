@@ -12,14 +12,6 @@ import "@/js/components/molecules/Links.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
-
 class CommonQuestionsAndAnswers extends HTMLElement {
   constructor() {
     super();
@@ -58,6 +50,11 @@ class CommonQuestionsAndAnswers extends HTMLElement {
         sectionId: "q2",
         sectionLabel: "2. Why do you want to work here?",
         sectionAriaLabel: "Why do you want to work here interview question",
+        description: /* html */ `
+          <p>
+            This question evaluates your motivation and whether you researched the company and understand its values and goals.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             I’m interested in this company because of its focus on building quality
@@ -67,11 +64,23 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             development and continuous improvement aligns well with your goals.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Show that you researched the company</li>
+            <li>Connect your goals with the company’s mission</li>
+            <li>Avoid generic answers</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q3",
         sectionLabel: "3. What are your strengths?",
         sectionAriaLabel: "Strengths interview question",
+        description: /* html */ `
+          <p>
+            The interviewer wants to understand what you do best and how your strengths contribute to the role.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             One of my main strengths is organization and architectural thinking.
@@ -80,11 +89,23 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             understanding concepts deeply instead of relying on quick fixes.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Choose strengths relevant to the job</li>
+            <li>Provide concrete examples</li>
+            <li>Avoid vague adjectives</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q4",
         sectionLabel: "4. What is your biggest weakness?",
         sectionAriaLabel: "Weakness interview question",
+        description: /* html */ `
+          <p>
+            This question assesses self-awareness and your ability to improve over time.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             Earlier in my learning process, I sometimes spent too much time refining
@@ -93,11 +114,23 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             and then improving it step by step.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Be honest but strategic</li>
+            <li>Show improvement actions</li>
+            <li>Avoid critical weaknesses for the role</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q5",
         sectionLabel: "5. Why should we hire you?",
         sectionAriaLabel: "Why should we hire you interview question",
+        description: /* html */ `
+          <p>
+            This question evaluates your value proposition and how well you match the company’s needs.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             I bring strong fundamentals combined with practical project experience.
@@ -106,11 +139,23 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             to grow while contributing positively to the team.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Highlight relevant skills</li>
+            <li>Connect experience to job requirements</li>
+            <li>Show enthusiasm and confidence</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q6",
         sectionLabel: "6. Describe a challenge you faced",
         sectionAriaLabel: "Challenge interview question",
+        description: /* html */ `
+          <p>
+            Interviewers use this question to understand your problem-solving process and resilience.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             While building a SPA project, I faced challenges coordinating navigation,
@@ -120,11 +165,23 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             easier to implement.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Use the STAR method (Situation, Task, Action, Result)</li>
+            <li>Focus on your actions</li>
+            <li>Explain the outcome clearly</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q7",
         sectionLabel: "7. Where do you see yourself in five years?",
         sectionAriaLabel: "Career goals interview question",
+        description: /* html */ `
+          <p>
+            This question evaluates ambition, planning, and alignment with the company’s long-term opportunities.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             I see myself growing into a senior developer role with strong
@@ -132,18 +189,36 @@ class CommonQuestionsAndAnswers extends HTMLElement {
             others while continuing to deepen my technical knowledge.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Show growth mindset</li>
+            <li>Align goals with the field</li>
+            <li>Avoid unrealistic expectations</li>
+          </ul>
+        `,
       },
       {
         sectionId: "q8",
         sectionLabel: "8. Do you have any questions for us?",
         sectionAriaLabel: "Questions for interviewer",
+        description: /* html */ `
+          <p>
+            This question measures curiosity and engagement. Asking thoughtful questions shows genuine interest.
+          </p>
+        `,
         sampleAnswer: /* html */ `
           <p>
             Yes. I’d like to know how the team approaches code reviews and knowledge
-            sharing, and what success looks like for someone in this role during the
-            first six months.
+            sharing, and what success looks like for someone in this role during the first six months.
           </p>
   `,
+        notes: /* html */ `
+          <ul>
+            <li>Ask about team processes</li>
+            <li>Clarify expectations for the role</li>
+            <li>Avoid questions easily answered on the website</li>
+          </ul>
+        `,
       },
       {
         sectionId: "youtube",
@@ -171,7 +246,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
 
       <wc-page-header></wc-page-header>

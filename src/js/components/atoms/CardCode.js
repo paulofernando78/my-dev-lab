@@ -1,11 +1,21 @@
 import componentStyles from "@css/imports/component.css?inline";
 
+import "@/js/components/organisms/SandBox.js";
+
 const style = /* css */ `
   :host {
     scroll-margin-top: 5px
   }  
 
+  .icon {
+    width: 20px
+  }
+
   .label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
     width: max-content;
     padding: 5px 6px 5px 5px;
     font-weight: bold;
@@ -32,6 +42,7 @@ class CardCode extends HTMLElement {
   }
 
   connectedCallback() {
+    const cardLabelIconAttr = this.getAttribute("cardLabelIcon");
     const cardLabelAttr = this.getAttribute("cardLabel");
 
     this.shadowRoot.innerHTML = /* html */ `
@@ -41,7 +52,14 @@ class CardCode extends HTMLElement {
 
         
       </style>
-      ${cardLabelAttr ? `<div class="label">${cardLabelAttr}</div>` : ""}
+      ${cardLabelAttr
+        ? /* html */ `
+        <div class="label">
+          <img src="${cardLabelIconAttr}" class="icon"/>
+          ${cardLabelAttr}
+        </div>`
+        :
+        ""}
       <div class="card-container">
         <slot></slot>
       </div>

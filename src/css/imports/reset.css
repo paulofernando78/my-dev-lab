@@ -16,10 +16,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 img,
 picture,
 video,

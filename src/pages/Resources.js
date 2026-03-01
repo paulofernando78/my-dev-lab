@@ -34,6 +34,14 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Sites",
         links: [
           {
+            href: "https://developer.mozilla.org/en-US/",
+            label: "MDN Web Docs | HTML: HyperText Markup Language | MDN",
+          },
+          {
+            href: "https://www.landingfolio.com/",
+            label: "Landing Folio | The Best Landing Page Design Inspiration, Templates and More",
+          },
+          {
             href: "https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",
             label: "Daily Dev | Where developers suffer together",
           },
@@ -99,8 +107,12 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Youtube Channels",
         links: [
           {
-            href: "",
-            label: "",
+            href: "https://www.youtube.com/watch?v=zutb5Clb_0Y",
+            label: "Future Fullstack | HTML Full Course Tutorial for Beginners - Learn EVERYTHING You Need to Know in Detail (5:25: 52)",
+          },
+          {
+            href: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
+            label: "SuperSimpleDev | HTML & CSS Full Course - Beginner to Pro (6:31:23)",
           },
         ],
       },

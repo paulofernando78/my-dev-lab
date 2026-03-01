@@ -1,6 +1,8 @@
 import "../css/navbar.css";
 import { global } from "@/data/global";
-import { roadmap } from "@/data/roadmap";
+import { fullstackRoadmap } from "@/data/fullstackRoadmap";
+import { motionThreeD } from "@/data/motionThreeD";
+import { ai } from "@/data/ai";
 import { misc } from "@/data/misc";
 
 const ul = document.querySelector("#navbar-links");
@@ -23,8 +25,8 @@ ul.innerHTML = /* html */ `
       </ul>
     </div>
 
-    <!-- Sections -->
-    ${roadmap
+    <!-- Full-Stack Roadmap -->
+    ${fullstackRoadmap
       .filter((section) => section.section)
       .map(
         (section) => /* html */ `
@@ -77,7 +79,55 @@ ul.innerHTML = /* html */ `
       )
       .join("")}
 
-      <!-- Miscellaneous -->
+    <!-- Artificial Intelligence -->
+    ${ai
+      .filter((section) => section.section)
+      .map(
+        (section) => /* html */ `
+        <div class="line-break-item">
+          <div class="flex-align-center">
+            <img src="${section.icon}" />
+            <span class="navbar__section">${section.section}</span>
+          </div>
+
+          ${section.categories
+            .map(
+              (category) => /* html */ `
+              <li>
+                <details>
+                  <summary>
+                    <div class="navbar__icon__category-wrapper">
+                      ${
+                        category.icon
+                          ? /* html */ `<img src="${category.icon}" class="navbar__icon__size ${category.category === "Three JS" ? "invert" : ""}" />`
+                          : ""
+                      }
+                      <span class="navbar__category">${category.category}</span>
+                    </div>
+                  </summary>
+
+                  <ul class="navbar__modules">
+                    ${category.labels
+                      .map(
+                        (label) => /* html */ `
+                              <li class="navbar__module">
+                                <a href="${label.href}">${label.label}</a>
+                              </li>
+                            `,
+                      )
+                      .join("")}
+                  </ul>
+                </details>
+              </li>
+            `,
+            )
+            .join("")}
+        </div>
+      `,
+      )
+      .join("")}
+
+    <!-- Miscellaneous -->
     ${misc
       .filter((section) => section.section)
       .map(
@@ -106,11 +156,12 @@ ul.innerHTML = /* html */ `
 
                   <ul class="navbar__modules">
                     ${category.labels
-                      .map((label) => /* html */ `
+                      .map(
+                        (label) => /* html */ `
                               <li class="navbar__module">
                                 <a href="${label.href}">${label.label}</a>
                               </li>
-                            `
+                            `,
                       )
                       .join("")}
                   </ul>
@@ -123,6 +174,8 @@ ul.innerHTML = /* html */ `
       `,
       )
       .join("")}
+
+    
 
   </div>
 `;

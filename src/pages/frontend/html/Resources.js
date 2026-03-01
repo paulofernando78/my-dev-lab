@@ -2,11 +2,11 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
+import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-
 import "@/js/components/molecules/Code.js";
-
+import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
@@ -28,13 +28,21 @@ class Resources extends HTMLElement {
   render() {
     const sections = [
       {
+        sectionId: "whats-it",
+        sectionLabel: "What’s it?",
+        sectionAriaLabel: "What’s it?",
+        description: /* html */ `
+          <p>...</p>
+        `,
+      },
+      {
         sectionId: "sites",
         sectionLabel: "Sites",
         sectionAriaLabel: "Sites",
         links: [
           {
             href: "",
-            title: "",
+            label: "...",
           },
         ],
       },
@@ -44,8 +52,21 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Youtube Channels",
         links: [
           {
+            href: "https://www.youtube.com/watch?v=HD13eq_Pmp8",
+            label: "Bro Code | Learn HTML in 1 hour",
+          },
+          {
+            href: "https://www.youtube.com/watch?v=qz0aGYrrlhU",
+            label: "Programming with Mosh | HTML Tutorial for Beginners: HTML Crash Course (1:09:33)",
+          },
+          {
+            href: "https://www.youtube.com/watch?v=mJgBOIoGihA",
+            label: "Dave Gray HTML Full Course for Beginners | Complete All-in-One Tutoria… (4:07:33)",
+          },
+          
+          {
             href: "",
-            title: "",
+            label: "",
           },
         ],
       },
@@ -56,7 +77,7 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "",
-            title: "",
+            label: "...",
           },
         ],
       },

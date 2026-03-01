@@ -9,9 +9,7 @@ export function renderSections(sections) {
           ${section.examples ? section.examples.map((example, index) => /* html */ `
             <wc-card-code ${example.cardLabel ? `cardLabel="${example.cardLabel}"` : ""} id="${section.sectionId}-card-${index}">
               ${(example.type ?? "code") === "snippet"
-                  ? // if type missing → use "code" then compare to "snippet"
-                    /* image + text mode */ /* html */
-                    `
+                ? /* image + text mode */ /* html */ `
                 <wc-wrapper>
                   <div>
                     <img src="${example.image}" alt="snippet"/>
@@ -21,8 +19,11 @@ export function renderSections(sections) {
                   </div>
                 </wc-wrapper>
                 `
-                  : /* code + preview mode */ /* html */
-                    `
+                : example.type === "sandbox"
+                ? /* sandbox mode */ /* html */ `
+                  <wc-sandbox></wc-sandbox>
+                `
+                : /* code + preview mode */ /* html */ `
                 <wc-wrapper>
                   <wc-code language="${example.language}">
                     ${example.code}
