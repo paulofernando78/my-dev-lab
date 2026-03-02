@@ -19,6 +19,12 @@
   position: absolute;
 }
 
+.navbar__icon__alignement {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
 .section-icon {
   display: flex;
   align-items: center;
@@ -30,12 +36,6 @@
 .navbar__category
 {
   font-size: 1.3rem;
-}
-
-.navbar__icon__category-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 7px;
 }
 
 .navbar__icon__size {
@@ -104,6 +104,16 @@
 
 .navbar__module a {
   font-size: 1.2rem;
+}
+
+img[src*="tools.svg"] {
+  width: 22px;
+  margin: 0 0 0 2px
+}
+
+img[src*="vs-code.svg"] {
+  width: 19px;
+  margin: 0 1px 0 3px
 }
 
 .invert {

@@ -8,6 +8,7 @@ const style = /* css */ `
   .label {
     background-color: black;
     color: white;
+    border: 1px solid var(--slate-7);
     border-radius: 5px;
     padding: 4px 7px;
     font-size: 1.1rem;

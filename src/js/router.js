@@ -1,212 +1,6 @@
+const pages = import.meta.glob("../pages/**/page.js");
+
 import "../js/components/atoms/Loading.js";
-
-/*
- * ROUTE TABLE
- * Maps URL paths to their corresponding Web Component tag
- * and a loader function that dynamically imports the page module.
- * This enables code-splitting and lazy loading.
- */
-const routes = {
-  "/boilerplate": {
-    tag: "wc-boilerplate",
-    load: () => import("../pages/Boilerplate.js"),
-  },
-  404: {
-    tag: "wc-404",
-    load: () => import("../pages/404.js"),
-  },
-  "/": {
-    tag: "wc-home",
-    load: () => import("../pages/Home.js"),
-  },
-  "/resources": {
-    tag: "wc-resources",
-    load: () => import("../pages/Resources.js"),
-  },
-
-  //! Frontend
-
-  // Atomic Design
-  "/frontend/architecture/atomic-design": {
-    tag: "wc-atomic-design",
-    load: () => import("../pages/frontend/architecture/AtomicDesign.js"),
-  },
-
-  // HTML
-  // Resources
-  "/frontend/html/resources": {
-    tag: "wc-html-resources",
-    load: () => import("../pages/frontend/html/Resources.js"),
-  },
-  // Module 1
-  "/frontend/html/module-1": {
-    tag: "wc-html-module-one",
-    load: () => import("../pages/frontend/html/ModuleOne.js"),
-  },
-  // Module 2
-  "/frontend/html/module-2": {
-    tag: "wc-html-module-two",
-    load: () => import("../pages/frontend/html/ModuleTwo.js"),
-  },
-  // Module 3
-  "/frontend/html/module-3": {
-    tag: "wc-html-module-three",
-    load: () => import("../pages/frontend/html/ModuleThree.js"),
-  },
-  // Module 4
-  "/frontend/html/module-4": {
-    tag: "wc-html-module-four",
-    load: () => import("../pages/frontend/html/ModuleFour.js"),
-  },
-  // Module 5
-  "/frontend/html/module-5": {
-    tag: "wc-html-module-five",
-    load: () => import("../pages/frontend/html/ModuleFive.js"),
-  },
-  // Module 6
-  "/frontend/html/module-6": {
-    tag: "wc-html-module-six",
-    load: () => import("../pages/frontend/html/ModuleSix.js"),
-  },
-  // Module 7
-  "/frontend/html/module-7": {
-    tag: "wc-html-module-seven",
-    load: () => import("../pages/frontend/html/ModuleSeven.js"),
-  },
-
-  // CSS
-  // Resources
-  "/frontend/css/resources": {
-    tag: "wc-css-resources",
-    load: () => import("../pages/frontend/css/Resources.js"),
-  },
-  "/frontend/css/module-1": {
-    tag: "wc-css-module-one",
-    load: () => import("../pages/frontend/css/ModuleOne.js"),
-  },
-  "/frontend/css/module-2": {
-    tag: "wc-css-module-two",
-    load: () => import("../pages/frontend/css/ModuleTwo.js"),
-  },
-  "/frontend/css/module-3": {
-    tag: "wc-css-module-three",
-    load: () => import("../pages/frontend/css/ModuleThree.js"),
-  },
-  "/frontend/css/module-4": {
-    tag: "wc-css-module-four",
-    load: () => import("../pages/frontend/css/ModuleFour.js"),
-  },
-  "/frontend/css/module-5": {
-    tag: "wc-css-module-five",
-    load: () => import("../pages/frontend/css/ModuleFive.js"),
-  },
-  "/frontend/css/module-6": {
-    tag: "wc-css-module-six",
-    load: () => import("../pages/frontend/css/ModuleSix.js"),
-  },
-  "/frontend/css/module-7": {
-    tag: "wc-css-module-seven",
-    load: () => import("../pages/frontend/css/ModuleSeven.js"),
-  },
-  "/frontend/css/module-8": {
-    tag: "wc-css-module-eight",
-    load: () => import("../pages/frontend/css/ModuleEight.js"),
-  },
-  "/frontend/css/module-9": {
-    tag: "wc-css-module-nine",
-    load: () => import("../pages/frontend/css/ModuleNine.js"),
-  },
-
-  // JS
-  // Resources
-  "/frontend/js/resources": {
-    tag: "wc-js-resources",
-    load: () => import("../pages/frontend/js/Resources.js"),
-  },
-  "/frontend/js/module-1": {
-    tag: "wc-js-module-one",
-    load: () => import("../pages/frontend/js/ModuleOne.js"),
-  },
-  "/frontend/js/module-2": {
-    tag: "wc-js-module-two",
-    load: () => import("../pages/frontend/js/ModuleTwo.js"),
-  },
-  "/frontend/js/module-3": {
-    tag: "wc-js-module-three",
-    load: () => import("../pages/frontend/js/ModuleThree.js"),
-  },
-  "/frontend/js/module-4": {
-    tag: "wc-js-module-four",
-    load: () => import("../pages/frontend/js/ModuleFour.js"),
-  },
-  "/frontend/js/module-5": {
-    tag: "wc-js-module-five",
-    load: () => import("../pages/frontend/js/ModuleFive.js"),
-  },
-  "/frontend/js/module-6": {
-    tag: "wc-js-module-six",
-    load: () => import("../pages/frontend/js/ModuleSix.js"),
-  },
-  "/frontend/js/module-7": {
-    tag: "wc-js-module-seven",
-    load: () => import("../pages/frontend/js/ModuleSeven.js"),
-  },
-  "/frontend/js/module-8": {
-    tag: "wc-js-module-eight",
-    load: () => import("../pages/frontend/js/ModuleEight.js"),
-  },
-  "/frontend/js/module-9": {
-    tag: "wc-js-module-nine",
-    load: () => import("../pages/frontend/js/ModuleNine.js"),
-  },
-  "/frontend/js/module-10": {
-    tag: "wc-js-module-ten",
-    load: () => import("../pages/frontend/js/ModuleTen.js"),
-  },
-  "/frontend/js/module-11": {
-    tag: "wc-js-module-eleven",
-    load: () => import("../pages/frontend/js/ModuleEleven.js"),
-  },
-  "/frontend/js/module-12": {
-    tag: "wc-js-module-twelve",
-    load: () => import("../pages/frontend/js/ModuleTwelve.js"),
-  },
-
-  //! Backend
-
-  // Node JS
-  "/backend/node-js/module-1": {
-    tag: "wc-node-js-module-one",
-    load: () => import("../pages/backend/node-js/ModuleOne.js"),
-  },
-
-  //! Tools
-
-  //! Git
-  // Module 1
-  "/tools/git/module-1": {
-    tag: "wc-git-module-one",
-    load: () => import("../pages/tools/git/ModuleOne.js"),
-  },
-
-  //! AI
-
-  //! Prompts
-  // Dev Prompts
-  "/ai/prompts/dev-prompts": {
-    tag: "wc-dev-prompts",
-    load: () => import("../pages/ai/prompts/DevPrompts.js"),
-  },
-
-  //! Miscellaneous
-
-  //! Jobs
-  // Regular Questions and Answers
-  "/misc/jobs/common-questions-and-answers": {
-    tag: "wc-jobs-common-questions-answers",
-    load: () => import("../pages/misc/jobs/CommonQuestionsAndAnswers.js"),
-  },
-};
 
 /*
  * currentPath
@@ -248,19 +42,20 @@ export async function renderRoute() {
   let path = window.location.pathname; // Current route path
   path = path.toLowerCase();
 
-  // If the path does not exist in our route table, fallback to 404
-  if (!routes[path]) path = 404;
+  // Normalize path
+  let normalized = path === "/" ? "/home" : path;
 
-  // Optimization: avoid re-rendering if the user is already on this route
-  if (path === currentPath) return;
-  currentPath = path;
+  //
+  if (normalized === currentPath) return;
+  currentPath = normalized;
 
-  // Extract the Web Component tag and the loader function for this route
-  const { tag, load } = routes[path];
+  const key = `../pages${normalized}/page.js`;
+  const loader = pages[key] ?? pages["../pages/404/page.js"];
 
   //! Increase token to invalidate older navigations (race condition protection)
   const token = ++renderToken;
 
+  //! Loading.js
   // 1) Fade OUT do conteúdo atual
   app.classList.add("is-fading");
 
@@ -283,8 +78,24 @@ export async function renderRoute() {
   await new Promise(requestAnimationFrame);
 
   // 3) Carrega a página nova
-  await load();
+  await loader();
   if (token !== renderToken) return;
+
+  const tag = "wc-" + normalized.slice(1).replaceAll("/", "-");
+
+// URL
+// /tools/vs-code
+//    ↓
+// normalized
+// /tools/vs-code
+//    ↓ slice(1)
+// tools/vs-code
+//    ↓ replaceAll
+// tools-vs-code
+//    ↓ prefix
+// wc-tools-vs-code
+//    ↓
+// Web Component tag
 
   const element = document.createElement(tag);
   element.classList.add("page");
@@ -307,14 +118,17 @@ export async function renderRoute() {
 const prefetchRoutes = new Set();
 
 function prefetch(path) {
-  if (!routes[path]) return;
-  if (prefetchRoutes.has(path)) return;
+  let normalized = path === "/" ? "/home" : path;
+  const key = `../pages${normalized}/page.js`;
 
-  prefetchRoutes.add(path);
+  if (!pages[key]) return;
+  if (prefetchRoutes.has(key)) return;
 
-  routes[path].load().catch((err) => {
+  prefetchRoutes.add(key);
+
+  pages[key]().catch((err) => {
     console.warn(`Falha no prefetch de ${path}:`, err);
-    prefetchRoutes.delete(path);
+    prefetchRoutes.delete(key);
   });
 }
 

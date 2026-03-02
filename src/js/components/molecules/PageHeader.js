@@ -3,6 +3,7 @@ import { categoryStyles } from "@/data/categoryStyles.js";
 
 import { global } from "@/data/global.js";
 import { fullstackRoadmap } from "@/data/fullstackRoadmap.js";
+import { ai } from "@/data/ai.js";
 import { misc } from "@/data/misc.js";
 
 import { normalizePage } from "@/data/normalizePages";
@@ -60,7 +61,7 @@ class PageHeader extends HTMLElement {
   render() {
     const path = window.location.pathname;
 
-    const pages = normalizePage({ global, fullstackRoadmap, misc });
+    const pages = normalizePage({ global, fullstackRoadmap, ai, misc });
 
     const current = pages.find((p) => p.href === path);
     if (!current) return;
@@ -110,7 +111,9 @@ class PageHeader extends HTMLElement {
         title = `Module ${moduleNumber}`;
         subtitle = current.module;
       }
-
+    } else if (current.type === "ai") {
+      category = current.category;
+      title = current.title;
       icon = config.icon ?? null;
     } else if (current.type === "misc") {
       category = current.category;

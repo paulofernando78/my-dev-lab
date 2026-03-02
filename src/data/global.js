@@ -6,9 +6,5 @@ export const global = [
   {
     href: "/resources",
     label: "Resources"
-  },
-  {
-    href: "/ide",
-    label: "IDE"
-  },
+  }
 ]
