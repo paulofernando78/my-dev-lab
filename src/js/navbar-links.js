@@ -1,6 +1,7 @@
 import "../css/navbar.css";
 import { global } from "@/data/global";
 import { tools } from "@/data/tools";
+import { design } from "@/data/design";
 import { fullstackRoadmap } from "@/data/fullstackRoadmap";
 import { motionThreeD } from "@/data/motionThreeD";
 import { ai } from "@/data/ai";
@@ -40,9 +41,9 @@ const renderItems = (items = []) =>
 
       // Label type (has .label)
       return /* html */ `
-        <li>
+        <li class="navbar__label">
           <a href="${item.href}" class="navbar__icon__alignement">
-            ${item.labelIcon ? /* html */`<img src="${item.labelIcon}" class="navbar__icon__size" />` : ""}
+            ${item.labelIcon ? /* html */ `<img src="${item.labelIcon}" class="navbar__icon__size" />` : ""}
             ${item.label}
           </a>
         </li>
@@ -81,8 +82,8 @@ const renderCategories = (categories = []) =>
 
 // ...
 const renderSection = (section, headerClass = "section-icon") => {
-  // Section with direct links (no categories / no details-summary)
-  if (section.links) {
+  // Section with direct labels (no categories / no details-summary)
+  if (section.labels) {
     return /* html */ `
       <div class="line-break-item">
         <div class="${headerClass}">
@@ -91,7 +92,7 @@ const renderSection = (section, headerClass = "section-icon") => {
         </div>
 
         <ul class="flex-align-center">
-          ${renderItems(section.links)}
+          ${renderItems(section.labels)}
         </ul>
       </div>
     `;
@@ -128,8 +129,14 @@ ul.innerHTML = /* html */ `
       </ul>
     </div>
 
-    <!-- Full-Stack Roadmap -->
+    <!-- Tools -->
     ${tools
+      .filter((section) => section.section)
+      .map((section) => renderSection(section))
+      .join("")}
+
+      <!-- UI / UX Design -->
+    ${design
       .filter((section) => section.section)
       .map((section) => renderSection(section))
       .join("")}

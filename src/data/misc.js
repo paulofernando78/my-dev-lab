@@ -3,7 +3,7 @@ export const misc = [
     icon: "/assets/images/icons/misc.svg",
     section: "Miscellaneous",
     categories: [
-      // HTML
+      // Job
       {
         icon: "/assets/images/icons/job.svg",
         category: "Jobs",

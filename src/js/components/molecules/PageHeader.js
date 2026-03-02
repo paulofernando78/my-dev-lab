@@ -2,6 +2,8 @@ import componentStyles from "@css/imports/component.css?inline";
 import { categoryStyles } from "@/data/categoryStyles.js";
 
 import { global } from "@/data/global.js";
+import { tools } from "@/data/tools.js";
+import { design } from "@/data/design.js";
 import { fullstackRoadmap } from "@/data/fullstackRoadmap.js";
 import { ai } from "@/data/ai.js";
 import { misc } from "@/data/misc.js";
@@ -61,7 +63,7 @@ class PageHeader extends HTMLElement {
   render() {
     const path = window.location.pathname;
 
-    const pages = normalizePage({ global, fullstackRoadmap, ai, misc });
+    const pages = normalizePage({ global, tools, design, fullstackRoadmap, ai, misc });
 
     const current = pages.find((p) => p.href === path);
     if (!current) return;
@@ -111,15 +113,16 @@ class PageHeader extends HTMLElement {
         title = `Module ${moduleNumber}`;
         subtitle = current.module;
       }
-    } else if (current.type === "ai") {
+    } else if (
+      current.type === "tools" ||
+      current.type === "design" ||
+      current.type === "ai" ||
+      current.type === "misc"
+    ) {
       category = current.category;
       title = current.title;
       icon = config.icon ?? null;
-    } else if (current.type === "misc") {
-      category = current.category;
-      title = current.title;
-      icon = config.icon ?? null;
-    }
+    } 
 
     //! Modules (Full-Stack Roadmap)
 

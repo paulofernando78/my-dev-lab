@@ -2,12 +2,14 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
+import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
-
 import "@/js/components/molecules/Code.js";
-
+import "@/js/components/organisms/Sandbox.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
@@ -31,35 +33,20 @@ class ModuleSeven extends HTMLElement {
 
   render() {
     const sections = [
+      //! Description / Sample Answer / Notes
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-            <p>Description</p>
-            <p>Description</p>
+          <p>...</p>
         `,
-      },
-      {
-        sectionId: "javascript",
-        sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
-        examples: [
-          {
-            type: "code",
-            cardLabel: "Javascript",
-            language: "js",
-            code: `
-console.log(...)
-            `,
-            preview: () => /* js */ `
-              console.log(...)
-            `,
-            notes: /* html */ `
-              <p>Notes</p>
-            `,
-          },
-        ],
+        sampleAnswer: /* html */ `
+          <p>...</p>
+        `,
+        notes: /* html */ `
+          <p>...</p>
+        `,
       },
     ];
 

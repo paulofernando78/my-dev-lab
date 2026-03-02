@@ -6,6 +6,7 @@ export function renderSections(sections) {
           ${section.description ? /* html*/ `<wc-card-icon variant="description">${section.description}</wc-card-icon>` : ""}
           ${section.sampleAnswer ? /* html*/ `<wc-card-icon variant="sample-answer">${section.sampleAnswer}</wc-card-icon>` : ""}
           ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
+          ${section.list ? /* html*/ `<wc-card-icon variant="list">${section.list}</wc-card-icon>` : ""}
           ${
             section.examples
               ? section.examples

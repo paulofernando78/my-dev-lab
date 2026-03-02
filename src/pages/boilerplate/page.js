@@ -47,6 +47,14 @@ class Boilerplate extends HTMLElement {
         notes: /* html */ `
           <p>...</p>
         `,
+        lists: [
+          {
+            list: "aaa"
+          },
+          {
+            list: "bbb"
+          }
+        ],
       },
       //! HTML
       {
@@ -64,6 +72,11 @@ class Boilerplate extends HTMLElement {
             preview: () => /* html */ `
               <span>...</span>
             `,
+            sandbox: [
+              {
+                html: true,
+              }
+            ],
             notes: /* html */ `
                 <p>Notes</p>
                 <p>Notes</p>
@@ -92,6 +105,12 @@ class Boilerplate extends HTMLElement {
               <div class="box">
               </div>
             `,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+              }
+            ],
             notes: /* html */ `
               <p>Notes</p>
             `,
@@ -115,13 +134,6 @@ console.log(...)
               console.log(...)
             `,
             sandbox: [
-              {
-                html: true,
-              },
-              {
-                html: true,
-                css: true,
-              },
               {
                 html: true,
                 css: true,

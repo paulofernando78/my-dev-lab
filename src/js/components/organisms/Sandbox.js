@@ -30,7 +30,7 @@ const style = /* css */ `
     height: calc(100% - 1.7rem);
     background-color: var(--gray-8);
     font-family: 'Courier New', Courier, monospace;
-    min-height: 100px;
+    min-height: 150px;
 
   }
 

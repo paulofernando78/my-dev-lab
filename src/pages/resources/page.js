@@ -49,6 +49,10 @@ class Resources extends HTMLElement {
             href: "https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",
             label: "Google Drive | PDF Books",
           },
+          {
+            href: "https://caniuse.com/",
+            label: "Can I use...?",
+          },
         ],
       },
       {

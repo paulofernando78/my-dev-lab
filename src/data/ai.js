@@ -3,7 +3,7 @@ export const ai = [
     icon: "/assets/images/icons/ai.svg",
     section: "AI",
     categories: [
-      // HTML
+      // Prompts
       {
         icon: "/assets/images/icons/text.svg",
         category: "Prompts",
