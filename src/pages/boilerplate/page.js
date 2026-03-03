@@ -3,8 +3,9 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
-import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/CardCode.js";
+import "@/js/components/atoms/Preview.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
@@ -46,19 +47,30 @@ class Boilerplate extends HTMLElement {
         `,
         notes: /* html */ `
           <p>...</p>
-        `,
-        list: /* html */`
-          <ul>
-            <li>aaa</li>
-          </ul>
         `
+      },
+       //! Snippet + Image
+      {
+        sectionId: "snippet",
+        sectionLabel: "Snippet",
+        sectionAriaLabel: "...",
+        cardCodes: [
+          {
+            type: "snippet",
+            cardLabel: "Snippet (Image + Text)",
+            image: "/assets/images/semantic.jpg",
+            description: /* html */ `
+              <p>Description</p>
+            `,
+          },
+        ],
       },
       //! HTML
       {
         sectionId: "html",
         sectionLabel: "HTML",
         sectionAriaLabel: "HTML block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "HTML",
@@ -75,8 +87,7 @@ class Boilerplate extends HTMLElement {
               }
             ],
             notes: /* html */ `
-                <p>Notes</p>
-                <p>Notes</p>
+                <p>...</p>
             `,
           },
         ],
@@ -86,7 +97,7 @@ class Boilerplate extends HTMLElement {
         sectionId: "css",
         sectionLabel: "CSS",
         sectionAriaLabel: "CSS block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "CSS",
@@ -119,7 +130,7 @@ class Boilerplate extends HTMLElement {
         sectionId: "javascript",
         sectionLabel: "Javascript",
         sectionAriaLabel: "Javascript block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Javascript",
@@ -138,23 +149,7 @@ console.log(...)
               },
             ],
             notes: /* html */ `
-              <p>Notes</p>
-            `,
-          },
-        ],
-      },
-      //! Snippet + Image
-      {
-        sectionId: "snippet",
-        sectionLabel: "Snippet",
-        sectionAriaLabel: "...",
-        examples: [
-          {
-            type: "snippet",
-            cardLabel: "Snippet (Image + Text)",
-            image: "/assets/images/semantic.jpg",
-            description: /* html */ `
-              <p>Description</p>
+              <p>...</p>
             `,
           },
         ],

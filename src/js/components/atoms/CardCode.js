@@ -49,8 +49,6 @@ class CardCode extends HTMLElement {
       <style>
         ${componentStyles}
         ${style}
-
-        
       </style>
       ${cardLabelAttr
         ? /* html */ `

@@ -3,10 +3,6 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/atoms/CardCode.js";
 
 const style = /* css */ `
-  .container, textarea {
-    color: var(--text-color)
-  }
-
   .container {
     background-color: var(--gray-7);
     border-radius: 5px 5px 0 0;
@@ -46,9 +42,13 @@ const style = /* css */ `
 
   textarea {
     width: 100%;
-    background-color: var(--gray-8);
+    background-color: #1E1E1E;
+    color: #fff;
+    border: 0;
+
     font-family: 'Courier New', Courier, monospace;
     min-height: 150px;
+    padding: 5px
   }
 
   label {
@@ -182,7 +182,7 @@ class Sandbox extends HTMLElement {
       </style>
       
         <div class="container__header">
-          <span class="container__title">Playground</span>
+          <span class="container__title">Code Sandbox</span>
         </div>
         <div class="container__content">
           <!-- Left Column -->
