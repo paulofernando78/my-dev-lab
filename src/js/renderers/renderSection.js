@@ -57,18 +57,13 @@ export function renderSections(sections) {
                         `
                         : /* code + preview mode */ /* html */ `
                      
-                          <wc-preview>
+                          <wc-preview class="preview">
                             ${cardCode.preview()}
                           </wc-preview>
                      
                       `
                     }
                 </wc-wrapper>
-
-
-
-
-                  
                   ${
                     cardCode.notes
                       ? /* html */ `

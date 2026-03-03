@@ -94,7 +94,7 @@ class AtomicDesign extends HTMLElement {
 
             <p>Examples include buttons, inputs, labels, and icons.</p>
         `,
-        examples: [
+        cardCodes: [
           {
             cardLabel: "button",
             language: "html",
@@ -127,7 +127,7 @@ class AtomicDesign extends HTMLElement {
 
             <p>For example, a search bar made of an input and a button.</p>
         `,
-        examples: [
+        cardCodes: [
           {
             cardLabel: "Search bar",
             language: "html",
@@ -156,7 +156,7 @@ class AtomicDesign extends HTMLElement {
 
             <p>Examples include headers, navigation bars, or cards with multiple elements.</p>
         `,
-        examples: [
+        cardCodes: [
           {
             cardLabel: "Header",
             language: "html",
@@ -191,7 +191,7 @@ class AtomicDesign extends HTMLElement {
 
             <p>They focus on placement and composition rather than final data.</p>
         `,
-        examples: [
+        cardCodes: [
           {
             cardLabel: "Page template",
             language: "html",

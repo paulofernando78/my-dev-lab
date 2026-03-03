@@ -44,7 +44,7 @@ class ModuleNine extends HTMLElement {
         sectionId: "javascript",
         sectionLabel: "Javascript",
         sectionAriaLabel: "Javascript block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Javascript",

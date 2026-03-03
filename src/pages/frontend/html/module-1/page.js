@@ -57,7 +57,7 @@ class ModuleOne extends HTMLElement {
         sectionId: "boilerplate",
         sectionLabel: "Basic HTML",
         sectionAriaLabel: "Basic HTML",
-        examples: [
+        cardCodes: [
           {
             type: "snippet",
             cardLabel: "Boilerplate",

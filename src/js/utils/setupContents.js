@@ -4,7 +4,7 @@ export function setupContents(root, sections) {
   contentsEl.contents = sections.map((section) => ({
     id: section.sectionId,
     sectionLabel: section.sectionLabel,
-    content: (section.examples || []).map((example, index) => ({
+    content: (section.cardCodes || []).map((example, index) => ({
       id: example.sectionId || `${section.sectionId}-card-${index}`,
       subSectionLabel: example.cardLabel,
     })),

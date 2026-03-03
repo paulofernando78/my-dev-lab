@@ -44,7 +44,7 @@ class ModuleThree extends HTMLElement {
         sectionId: "css",
         sectionLabel: "CSS",
         sectionAriaLabel: "CSS block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "CSS",
@@ -74,9 +74,9 @@ class ModuleThree extends HTMLElement {
         links: [
           {
             href: "https://gwfh.mranftl.com/fonts",
-            label: "Mario Ranftl google webfonts helper"
-          }
-        ]
+            label: "Mario Ranftl google webfonts helper",
+          },
+        ],
       },
     ];
 

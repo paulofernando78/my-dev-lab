@@ -113,7 +113,7 @@ class ModuleEight extends HTMLElement {
         description: /* html */ `
           <p>The document.designMode property in HTML allows for making the entire document editable within the browser. This property can be set to either "on" or "off".</p>
         `,
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Javascript",

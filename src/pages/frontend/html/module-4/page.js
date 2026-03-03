@@ -28,69 +28,31 @@ class ModuleFour extends HTMLElement {
   render() {
     const sections = [
       {
-        sectionId: "media",
-        sectionLabel: "Media & Embedded Content",
-        sectionAriaLabel: "Media and Embedded Content",
-        examples: [
+        sectionId: "semantic-layout",
+        sectionLabel: "Semantic Layout",
+        sectionAriaLabel: "Semantic Layout",
+        description: /* html */ `
+          <wc-text-block>
+            <p><strong>Semantic HTML tags</strong> describe the meaning and purpose of content, not just its appearance. They help browsers, search engines, and assistive technologies understand the structure of a page.</p>
+
+            <p>Instead of using generic containers like <code>&lt;div&gt;</code>, semantic elements clearly define sections such as headers, main content, articles, sidebars, and footers.</p>
+          </wc-text-block> 
+        `,
+        cardCodes: [
           {
-            cardLabel: "Image",
             language: "html",
             code: `
-<img src="image.jpg" alt="Description">
-        `,
-            preview: () => `
-<img src="/assets/images/semantic.jpg" alt="Example image">
-        `,
-          },
-          {
-            cardLabel: "Figure & Figcaption",
-            language: "html",
-            code: `
-<figure>
-  <img src="image.jpg" alt="Description">
-  <figcaption>Image description</figcaption>
-</figure>
-        `,
-            preview: () => `
-<figure>
-  <img src="/assets/images/semantic.jpg" alt="Example image">
-  <figcaption>Image description</figcaption>
-</figure>
-        `,
-          },
-          {
-            cardLabel: "Audio",
-            language: "html",
-            code: `
-<audio controls>
-  <source src="audio.mp3" type="audio/mpeg">
-</audio>
-        `,
-            preview: () => `
-<audio controls></audio>
-        `,
-          },
-          {
-            cardLabel: "Video",
-            language: "html",
-            code: `
-<video controls width="320">
-  <source src="video.mp4" type="video/mp4">
-</video>
-        `,
-            preview: () => `
-<video controls width="320"></video>
-        `,
-          },
-          {
-            cardLabel: "Iframe",
-            language: "html",
-            code: `
-<iframe src="https://example.com"></iframe>
-        `,
-            preview: () => `
-<iframe src="https://example.com" width="300" height="150"></iframe>
-        `,
+<header></header>
+<main></main>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+<div></div>
+          `,
+            preview: () => /* html */ `
+              <img src="/assets/images/semantic.jpg"/>
+          `,
           },
         ],
       },

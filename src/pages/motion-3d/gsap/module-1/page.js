@@ -49,7 +49,7 @@ class Boilerplate extends HTMLElement {
         sectionId: "html",
         sectionLabel: "HTML",
         sectionAriaLabel: "HTML block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "HTML",
@@ -57,10 +57,10 @@ class Boilerplate extends HTMLElement {
             code: `
 <span>...</span>
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <span>...</span>
             `,
-            notes: /* html */`
+            notes: /* html */ `
                 <p>Notes</p>
                 <p>Notes</p>
             `,
@@ -71,7 +71,7 @@ class Boilerplate extends HTMLElement {
         sectionId: "css",
         sectionLabel: "CSS",
         sectionAriaLabel: "CSS block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "CSS",
@@ -83,11 +83,11 @@ class Boilerplate extends HTMLElement {
   height: 100px
 }
             `,
-            preview: () => /* html */`
+            preview: () => /* html */ `
               <div class="box">
               </div>
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
@@ -97,7 +97,7 @@ class Boilerplate extends HTMLElement {
         sectionId: "javascript",
         sectionLabel: "Javascript",
         sectionAriaLabel: "Javascript block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Javascript",
@@ -105,10 +105,10 @@ class Boilerplate extends HTMLElement {
             code: `
 console.log(...)
             `,
-            preview: () => /* js */`
+            preview: () => /* js */ `
               console.log(...)
             `,
-            notes: /* html */`
+            notes: /* html */ `
               <p>Notes</p>
             `,
           },
@@ -118,12 +118,12 @@ console.log(...)
         sectionId: "snippet",
         sectionLabel: "Snippet",
         sectionAriaLabel: "...",
-        examples: [
+        cardCodes: [
           {
             type: "snippet",
             cardLabel: "Snippet (Image + Text)",
             image: "/assets/images/semantic.jpg",
-            description: /* html */`
+            description: /* html */ `
               <p>Description</p>
             `,
           },
@@ -136,9 +136,9 @@ console.log(...)
         links: [
           {
             href: "www.google.com",
-            label: "link"
-          }
-        ]
+            label: "link",
+          },
+        ],
       },
     ];
 
@@ -152,9 +152,7 @@ console.log(...)
 
       <wc-contents></wc-contents>
 
-      <div class="line-break">
-        ${renderSections(sections)}
-      </div>
+      <div class="line-break">${renderSections(sections)}</div>
 
       <wc-lesson-nav></wc-lesson-nav>
     `;

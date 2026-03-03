@@ -31,7 +31,7 @@ class ModuleTwo extends HTMLElement {
         sectionId: "text",
         sectionLabel: "Text and Content Structure",
         sectionAriaLabel: "Text and Content Structure",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Headings",
@@ -63,34 +63,7 @@ class ModuleTwo extends HTMLElement {
             preview: () => /* html */ `
               <p>This is a paragraph.</p>
         `,
-          },
-          {
-            cardLabel: "Textarea",
-            language: "html",
-            code: `
-<textarea>Lorem ipsum...</textarea>
-        `,
-            preview: () => /* html */ `
-              <textarea>Lorem ipsum...</textarea>
-        `,
-            notes: /* html */ `
-              <wc-text-block>
-                <p>The <code>&lt;textarea&gt;</code> element is used for multi-line text input, such as comments, messages, or longer descriptions.</p>
-
-                <p>Unlike <code>&lt;input&gt;</code> elements, a textarea does not use a <code>value</code> attribute. The initial text is written between the opening and closing tags.</p>
-
-                <p>Common attributes include:</p>
-                <ul>
-                  <li><code>rows</code> and <code>cols</code> — define the visible size of the textarea</li>
-                  <li><code>placeholder</code> — shows helper text when empty</li>
-                  <li><code>maxlength</code> — limits the number of characters</li>
-                  <li><code>readonly</code> and <code>disabled</code> — control user interaction</li>
-                </ul>
-
-                <p>Textareas are resizable by default in most browsers and can be controlled using CSS.</p>
-              </wc-text-block>
-        `,
-          },
+          }
         ],
       },
     ];

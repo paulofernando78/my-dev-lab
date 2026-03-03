@@ -1,18 +1,8 @@
 import styleImports from "@css/styles.css?inline";
 
-const style = /* css */ `
-  .container {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid;
-    border-radius: var(--border-radius);
-    padding: 1px 5px 5px 5px
-  }
-`;
-
 class Preview extends HTMLElement {
   constructor() {
-    super();
+    super();div
     this.attachShadow({ mode: "open" });
   }
 
@@ -26,9 +16,7 @@ class Preview extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <div class="container">
         <slot></slot>
-      </div>
       `;
     }
   }

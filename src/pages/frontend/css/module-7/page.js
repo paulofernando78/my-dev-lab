@@ -44,7 +44,7 @@ class ModuleSeven extends HTMLElement {
         sectionId: "css",
         sectionLabel: "CSS",
         sectionAriaLabel: "CSS block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "CSS",

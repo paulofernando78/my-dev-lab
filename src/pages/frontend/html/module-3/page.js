@@ -33,7 +33,7 @@ class ModuleThree extends HTMLElement {
         sectionId: "ordered-lists",
         sectionLabel: "Ordered Lists",
         sectionAriaLabel: "Ordered Lists",
-        examples: [
+        cardCodes: [
           {
             cardLabel: "default (numbers)",
             language: "html",
@@ -88,7 +88,7 @@ class ModuleThree extends HTMLElement {
         sectionId: "unordered-lists",
         sectionLabel: "Unordered Lists",
         sectionAriaLabel: "Unordered Lists",
-        examples: [
+        cardCodes: [
           {
             cardLabel: "Unordered List",
             language: "html",
@@ -111,7 +111,7 @@ class ModuleThree extends HTMLElement {
         sectionId: "links",
         sectionLabel: "Links",
         sectionAriaLabel: "Links",
-        examples: [
+        cardCodes: [
           {
             cardLabel: "Default Link",
             language: "html",

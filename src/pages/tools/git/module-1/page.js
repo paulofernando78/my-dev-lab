@@ -44,7 +44,7 @@ class ModuleOne extends HTMLElement {
         sectionId: "html",
         sectionLabel: "HTML",
         sectionAriaLabel: "HTML block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "HTML",
@@ -66,7 +66,7 @@ class ModuleOne extends HTMLElement {
         sectionId: "css",
         sectionLabel: "CSS",
         sectionAriaLabel: "CSS block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "CSS",
@@ -92,7 +92,7 @@ class ModuleOne extends HTMLElement {
         sectionId: "javascript",
         sectionLabel: "Javascript",
         sectionAriaLabel: "Javascript block",
-        examples: [
+        cardCodes: [
           {
             type: "code",
             cardLabel: "Javascript",
@@ -113,7 +113,7 @@ console.log(...)
         sectionId: "snippet",
         sectionLabel: "Snippet",
         sectionAriaLabel: "...",
-        examples: [
+        cardCodes: [
           {
             type: "snippet",
             cardLabel: "Snippet (Image + Text)",

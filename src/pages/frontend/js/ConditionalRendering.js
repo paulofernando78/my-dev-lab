@@ -30,7 +30,7 @@ class ConditionalRendering extends HTMLElement {
         sectionId: "template-literals",
         sectionLabel: "Template Literals",
         sectionAriaLabel: "...",
-        examples: [
+        cardCodes: [
           //! TRUE
           {
             cardLabel: "true",
