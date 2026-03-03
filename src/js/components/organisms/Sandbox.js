@@ -4,19 +4,38 @@ import "@/js/components/atoms/CardCode.js";
 
 const style = /* css */ `
   .container, textarea {
-    border: 1px solid var(--gray-5);
-    border-radius: var(--border-radius);
-    padding: 5px;
     color: var(--text-color)
   }
 
   .container {
+    background-color: var(--gray-7);
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container__header {
+    background-color: var(--gray-7);
+    border: 1px solid var(--gray-6);
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container__title {
+    display: block;
+    font-weight: bold;
+    padding: 5px;
+  }
+  
+  .container__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
+
+    border: 1px solid var(--gray-6);
+    border-radius: 0 0 5px 5px;
+    padding: 5px
   }
 
-  .cards-code-container {
+  .cards__code-container {
     display: grid;
     gap: 1rem;
   }
@@ -27,11 +46,9 @@ const style = /* css */ `
 
   textarea {
     width: 100%;
-    height: calc(100% - 1.7rem);
     background-color: var(--gray-8);
     font-family: 'Courier New', Courier, monospace;
     min-height: 150px;
-
   }
 
   label {
@@ -45,7 +62,6 @@ const style = /* css */ `
 
   iframe {
     flex: 1;
-    margin-top: 5px;
     width: 100%;
     border-radius: 5px;
     background-color: white;
@@ -164,29 +180,35 @@ class Sandbox extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <div class="container">
-
-        <!-- Left Column -->
-        <div class="cards-code-container">
-          ${this.editors
-            .filter((editor) => this.hasAttribute(editor.key))
-            .map(
-              (editor) => /* html */ `
-            <wc-card-code cardLabelIcon="${editor.cardLabelIcon}" cardLabel="${editor.cardLabel}">
-              <textarea spellcheck="false" id="${editor.id}"></textarea>
-            </wc-card-code>
-          `,
-            )
-            .join("")}
+      
+        <div class="container__header">
+          <span class="container__title">Playground</span>
         </div>
+        <div class="container__content">
+          <!-- Left Column -->
+          <div class="cards__code-container">
+            ${this.editors
+              .filter((editor) => this.hasAttribute(editor.key))
+              .map(
+                (editor) => /* html */ `
+              <wc-card-code cardLabelIcon="${editor.cardLabelIcon}" cardLabel="${editor.cardLabel}">
+                <textarea spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" id="${editor.id}"></textarea>
+              </wc-card-code>
+            `,
+              )
+              .join("")}
+          </div>
 
-        <!-- Right Column -->
-        <div class="output-container">
-          <label>Output</label>
-          <iframe id="output" sandbox="allow-scripts allow-same-origin"></iframe>
+          <!-- Right Column -->
+          <div class="output-container">
+           
+            <iframe id="output" sandbox="allow-scripts allow-same-origin"></iframe>
+          </div>
+      
+          
         </div>
-        
-      </div>
+      
+      
     `;
   }
 

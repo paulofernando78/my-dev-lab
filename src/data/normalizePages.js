@@ -6,7 +6,7 @@
 //         ↓
 // UI (PageHeader / LessonNav / Router)
 
-export function normalizePage({ global, tools, fullstackRoadmap, ai, misc }) {
+export function normalizePage({ global, tools, design, fullstackRoadmap, ai, misc }) {
   function normalizeSections(data, itemKey, type) {
     return (data ?? [])
       .flatMap((section) => section.categories ?? [])
@@ -38,7 +38,7 @@ export function normalizePage({ global, tools, fullstackRoadmap, ai, misc }) {
   const normalizedTools = normalizeSections(tools, "labels", "misc");
 
   const normalizedDesign = normalizeSections(design, "labels", "design");
-
+ 
   const normalizedAi = normalizeSections(ai, "labels", "ai");
 
   const normalizedMisc = normalizeSections(misc, "labels", "misc");

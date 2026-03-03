@@ -133,6 +133,19 @@ code {
   font-family: "Courier New", Courier, monospace;
   background-color: var(--slate-1);
   color: var(--surface-text-color);
+  border-radius: var(--border-radius);
+}
+
+table {
+  border: 1px solid;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+  /* overflow: hidden */
+}
+
+td {
+  border: 1px solid;
+  padding: 1px 5px;
 }
 
 wc-icon[name="scrollToTop"] {

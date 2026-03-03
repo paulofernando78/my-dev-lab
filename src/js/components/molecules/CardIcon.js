@@ -65,10 +65,6 @@ class CardIcon extends HTMLElement {
         icon = "/assets/images/icons/notes.svg";
         label = "Notes";
         break;
-      case "list":
-        icon = "/assets/images/icons/list.svg";
-        label = "List";
-        break;
       default:
         icon = "";
         label = "";

@@ -47,14 +47,11 @@ class Boilerplate extends HTMLElement {
         notes: /* html */ `
           <p>...</p>
         `,
-        lists: [
-          {
-            list: "aaa"
-          },
-          {
-            list: "bbb"
-          }
-        ],
+        list: /* html */`
+          <ul>
+            <li>aaa</li>
+          </ul>
+        `
       },
       //! HTML
       {

@@ -48,7 +48,7 @@ export function renderSections(sections) {
                       ? example.sandbox
                           .map(
                             (config, index) => /* html */ `
-                <wc-sandbox id="${example.exampleId}-sandbox-${index}"
+                <wc-sandbox id="${section.sectionId}-sandbox-${index}"
                   ${config.html ? "html" : ""}
                   ${config.css ? "css" : ""}
                   ${config.js ? "js" : ""}

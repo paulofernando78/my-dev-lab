@@ -9,17 +9,10 @@ import "@/js/components/molecules/Code.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/atoms/Spacer.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
-
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
 
 class Boilerplate extends HTMLElement {
   constructor() {
@@ -33,53 +26,78 @@ class Boilerplate extends HTMLElement {
 
   render() {
     const sections = [
+      //! Keyboard shortcuts
+      {
+        sectionId: "keyboard-shortcuts",
+        sectionLabel: "Keyboard shortcuts",
+        sectionAriaLabel: "Keyboard shortcuts",
+        description: /* html */ `
+            <style>
+              td:first-child {
+                font-weight: bold
+              }
+            </style>
+            <p>Essential VS Code keyboard shortcuts to improve speed and productivity while coding.</p>
+            <wc-spacer></wc-spacer>
+            <table>
+            <tr>
+              <td>Ctrl + D</td>
+              <td>Mutiple selected</td>
+            </tr>
+            <tr>
+              <td>Shift + Alt</td>
+              <td>duplicate line</td>
+            </tr>
+            <tr>
+              <td>Alt + Z:</td>
+              <td>VS Code Alignment</td>
+            </tr>
+            <tr>
+              <td>Crtl + space</td>
+              <td>VS Code folder</td>
+            </tr>
+          </table>
+        `,
+      },
       //! ...
       {
         sectionId: "settings",
         sectionLabel: "Settings",
         sectionAriaLabel: "Settings",
-        list: /* html */ `
+        description: /* html */ `
+          <p>Recommended VS Code settings for a cleaner, smoother, and more productive coding experience.</p>
+          <wc-spacer></wc-spacer>
           <ul>
             <li>Bracket pair: on</li>
             <li>word map: on</li>
             <li>cursor smooth: on</li>
             <li>blink: expand</li>
           </ul>
+          
         `,
       },
-      //! Keyboard shortcuts
-      {
-        sectionId: "keyboard-shortcuts",
-        sectionLabel: "Keyboard shortcuts",
-        sectionAriaLabel: "Keyboard shortcuts",
-        list: /* html */ `
-          <ul>
-            <li>Ctrl + D: Mutiple selected</li>
-            <li>Shift + Alt = duplicate line</li>
-            <li>Alt + Z: VS Code Alignment</li>
-            <li>Crtl + space: VS Code folder</li>
-            <li>Crtl + link to open it</li>
-          </ul>
-        `,
-      },
+      //! Extensions
       {
         sectionId: "extensions",
         sectionLabel: "Extensions",
         sectionAriaLabel: "Extensions",
-        list: /* html */ `
-          <ul>
+        description: /* html */ `
+        <p>Mac: ⇧ Cmd + ⌘ Shift + X</p>
+        <p>Windows: Crtl + Shift + X</p>
+        <wc-spacer></wc-spacer>  
+        <ul>
             <li>ESLint</li>
             <li>HTMLHint</li>
             <li>vscode-icons</li>
             <li>Prettier - Code Formatter</li>
             <li>Javascript (ES6) code snippets</li>
+            <li>Figma for VS Code</li>
             <li>Error Lens</li>
             <li>Auto Rename Tag</li>
             <li>htmltagwrap</li>
             <li>Better Comments</li>
             <li>Code Snap</li>
             <li>Snippets Creator</li>
-            <li>Figma for VS Code</li>
             <li>Path Intellisense</li>
             <li>Image preview</li>
             <li>es6-string-html (for Web Components)</li>
@@ -103,7 +121,6 @@ class Boilerplate extends HTMLElement {
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
 
       <wc-page-header></wc-page-header>

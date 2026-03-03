@@ -16,8 +16,8 @@ const style = /* css */ `
     align-items: center;
     gap: 5px;
 
-    width: max-content;
-    padding: 5px 8px 0 5px;
+    
+    padding: 5px 5px 0 5px;
     font-weight: bold;
 
     color: #fff;
@@ -31,7 +31,7 @@ const style = /* css */ `
 
     color: #fff;
     background-color: var(--gray-7);
-    border-radius: 0 5px 5px 5px;
+    border-radius: 0 0 5px 5px;
   }
 `;
 
