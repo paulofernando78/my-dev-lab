@@ -4,7 +4,7 @@ const style = /* css */ `
     color: #000;
     border: 1px solid;
     border-radius: var(--border-radius);
-    padding: 1px 5px 5px 5px
+    padding: 5px 5px 5px 5px
   }
 `;
 
