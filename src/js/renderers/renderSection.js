@@ -32,17 +32,15 @@ export function renderSections(sections) {
                     cardLabelIcon="/assets/images/icons/text.svg"
                     id="${section.sectionId}-card-${index}">
                     ${
-                      cardCode.image
+                      (cardCode.type ?? "code") === "snippet"
                         ? /* html */ `
-                      <div>
-                        <img src="${cardCode.image}" alt="snippet"/>
-                      </div>
-                      `
+                          ${cardCode.image ? `<div><img src="${cardCode.image}" alt="snippet"/></div>` : ""}
+                        `
                         : /* html */ `
-                    <wc-code language="${cardCode.language}">
-                      ${cardCode.code}
-                    </wc-code>
-                    `
+                          <wc-code language="${cardCode.language}">
+                            ${cardCode.code ?? ""}
+                          </wc-code>
+                        `
                     }
                 
                   </wc-card-code>
@@ -58,7 +56,7 @@ export function renderSections(sections) {
                         : /* code + preview mode */ /* html */ `
                      
                           <wc-preview class="preview">
-                            ${cardCode.preview()}
+                            ${cardCode.preview ? cardCode.preview() : ""}
                           </wc-preview>
                      
                       `
@@ -75,13 +73,13 @@ export function renderSections(sections) {
                       ? cardCode.sandbox
                           .map(
                             (config, index) => /* html */ `
-              <wc-sandbox
-                id="${section.sectionId}-sandbox-${index}"
-                ${config.html ? "html" : ""}
-                ${config.css ? "css" : ""}
-                ${config.js ? "js" : ""}
-              ></wc-sandbox>
-            `,
+                <wc-sandbox
+                  id="${section.sectionId}-sandbox-${index}"
+                  ${config.html ? "html" : ""}
+                  ${config.css ? "css" : ""}
+                  ${config.js ? "js" : ""}
+                ></wc-sandbox>
+              `,
                           )
                           .join("")
                       : ""
@@ -92,9 +90,11 @@ export function renderSections(sections) {
               : ""
           }
           
-          <wc-links
-            data-links="${encodeURIComponent(JSON.stringify(section.links))}">
-          </wc-links>
+          ${
+            section.links
+              ? `<wc-links data-links="${encodeURIComponent(JSON.stringify(section.links))}"></wc-links>`
+              : ""
+          }
         </wc-section>
       `,
     )

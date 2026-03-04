@@ -5,12 +5,13 @@ import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/Preview.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 const style = /* css */ `
   h1, h2, h3, h4 {

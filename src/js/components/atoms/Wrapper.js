@@ -1,6 +1,6 @@
 
 const style = /* css */ `
-  :where(wc-wrapper) {
+  :host {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 5px;
@@ -15,16 +15,20 @@ const style = /* css */ `
 `;
 
 class Wrapper extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: "open" })
+  }
+
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.innerHTML = /* HTML */ `
+    this.shadowRoot.innerHTML = /* HTML */ `
     <style>
       ${style}
     </style>
-
     <slot></slot>
     `;
   }

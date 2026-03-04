@@ -51,8 +51,6 @@ class ModuleTwo extends HTMLElement {
             sandbox: [
               {
                 html: true,
-                css: true,
-                js: true,
               },
             ],
           },
