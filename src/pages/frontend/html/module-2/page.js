@@ -51,6 +51,8 @@ class ModuleTwo extends HTMLElement {
             sandbox: [
               {
                 html: true,
+                css: true,
+                js: true,
               },
             ],
           },
@@ -63,7 +65,7 @@ class ModuleTwo extends HTMLElement {
             preview: () => /* html */ `
               <p>This is a paragraph.</p>
         `,
-          }
+          },
         ],
       },
     ];

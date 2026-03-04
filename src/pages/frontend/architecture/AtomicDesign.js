@@ -24,7 +24,6 @@ const style = /* css */ `
   .template-header, .template-footer {
     background:#ddd; height:40px;
     display: grid;
-    display: grid;
   }
 
   .template-main {

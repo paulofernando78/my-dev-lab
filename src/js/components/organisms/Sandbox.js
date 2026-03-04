@@ -1,10 +1,11 @@
-import "@/js/components/atoms/Wrapper.js";
+import styleImports from "@css/styles.css?inline";
 
 import * as monaco from "monaco-editor";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
 import htmlWorker from "monaco-editor/esm/vs/language/html/html.worker?worker";
 import cssWorker from "monaco-editor/esm/vs/language/css/css.worker?worker";
 import tsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker";
+import monacoCss from "monaco-editor/min/vs/editor/editor.main.css?inline";
 
 self.MonacoEnvironment = {
   getWorker(_, label) {
@@ -51,9 +52,16 @@ const style = /* css */ `
     padding: 7px 5px 5px
   }
 
-  .sandbox__reset-btn {
-    background-color: #fff;
+  .icon {
+    width: var(--icon)
+  }
 
+  .reset-btn {
+    background-color: #1E1E1E;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 19px;
+    height: 19px
   }
 
    .monaco-editor {
@@ -80,6 +88,10 @@ const style = /* css */ `
 `;
 
 class Sandbox extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
   debounce(fn, delay) {
     let timeout;
     return (...args) => {
@@ -111,93 +123,125 @@ class Sandbox extends HTMLElement {
     this.editors = {};
 
     if (enableHTML) {
-      this.editors.html = monaco.editor.create(this.querySelector("#html-editor"), {
-        value: localStorage.getItem(`sandbox-${this.id}-html`) || "",
-        language: "html",
-        theme: "vs-dark",
-        automaticLayout: true,
-        minimap: { enabled: false },
+      this.editors.html = monaco.editor.create(
+        this.shadowRoot.querySelector("#html-editor"),
+        {
+          value: localStorage.getItem(`sandbox-${this.id}-html`) || "",
+          language: "html",
+          theme: "vs-dark",
+          automaticLayout: true,
+          minimap: { enabled: false },
 
-        tabSize: 2,
-        insertSpaces: true,
-        detectIndentation: false,
+          tabSize: 2,
+          insertSpaces: true,
+          detectIndentation: false,
 
-        padding: {
-          top: 15,
-          bottom: 15,
+          padding: {
+            top: 15,
+            bottom: 15,
+          },
+
+          glyphMargin: false,
+          lineNumbersMinChars: 2,
+          lineDecorationsWidth: 12,
+          folding: false,
+          wordWrap: "on",
+
+          quickSuggestions: true,
+          suggestOnTriggerCharacters: true,
+          acceptSuggestionOnEnter: "on",
         },
-
-        glyphMargin: false,
-        lineNumbersMinChars: 2,
-        lineDecorationsWidth: 12,
-        folding: false,
-        wordWrap: "on",
-
-        quickSuggestions: true,
-        suggestOnTriggerCharacters: true,
-        acceptSuggestionOnEnter: "on",
-      });
+      );
     }
 
     if (enableCSS) {
-      this.editors.css = monaco.editor.create(this.querySelector("#css-editor"), {
-        value: localStorage.getItem(`sandbox-${this.id}-css`) || "",
-        language: "css",
-        theme: "vs-dark",
-        automaticLayout: true,
-        minimap: { enabled: false },
+      this.editors.css = monaco.editor.create(
+        this.shadowRoot.querySelector("#css-editor"),
+        {
+          value: localStorage.getItem(`sandbox-${this.id}-css`) || "",
+          language: "css",
+          theme: "vs-dark",
+          automaticLayout: true,
+          minimap: { enabled: false },
 
-        tabSize: 2,
-        insertSpaces: true,
-        detectIndentation: false,
+          tabSize: 2,
+          insertSpaces: true,
+          detectIndentation: false,
 
-        padding: {
-          top: 15,
-          bottom: 15,
+          padding: {
+            top: 15,
+            bottom: 15,
+          },
+
+          glyphMargin: false,
+          lineNumbersMinChars: 2,
+          lineDecorationsWidth: 12,
+          folding: false,
+          wordWrap: "on",
+
+          quickSuggestions: true,
+          suggestOnTriggerCharacters: true,
+          acceptSuggestionOnEnter: "on",
         },
-
-        glyphMargin: false,
-        lineNumbersMinChars: 2,
-        lineDecorationsWidth: 12,
-        folding: false,
-        wordWrap: "on",
-
-        quickSuggestions: true,
-        suggestOnTriggerCharacters: true,
-        acceptSuggestionOnEnter: "on",
-      });
+      );
     }
 
     if (enableJS) {
-      this.editors.js = monaco.editor.create(this.querySelector("#js-editor"), {
-        value: localStorage.getItem(`sandbox-${this.id}-js`) || "",
-        language: "javascript",
-        theme: "vs-dark",
-        automaticLayout: true,
-        minimap: { enabled: false },
+      this.editors.js = monaco.editor.create(
+        this.shadowRoot.querySelector("#js-editor"),
+        {
+          value: localStorage.getItem(`sandbox-${this.id}-js`) || "",
+          language: "javascript",
+          theme: "vs-dark",
+          automaticLayout: true,
+          minimap: { enabled: false },
 
-        tabSize: 2,
-        insertSpaces: true,
-        detectIndentation: false,
+          tabSize: 2,
+          insertSpaces: true,
+          detectIndentation: false,
 
-        padding: {
-          top: 15,
-          bottom: 15,
+          padding: {
+            top: 15,
+            bottom: 15,
+          },
+
+          glyphMargin: false,
+          lineNumbersMinChars: 2,
+          lineDecorationsWidth: 12,
+          folding: false,
+          wordWrap: "on",
+
+          quickSuggestions: true,
+          suggestOnTriggerCharacters: true,
+          acceptSuggestionOnEnter: "on",
         },
-
-        glyphMargin: false,
-        lineNumbersMinChars: 2,
-        lineDecorationsWidth: 12,
-        folding: false,
-        wordWrap: "on",
-
-        quickSuggestions: true,
-        suggestOnTriggerCharacters: true,
-        acceptSuggestionOnEnter: "on",
-      });
+      );
     }
 
-    this.iframe = this.querySelector("#output");
+    this.iframe = this.shadowRoot.querySelector("#output");
+
+    // click reset
+    // ↓
+    // descobre qual editor
+    // ↓
+    // limpa o código
+    // ↓
+    // remove localStorage
+    // ↓
+    // atualiza iframe
+
+    const resetButtons = this.shadowRoot.querySelectorAll(".reset-btn");
+
+    resetButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const editorType = btn.dataset.editor;
+        if (!editorType || !this.editors[editorType]) return;
+
+        this.editors[editorType].setValue("");
+        localStorage.removeItem(`sandbox-${this.id}-${editorType}`);
+        this.updatePreview();
+      });
+    });
 
     Object.entries(this.editors).forEach(([key, editor]) => {
       editor.onDidChangeModelContent(() => {
@@ -211,45 +255,58 @@ class Sandbox extends HTMLElement {
   }
 
   render() {
-    
     const enableHTML = this.hasAttribute("html");
     const enableCSS = this.hasAttribute("css");
     const enableJS = this.hasAttribute("js");
 
-    this.innerHTML = /* html */ `
+    this.shadowRoot.innerHTML = /* html */ `
       <style>
+        ${styleImports}
+        ${monacoCss}
         ${style}
       </style>
 
       <div class="sandbox">
         <div class="sandbox__editors line-break">
 
-          ${enableHTML ? /* html */`
+          ${
+            enableHTML
+              ? /* html */ `
           <div>
             <div class="sandbox__header">
               <img src="/assets/images/icons/html5.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="html"/>
             </div>
             <div id="html-editor"></div>
-          </div>` : ``}
+          </div>`
+              : ""
+          }
 
-          ${enableCSS ? `
+          ${
+            enableCSS
+              ? /* html */ `
           <div>
             <div class="sandbox__header">
               <img src="/assets/images/icons/css.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="csss"/>
             </div>
             <div id="css-editor"></div>
-          </div>` : ``}
+          </div>`
+              : ""
+          }
 
-          ${enableJS ? `
+          ${
+            enableJS
+              ? /* html */ `
           <div>
             <div class="sandbox__header">
               <img src="/assets/images/icons/javascript.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="js"/>
             </div>
             <div id="js-editor"></div>
-          </div>` : ``}
+          </div>`
+              : ""
+          }
         </div>
 
         <div class="sandbox__preview">
