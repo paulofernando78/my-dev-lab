@@ -82,8 +82,7 @@ class CardCode extends HTMLElement {
             ${cardLabelAttr}
           </div>
           <div class="flex-align-center">
-            <img src="/assets/images/icons/visibility.svg" class="icon icon-visibility"/>
-            <img src="/assets/images/icons/visibility-off.svg" class="icon icon-visibility-off"/>
+            <img src="/assets/images/icons/visibility-off.svg" class="icon visibility-toggle"/>
           </div>
         </div>`
           : ""
@@ -93,22 +92,15 @@ class CardCode extends HTMLElement {
       </div>
     `;
 
-    const visibility = this.shadowRoot.querySelector(".icon-visibility");
-    const visibilityOff = this.shadowRoot.querySelector(".icon-visibility-off");
-
+    const visibility = this.shadowRoot.querySelector(".visibility-toggle");
     const code = this.querySelector("wc-code");
 
-
-    if (visibility && visibilityOff && code) {
-      visibility.addEventListener("click", () => {
-      code.classList.add("hidden");
-    });
-
-    visibilityOff.addEventListener("click", () => {
-      code.classList.remove("hidden")
+    visibility.addEventListener("click", () => {
+      const hidden = code.classList.toggle("hidden")
+      visibility.src = hidden
+      ? "/assets/images/icons/visibility.svg"
+      : "/assets/images/icons/visibility-off.svg"
     })
-    }
-    
   }
 }
 

@@ -61,7 +61,6 @@ const style = /* css */ `
     justify-content: space-between;
 
     background-color: var(--slate-7);
-    border-bottom: 2px solid #0D0F12;
     padding: 7px 5px 5px
   }
 
