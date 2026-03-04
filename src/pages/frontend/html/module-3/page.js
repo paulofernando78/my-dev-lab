@@ -13,7 +13,7 @@ import { renderSections } from "@/js/renderers/renderSection";
 
 const style = /* css */ `
   ol, ul {
-    
+    padding-left: 1.20rem
   }
 `;
 
@@ -34,53 +34,67 @@ class ModuleThree extends HTMLElement {
         sectionLabel: "Ordered Lists",
         sectionAriaLabel: "Ordered Lists",
         cardCodes: [
+          //! Default (numbers)
           {
-            cardLabel: "default (numbers)",
+            cardLabel: "Default (numbers)",
             language: "html",
             code: `
 <ol>
-  <li>Item 1</li>
-  <li>Item 2</li>
+  <li>...</li>
+  <li>...</li>
 </ol>
         `,
             preview: () => /* html */ `
               <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
+                <li>...</li>
+                <li>...</li>
               </ol>
         `,
           },
+          //! Letters
           {
-            cardLabel: "letters",
+            cardLabel: "Alphabetic (HTML type - legacy)",
             language: "html",
             code: `
-<ol>
-  <li>Item 1</li>
-  <li>Item 2</li>
+<ol type="A">
+  <li>...</li>
+  <li>...</li>
 </ol>
         `,
             preview: () => /* html */ `
-              <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
+              <ol type="A">
+                <li>...</li>
+                <li>...</li>
               </ol>
         `,
           },
+          //! ...
           {
-            cardLabel: "Unordered List",
+            cardLabel: "Alphabetic (CSS list-style-type)",
             language: "html",
             code: `
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ul>
+<style>
+  ol.alpha {
+    list-style-type: lower-alpha;
+  }
+</style>
+
+<ol class="alpha">
+  <li>...</li>
+  <li>...</li>
+</ol>
         `,
             preview: () => /* html */ `
-              <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-              </ul>
+              <ol style="list-style-type: lower-alpha;">
+                <li>...</li>
+                <li>...</li>
+              </ol>
         `,
+            sandbox: [
+              {
+                html: true,
+              },
+            ],
           },
         ],
       },
@@ -94,14 +108,14 @@ class ModuleThree extends HTMLElement {
             language: "html",
             code: `
 <ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
+  <li>...</li>
+  <li>...</li>
 </ul>
         `,
             preview: () => /* html */ `
               <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
+                <li>...</li>
+                <li>...</li>
               </ul>
         `,
           },

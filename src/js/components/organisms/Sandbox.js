@@ -22,6 +22,20 @@ const style = /* css */ `
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 8px;
   }
+
+  .header {
+    border-radius: 5px 5px 0 0;
+    background-color: #374152;
+    background-color: var(--slate-7);
+    border-bottom: 2px solid #0D0F12;
+
+    padding: 5px
+  }
+
+  .title {
+    font-weight: bold;
+    padding-block: 5px
+  }
   
   .sandbox__editors,
   .sandbox__preview {
@@ -42,12 +56,11 @@ const style = /* css */ `
     height: 200px;
   }
   
-  .sandbox__header {
+  .sandbox__editors-header {
     display: flex;
     justify-content: space-between;
 
-    border-radius: 5px 5px 0 0;
-    background-color: #1E1E1E;
+    background-color: var(--slate-7);
     border-bottom: 2px solid #0D0F12;
     padding: 7px 5px 5px
   }
@@ -57,7 +70,7 @@ const style = /* css */ `
   }
 
   .reset-btn {
-    background-color: #1E1E1E;
+    background-color: var(--slate-7);
     border-radius: 50%;
     cursor: pointer;
     width: 19px;
@@ -80,11 +93,11 @@ const style = /* css */ `
     border: 0;
   }
 
-  @media (width < 700px) {
-    .sandbox {
-      grid-template-columns: 1fr;
+  @media (width < 876px) {
+      .sandbox {
+        grid-template-columns: 1fr;
+      }
     }
-  }
 `;
 
 class Sandbox extends HTMLElement {
@@ -266,32 +279,36 @@ class Sandbox extends HTMLElement {
         ${style}
       </style>
 
+      <div class="header">
+        <span class="title">Sandbox Playground</span>
+      </div>
       <div class="sandbox">
         <div class="sandbox__editors line-break">
 
           ${
             enableHTML
               ? /* html */ `
-          <div>
-            <div class="sandbox__header">
-              <img src="/assets/images/icons/html5.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="html"/>
-            </div>
-            <div id="html-editor"></div>
-          </div>`
+            <div>
+              <div class="sandbox__editors-header">
+                <img src="/assets/images/icons/html5.svg" class="icon"/>
+                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="html"/>
+              </div>
+              <div id="html-editor"></div>
+            </div>`
               : ""
           }
 
           ${
             enableCSS
               ? /* html */ `
-          <div>
-            <div class="sandbox__header">
-              <img src="/assets/images/icons/css.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
+            <div>
+              <div class="sandbox__editors-header">
+                <img src="/assets/images/icons/css.svg" class="icon"/>
+                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
+              </div>
+              <div id="css-editor"></div>
             </div>
-            <div id="css-editor"></div>
-          </div>`
+          `
               : ""
           }
 
@@ -299,12 +316,13 @@ class Sandbox extends HTMLElement {
             enableJS
               ? /* html */ `
           <div>
-            <div class="sandbox__header">
+            <div class="sandbox__editors-header">
               <img src="/assets/images/icons/javascript.svg" class="icon"/>
               <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="js"/>
             </div>
             <div id="js-editor"></div>
-          </div>`
+          </div>
+          `
               : ""
           }
         </div>

@@ -31,6 +31,9 @@ class ModuleTwo extends HTMLElement {
         sectionId: "text",
         sectionLabel: "Text and Content Structure",
         sectionAriaLabel: "Text and Content Structure",
+        description: /* html */ `
+          <p>???</p>
+        `,
         cardCodes: [
           {
             type: "code",
@@ -55,6 +58,9 @@ class ModuleTwo extends HTMLElement {
             ],
           },
           {
+            description: /* html */ `
+              <p>???</p>
+            `,
             cardLabel: "Paragraph",
             language: "html",
             code: `

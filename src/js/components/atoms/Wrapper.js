@@ -7,7 +7,7 @@ const style = /* css */ `
     align-items: start;
   }
 
-  @media (width < 600px) {
+  @media (width < 876px) {
     :host {
       grid-template-columns: 1fr;
     }

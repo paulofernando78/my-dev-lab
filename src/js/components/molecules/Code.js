@@ -4,15 +4,43 @@ import hljsTheme from "highlight.js/styles/vs2015.css?inline";
 
 const style = /* css */ `
   pre {
+    position: relative;
     margin: 0;
-    background-color: #252525;
+    padding: 5px;
     border-radius: var(--border-radius);
-    white-space: pre-wrap;
+    overflow: hidden;
   }
   
-  .hljs,
-  .hljs * {
+  .blur-overlay {
+    margin: 5px;
+    position: absolute;
+    
+    inset: 0;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(20,20,20,.35);
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  
+  :host(.hidden) .blur-overlay {
+    opacity: 1;
+  }
+  
+  .hljs {
+    display: block;
+    margin: 0;
+    padding: 0.8rem;
     font-size: 0.9rem;
+    white-space: pre-wrap;
+    border-radius: inherit;
+  }
+
+  .hljs * {
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -36,14 +64,8 @@ class Code extends HTMLElement {
         ${style}
       </style>
 
-      <pre><code class="language-${language}"><slot></slot></code></pre>
+      <pre><div class="blur-overlay"></div><code class="language-${language}"></code></pre>
     `;
-
-    const slot = this.shadowRoot.querySelector("slot");
-
-    slot.addEventListener("slotchange", () => {
-      this.highlight();
-    });
 
     const codeEl = this.shadowRoot.querySelector("code");
 

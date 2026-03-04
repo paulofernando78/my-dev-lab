@@ -44,7 +44,7 @@ li {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background: url("/assets/images/icons/text.svg");
+  background: url("/assets/images/icons/code.svg");
 }
 
 `;
