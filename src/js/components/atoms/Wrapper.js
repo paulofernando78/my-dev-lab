@@ -14,17 +14,12 @@ const style = /* css */ `
 `;
 
 class Wrapper extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.shadowRoot.innerHTML = /* HTML */ `
+    this.innerHTML = /* HTML */ `
     <style>
       ${style}
     </style>

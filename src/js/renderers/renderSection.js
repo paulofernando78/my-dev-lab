@@ -75,12 +75,13 @@ export function renderSections(sections) {
                       ? cardCode.sandbox
                           .map(
                             (config, index) => /* html */ `
-                <wc-sandbox id="${section.sectionId}-sandbox-${index}"
-                  ${config.html ? "html" : ""}
-                  ${config.css ? "css" : ""}
-                  ${config.js ? "js" : ""}
-                ></wc-sandbox>
-                `,
+              <wc-sandbox
+                id="${section.sectionId}-sandbox-${index}"
+                ${config.html ? "html" : ""}
+                ${config.css ? "css" : ""}
+                ${config.js ? "js" : ""}
+              ></wc-sandbox>
+            `,
                           )
                           .join("")
                       : ""

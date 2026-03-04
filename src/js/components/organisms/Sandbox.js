@@ -1,221 +1,292 @@
-import styleImports from "@css/styles.css?inline";
+import "@/js/components/atoms/Wrapper.js";
 
-import "@/js/components/atoms/CardCode.js";
+import * as monaco from "monaco-editor";
+import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+import htmlWorker from "monaco-editor/esm/vs/language/html/html.worker?worker";
+import cssWorker from "monaco-editor/esm/vs/language/css/css.worker?worker";
+import tsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker";
+
+self.MonacoEnvironment = {
+  getWorker(_, label) {
+    if (label === "html") return new htmlWorker();
+    if (label === "css") return new cssWorker();
+    if (label === "typescript" || label === "javascript") return new tsWorker();
+    return new editorWorker();
+  },
+};
 
 const style = /* css */ `
-  .container {
-    background-color: var(--gray-7);
-    border-radius: 5px 5px 0 0;
-  }
-  
-  .container__header {
-    background-color: var(--gray-7);
-    border: 1px solid var(--gray-6);
-    border-bottom: 0;
-    border-radius: 5px 5px 0 0;
-  }
-  
-  .container__title {
-    display: block;
-    font-weight: bold;
-    padding: 5px;
-  }
-  
-  .container__content {
+  .sandbox {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-
-    border: 1px solid var(--gray-6);
-    border-radius: 0 0 5px 5px;
-    padding: 5px
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+  }
+  
+  .sandbox__editors,
+  .sandbox__preview {
+    min-width: 0;
   }
 
-  .cards__code-container {
-    display: grid;
-    gap: 1rem;
+  .sandbox__editors,
+  .sandbox__editors > div,
+  #html-editor,
+  #css-editor,
+  #js-editor {
+    min-width: 0;
   }
 
-  img {
-    width: 20px
+  #html-editor,
+  #css-editor,
+  #js-editor {
+    height: 200px;
   }
-
-  textarea {
-    width: 100%;
-    background-color: #1E1E1E;
-    color: #fff;
-    border: 0;
-
-    font-family: 'Courier New', Courier, monospace;
-    min-height: 150px;
-    padding: 5px
-  }
-
-  label {
-    font-weight: bold;
-  }
-
-  .output-container {
+  
+  .sandbox__header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 5px 5px 0 0;
+    background-color: #1E1E1E;
+    border-bottom: 2px solid #0D0F12;
+    padding: 7px 5px 5px
   }
 
-  iframe {
-    flex: 1;
+  .sandbox__reset-btn {
+    background-color: #fff;
+
+  }
+
+   .monaco-editor {
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+  }
+
+  .sandbox__preview {
+    min-width: 0;
+  }
+
+  .sandbox__preview iframe {
+    border-radius: var(--border-radius);
     width: 100%;
-    border-radius: 5px;
-    background-color: white;
+    height: 100%;
+    border: 0;
   }
 
-  @media (width < 600px) {
-    .container {
-      grid-template-columns: 1fr
+  @media (width < 700px) {
+    .sandbox {
+      grid-template-columns: 1fr;
     }
   }
 `;
 
 class Sandbox extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
+  debounce(fn, delay) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        fn.apply(this, args);
+      }, delay);
+    };
   }
 
-  // 1️⃣ connectedCallback
-  // 2️⃣ iframe loads once
-  // 3️⃣ user types
-  // 4️⃣ state updates
-  // 5️⃣ innerHTML updated inside iframe
+  saveToStorage(key, value) {
+    localStorage.setItem(`sandbox-${this.id}-${key}`, value);
+  }
 
   connectedCallback() {
-     this.instanceId = this.getAttribute("id") || crypto.randomUUID();
+    // Prevent multiple initializations
+    if (this.editors) return;
+
     this.render();
-    this.setup();
-  }
 
-  state = {
-    html: "",
-    css: "",
-    js: "",
-  };
+    this.updatePreviewDebounced = this.debounce(this.updatePreview, 300);
 
-  editors = [
-    {
-      cardLabelIcon: "/assets/images/icons/html5.svg",
-      cardLabel: "HTML",
-      id: "htmlCode",
-      key: "html",
-    },
-    {
-      cardLabelIcon: "/assets/images/icons/css.svg",
-      cardLabel: "CSS",
-      id: "cssCode",
-      key: "css",
-    },
-    {
-      cardLabelIcon: "/assets/images/icons/javascript.svg",
-      cardLabel: "JS",
-      id: "jsCode",
-      key: "js",
-    },
-  ];
+    this.saveDebounced = this.debounce(this.saveToStorage, 500);
 
-  setup() {
-    const output = this.shadowRoot.querySelector("#output");
+    const enableHTML = this.hasAttribute("html");
+    const enableCSS = this.hasAttribute("css");
+    const enableJS = this.hasAttribute("js");
 
-    this.editors
-      .filter((editor) => this.hasAttribute(editor.key))
-      .forEach((editor) => {
-        const textarea = this.shadowRoot.querySelector(`#${editor.id}`);
-        const saved = localStorage.getItem(
-          `sandbox-${this.instanceId}-${editor.key}`,
-        );
+    this.editors = {};
 
-        if (saved) {
-          this.state[editor.key] = saved;
-          textarea.value = saved;
-        }
+    if (enableHTML) {
+      this.editors.html = monaco.editor.create(this.querySelector("#html-editor"), {
+        value: localStorage.getItem(`sandbox-${this.id}-html`) || "",
+        language: "html",
+        theme: "vs-dark",
+        automaticLayout: true,
+        minimap: { enabled: false },
 
-        textarea.addEventListener("input", () => {
-          this.state[editor.key] = textarea.value;
-          localStorage.setItem(
-            `sandbox-${this.instanceId}-${editor.key}`,
-            textarea.value,
-          );
-          this.updatePreview();
-        });
+        tabSize: 2,
+        insertSpaces: true,
+        detectIndentation: false,
+
+        padding: {
+          top: 15,
+          bottom: 15,
+        },
+
+        glyphMargin: false,
+        lineNumbersMinChars: 2,
+        lineDecorationsWidth: 12,
+        folding: false,
+        wordWrap: "on",
+
+        quickSuggestions: true,
+        suggestOnTriggerCharacters: true,
+        acceptSuggestionOnEnter: "on",
       });
+    }
+
+    if (enableCSS) {
+      this.editors.css = monaco.editor.create(this.querySelector("#css-editor"), {
+        value: localStorage.getItem(`sandbox-${this.id}-css`) || "",
+        language: "css",
+        theme: "vs-dark",
+        automaticLayout: true,
+        minimap: { enabled: false },
+
+        tabSize: 2,
+        insertSpaces: true,
+        detectIndentation: false,
+
+        padding: {
+          top: 15,
+          bottom: 15,
+        },
+
+        glyphMargin: false,
+        lineNumbersMinChars: 2,
+        lineDecorationsWidth: 12,
+        folding: false,
+        wordWrap: "on",
+
+        quickSuggestions: true,
+        suggestOnTriggerCharacters: true,
+        acceptSuggestionOnEnter: "on",
+      });
+    }
+
+    if (enableJS) {
+      this.editors.js = monaco.editor.create(this.querySelector("#js-editor"), {
+        value: localStorage.getItem(`sandbox-${this.id}-js`) || "",
+        language: "javascript",
+        theme: "vs-dark",
+        automaticLayout: true,
+        minimap: { enabled: false },
+
+        tabSize: 2,
+        insertSpaces: true,
+        detectIndentation: false,
+
+        padding: {
+          top: 15,
+          bottom: 15,
+        },
+
+        glyphMargin: false,
+        lineNumbersMinChars: 2,
+        lineDecorationsWidth: 12,
+        folding: false,
+        wordWrap: "on",
+
+        quickSuggestions: true,
+        suggestOnTriggerCharacters: true,
+        acceptSuggestionOnEnter: "on",
+      });
+    }
+
+    this.iframe = this.querySelector("#output");
+
+    Object.entries(this.editors).forEach(([key, editor]) => {
+      editor.onDidChangeModelContent(() => {
+        const value = editor.getValue();
+        this.saveDebounced(key, value);
+        this.updatePreviewDebounced();
+      });
+    });
 
     this.updatePreview();
   }
 
-  buildDocument() {
-    return /* html*/ `
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <style>
-      ${this.state.css}
-      body {
-        margin: 0;
-        padding: 10px;
-        font-family: sans-serif;
-      }
-    </style>
-    </head>
-    <body>
-      ${this.state.html}
-      <script>
-        window.addEventListener("DOMContentLoaded", () => {
-          ${this.state.js}
-        })
-      </script>
-    </body>
-    </html>
-    `;
-  }
-
   render() {
-    this.shadowRoot.innerHTML = /* HTML */ `
+    
+    const enableHTML = this.hasAttribute("html");
+    const enableCSS = this.hasAttribute("css");
+    const enableJS = this.hasAttribute("js");
+
+    this.innerHTML = /* html */ `
       <style>
-        ${styleImports}
         ${style}
       </style>
-      
-        <div class="container__header">
-          <span class="container__title">Code Sandbox</span>
-        </div>
-        <div class="container__content">
-          <!-- Left Column -->
-          <div class="cards__code-container">
-            ${this.editors
-              .filter((editor) => this.hasAttribute(editor.key))
-              .map(
-                (editor) => /* html */ `
-              <wc-card-code cardLabelIcon="${editor.cardLabelIcon}" cardLabel="${editor.cardLabel}">
-                <textarea spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" id="${editor.id}"></textarea>
-              </wc-card-code>
-            `,
-              )
-              .join("")}
-          </div>
 
-          <!-- Right Column -->
-          <div class="output-container">
-           
-            <iframe id="output" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
-      
-          
+      <div class="sandbox">
+        <div class="sandbox__editors line-break">
+
+          ${enableHTML ? /* html */`
+          <div>
+            <div class="sandbox__header">
+              <img src="/assets/images/icons/html5.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon"/>
+            </div>
+            <div id="html-editor"></div>
+          </div>` : ``}
+
+          ${enableCSS ? `
+          <div>
+            <div class="sandbox__header">
+              <img src="/assets/images/icons/css.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon"/>
+            </div>
+            <div id="css-editor"></div>
+          </div>` : ``}
+
+          ${enableJS ? `
+          <div>
+            <div class="sandbox__header">
+              <img src="/assets/images/icons/javascript.svg" class="icon"/>
+              <img src="/assets/images/icons/reset.svg" class="icon"/>
+            </div>
+            <div id="js-editor"></div>
+          </div>` : ``}
         </div>
-      
-      
+
+        <div class="sandbox__preview">
+          <iframe id="output"></iframe>
+        </div>
+      </div>
     `;
   }
 
   updatePreview() {
-    const output = this.shadowRoot.querySelector("#output");
-    if (!output) return;
-    output.srcdoc = this.buildDocument();
+    const html = this.editors.html ? this.editors.html.getValue() : "";
+    const css = this.editors.css ? this.editors.css.getValue() : "";
+    const js = this.editors.js ? this.editors.js.getValue() : "";
+
+    this.iframe.srcdoc = /* html */ `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          html, body {
+            margin: 0;
+            padding: 10px;
+            background: white !important;
+            color: black !important;
+            color-scheme: light;
+          }
+          ${css}
+        </style>
+      </head>
+      <body>
+        ${html}
+        <script>
+          ${js}
+        </script>
+      </body>
+    </html>
+  `;
   }
 }
 

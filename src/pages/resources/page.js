@@ -72,6 +72,10 @@ class Resources extends HTMLElement {
             href: "https://exercism.org/",
             label: "Exercism",
           },
+          {
+            href: "https://scratch.mit.edu/",
+            label: "Scratch MIT",
+          },
         ],
       },
       {

@@ -23,11 +23,6 @@ const style = /* css */ `
 `;
 
 class Boilerplate extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
   connectedCallback() {
     this.render();
   }
@@ -168,7 +163,7 @@ console.log(...)
       },
     ];
 
-    this.shadowRoot.innerHTML = /* HTML */ `
+    this.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
         ${style}
@@ -183,7 +178,7 @@ console.log(...)
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
-    setupContents(this.shadowRoot, sections);
+    setupContents(this, sections);
   }
 }
 

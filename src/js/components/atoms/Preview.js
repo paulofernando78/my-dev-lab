@@ -2,7 +2,7 @@ import styleImports from "@css/styles.css?inline";
 
 class Preview extends HTMLElement {
   constructor() {
-    super();div
+    super();
     this.attachShadow({ mode: "open" });
   }
 

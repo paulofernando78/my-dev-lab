@@ -76,11 +76,11 @@ header {
 }
 
 .nav-main {
-  flex: 1;
   display: flex;
   position: relative;
   min-height: 0;
   width: 100%;
+  flex: 1;
   
 }
 
@@ -114,8 +114,12 @@ footer {
   text-align: center;
 }
 
-img {
+img-radius {
   border-radius: 5px;
+}
+
+.icon {
+  width: 21px
 }
 
 svg {
