@@ -20,14 +20,14 @@ const style = /* css */ `
   .sandbox {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 8px;
+    gap: 5px;
   }
 
   .header {
     border-radius: 5px 5px 0 0;
     background-color: #374152;
     background-color: var(--slate-7);
-    border-bottom: 2px solid #0D0F12;
+    border-bottom: 5px solid #0D0F12;
 
     padding: 5px
   }
@@ -87,7 +87,7 @@ const style = /* css */ `
   }
 
   .sandbox__preview iframe {
-    border-radius: var(--border-radius);
+    border-radius: 0 0 5px 5px;
     width: 100%;
     height: 100%;
     border: 0;

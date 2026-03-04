@@ -41,8 +41,12 @@ const style = /* css */ `
     border-radius: 0 0 5px 5px;
   }
 
-  .hljs {
+  .hljs * {
     margin: 0;
+    padding: 0;
+  }
+
+  .hljs {
     padding: 0.8rem;
     font-size: 0.9rem;
     white-space: pre-wrap;
@@ -51,11 +55,6 @@ const style = /* css */ `
   pre {
     border-radius: var(--border-radius);
     overflow: hidden;
-  }
-
-  .hljs * {
-    margin: 0;
-    padding: 0;
   }
 `;
 
