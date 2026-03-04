@@ -11,8 +11,7 @@ const style = /* css */ `
     width: var(--icon);
   }
 
-  .icon-visibility,
-  .icon-visibility-off {
+  .visibility-toggle {
     cursor: pointer
   }
 
