@@ -288,7 +288,7 @@ class Sandbox extends HTMLElement {
           <div>
             <div class="sandbox__header">
               <img src="/assets/images/icons/css.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="csss"/>
+              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
             </div>
             <div id="css-editor"></div>
           </div>`
