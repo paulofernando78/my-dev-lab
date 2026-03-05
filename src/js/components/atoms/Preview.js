@@ -16,7 +16,7 @@ class Preview extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-        <slot></slot>
+      <slot></slot>
       `;
     }
   }

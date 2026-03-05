@@ -28,14 +28,6 @@ class Resources extends HTMLElement {
   render() {
     const sections = [
       {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
-        description: /* html */ `
-          <p>...</p>
-        `,
-      },
-      {
         sectionId: "sites",
         sectionLabel: "Sites",
         sectionAriaLabel: "Sites",

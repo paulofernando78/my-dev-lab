@@ -28,8 +28,7 @@ const style = /* css */ `
     background-color: #374152;
     background-color: var(--slate-7);
     border-bottom: 5px solid #0D0F12;
-
-    padding: 5px
+    padding: 1px 4px
   }
 
   .title {
@@ -278,8 +277,9 @@ class Sandbox extends HTMLElement {
         ${style}
       </style>
 
-      <div class="header">
-        <span class="title">Sandbox Playground</span>
+      <div class="header flex-align-center">
+        <img src="/assets/images/icons/practice.svg" class="icon"/>
+        <span class="title">Practice</span>
       </div>
       <div class="sandbox">
         <div class="sandbox__editors line-break">
@@ -342,6 +342,9 @@ class Sandbox extends HTMLElement {
     <!DOCTYPE html>
     <html>
       <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <style>
           html, body {
             margin: 0;
@@ -349,6 +352,7 @@ class Sandbox extends HTMLElement {
             background: white !important;
             color: black !important;
             color-scheme: light;
+            font-family: "Roboto", sans-serif;
           }
           ${css}
         </style>

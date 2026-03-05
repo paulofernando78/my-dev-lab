@@ -55,7 +55,7 @@ class Boilerplate extends HTMLElement {
             cardLabel: "Snippet (Image + Text)",
             image: "/assets/images/semantic.jpg",
             description: /* html */ `
-              <p>Description</p>
+              <p>...</p>
             `,
           },
         ],
@@ -74,16 +74,13 @@ class Boilerplate extends HTMLElement {
 <span>...</span>
             `,
             preview: () => /* html */ `
-              <span>...</span>
+              <span>This is a span.</span>
             `,
             sandbox: [
               {
                 html: true,
               }
             ],
-            notes: /* html */ `
-                <p>...</p>
-            `,
           },
         ],
       },
@@ -114,9 +111,6 @@ class Boilerplate extends HTMLElement {
                 css: true,
               }
             ],
-            notes: /* html */ `
-              <p>Notes</p>
-            `,
           },
         ],
       },
@@ -143,9 +137,6 @@ console.log(...)
                 js: true,
               },
             ],
-            notes: /* html */ `
-              <p>...</p>
-            `,
           },
         ],
       },

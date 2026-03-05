@@ -10,6 +10,15 @@ const style = /* css */ `
     border-radius: var(--border-radius);
     padding: 5px 5px 5px 5px
   }
+  
+  .card-img {
+    padding: 5px;
+    overflow: hidden;
+  }
+  
+  .card-img img {
+    border-radius: var(--border-radius);
+  }
 `;
 
 export function renderSections(sections) {
@@ -32,8 +41,8 @@ export function renderSections(sections) {
                 id="${section.sectionId}-card-${index}">
                 ${
                   (cardCode.type ?? "code") === "snippet"
-                    ? /* html */ `
-                      ${cardCode.image ? `<div><img src="${cardCode.image}" alt="snippet"/></div>` : ""}
+                    ? /* image + text mode */ /* html */ `
+                      ${cardCode.image ? /* html */`<div class="card-img"><img src="${cardCode.image}" alt="snippet" class="img-radius"/></div>` : ""}
                     `
                     : /* html */ `
                       <wc-code language="${cardCode.language}">
@@ -41,30 +50,26 @@ export function renderSections(sections) {
                       </wc-code>
                     `
                 }
-            
               </wc-card-code>
               ${
                 (cardCode.type ?? "code") === "snippet"
-                  ? /* image + text mode */ /* html */ `
+                  ? /* Code + text mode */ /* html */ `
                   
-                    <div class="line-break">
+                    <wc-card-icon variant="description">
                       ${cardCode.description ?? ""}
-                    </div>
+                    </wc-card-icon>
                 
                   `
                   : /* code + preview mode */ /* html */ `
-                
-                    <wc-preview class="preview">
-                      ${cardCode.preview ? cardCode.preview() : ""}
-                    </wc-preview>
+                    <wc-card-icon variant="preview">
+                      <div class="preview">
+                        ${cardCode.preview ? cardCode.preview() : ""}
+                      </div>
+                    </wc-card-icon>
                 
                 `
               }
             </wc-wrapper>
-
-            ${cardCode.notes ? /* html */ `
-              <wc-notes>${cardCode.notes}</wc-notes>`
-            : "" }
             ${cardCode.sandbox ? cardCode.sandbox.map((config, index) => /* html */ `
               <wc-sandbox
                 id="${section.sectionId}-sandbox-${index}"

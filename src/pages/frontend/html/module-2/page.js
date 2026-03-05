@@ -51,11 +51,6 @@ class ModuleTwo extends HTMLElement {
               <h3>Heading 3</h3>
               <h4>Heading 4</h4>
         `,
-            sandbox: [
-              {
-                html: true,
-              },
-            ],
           },
           {
             description: /* html */ `
@@ -69,6 +64,11 @@ class ModuleTwo extends HTMLElement {
             preview: () => /* html */ `
               <p>This is a paragraph.</p>
         `,
+            sandbox: [
+              {
+                html: true,
+              },
+            ],
           },
         ],
       },

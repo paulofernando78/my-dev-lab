@@ -78,20 +78,15 @@ class Contents extends HTMLElement {
               <li class="section">
                   <a data-target="${section.id}">${section.sectionLabel}</a>
                 <ul>
-                  ${
-                    section.content
-                      ? section.content
-                          .filter((subSection) => subSection.subSectionLabel)
-                          .map(
-                            (subSection) => /* html */ `
+                  ${section.content ? section.content
+                     .filter((subSection) => subSection.subSectionLabel)
+                     .map((subSection) => /* html */ `
                       <li class="content">
                         <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
-                    </li>
-                  `,
-                          )
-                          .join("")
-                      : ""
-                  }
+                      </li>
+                    `
+                    ,).join("")
+                    : "" }
                 </ul>
               </li>
             `,
@@ -104,7 +99,7 @@ class Contents extends HTMLElement {
     this.shadowRoot.querySelectorAll("a[data-target]").forEach((link) => {
       link.addEventListener("click", () => {
         const id = link.dataset.target;
-        const root = this.getRootNode();
+        const root = this.getRootNode({ composed: true });
         const target = root.getElementById(id);
         console.log(target);
 

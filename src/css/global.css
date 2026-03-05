@@ -116,10 +116,6 @@ footer {
   text-align: center;
 }
 
-img-radius {
-  border-radius: 5px;
-}
-
 svg {
   filter: invert(var(--icon-invert));
 }
