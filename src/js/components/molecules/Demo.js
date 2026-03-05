@@ -17,9 +17,11 @@ const style = /* css */ `
   @keyframes roll {
     from {
       transform: translateX(0) rotate(0deg);
+      border-radius: 0
     }
     to {
       transform: translateX(100px) rotate(360deg);
+      border-radius: 50%
     }
   }
 `;
