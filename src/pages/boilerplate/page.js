@@ -3,10 +3,11 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
+import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/CardCode.js";
-import "@/js/components/atoms/Preview.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
@@ -29,11 +30,11 @@ class Boilerplate extends HTMLElement {
 
   render() {
     const sections = [
-      //! Description / Sample Answer / Notes
+      //! ...
       {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
+        sectionId: "...",
+        sectionLabel: "Section",
+        sectionAriaLabel: "...",
         description: /* html */ `
           <p>...</p>
         `,
@@ -43,47 +44,49 @@ class Boilerplate extends HTMLElement {
         notes: /* html */ `
           <p>...</p>
         `,
-      },
-      //! ...
-      {
-        sectionId: "...",
-        sectionLabel: "...",
-        sectionAriaLabel: "...",
-        cardCodes: [
+
+        subSections: [
           {
-            cardLabel: "Img",
-            image: "/assets/images/semantic.jpg",
-          },
-          {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              ...
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            cardCodes: [
+              {
+                cardLabel: "Img",
+                image: "/assets/images/semantic.jpg",
+              },
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  ...
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+                  ...
+                `,
+              },
+              {
+                cardLabel: "JS",
+                language: "js",
+                code: /* js */ `
+                  ...
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
-            `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              ...
-            `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-></wc->
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -107,13 +110,9 @@ class Boilerplate extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-
       <wc-page-header></wc-page-header>
-
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 

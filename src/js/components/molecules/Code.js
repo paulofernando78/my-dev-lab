@@ -6,7 +6,6 @@ const style = /* css */ `
   pre {
     position: relative;
     margin: 0;
-    padding: 5px;
     border-radius: var(--border-radius);
     overflow: hidden;
   }

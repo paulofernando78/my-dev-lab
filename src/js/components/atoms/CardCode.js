@@ -33,7 +33,7 @@ const style = /* css */ `
   }
 
   .card-container {
-    padding: 0;
+    padding: 5px;
 
     color: #fff;
     background-color: var(--gray-7);
