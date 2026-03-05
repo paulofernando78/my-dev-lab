@@ -48,6 +48,220 @@ class ModuleSeven extends HTMLElement {
           <p>...</p>
         `,
       },
+      //! Event Basics
+      {
+        sectionId: "event-basics",
+        sectionLabel: "Event Basics",
+        sectionAriaLabel: "Event Basics",
+        cardCodes: [
+          {
+            cardLabel: "HTML",
+            language: "html",
+            code: /* html */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "CSS",
+            language: "css",
+            code: /* css */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "JS",
+            language: "js",
+            code: /* js */ `
+              ...
+            `,
+          },
+        ],
+        demo: /* html */ `
+              <wc-></wc->
+            `,
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
+          },
+        ],
+      },
+      //! Event Listeners
+      {
+        sectionId: "event-listeners",
+        sectionLabel: "Event Listeners",
+        sectionAriaLabel: "Event Listeners",
+        cardCodes: [
+          {
+            cardLabel: "HTML",
+            language: "html",
+            code: /* html */ `
+              <button>Show Object</button>
+            `,
+          },
+          {
+            cardLabel: "CSS",
+            language: "css",
+            code: /* css */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "JS",
+            language: "js",
+            code: /* js */ `
+              const button = document.querySelector("button")
+              const div = document.querySelector("div")
+
+              button.addEventListener("click", () => {
+                div.classList.toggle("box")
+              })
+
+            `,
+          },
+        ],
+        demo: /* html */ `
+              <wc-toogle></wc-toogle>
+            `,
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
+          },
+        ],
+      },
+      //! Event Object
+      {
+        sectionId: "event-object",
+        sectionLabel: "Event Object",
+        sectionAriaLabel: "Event Object",
+        cardCodes: [
+          {
+            cardLabel: "HTML",
+            language: "html",
+            code: /* html */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "CSS",
+            language: "css",
+            code: /* css */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "JS",
+            language: "js",
+            code: /* js */ `
+              ...
+            `,
+          },
+        ],
+        demo: /* html */ `
+              <wc-></wc->
+            `,
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
+          },
+        ],
+      },
+      //! Event Propagation
+      {
+        sectionId: "event-propagation",
+        sectionLabel: "Event Propagation",
+        sectionAriaLabel: "Event Propagation",
+        cardCodes: [
+          {
+            cardLabel: "HTML",
+            language: "html",
+            code: /* html */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "CSS",
+            language: "css",
+            code: /* css */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "JS",
+            language: "js",
+            code: /* js */ `
+              ...
+            `,
+          },
+        ],
+        demo: /* html */ `
+              <wc-></wc->
+            `,
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
+          },
+        ],
+      },
+      //! Event Delegation
+      {
+        sectionId: "event-delegation",
+        sectionLabel: "Event Delegation",
+        sectionAriaLabel: "Event Delegation",
+        cardCodes: [
+          {
+            cardLabel: "HTML",
+            language: "html",
+            code: /* html */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "CSS",
+            language: "css",
+            code: /* css */ `
+              ...
+            `,
+          },
+          {
+            cardLabel: "JS",
+            language: "js",
+            code: /* js */ `
+              ...
+            `,
+          },
+        ],
+        demo: /* html */ `
+              <wc-></wc->
+            `,
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
+          },
+        ],
+      },
+
+      //! Links
+      {
+        sectionId: "links",
+        sectionLabel: "Links",
+        sectionAriaLabel: "Links",
+        links: [
+          {
+            href: "www.google.com",
+            label: "link",
+          },
+        ],
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `

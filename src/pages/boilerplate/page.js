@@ -42,104 +42,52 @@ class Boilerplate extends HTMLElement {
         `,
         notes: /* html */ `
           <p>...</p>
-        `
+        `,
       },
-       //! Snippet + Image
+      //! ...
       {
-        sectionId: "snippet",
-        sectionLabel: "Snippet",
+        sectionId: "...",
+        sectionLabel: "...",
         sectionAriaLabel: "...",
         cardCodes: [
           {
-            type: "snippet",
-            cardLabel: "Snippet (Image + Text)",
+            cardLabel: "Img",
             image: "/assets/images/semantic.jpg",
-            description: /* html */ `
-              <p>...</p>
-            `,
           },
-        ],
-      },
-      //! HTML
-      {
-        sectionId: "html",
-        sectionLabel: "HTML",
-        sectionAriaLabel: "HTML block",
-        cardCodes: [
           {
-            type: "code",
             cardLabel: "HTML",
             language: "html",
-            code: `
-<span>...</span>
+            code: /* html */ `
+              ...
             `,
-            preview: () => /* html */ `
-              <span>This is a span.</span>
-            `,
-            sandbox: [
-              {
-                html: true,
-              }
-            ],
           },
-        ],
-      },
-      //! CSS
-      {
-        sectionId: "css",
-        sectionLabel: "CSS",
-        sectionAriaLabel: "CSS block",
-        cardCodes: [
           {
-            type: "code",
             cardLabel: "CSS",
             language: "css",
-            code: `
-.box {
-  background-color: blue;
-  width: 100px;
-  height: 100px
-}
+            code: /* css */ `
+              ...
             `,
-            preview: () => /* html */ `
-              <div class="box">
-              </div>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-              }
-            ],
           },
-        ],
-      },
-      //! Javascript
-      {
-        sectionId: "javascript",
-        sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
-        cardCodes: [
           {
-            type: "code",
-            cardLabel: "Javascript",
+            cardLabel: "JS",
             language: "js",
-            code: `
-console.log(...)
+            code: /* js */ `
+              ...
             `,
-            preview: () => /* js */ `
-              console.log(...)
+          },
+        ],
+        demo: /* html */ `
+              <wc-></wc->
             `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
-              },
-            ],
+        sandbox: [
+          {
+            html: true,
+            css: true,
+            js: true,
           },
         ],
       },
+
       //! Links
       {
         sectionId: "links",
