@@ -119,7 +119,6 @@ export function renderSections(sections) {
               : ""
           }
           
-          //! Preview
           <wc-card-code cardLabelIcon="/assets/images/icons/preview.svg" cardLabel="Preview">
             <div class="preview-container">
               ${subSection.preview ?? ""}
