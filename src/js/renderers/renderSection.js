@@ -2,29 +2,11 @@ const style = /* css */ `
   wc-section {
     margin-bottom: 50px;
   }
-  
-  .card__code-img {
-    width: 50%;
-    margin: 0 auto
-  }
-
-  .card-img {
-    overflow: hidden;
-  }
-  
-  .card-img img {
-    border-radius: var(--border-radius);
-  }
 
   .imgs-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 3fr));
     gap: 10px
-  }
-
-  .imgs-wrapper wc-card-code {
-    flex: 0 0 350px
   }
 
   .cards-wrapper {
@@ -59,20 +41,26 @@ export function renderSections(sections) {
       ${section.sampleAnswer ? /* html*/ `<wc-card-icon variant="sample-answer">${section.sampleAnswer}</wc-card-icon>` : ""}
       ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
 
-      ${
-        section.subSections
-          ? section.subSections
-              .map(
-                (subSection) => /* html */ `
+      <div class="imgs-wrapper">
+        ${section.imgs ? section.imgs.map((img) => /* html */ `
+            ${img.imgSrc ? /* html*/ `
+              <wc-card-code CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
+                <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
+              </wc-card-code>
+            ` : ""}
+          `,).join("") : ""
+        }
+      </div>
+      
+      
+
+      ${section.subSections ? section.subSections.map((subSection) => /* html */ `
         <wc-sub-section
           id="${subSection.subSectionId}"
           label="${subSection.subSectionLabel}"
           aria-label="${subSection.subSectionAriaLabel}">
 
-          ${
-            subSection.cardCodes
-              ? /* html */ `
-
+          ${subSection.cardCodes ? /* html */ `
             <div class="imgs-wrapper">
               ${subSection.cardCodes
                 .filter((cardCode) => cardCode.imgs)
@@ -83,8 +71,7 @@ export function renderSections(sections) {
                     .map(
                       (img, imgIndex) => /* html */ `
                     <wc-card-code
-                      ${cardCode.cardLabel ? `cardLabel="${cardCode.cardLabel}"` : ""}
-                      cardLabelIcon="/assets/images/icons/code.svg"
+                      CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image""
                       id="${section.sectionId}-${subSection.subSectionId}-img-${index}-${imgIndex}">
                       <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
                     </wc-card-code>

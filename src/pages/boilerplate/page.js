@@ -45,6 +45,22 @@ class Boilerplate extends HTMLElement {
         notes: /* html */ `
           <p>...</p>
         `,
+        imgs: [
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Semantic image",
+          },
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Semantic image",
+          },
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Semantic image",
+          },
+        ],
+        imgSrc: "/assets/images/semantic.jpg",
+        alt: "Semantic image",
 
         subSections: [
           {
