@@ -1,51 +1,51 @@
 import componentStyles from "@css/imports/component.css?inline";
 
 const style = /* css */ `
-.contents-navbar {
-  margin-block: 10px
-}
+  .contents-navbar {
+    margin-block: 10px
+  }
 
-.contents-navbar-title {
-  font-weight: bold;
-  text-transform: uppercase;
-  display: block;
-}
+  .contents-navbar-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+  }
 
-.contents-navbar ul {
-  padding-inline-start: 1.6rem;
-}
+  .contents-navbar ul {
+    padding-inline-start: 1.6rem;
+  }
 
-.contents-navbar a {
-  font-size: 1rem;
-  cursor: pointer;
-}
+  .contents-navbar a {
+    font-size: 1rem;
+    cursor: pointer;
+  }
 
-li {
-  list-style: none;
-}
+  li {
+    list-style: none;
+  }
 
-.section::before,
-.content::before {
-  transform: translateY(-2px)
-}
+  .section::before,
+  .content::before {
+    transform: translateY(-2px)
+  }
 
-.section::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: url("/assets/images/icons/section.svg");
-}
+  .section::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url("/assets/images/icons/section.svg");
+  }
 
-.content::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: url("/assets/images/icons/code.svg");
-}
+  .content::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: url("/assets/images/icons/sub-section.svg");
+  }
 
 `;
 

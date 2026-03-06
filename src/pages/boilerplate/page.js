@@ -16,14 +16,6 @@ import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
-
 class Boilerplate extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -31,85 +23,48 @@ class Boilerplate extends HTMLElement {
 
   render() {
     const sections = [
-      //! ...
       {
-        sectionId: "...",
-        sectionLabel: "Section",
-        sectionAriaLabel: "...",
+        sectionId: "headings",
+        sectionLabel: "Headings",
+        sectionAriaLabel: "Headings",
         description: /* html */ `
-          <p>...</p>
+          <p>Headings define the structure and hierarchy of a page.</p>
+          <p>They range from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p>
+          <p>Search engines and assistive technologies use headings to understand the structure of the document.</p>
         `,
         sampleAnswer: /* html */ `
-          <p>...</p>
+          <wc-html-headings></wc-html-headings>
         `,
         notes: /* html */ `
-          <p>...</p>
+          <p>Use headings to organize content logically.</p>
         `,
         imgs: [
           {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Semantic image",
-          },
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Semantic image",
-          },
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Semantic image",
+            imgSrc: "/assets/images/headings.jpg",
+            alt: "Headings example",
           },
         ],
-        imgSrc: "/assets/images/semantic.jpg",
-        alt: "Semantic image",
+        imgSrc: "/assets/images/headings.jpg",
+        alt: "Headings example",
 
         subSections: [
           {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
+            subSectionId: "headings-sub",
+            subSectionLabel: "Headings Subsection",
+            subSectionAriaLabel: "Headings Subsection",
             description: /* html */ `
-            <p>...</p>
+              <p>Headings help users navigate your content.</p>
             `,
             notes: /* html */ `
-              <p>...</p>
+              <p>Don't skip heading levels.</p>
             `,
             cardCodes: [
-              {
-                cardLabel: "Img",
-                imgs: [
-                  {
-                    imgSrc: "/assets/images/semantic.jpg",
-                    alt: "Semantic image",
-                  },
-                  {
-                    imgSrc: "/assets/images/semantic.jpg",
-                    alt: "Semantic image",
-                  },
-                  {
-                    imgSrc: "/assets/images/semantic.jpg",
-                    alt: "Semantic image",
-                  },
-                ],
-              },
               {
                 cardLabel: "HTML",
                 language: "html",
                 code: /* html */ `
-                  ...
-                `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-                  ...
-                `,
-              },
-              {
-                cardLabel: "JS",
-                language: "js",
-                code: /* js */ `
-                  ...
+                  <h1>Main Title</h1>
+                  <h2>Sub Title</h2>
                 `,
               },
             ],
@@ -120,22 +75,68 @@ class Boilerplate extends HTMLElement {
               {
                 html: true,
                 css: true,
-                js: true,
+                js: false,
               },
             ],
           },
         ],
       },
-
-      //! Links
       {
-        sectionId: "links",
-        sectionLabel: "Links",
-        sectionAriaLabel: "Links",
-        links: [
+        sectionId: "paragraph",
+        sectionLabel: "Paragraph",
+        sectionAriaLabel: "Paragraph",
+        description: /* html */ `
+          <p>The <code>&lt;p&gt;</code> element represents a paragraph of text.</p>
+          <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
+          <p>Paragraphs are used to group related sentences into blocks of content.</p>
+        `,
+        sampleAnswer: /* html */ `
+          <p>This is a paragraph</p>
+        `,
+        notes: /* html */ `
+          <p>Use paragraphs to separate blocks of text.</p>
+        `,
+        imgs: [
           {
-            href: "www.google.com",
-            label: "link",
+            imgSrc: "/assets/images/paragraph.jpg",
+            alt: "Paragraph example",
+          },
+        ],
+        imgSrc: "/assets/images/paragraph.jpg",
+        alt: "Paragraph example",
+
+        subSections: [
+          {
+            subSectionId: "paragraph-sub",
+            subSectionLabel: "Paragraph Subsection",
+            subSectionAriaLabel: "Paragraph Subsection",
+            description: /* html */ `
+              <p>The <code>&lt;p&gt;</code> element represents a paragraph of text.</p>
+              <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
+              <p>Paragraphs are used to group related sentences into blocks of content.</p>
+            `,
+            notes: /* html */ `
+              <p>Paragraphs improve readability.</p>
+            `,
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  <p>This is a paragraph</p>
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
+            `,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: false,
+              },
+            ],
           },
         ],
       },

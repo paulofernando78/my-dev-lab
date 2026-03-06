@@ -109,34 +109,33 @@ export function renderSections(sections) {
               : ""
           }
           
-          <wc-card-code cardLabelIcon="/assets/images/icons/preview.svg" cardLabel="Preview">
-            <div class="preview-container">
-              ${subSection.preview ?? ""}
-            </div>
-          </wc-card-code>
-
-          ${
-            subSection.sandbox
-              ? subSection.sandbox
-                  .map(
-                    (config, index) => /* html */ `
-            <wc-sandbox
-              id="${section.sectionId}-${subSection.subSectionId}-sandbox-${index}"
-              ${config.html ? "html" : ""}
-              ${config.css ? "css" : ""}
-              ${config.js ? "js" : ""}
-            >
-            </wc-sandbox>
-          `,
-                  )
-                  .join("")
-              : ""
+          ${subSection.preview ? /*html */`
+              <wc-card-code cardLabelIcon="/assets/images/icons/preview.svg" cardLabel="Preview">
+                <div class="preview-container">
+                  ${subSection.preview ?? ""}
+                </div>
+              </wc-card-code>`
+            : ""
+          }
+          
+          ${subSection.sandbox
+            ?
+            subSection.sandbox.map((config, index) => /* html */ `
+              <wc-sandbox
+                id="${section.sectionId}-${subSection.subSectionId}-sandbox-${index}"
+                ${config.html ? "html" : ""}
+                ${config.css ? "css" : ""}
+                ${config.js ? "js" : ""}
+              >
+              </wc-sandbox>
+            `,
+            ).join("")
+            : ""
           }
 
         </wc-sub-section>
       `,
-              )
-              .join("")
+            ).join("")
           : ""
       }
           

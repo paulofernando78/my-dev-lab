@@ -9,7 +9,7 @@ const style = /* css */ `
   :host([variant="notes"]) img {
   filter: invert(24%) sepia(94%) saturate(7000%)
           hue-rotate(350deg) brightness(95%) contrast(120%);
-}
+  }
   
   .container {
     display: grid;
@@ -82,7 +82,7 @@ class CardIcon extends HTMLElement {
       <div class="container">
         <img src="${icon}" alt="${variant} icon" />
         <span><b>${label}</b></span>
-        <div class="content">
+        <div class="content line-break">
           <slot></slot>
         </div>
       </div>
