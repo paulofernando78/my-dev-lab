@@ -67,6 +67,12 @@ class Boilerplate extends HTMLElement {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
             subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+            <p>...</p>
+            `,
+            notes: /* html */ `
+              <p>...</p>
+            `,
             cardCodes: [
               {
                 cardLabel: "Img",

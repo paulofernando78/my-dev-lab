@@ -60,6 +60,9 @@ export function renderSections(sections) {
           label="${subSection.subSectionLabel}"
           aria-label="${subSection.subSectionAriaLabel}">
 
+          ${subSection.description ? /* html*/ `<wc-card-icon variant="description">${subSection.description}</wc-card-icon>` : ""}
+          ${subSection.notes ? /* html*/ `<wc-card-icon variant="notes">${subSection.notes}</wc-card-icon>` : ""}
+
           ${subSection.cardCodes ? /* html */ `
             <div class="imgs-wrapper">
               ${subSection.cardCodes
