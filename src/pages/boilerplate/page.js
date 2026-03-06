@@ -5,6 +5,7 @@ import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/Image.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Demo.js";
@@ -53,7 +54,20 @@ class Boilerplate extends HTMLElement {
             cardCodes: [
               {
                 cardLabel: "Img",
-                image: "/assets/images/semantic.jpg",
+                imgs: [
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Semantic image",
+                  },
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Semantic image",
+                  },
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Semantic image",
+                  },
+                ],
               },
               {
                 cardLabel: "HTML",

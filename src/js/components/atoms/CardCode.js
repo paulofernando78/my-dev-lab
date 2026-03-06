@@ -94,12 +94,16 @@ class CardCode extends HTMLElement {
     const visibility = this.shadowRoot.querySelector(".visibility-toggle");
     const code = this.querySelector("wc-code");
 
-    visibility.addEventListener("click", () => {
-      const hidden = code.classList.toggle("hidden")
-      visibility.src = hidden
-      ? "/assets/images/icons/visibility.svg"
-      : "/assets/images/icons/visibility-off.svg"
-    })
+    if (visibility && code) {
+      visibility.addEventListener("click", () => {
+        const hidden = code.classList.toggle("hidden");
+        visibility.src = hidden
+          ? "/assets/images/icons/visibility.svg"
+          : "/assets/images/icons/visibility-off.svg";
+      });
+    } else {
+      visibility.remove();
+    }
   }
 }
 

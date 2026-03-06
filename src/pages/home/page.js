@@ -1,6 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/atoms/Card.js";
+import "@/js/components/atoms/Image.js";
 import { fullstackRoadmap } from "@/data/fullstackRoadmap";
 
 const style = /* css */ `
@@ -71,61 +72,64 @@ class Home extends HTMLElement {
       </style>
       <wc-sandbox></wc-sandbox>
       <section class="line-break" aria-label="My Dev Den">
-          <img src="/assets/images/my-dev-den.png"/>
-          <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
-          <div class="flex-align-center">
-            <img src="/assets/images/icons/roadmap.svg" class="roadmap__icon"/>
-            <h2>Full-Stack Roadmap</h2>
-          </div>
+        <wc-Image src="/assets/images/my-dev-den.png" alt="A pic of myself and my room"></wc-Image>
+        <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
+        <div class="flex-align-center">
+          <img src="/assets/images/icons/roadmap.svg" class="roadmap__icon"/>
+          <h2>Full-Stack Roadmap</h2>
+        </div>
 
-          <div class="line-break">
-            ${fullstackRoadmap.map((section) => /* html */ `
-              <div>
-                <h3 class="home__card-header">${section.section}</h3>
-                <div class="home__card line-break">
-                  ${section.categories.map((category) => {
-                      const moduleCount = category.modules.filter((m) =>
-                        m.module
-                      ).length -1;
+        <div class="line-break">
+          ${fullstackRoadmap
+            .map(
+              (section) => /* html */ `
+            <div>
+              <h3 class="home__card-header">${section.section}</h3>
+              <div class="home__card line-break">
+                ${section.categories
+                  .map((category) => {
+                    const moduleCount =
+                      category.modules.filter((m) => m.module).length - 1;
 
-                      return /* html */ `
-                  <div class="home__card-icon-category--wrapper">
-                    <img src="${category.icon}" class="home__card-icon-category"/>
-                    <h4 class="home__card-category">${category.category} • ${moduleCount} Modules</h4>
-                  </div>
-    
-                  <ul class="line-break">
-                    ${category.modules.map((module, index) => {
+                    return /* html */ `
+                <div class="home__card-icon-category--wrapper">
+                  <img src="${category.icon}" class="home__card-icon-category"/>
+                  <h4 class="home__card-category">${category.category} • ${moduleCount} Modules</h4>
+                </div>
+  
+                <ul class="line-break">
+                  ${category.modules
+                    .map((module, index) => {
                       const number = index;
 
-            
-
-                      return /* html */`
-                      <li class="home__card-module-border">
-                          ${number == 0
-                            ? /* html */`<h5 class="home__card-module">${module.module}</h5>`
-                            :
-                            /* html */`<h5 class="home__card-module">Module ${number} • ${module.module}</h5>`
+                      return /* html */ `
+                    <li class="home__card-module-border">
+                        ${
+                          number == 0
+                            ? /* html */ `<h5 class="home__card-module">${module.module}</h5>`
+                            : /* html */ `<h5 class="home__card-module">Module ${number} • ${module.module}</h5>`
                         }
-                        ${module.description
+                      ${
+                        module.description
                           ? /* html */ `
-                          <p>${module.description}</p>`
+                        <p>${module.description}</p>`
                           : ""
-                        }
-                      </li>
-                      `    
-                    }).join("")}
-                  </ul>
-                  <hr class="home__category-separator"/>
-                  `;
+                      }
+                    </li>
+                    `;
                     })
                     .join("")}
-                </div>
+                </ul>
+                <hr class="home__category-separator"/>
+                `;
+                  })
+                  .join("")}
               </div>
-              `,
-              )
-              .join("")}
-          </div>
+            </div>
+            `,
+            )
+            .join("")}
+        </div>
       </section>
     `;
   }
