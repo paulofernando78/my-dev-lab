@@ -1,12 +1,10 @@
 const style = /* css */ `
-  wc-section {
-    margin-bottom: 50px;
-  }
+  
 
   .imgs-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(330px, 3fr));
-    gap: 10px
+    gap: 10px;
   }
 
   .cards-wrapper {
@@ -36,24 +34,28 @@ export function renderSections(sections) {
     <style>
       ${style}
     </style>
+
     <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
       ${section.description ? /* html*/ `<wc-card-icon variant="description">${section.description}</wc-card-icon>` : ""}
       ${section.sampleAnswer ? /* html*/ `<wc-card-icon variant="sample-answer">${section.sampleAnswer}</wc-card-icon>` : ""}
       ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
 
-      <div class="imgs-wrapper">
+      ${section.imgs
+        ? /* html */`
+        <div class="imgs-wrapper">
         ${section.imgs ? section.imgs.map((img) => /* html */ `
             ${img.imgSrc ? /* html*/ `
-              <wc-card-code CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
+              <wc-card-code
+                CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
                 <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
               </wc-card-code>
             ` : ""}
           `,).join("") : ""
         }
-      </div>
+        </div>`
+        :
+        "" }
       
-      
-
       ${section.subSections ? section.subSections.map((subSection) => /* html */ `
         <wc-sub-section
           id="${subSection.subSectionId}"
@@ -63,31 +65,28 @@ export function renderSections(sections) {
           ${subSection.description ? /* html*/ `<wc-card-icon variant="description">${subSection.description}</wc-card-icon>` : ""}
           ${subSection.notes ? /* html*/ `<wc-card-icon variant="notes">${subSection.notes}</wc-card-icon>` : ""}
 
-          ${subSection.cardCodes ? /* html */ `
-            <div class="imgs-wrapper">
-              ${subSection.cardCodes
-                .filter((cardCode) => cardCode.imgs)
-                .map(
-                  (cardCode, index) => /* html */ `
-
-                  ${cardCode.imgs
-                    .map(
-                      (img, imgIndex) => /* html */ `
+          ${subSection.cardCodes
+            ? /* html */ `
+            
+            ${subSection.imgs
+            ? /* html */`
+              <div class="imgs-wrapper">
+              ${subSection.imgs ? section.imgs.map((img) => /* html */ `
+                  ${img.imgSrc ? /* html*/ `
                     <wc-card-code
-                      CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image""
-                      id="${section.sectionId}-${subSection.subSectionId}-img-${index}-${imgIndex}">
+                      CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
                       <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
                     </wc-card-code>
-                  `,
-                    )
-                    .join("")}
-                  
-                `,
-                )
-                .join("")}
-            </div>
+                  ` : ""}
+                `,).join("") : ""
+              }
+              </div>`
+              :
+              "" }
 
-            <div class="cards-wrapper">
+            ${subSection.cardCodes
+              ? /* html */ `
+              <div class="cards-wrapper">
               ${subSection.cardCodes
                 .filter((cardCode) => cardCode.code)
                 .map(
@@ -104,6 +103,10 @@ export function renderSections(sections) {
                 )
                 .join("")}
             </div>
+            `
+              : ""
+            }
+            
 
           `
               : ""
@@ -139,14 +142,14 @@ export function renderSections(sections) {
           : ""
       }
           
-        ${
-          section.links
-            ? /* html */ `
-          <wc-links data-links="${encodeURIComponent(JSON.stringify(section.links))}"></wc-links>`
-            : ""
-        }
-        </wc-section>
-      `,
+      ${
+        section.links
+          ? /* html */ `
+        <wc-links data-links="${encodeURIComponent(JSON.stringify(section.links))}"></wc-links>`
+          : ""
+      }
+      </wc-section>
+    `,
     )
     .join("");
 }

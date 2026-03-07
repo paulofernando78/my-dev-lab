@@ -16,7 +16,7 @@ import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
-const style = /* css */`
+const style = /* css */ `
 
 `;
 
@@ -25,11 +25,11 @@ class Boilerplate extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
   }
-  
+
   connectedCallback() {
     this.render();
   }
-  
+
   render() {
     const sections = [
       {
@@ -63,6 +63,12 @@ class Boilerplate extends HTMLElement {
             notes: /* html */ `
               ...
             `,
+            imgs: [
+              {
+                imgSrc: "/assets/images/semantic.jpg",
+                alt: "Headings example",
+              },
+            ],
             cardCodes: [
               {
                 cardLabel: "HTML",
@@ -100,7 +106,7 @@ div {
   }
 }
               `,
-},
+              },
               {
                 cardLabel: "Javascript",
                 language: "js",
@@ -122,6 +128,17 @@ console.log()
           },
         ],
       },
+      {
+        sectionId: "resources",
+        sectionLabel: "Resources",
+        sectionAriaLabel: "Resources",
+        links: [
+          {
+            href: "https://www.google.com/",
+            label: "link"
+          }
+        ]
+      },
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -129,7 +146,7 @@ console.log()
         ${styleImports}
         ${style}
       </style>
-    <wc-page-header></wc-page-header>
+      <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
       <div class="line-break">${renderSections(sections)}</div>
       <wc-lesson-nav></wc-lesson-nav>

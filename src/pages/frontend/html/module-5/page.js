@@ -2,14 +2,18 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
-import "@/js/components/atoms/CardCode.js";
+import "@/js/components/molecules/CardIcon.js";
+import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
-
+import "@/js/components/atoms/Image.js";
+import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
-
+import "@/js/components/organisms/Sandbox.js";
+import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 const style = /* css */ `
 
@@ -28,69 +32,53 @@ class ModuleFive extends HTMLElement {
   render() {
     const sections = [
       {
-        sectionId: "media",
-        sectionLabel: "Media & Embedded Content",
-        sectionAriaLabel: "Media and Embedded Content",
-        cardCodes: [
+        sectionId: "section",
+        sectionLabel: "Section",
+        sectionAriaLabel: "Section",
+        description: /* html */ `
+          ...
+        `,
+        subSections: [
           {
-            cardLabel: "Image",
-            language: "html",
-            code: `
-<img src="image.jpg" alt="Description">
-        `,
-            preview: () => `
-<img src="/assets/images/semantic.jpg" alt="Example image">
-        `,
-          },
-          {
-            cardLabel: "Figure & Figcaption",
-            language: "html",
-            code: `
-<figure>
-  <img src="image.jpg" alt="Description">
-  <figcaption>Image description</figcaption>
-</figure>
-        `,
-            preview: () => `
-<figure>
-  <img src="/assets/images/semantic.jpg" alt="Example image">
-  <figcaption>Image description</figcaption>
-</figure>
-        `,
-          },
-          {
-            cardLabel: "Audio",
-            language: "html",
-            code: `
-<audio controls>
-  <source src="audio.mp3" type="audio/mpeg">
-</audio>
-        `,
-            preview: () => `
-<audio controls></audio>
-        `,
-          },
-          {
-            cardLabel: "Video",
-            language: "html",
-            code: `
-<video controls width="320">
-  <source src="video.mp4" type="video/mp4">
-</video>
-        `,
-            preview: () => `
-<video controls width="320"></video>
-        `,
-          },
-          {
-            cardLabel: "Iframe",
-            language: "html",
-            code: `
-<iframe src="https://example.com"></iframe>
-        `,
-            preview: () => `
-<iframe src="https://example.com" width="300" height="150"></iframe>
-        `,
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+              ...
+            `,
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+...
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+...
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+...
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-></wc->
+            `,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -101,13 +89,9 @@ class ModuleFive extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-
       <wc-page-header></wc-page-header>
-
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 

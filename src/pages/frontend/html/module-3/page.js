@@ -38,21 +38,12 @@ class ModuleThree extends HTMLElement {
         description: /* html */ `
           ...
         `,
-        imgs: [
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Headings example",
-          },
-        ],
         subSections: [
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
             subSectionAriaLabel: "Sub Section",
             description: /* html */ `
-              ...
-            `,
-            notes: /* html */ `
               ...
             `,
             cardCodes: [
