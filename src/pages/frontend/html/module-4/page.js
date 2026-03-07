@@ -264,9 +264,6 @@ class ModuleFour extends HTMLElement {
                 `,
               },
             ],
-            preview: /* html */ `
-              <wc-></wc->
-            `,
           },
           {
             subSectionId: "article-layout",
@@ -310,9 +307,6 @@ class ModuleFour extends HTMLElement {
                 `,
               },
             ],
-            preview: /* html */ `
-              <wc-></wc->
-            `,
           },
           {
             subSectionId: "documentation-layout",
@@ -359,9 +353,6 @@ class ModuleFour extends HTMLElement {
                 `,
               },
             ],
-            preview: /* html */ `
-              <wc-></wc->
-            `,
           },
           {
             subSectionId: "dashboard-layout",
@@ -404,9 +395,6 @@ class ModuleFour extends HTMLElement {
                 `,
               },
             ],
-            preview: /* html */ `
-              <wc-></wc->
-            `,
           },
         ],
       },
