@@ -73,7 +73,7 @@ class Home extends HTMLElement {
       <wc-sandbox></wc-sandbox>
       <section class="line-break" aria-label="My Dev Den">
         <wc-Image src="/assets/images/my-dev-den.png" alt="A pic of myself and my room"></wc-Image>
-        <p>Welcome to my Dev Den — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
+        <p>Welcome to my Dev Lab — a personal learning environment built with Web Components using a client-side rendered (CSR) SPA architecture. The curriculum follows a progressive cognitive load approach, where each module builds upon knowledge from the previous one, guiding learning step by step. It is organized into the following categories:</p>
         <div class="flex-align-center">
           <img src="/assets/images/icons/roadmap.svg" class="roadmap__icon"/>
           <h2>Full-Stack Roadmap</h2>

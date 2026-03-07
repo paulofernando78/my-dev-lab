@@ -14,13 +14,22 @@ import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
+
+const style = /* css */`
+
+`;
 
 class Boilerplate extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+  
   connectedCallback() {
     this.render();
   }
-
+  
   render() {
     const sections = [
       {
@@ -59,26 +68,25 @@ class Boilerplate extends HTMLElement {
                 cardLabel: "HTML",
                 language: "html",
                 code: /* html */ `
-<h1>Hello Wordl!</h1>
+<h1>Hello World!</h1>
                 `,
               },
               {
                 cardLabel: "CSS",
                 language: "css",
                 code: /* css */ `
-
 h1 {
-    display: block;
-    margin-bottom: 1rem
-  }
+  display: block;
+  margin-bottom: 1rem
+}
 
 div {
   width: 50px;
   height: 50px;
   animation: roll 2s infinite alternate;
   margin-bottom: 10px
-}
-
+} 
+      
 @keyframes roll {
   from {
     transform: translateX(0) rotate(0deg);
@@ -90,7 +98,8 @@ div {
     background-color: blue;
     border-radius: 50%
   }
-                `,
+}
+              `,
 },
               {
                 cardLabel: "Javascript",
@@ -115,17 +124,18 @@ console.log()
       },
     ];
 
-    this.innerHTML = /* HTML */ `
+    this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
+        ${style}
       </style>
-      <wc-page-header></wc-page-header>
+    <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
       <div class="line-break">${renderSections(sections)}</div>
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
-    setupContents(this, sections);
+    setupContents(this.shadowRoot, sections);
   }
 }
 

@@ -8,23 +8,19 @@ import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
-import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
-
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 class ModuleOne extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+  
   connectedCallback() {
     this.render();
   }
@@ -129,10 +125,9 @@ class ModuleOne extends HTMLElement {
       },
     ];
 
-    this.innerHTML = /* HTML */ `
+    this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
       <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
@@ -140,9 +135,9 @@ class ModuleOne extends HTMLElement {
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
-    setupContents(this, sections);
+    setupContents(this.shadowRoot, sections);
   }
 }
 
-export default ModuleOne;
 customElements.define("wc-frontend-html-module-1", ModuleOne);
+export default ModuleOne;

@@ -99,8 +99,8 @@ class Contents extends HTMLElement {
     this.shadowRoot.querySelectorAll("a[data-target]").forEach((link) => {
       link.addEventListener("click", () => {
         const id = link.dataset.target;
-        const root = this.getRootNode({ composed: true });
-        const target = root.getElementById(id);
+        const root = this.getRootNode();
+        const target = root.querySelector(`#${id}`);
         console.log(target);
 
         target?.scrollIntoView({

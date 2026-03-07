@@ -24,6 +24,11 @@ const style = /* css */ `
 `;
 
 class ModuleTwo extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
+  
   connectedCallback() {
     this.render();
   }
@@ -96,7 +101,7 @@ class ModuleTwo extends HTMLElement {
       },
     ];
 
-    this.innerHTML = /* HTML */ `
+    this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
         ${style}
@@ -111,7 +116,7 @@ class ModuleTwo extends HTMLElement {
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
-    setupContents(this, sections);
+    setupContents(this.shadowRoot, sections);
   }
 }
 
