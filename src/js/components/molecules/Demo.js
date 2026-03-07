@@ -9,21 +9,22 @@ const style = /* css */ `
   div {
     width: 50px;
     height: 50px;
-    background-color: red;
     animation: roll 2s infinite alternate;
     margin-bottom: 10px
   }
 
   @keyframes roll {
-    from {
-      transform: translateX(0) rotate(0deg);
-      border-radius: 0
-    }
-    to {
-      transform: translateX(100px) rotate(360deg);
-      border-radius: 50%
-    }
+  from {
+    transform: translateX(0) rotate(0deg);
+    background-color: red;
+    border-radius: 0
   }
+  to {
+    transform: translateX(200px) rotate(360deg);
+    background-color: blue;
+    border-radius: 50%
+  }
+}
 `;
 
 class Demo extends HTMLElement {
@@ -48,9 +49,9 @@ class Demo extends HTMLElement {
       </style>
       <h1>Hello World!</h1>
       <div></div>
-      `;
-    }
+    `;
   }
+}
 
 customElements.define("wc-demo", Demo);
 export default Demo;

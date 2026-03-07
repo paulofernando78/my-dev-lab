@@ -47,9 +47,9 @@ class Boilerplate extends HTMLElement {
 
         subSections: [
           {
-            subSectionId: "headings-sub",
-            subSectionLabel: "Headings Subsection",
-            subSectionAriaLabel: "Headings Subsection",
+            subSectionId: "sub-section",
+            subSectionLabel: "Subsection",
+            subSectionAriaLabel: "Subsection",
             description: /* html */ `
               ...
             `,
@@ -86,7 +86,7 @@ div {
     transform: translateX(100px) rotate(360deg);
     border-radius: 50%
   }
-}
+  }
                 `,
               },
               {
@@ -105,63 +105,6 @@ console.log()
                 html: true,
                 css: true,
                 js: true,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        sectionId: "paragraph",
-        sectionLabel: "Paragraph",
-        sectionAriaLabel: "Paragraph",
-        description: /* html */ `
-          <p>The <code>&lt;p&gt;</code> element represents a paragraph of text.</p>
-          <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
-          <p>Paragraphs are used to group related sentences into blocks of content.</p>
-        `,
-        sampleAnswer: /* html */ `
-          <p>This is a paragraph</p>
-        `,
-        notes: /* html */ `
-          <p>Use paragraphs to separate blocks of text.</p>
-        `,
-        imgs: [
-          {
-            imgSrc: "/assets/images/paragraph.jpg",
-            alt: "Paragraph example",
-          },
-        ],
-        imgSrc: "/assets/images/paragraph.jpg",
-        alt: "Paragraph example",
-
-        subSections: [
-          {
-            subSectionId: "paragraph-sub",
-            subSectionLabel: "Paragraph Subsection",
-            subSectionAriaLabel: "Paragraph Subsection",
-            description: /* html */ `
-              ...
-            `,
-            notes: /* html */ `
-              <p>Paragraphs improve readability.</p>
-            `,
-            cardCodes: [
-              {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-                  <p>This is a paragraph</p>
-                `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: false,
               },
             ],
           },
