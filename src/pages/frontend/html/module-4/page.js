@@ -116,6 +116,24 @@ class ModuleFour extends HTMLElement {
             `,
           },
           {
+            subSectionId: "main",
+            subSectionLabel: "Main",
+            subSectionAriaLabel: "Main",
+            description: /* html */ `
+              <p>The <code>&lt;main&gt;</code> element represents the primary content of a webpage.</p>
+
+              <p>It contains the most important information of the page and should be unique.</p>
+
+              <ul>
+                <li>There should only be <strong>one</strong> <code>&lt;main&gt;</code> element per page.</li>
+                <li>It should not be inside <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, or <code>&lt;aside&gt;</code>.</li>
+                <li>It usually contains articles, sections, or other core content.</li>
+              </ul>
+
+              <p>Assistive technologies use <code>&lt;main&gt;</code> to quickly jump to the main content of the page.</p>
+            `,
+          },
+          {
             subSectionId: "section",
             subSectionLabel: "Section",
             subSectionAriaLabel: "Section",
@@ -195,7 +213,7 @@ class ModuleFour extends HTMLElement {
         sectionLabel: "Layouts",
         sectionAriaLabel: "Layouts",
         description: /* html */ `
-          <p>...</p>
+          <p>Semantic layouts help both humans and machines understand how the page is organized.</p>
         `,
         imgs: [
           {
@@ -205,11 +223,46 @@ class ModuleFour extends HTMLElement {
         ],
         subSections: [
           {
-            subSectionId: "...",
+            subSectionId: "",
             subSectionLabel: "...",
             subSectionAriaLabel: "...",
             description: /* html */ `
-              <p>Semantic layouts help both humans and machines understand how the page is organized.</p>
+              
+            `,
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+<header>
+  <h1>Website Title</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Articles</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <h2>Main Article</h2>
+    <p>This is the main content of the page.</p>
+  </article>
+
+  <aside>
+    <h3>Related</h3>
+    <p>Additional information or links.</p>
+  </aside>
+</main>
+
+<footer>
+  <p>&copy; 2026 My Website</p>
+</footer>
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-></wc->
             `,
           },
         ],
