@@ -1,7 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-  span {
+  h1 {
     display: block;
     margin-bottom: 1rem
   }
@@ -46,7 +46,7 @@ class Demo extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <span>Hello World!</span>
+      <h1>Hello World!</h1>
       <div></div>
       `;
     }

@@ -28,19 +28,17 @@ class Boilerplate extends HTMLElement {
         sectionLabel: "Headings",
         sectionAriaLabel: "Headings",
         description: /* html */ `
-          <p>Headings define the structure and hierarchy of a page.</p>
-          <p>They range from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p>
-          <p>Search engines and assistive technologies use headings to understand the structure of the document.</p>
+          ...
         `,
         sampleAnswer: /* html */ `
-          <wc-html-headings></wc-html-headings>
+          
         `,
         notes: /* html */ `
-          <p>Use headings to organize content logically.</p>
+          ...
         `,
         imgs: [
           {
-            imgSrc: "/assets/images/headings.jpg",
+            imgSrc: "/assets/images/semantic.jpg",
             alt: "Headings example",
           },
         ],
@@ -53,18 +51,49 @@ class Boilerplate extends HTMLElement {
             subSectionLabel: "Headings Subsection",
             subSectionAriaLabel: "Headings Subsection",
             description: /* html */ `
-              <p>Headings help users navigate your content.</p>
+              ...
             `,
             notes: /* html */ `
-              <p>Don't skip heading levels.</p>
+              ...
             `,
             cardCodes: [
               {
                 cardLabel: "HTML",
                 language: "html",
                 code: /* html */ `
-                  <h1>Main Title</h1>
-                  <h2>Sub Title</h2>
+<h1>Hello Wordl!</h1>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+
+div {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  animation: roll 2s infinite alternate;
+  margin-bottom: 10px
+}
+
+@keyframes roll {
+  from {
+    transform: translateX(0) rotate(0deg);
+    border-radius: 0
+  }
+  to {
+    transform: translateX(100px) rotate(360deg);
+    border-radius: 50%
+  }
+}
+                `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+console.log()
                 `,
               },
             ],
@@ -75,7 +104,7 @@ class Boilerplate extends HTMLElement {
               {
                 html: true,
                 css: true,
-                js: false,
+                js: true,
               },
             ],
           },
@@ -111,9 +140,7 @@ class Boilerplate extends HTMLElement {
             subSectionLabel: "Paragraph Subsection",
             subSectionAriaLabel: "Paragraph Subsection",
             description: /* html */ `
-              <p>The <code>&lt;p&gt;</code> element represents a paragraph of text.</p>
-              <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
-              <p>Paragraphs are used to group related sentences into blocks of content.</p>
+              ...
             `,
             notes: /* html */ `
               <p>Paragraphs improve readability.</p>
@@ -145,7 +172,6 @@ class Boilerplate extends HTMLElement {
     this.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
       <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
