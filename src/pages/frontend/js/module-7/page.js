@@ -3,15 +3,20 @@ import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
-import "@/js/components/atoms/CardCode.js";
+import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/Image.js";
+import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
+
+// Previews
+import "@/js/components/pages/js/module-7/Toggle.js";
 
 const style = /* css */ `
   .box {
@@ -33,18 +38,12 @@ class ModuleSeven extends HTMLElement {
 
   render() {
     const sections = [
-      //! Description / Sample Answer / Notes
+      //! What's it?
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
         sectionAriaLabel: "What’s it?",
         description: /* html */ `
-          <p>...</p>
-        `,
-        sampleAnswer: /* html */ `
-          <p>...</p>
-        `,
-        notes: /* html */ `
           <p>...</p>
         `,
       },
@@ -53,37 +52,52 @@ class ModuleSeven extends HTMLElement {
         sectionId: "event-basics",
         sectionLabel: "Event Basics",
         sectionAriaLabel: "Event Basics",
-        cardCodes: [
+        description: /* html */ `
+          <p>...</p>
+        `,
+        subSections: [
           {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              ...
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
+            notes: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              ...
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  <h1>...</h1>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+                  console.log()
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
             `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-></wc->
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -92,43 +106,67 @@ class ModuleSeven extends HTMLElement {
         sectionId: "event-listeners",
         sectionLabel: "Event Listeners",
         sectionAriaLabel: "Event Listeners",
-        cardCodes: [
+        description: /* html */ `
+          <p>...</p>
+        `,
+        subSections: [
           {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              <button>Show Object</button>
+            subSectionId: "toggle",
+            subSectionLabel: "Toggle",
+            subSectionAriaLabel: "Toggle",
+            description: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
-            `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              const button = document.querySelector("button")
-              const div = document.querySelector("div")
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+<button>Show message</button>
+<span class="hidden">Hidden message</span>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+                button {
+display: block;
+margin-bottom: 0.5rem
+}  
 
-              button.addEventListener("click", () => {
-                div.classList.toggle("box")
-              })
+.hidden {
+display: none
+}
 
+.hidden.show {
+display: block
+}
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+const button = document.querySelector("button");
+const span = document.querySelector("span");
+
+button.addEventListener("click", () => {
+  span.classList.toggle("show")
+});
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-js-module-7-toggle></wc-js-module-7-toggle>
             `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-toogle></wc-toogle>
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -137,37 +175,52 @@ class ModuleSeven extends HTMLElement {
         sectionId: "event-object",
         sectionLabel: "Event Object",
         sectionAriaLabel: "Event Object",
-        cardCodes: [
+        description: /* html */ `
+          <p>...</p>
+        `,
+        subSections: [
           {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              ...
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
+            notes: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              ...
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  <h1>...</h1>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+                  console.log()
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
             `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-></wc->
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -176,37 +229,52 @@ class ModuleSeven extends HTMLElement {
         sectionId: "event-propagation",
         sectionLabel: "Event Propagation",
         sectionAriaLabel: "Event Propagation",
-        cardCodes: [
+        description: /* html */ `
+          <p>...</p>
+        `,
+        subSections: [
           {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              ...
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
+            notes: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              ...
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  <h1>...</h1>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+                  console.log()
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
             `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-></wc->
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
@@ -215,41 +283,55 @@ class ModuleSeven extends HTMLElement {
         sectionId: "event-delegation",
         sectionLabel: "Event Delegation",
         sectionAriaLabel: "Event Delegation",
-        cardCodes: [
+        description: /* html */ `
+          <p>...</p>
+        `,
+        subSections: [
           {
-            cardLabel: "HTML",
-            language: "html",
-            code: /* html */ `
-              ...
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "Sub Section",
+            description: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "CSS",
-            language: "css",
-            code: /* css */ `
-              ...
+            notes: /* html */ `
+              ...aaa
             `,
-          },
-          {
-            cardLabel: "JS",
-            language: "js",
-            code: /* js */ `
-              ...
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+                  <h1>...</h1>
+                `,
+              },
+              {
+                cardLabel: "CSS",
+                language: "css",
+                code: /* css */ `
+              `,
+              },
+              {
+                cardLabel: "Javascript",
+                language: "js",
+                code: /* js */ `
+                  console.log()
+                `,
+              },
+            ],
+            preview: /* html */ `
+              <wc-demo></wc-demo>
             `,
-          },
-        ],
-        demo: /* html */ `
-              <wc-></wc->
-            `,
-        sandbox: [
-          {
-            html: true,
-            css: true,
-            js: true,
+            sandbox: [
+              {
+                html: true,
+                css: true,
+                js: true,
+              },
+            ],
           },
         ],
       },
-
       //! Links
       {
         sectionId: "links",
@@ -269,18 +351,9 @@ class ModuleSeven extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-
-      <wc-page-header
-        category="Javascript"
-        page="Module 7"
-        unit="Events"
-        aria-label="..."
-      ></wc-page-header>
-
+      <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 

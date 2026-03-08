@@ -27,14 +27,31 @@ class Resources extends HTMLElement {
 
   render() {
     const sections = [
+       //! Links
       {
-        sectionId: "sites",
-        sectionLabel: "Sites",
-        sectionAriaLabel: "Sites",
+        sectionId: "links",
+        sectionLabel: "Links",
+        sectionAriaLabel: "Links",
         links: [
           {
-            href: "",
-            label: "...",
+            href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+            label: "MDN | HTML: HyperText Markup Language",
+          },
+          {
+            href: "https://html.spec.whatwg.org/",
+            label: "HTML | Living Standard",
+          },
+          {
+            href: "https://htmlreference.io/",
+            label: "HTML | Reference IO",
+          },
+          {
+            href: "https://htmldog.com/",
+            label: "HTML DOG",
+          },
+          {
+            href: "https://www.w3schools.com/html/default.asp",
+            label: "W3 School",
           },
         ],
       },
@@ -59,17 +76,6 @@ class Resources extends HTMLElement {
           {
             href: "",
             label: "",
-          },
-        ],
-      },
-      {
-        sectionId: "practice",
-        sectionLabel: "Practice",
-        sectionAriaLabel: "Practice",
-        links: [
-          {
-            href: "",
-            label: "...",
           },
         ],
       },

@@ -110,19 +110,7 @@ class ModuleOne extends HTMLElement {
             `,
           },
         ],
-      },
-      //! Links
-      {
-        sectionId: "links",
-        sectionLabel: "Links",
-        sectionAriaLabel: "Links",
-        links: [
-          {
-            href: "www.google.com",
-            label: "link",
-          },
-        ],
-      },
+      }
     ];
 
     this.shadowRoot.innerHTML = /* HTML */ `

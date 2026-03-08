@@ -32,6 +32,7 @@ class Boilerplate extends HTMLElement {
 
   render() {
     const sections = [
+      //! Section
       {
         sectionId: "Section",
         sectionLabel: "Section",
@@ -51,7 +52,7 @@ class Boilerplate extends HTMLElement {
             alt: "Headings example",
           },
         ],
-
+        //! Sub Section
         subSections: [
           {
             subSectionId: "sub-section",
@@ -128,6 +129,7 @@ console.log()
           },
         ],
       },
+      //! Resources
       {
         sectionId: "resources",
         sectionLabel: "Resources",

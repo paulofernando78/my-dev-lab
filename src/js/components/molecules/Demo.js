@@ -25,7 +25,7 @@ const style = /* css */ `
     border-radius: 0%
   }
   66% {
-    transform: translateX(66px) rotate(360deg);
+    transform: translateX(66px) rotate(0deg);
     background-color: orange;
     border-radius: 50%
   }

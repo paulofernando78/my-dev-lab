@@ -30,19 +30,25 @@ const style = /* css */ `
 `;
 
 export function renderSections(sections) {
-  return sections
-    .map(
-      (section) => /* html */ `
+    return /* html */ `
     <style>
       ${style}
     </style>
+    ${sections.map(
+      (section) => /* html */ `
 
-    <wc-section id="${section.sectionId}" label="${section.sectionLabel}" aria-label="${section.sectionAriaLabel}" class="line-break">
+    <wc-section
+      id="${section.sectionId}"
+      label="${section.sectionLabel}"
+      aria-label="${section.sectionAriaLabel}"
+      class="line-break"
+      >
+
       ${section.description ? /* html*/ `<wc-card-icon variant="description">${section.description}</wc-card-icon>` : ""}
       ${section.sampleAnswer ? /* html*/ `<wc-card-icon variant="sample-answer">${section.sampleAnswer}</wc-card-icon>` : ""}
       ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
 
-      ${section.imgs
+      ${section.imgs?.length
         ? /* html */`
         <div class="imgs-wrapper">
         ${section.imgs.map((img) => /* html */ `
@@ -62,56 +68,46 @@ export function renderSections(sections) {
         <wc-sub-section
           id="${subSection.subSectionId}"
           label="${subSection.subSectionLabel}"
-          aria-label="${subSection.subSectionAriaLabel}">
+          aria-label="${subSection.subSectionAriaLabel}"
+          class="line-break"
+          >
 
           ${subSection.description ? /* html*/ `<wc-card-icon variant="description">${subSection.description}</wc-card-icon>` : ""}
           ${subSection.notes ? /* html*/ `<wc-card-icon variant="notes">${subSection.notes}</wc-card-icon>` : ""}
 
           ${subSection.cardCodes
             ? /* html */ `
-            
-            ${subSection.imgs
-            ? /* html */`
+            ${subSection.imgs?.length
+            ? /* html */ `
               <div class="imgs-wrapper">
-              ${subSection.imgs ? subSection.imgs.map((img) => /* html */ `
+              ${subSection.imgs.map((img) => /* html */ `
                   ${img.imgSrc ? /* html*/ `
                     <wc-card-code
                       CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
                       <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
                     </wc-card-code>
                   ` : ""}
-                `,).join("") : ""
+                `,).join("")
               }
               </div>`
               :
-              "" }
-
-            ${subSection.cardCodes
-              ? /* html */ `
-              <div class="cards-wrapper">
-              ${subSection.cardCodes
-                .filter((cardCode) => cardCode.code)
-                .map(
-                  (cardCode, index) => /* html */ `
-                  <wc-card-code
-                    ${cardCode.cardLabel ? `cardLabel="${cardCode.cardLabel}"` : ""}
-                    cardLabelIcon="/assets/images/icons/code.svg"
-                    id="${section.sectionId}-${subSection.subSectionId}-code-${index}">
-                    <wc-code language="${cardCode.language}">
-                      ${cardCode.code ?? ""}
-                    </wc-code>
-                  </wc-card-code>
-                `,
-                )
-                .join("")}
-            </div>
-            `
-              : ""
+              ""
             }
-            
 
-          `
-              : ""
+            <div class="cards-wrapper">
+            ${subSection.cardCodes.map((cardCode, index) => /* html */ `
+                <wc-card-code
+                  cardLabel="${cardCode.cardLabel}"
+                  cardLabelIcon="/assets/images/icons/code.svg"
+                  id="${section.sectionId}-${subSection.subSectionId}-code-${index}">
+                    <wc-code language="${cardCode.language}">
+                    ${cardCode.code ?? ""}
+                    </wc-code>
+                </wc-card-code>
+              `,).join("")}
+            </div>
+          } `
+          : ""
           }
           
           ${subSection.preview ? /*html */`
@@ -152,6 +148,6 @@ export function renderSections(sections) {
       }
       </wc-section>
     `,
-    )
-    .join("");
+    ).join("")}
+    `;
 }
