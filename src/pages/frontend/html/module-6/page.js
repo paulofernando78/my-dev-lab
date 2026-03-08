@@ -48,8 +48,12 @@ class ModuleSix extends HTMLElement {
         sectionLabel: "Input Types",
         sectionAriaLabel: "Input Types",
         description: /* html */ `
-          ...
-        `,
+  <p>The <code>&lt;input&gt;</code> element is one of the most important parts of HTML forms. By changing the <code>type</code> attribute, the same element can behave in many different ways.</p>
+
+  <p>Each input type is designed for a specific kind of data — for example text, numbers, email addresses, or file uploads. Modern browsers also provide built‑in UI controls and validation depending on the type.</p>
+
+  <p>Understanding the available input types helps you create forms that are easier to use, more accessible, and better suited for mobile devices.</p>
+`,
 
         subSections: [
           //! text
@@ -247,7 +251,8 @@ class ModuleSix extends HTMLElement {
             subSectionLabel: "textarea",
             subSectionAriaLabel: "textarea",
             description: /* html */ `
-              <p>A multiline text input, ideal for longer content like messages or comments. Supports the following attributes:</p>
+              <p>A multiline text input, ideal for longer content like messages or comments.</p>
+              <p>Supports the following attributes:</p>
               
               <ul>
                 <li><code>rows</code> — visible height in lines</li>
@@ -284,17 +289,24 @@ class ModuleSix extends HTMLElement {
         sectionLabel: "Forms",
         sectionAriaLabel: "Forms",
         description: /* html */ `
-          ...
-        `,
+  <p>The <code>&lt;form&gt;</code> element groups input controls and allows users to submit data to a server.</p>
+
+  <p>A form usually contains labels, input fields, buttons, and sometimes validation rules. When the user submits the form, the browser sends the collected data to the URL specified in the <code>action</code> attribute.</p>
+
+  <p>Forms are essential for many features on the web such as login pages, search bars, registration forms, and contact forms.</p>
+`,
       },
       {
         sectionId: "resources",
         sectionLabel: "Resources",
         sectionAriaLabel: "Resources",
+        description: /* html */ `
+  <p>This section provides additional references and documentation to deepen your understanding of HTML forms and input elements.</p>
+`,
         links: [
           {
-            href: "",
-            label: "",
+            href: "/",
+            label: "...",
           },
         ],
       },

@@ -45,14 +45,14 @@ export function renderSections(sections) {
       ${section.imgs
         ? /* html */`
         <div class="imgs-wrapper">
-        ${section.imgs ? section.imgs.map((img) => /* html */ `
+        ${section.imgs.map((img) => /* html */ `
             ${img.imgSrc ? /* html*/ `
               <wc-card-code
                 CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
                 <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
               </wc-card-code>
             ` : ""}
-          `,).join("") : ""
+          `,).join("")
         }
         </div>`
         :
@@ -73,7 +73,7 @@ export function renderSections(sections) {
             ${subSection.imgs
             ? /* html */`
               <div class="imgs-wrapper">
-              ${subSection.imgs ? section.imgs.map((img) => /* html */ `
+              ${subSection.imgs ? subSection.imgs.map((img) => /* html */ `
                   ${img.imgSrc ? /* html*/ `
                     <wc-card-code
                       CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">

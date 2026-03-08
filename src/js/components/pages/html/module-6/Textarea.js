@@ -23,7 +23,7 @@ class HtmlModuleSixTextarea extends HTMLElement {
         ${styleImports}
         ${style}
       </style>
-      <label for="message">Write yor message</label>
+      <label for="message">Leave your comments below:</label>
       <textarea name="message" id="message"></textarea>
     `;
   }
