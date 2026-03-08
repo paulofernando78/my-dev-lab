@@ -115,7 +115,7 @@ class ModuleSeven extends HTMLElement {
             subSectionLabel: "Toggle",
             subSectionAriaLabel: "Toggle",
             description: /* html */ `
-              ...aaa
+              ...
             `,
             cardCodes: [
               {

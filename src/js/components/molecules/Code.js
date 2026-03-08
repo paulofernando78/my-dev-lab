@@ -55,7 +55,6 @@ class Code extends HTMLElement {
 
   render() {
     const language = this.getAttribute("language") || "";
-
     this.shadowRoot.innerHTML = /* html */ `
       <style>
         ${componentStyles}
@@ -66,18 +65,20 @@ class Code extends HTMLElement {
       <pre><div class="blur-overlay"></div><code class="language-${language}"></code></pre>
     `;
 
-    const codeEl = this.shadowRoot.querySelector("code");
+    const rawCode = this.innerHTML.trim();
+    // decode HTML entities like &gt; &lt; etc.
+    const decoder = document.createElement("textarea");
+    decoder.innerHTML = rawCode;
+    const decodedCode = decoder.value;
 
-    // pega o conteúdo escrito dentro do wc-code
-    codeEl.textContent = this.innerHTML.trim();
+    const codeEl = this.shadowRoot.querySelector("code");
+    codeEl.textContent = decodedCode;
 
     this.highlight();
   }
 
   highlight() {
     const codeEl = this.shadowRoot.querySelector("code");
-    if (!codeEl) return;
-
     hljs.highlightElement(codeEl);
   }
 }
