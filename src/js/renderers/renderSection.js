@@ -1,5 +1,7 @@
 const style = /* css */ `
-  
+  wc-section, wc-sub-section {
+    margin-top: 1.5rem
+  }
 
   .imgs-wrapper {
     display: grid;

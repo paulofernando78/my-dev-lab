@@ -14,15 +14,25 @@ const style = /* css */ `
   }
 
   @keyframes roll {
-  from {
+  0% {
     transform: translateX(0) rotate(0deg);
-    background-color: red;
+    background-color: green;
     border-radius: 0
   }
-  to {
-    transform: translateX(200px) rotate(360deg);
-    background-color: blue;
+  33% {
+    transform: translateX(50px) rotate(360deg);
+    background-color: red;
+    border-radius: 0%
+  }
+  66% {
+    transform: translateX(66px) rotate(360deg);
+    background-color: orange;
     border-radius: 50%
+  }
+  100% {
+    transform: translateX(100px) rotate(360deg);
+    background-color: blue;
+    border-radius: 0%
   }
 }
 `;
