@@ -95,7 +95,7 @@ export function renderSections(sections) {
             }
 
             <div class="cards-wrapper">
-            ${subSection.cardCodes.map((cardCode, index) => /* html */ `
+              ${subSection.cardCodes.map((cardCode, index) => /* html */ `
                 <wc-card-code
                   cardLabel="${cardCode.cardLabel}"
                   cardLabelIcon="/assets/images/icons/code.svg"
@@ -106,7 +106,7 @@ export function renderSections(sections) {
                 </wc-card-code>
               `,).join("")}
             </div>
-          } `
+            `
           : ""
           }
           

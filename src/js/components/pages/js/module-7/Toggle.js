@@ -27,6 +27,7 @@ class JsModuleSevenToggle extends HTMLElement {
     const button = this.shadowRoot.querySelector("button");
     const span = this.shadowRoot.querySelector("span");
 
+    // Callback inline
     button.addEventListener("click", () => {
       span.classList.toggle("show")
     });

@@ -30,6 +30,10 @@ class Boilerplate extends HTMLElement {
     this.render();
   }
 
+  disconnectedCallback() {
+    // cleanup (events, intervals, observers)
+  }
+
   render() {
     const sections = [
       //! Section

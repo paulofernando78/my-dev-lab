@@ -26,7 +26,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleSeven extends HTMLElement {
+class JSModuleSeven extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -361,5 +361,5 @@ button.addEventListener("click", () => {
   }
 }
 
-customElements.define("wc-frontend-js-module-7", ModuleSeven);
-export default ModuleSeven;
+customElements.define("wc-frontend-js-module-7", JSModuleSeven);
+export default JSModuleSeven;
