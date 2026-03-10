@@ -17,6 +17,10 @@ self.MonacoEnvironment = {
 };
 
 const style = /* css */ `
+  :root {
+    --card-height: 30px
+  }
+
   .sandbox {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -24,6 +28,7 @@ const style = /* css */ `
   }
 
   .header {
+    height: var(--car-height);
     border-radius: 5px 5px 0 0;
     background-color: #374152;
     background-color: var(--slate-7);
@@ -35,14 +40,13 @@ const style = /* css */ `
     font-weight: bold;
     padding-block: 5px
   }
-  
-  .sandbox__editors,
-  .sandbox__preview {
-    min-width: 0;
+  .editors {
+    display: grid;
+    gap: 5px
   }
-
-  .sandbox__editors,
-  .sandbox__editors > div,
+  
+  .editors,
+  .editors > div,
   #html-editor,
   #css-editor,
   #js-editor {
@@ -55,12 +59,12 @@ const style = /* css */ `
     height: 200px;
   }
   
-  .sandbox__editors-header {
+  .editors-header {
     display: flex;
     justify-content: space-between;
 
     background-color: var(--slate-7);
-    padding: 7px 5px 5px
+    padding: 5px
   }
 
   .icon {
@@ -80,15 +84,42 @@ const style = /* css */ `
     overflow: hidden;
   }
 
-  .sandbox__preview {
+  .preview {
     min-width: 0;
   }
 
-  .sandbox__preview iframe {
-    border-radius: 0 0 5px 5px;
+  .preview iframe {
     width: 100%;
     height: 100%;
     border: 0;
+  }
+
+  .console {
+   grid-column: 1 / -1
+  }
+
+  .console-header,
+  .output-header {
+    background-color: #374152;
+    background-color: var(--slate-7);
+    border-bottom: 5px solid #0D0F12;
+    padding: 5px;
+  }
+
+  .console-display {
+    border: 1px solid var(--slate-5);
+    border-radius: 0 0 5px 5px;
+    background: #0D0F12;
+    color: #8BE9FD;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 8px;
+    height: 150px;
+    overflow: auto;
+  }
+
+  .console-line {
+    white-space: pre-wrap;
   }
 
   @media (width < 876px) {
@@ -122,7 +153,7 @@ class Sandbox extends HTMLElement {
     if (this.editors) return;
 
     this.render();
-
+ 
     this.updatePreviewDebounced = this.debounce(this.updatePreview, 300);
 
     this.saveDebounced = this.debounce(this.saveToStorage, 500);
@@ -231,6 +262,19 @@ class Sandbox extends HTMLElement {
 
     this.iframe = this.shadowRoot.querySelector("#output");
 
+    this.consoleEl = this.shadowRoot.querySelector("#console");
+
+    window.addEventListener("message", (event) => {
+      if (!event.data || event.data.type !== "sandbox-console") return;
+
+      const line = document.createElement("div");
+      line.className = "console-line";
+      line.textContent = event.data.message;
+      this.consoleEl.appendChild(line);
+
+      this.consoleEl.scrollTop = this.consoleEl.scrollHeight;
+    });
+
     // click reset
     // ↓
     // descobre qual editor
@@ -281,14 +325,15 @@ class Sandbox extends HTMLElement {
         <img src="/assets/images/icons/practice.svg" class="icon"/>
         <span class="title">Practice</span>
       </div>
+
       <div class="sandbox">
-        <div class="sandbox__editors line-break">
+        <div class="editors">
 
           ${
             enableHTML
               ? /* html */ `
             <div>
-              <div class="sandbox__editors-header">
+              <div class="editors-header">
                 <img src="/assets/images/icons/html5.svg" class="icon"/>
                 <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="html"/>
               </div>
@@ -301,7 +346,7 @@ class Sandbox extends HTMLElement {
             enableCSS
               ? /* html */ `
             <div>
-              <div class="sandbox__editors-header">
+              <div class="editors-header">
                 <img src="/assets/images/icons/css.svg" class="icon"/>
                 <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
               </div>
@@ -315,7 +360,7 @@ class Sandbox extends HTMLElement {
             enableJS
               ? /* html */ `
           <div>
-            <div class="sandbox__editors-header">
+            <div class="editors-header">
               <img src="/assets/images/icons/javascript.svg" class="icon"/>
               <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="js"/>
             </div>
@@ -326,8 +371,20 @@ class Sandbox extends HTMLElement {
           }
         </div>
 
-        <div class="sandbox__preview">
+        <div class="preview">
+          <div class="output-header flex-align-center">
+            <img src="/assets/images/icons/output.svg" class="icon"/>
+            <span><b>Console</b></span>  
+          </div>
           <iframe id="output"></iframe>
+        </div>
+
+        <div class="console">
+          <div class="console-header flex-align-center">
+            <img src="/assets/images/icons/console.svg" class="icon"/>
+            <span><b>Console</b></span>  
+          </div>
+          <div id="console" class="console-display"></div>
         </div>
       </div>
     `;
@@ -360,7 +417,24 @@ class Sandbox extends HTMLElement {
       <body>
         ${html}
         <script>
-          ${js}
+          const send = (msg) => {
+            parent.postMessage({
+              type: "sandbox-console",
+              message: msg
+            }, "*");
+          };
+
+          const originalLog = console.log;
+          console.log = (...args) => {
+            send(args.join(" "));
+            originalLog(...args);
+          };
+
+          try {
+            ${js}
+          } catch (err) {
+            send(err.toString());
+          }
         </script>
       </body>
     </html>

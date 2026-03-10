@@ -6,6 +6,7 @@ import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
+import "@/js/components/molecules/Topic.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Demo.js";
@@ -40,7 +41,7 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "Section",
         sectionLabel: "Section",
-        sectionAriaLabel: "Section",
+        sectionAriaLabel: "...",
         description: /* html */ `
           ...
         `,
@@ -61,7 +62,7 @@ class Boilerplate extends HTMLElement {
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
+            subSectionAriaLabel: "...",
             description: /* html */ `
               ...
             `,
@@ -74,60 +75,57 @@ class Boilerplate extends HTMLElement {
                 alt: "Headings example",
               },
             ],
-            cardCodes: [
+            //! Topic
+            topics: [
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-<h1>Hello World!</h1>
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
                 `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-h1 {
-  display: block;
-  margin-bottom: 1rem
-}
+                notes: /* html */ `
+                  ...
+                `,
+                imgs: [
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Headings example",
+                  },
+                ],
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
-div {
-  width: 50px;
-  height: 50px;
-  animation: roll 2s infinite alternate;
-  margin-bottom: 10px
-} 
-      
-@keyframes roll {
-  from {
-    transform: translateX(0) rotate(0deg);
-    background-color: red;
-    border-radius: 0
-  }
-  to {
-    transform: translateX(200px) rotate(360deg);
-    background-color: blue;
-    border-radius: 50%
-  }
-}
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-console.log()
                 `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -141,9 +139,9 @@ console.log()
         links: [
           {
             href: "https://www.google.com/",
-            label: "link"
-          }
-        ]
+            label: "link",
+          },
+        ],
       },
     ];
 

@@ -126,11 +126,11 @@ input {
 
 code {
   border: 1px solid var(--slate-3);
+  background-color: var(--slate-9);
   border-radius: var(--border-radius);
-  padding: 0 1px;
+  padding: 1px 5px;
   font-family: "Courier New", Courier, monospace;
-  background-color: var(--slate-1);
-  color: var(--surface-text-color);
+  color: white;
   border-radius: var(--border-radius);
 }
 

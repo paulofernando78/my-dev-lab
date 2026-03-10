@@ -9,6 +9,7 @@ import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Links.js";
 
 import "@/js/components/molecules/LessonNav.js";
+
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
 

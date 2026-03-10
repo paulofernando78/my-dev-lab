@@ -6,6 +6,7 @@ import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
+import "@/js/components/molecules/Topic.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Demo.js";
@@ -44,9 +45,6 @@ class ModuleEight extends HTMLElement {
         description: /* html */ `
           <p>...</p>
         `,
-        notes: /* html */ `
-          <p>...</p>
-        `,
         subSections: [
           //! Window Properties
           {
@@ -56,37 +54,155 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            //! Topic
+            topics: [
+              //! window.innerWidth
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
+                topicId: "window-innerWidth",
+                topicLabel: "window.innerWidth",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  <p>Returns the width of the browser viewport in pixels.</p>
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+console.log(window.innerWidth);
+                `,
+                  },
+                ],
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
               },
+              //! window.innerHeight
               {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "window-innerHeight",
+                topicLabel: "window.innerHeight",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! window.scrollX
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "window-scroll-x",
+                topicLabel: "window.scrollX",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! window.scrollY
+              {
+                topicId: "window-scroll-y",
+                topicLabel: "window.scrollY",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -98,37 +214,128 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! window.alert()
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "window-alert()",
+                topicLabel: "window.alert( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! window.setTimeout()
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "window-setTimeout()",
+                topicLabel: "window.setTimeout( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! window.open()
+              {
+                topicId: "window-open()",
+                topicLabel: "window.open( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -154,37 +361,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -196,37 +454,87 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -294,37 +602,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -336,37 +695,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -392,37 +802,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -434,37 +895,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -490,37 +1002,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -532,37 +1095,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -574,37 +1188,88 @@ class ModuleEight extends HTMLElement {
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 
                 `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
 
-                  `,
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
+              //! Topic
               {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                 
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -616,23 +1281,28 @@ class ModuleEight extends HTMLElement {
         sectionLabel: "Design Mode",
         sectionAriaLabel: "Design Mode",
         description: /* html */ `
-          <p>The document.designMode property in HTML allows for making the entire document editable within the browser. This property can be set to either "on" or "off".</p>
+          <p>The <code>document.designMode</code> property in HTML allows for making the entire document editable within the browser. This property can be set to either "on" or "off".</p>
         `,
         subSections: [
           {
             subSectionId: "enabling-design-mode",
             subSectionLabel: "Enabling Design Mode",
             subSectionAriaLabel: "Enabling Design Mode",
-            description: /* html */ `
-                ...
-              `,
-            cardCodes: [
+            topics: [
+              //! Topic
               {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
+                topicId: "document-designMode",
+                topicLabel: "document.designMode = \"on\" / \"off\"",
+                topicAriaLabel: "",
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
 document.designMode = "on";
-                  `,
+                `,
+                  },
+                ],
               },
             ],
           },

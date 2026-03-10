@@ -6,6 +6,7 @@ import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
+import "@/js/components/molecules/Topic.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
 import "@/js/components/molecules/Demo.js";

@@ -29,21 +29,27 @@ const style = /* css */ `
     transform: translateY(-2px)
   }
 
-  .section::before {
+  .section::before,
+  .content::before,
+  .topic::before,
+  {
     content: "";
     display: inline-block;
     width: 24px;
     height: 24px;
     vertical-align: middle;
+  }
+
+
+  .section::before {
     background: url("/assets/images/icons/section.svg");
   }
 
   .content::before {
-    content: "";
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
+    background: url("/assets/images/icons/sub-section.svg");
+  }
+
+  .topic::before {
     background: url("/assets/images/icons/sub-section.svg");
   }
 
@@ -72,26 +78,33 @@ class Contents extends HTMLElement {
 
       <nav class="contents-navbar">
         <ul>
-          ${contents
-            .map(
-              (section) => /* html */ `
+          ${contents.map((section) => /* html */ `
               <li class="section">
                   <a data-target="${section.id}">${section.sectionLabel}</a>
                 <ul>
-                  ${section.content ? section.content
-                     .filter((subSection) => subSection.subSectionLabel)
-                     .map((subSection) => /* html */ `
-                      <li class="content">
-                        <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
-                      </li>
-                    `
-                    ,).join("")
-                    : "" }
+                  ${section.content
+                    ? section.content
+                      .filter((subSection) => subSection.subSectionLabel)
+                      .map((subSection) => /* html */ `
+                        <li class="content">
+                          <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
+                          <ul>
+                            ${(subSection.topics || []).map((topic) => /* html */ `
+                              <li class="topic">
+                                <a data-target="${topic.id}">${topic.topicLabel}</a>
+                              </li>
+                            `).join("")}
+                          </ul>
+                        </li>
+                      `,
+                    ).join("")
+                     :
+                     ""
+                  }
                 </ul>
               </li>
             `,
-            )
-            .join("")}
+            ).join("")}
         </ul>
       </nav>
     `;
