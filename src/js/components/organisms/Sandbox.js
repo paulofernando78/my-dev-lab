@@ -17,10 +17,6 @@ self.MonacoEnvironment = {
 };
 
 const style = /* css */ `
-  :root {
-    --card-height: 30px
-  }
-
   .sandbox {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -28,7 +24,6 @@ const style = /* css */ `
   }
 
   .header {
-    height: var(--car-height);
     border-radius: 5px 5px 0 0;
     background-color: #374152;
     background-color: var(--slate-7);
@@ -71,7 +66,8 @@ const style = /* css */ `
     width: var(--icon)
   }
 
-  .reset-btn {
+  .reset-btn,
+  .run-btn {
     background-color: var(--slate-7);
     border-radius: 50%;
     cursor: pointer;
@@ -84,14 +80,14 @@ const style = /* css */ `
     overflow: hidden;
   }
 
-  .preview {
-    min-width: 0;
+  .output {
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 
-  .preview iframe {
+  .output iframe {
     width: 100%;
     height: 100%;
-    border: 0;
   }
 
   .console {
@@ -153,8 +149,8 @@ class Sandbox extends HTMLElement {
     if (this.editors) return;
 
     this.render();
- 
-    this.updatePreviewDebounced = this.debounce(this.updatePreview, 300);
+
+    this.updateOutputDebounced = this.debounce(this.updateOutput, 300);
 
     this.saveDebounced = this.debounce(this.saveToStorage, 500);
 
@@ -290,23 +286,37 @@ class Sandbox extends HTMLElement {
     resetButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const editorType = btn.dataset.editor;
+
+        if (editorType === "console") {
+          this.consoleEl.innerHTML = "";
+          return;
+        }
+
         if (!editorType || !this.editors[editorType]) return;
 
         this.editors[editorType].setValue("");
         localStorage.removeItem(`sandbox-${this.id}-${editorType}`);
-        this.updatePreview();
+        this.updateOutput();
       });
     });
+
+    this.runBtn = this.shadowRoot.querySelector(".run-btn");
+
+    if (this.runBtn) {
+      this.runBtn.addEventListener("click", () => {
+        this.updateOutput();
+      });
+    }
 
     Object.entries(this.editors).forEach(([key, editor]) => {
       editor.onDidChangeModelContent(() => {
         const value = editor.getValue();
         this.saveDebounced(key, value);
-        this.updatePreviewDebounced();
+        this.updateOutputDebounced();
       });
     });
 
-    this.updatePreview();
+    this.updateOutput();
   }
 
   render() {
@@ -352,37 +362,44 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="css-editor"></div>
             </div>
-          `
+            `
               : ""
           }
 
           ${
             enableJS
               ? /* html */ `
-          <div>
-            <div class="editors-header">
-              <img src="/assets/images/icons/javascript.svg" class="icon"/>
-              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="js"/>
+            <div>
+              <div class="editors-header">
+                <img src="/assets/images/icons/javascript.svg" class="icon"/>
+                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="js"/>
+              </div>
+              <div id="js-editor"></div>
             </div>
-            <div id="js-editor"></div>
-          </div>
-          `
+            `
               : ""
           }
         </div>
 
-        <div class="preview">
+        <div class="output">
           <div class="output-header flex-align-center">
             <img src="/assets/images/icons/output.svg" class="icon"/>
-            <span><b>Console</b></span>  
+            <span><b>Output</b></span>  
           </div>
           <iframe id="output"></iframe>
         </div>
 
         <div class="console">
-          <div class="console-header flex-align-center">
-            <img src="/assets/images/icons/console.svg" class="icon"/>
-            <span><b>Console</b></span>  
+          <div class="console-header flex-space-between">
+            <div class="flex-align-center">
+              <img src="/assets/images/icons/console.svg" class="icon"/>
+              <span><b>Console</b></span>
+            </div>
+            <div class="flex-align-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
+            <img src="/assets/images/icons/reset.svg"
+       class="icon reset-btn" data-editor="console"/>
+            </div>
           </div>
           <div id="console" class="console-display"></div>
         </div>
@@ -390,7 +407,7 @@ class Sandbox extends HTMLElement {
     `;
   }
 
-  updatePreview() {
+  updateOutput() {
     const html = this.editors.html ? this.editors.html.getValue() : "";
     const css = this.editors.css ? this.editors.css.getValue() : "";
     const js = this.editors.js ? this.editors.js.getValue() : "";
@@ -424,11 +441,18 @@ class Sandbox extends HTMLElement {
             }, "*");
           };
 
-          const originalLog = console.log;
-          console.log = (...args) => {
-            send(args.join(" "));
-            originalLog(...args);
+          const intercept = (type) => {
+            const original = console[type];
+            console[type] = (...args) => {
+              send(\`[\${type}] \` + args.join(" "));
+              original(...args);
+            };
           };
+
+          intercept("log");
+          intercept("error");
+          intercept("warn");
+          intercept("info");
 
           try {
             ${js}
