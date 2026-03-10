@@ -16,7 +16,7 @@ self.MonacoEnvironment = {
   },
 };
 
-const style = /* css */ `
+const style = /* css */ `  
   .sandbox {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -27,8 +27,9 @@ const style = /* css */ `
     border-radius: 5px 5px 0 0;
     background-color: #374152;
     background-color: var(--slate-7);
-    border-bottom: 5px solid #0D0F12;
-    padding: 1px 4px
+    padding: 1px 4px;
+    color: #fff;
+    grid-column: 1 / -1
   }
 
   .title {
@@ -76,7 +77,6 @@ const style = /* css */ `
   }
 
    .monaco-editor {
-    border-radius: 0 0 5px 5px;
     overflow: hidden;
   }
 
@@ -98,7 +98,6 @@ const style = /* css */ `
   .output-header {
     background-color: #374152;
     background-color: var(--slate-7);
-    border-bottom: 5px solid #0D0F12;
     padding: 5px;
   }
 
@@ -331,17 +330,20 @@ class Sandbox extends HTMLElement {
         ${style}
       </style>
 
-      <div class="header flex-align-center">
-        <img src="/assets/images/icons/practice.svg" class="icon"/>
-        <span class="title">Practice</span>
+      <div class="sandbox-container">
+      
       </div>
 
+      
       <div class="sandbox">
-        <div class="editors">
+        <div class="header flex-align-center">
+          <img src="/assets/images/icons/practice.svg" class="icon"/>
+          <span class="title">Practice</span>
+        </div>
 
-          ${
-            enableHTML
-              ? /* html */ `
+        <div class="editors">
+          ${enableHTML
+            ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/html5.svg" class="icon"/>
@@ -349,12 +351,11 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="html-editor"></div>
             </div>`
-              : ""
+            : ""
           }
 
-          ${
-            enableCSS
-              ? /* html */ `
+          ${enableCSS
+            ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/css.svg" class="icon"/>
@@ -363,12 +364,11 @@ class Sandbox extends HTMLElement {
               <div id="css-editor"></div>
             </div>
             `
-              : ""
+            : ""
           }
 
-          ${
-            enableJS
-              ? /* html */ `
+          ${enableJS
+            ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/javascript.svg" class="icon"/>
@@ -377,32 +377,32 @@ class Sandbox extends HTMLElement {
               <div id="js-editor"></div>
             </div>
             `
-              : ""
+            : ""
           }
-        </div>
 
-        <div class="output">
-          <div class="output-header flex-align-center">
-            <img src="/assets/images/icons/output.svg" class="icon"/>
-            <span><b>Output</b></span>  
           </div>
-          <iframe id="output"></iframe>
-        </div>
+          <div class="output">
+            <div class="output-header flex-align-center">
+              <img src="/assets/images/icons/output.svg" class="icon"/>
+              <span><b>Output</b></span>  
+            </div>
+            <iframe id="output"></iframe>
+          </div>
 
-        <div class="console">
-          <div class="console-header flex-space-between">
-            <div class="flex-align-center">
-              <img src="/assets/images/icons/console.svg" class="icon"/>
-              <span><b>Console</b></span>
+          <div class="console">
+            <div class="console-header flex-space-between">
+              <div class="flex-align-center">
+                <img src="/assets/images/icons/console.svg" class="icon"/>
+                <span><b>Console</b></span>
+              </div>
+              <div class="flex-align-center">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
+              <img src="/assets/images/icons/reset.svg"
+         class="icon reset-btn" data-editor="console"/>
+              </div>
             </div>
-            <div class="flex-align-center">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
-            <img src="/assets/images/icons/reset.svg"
-       class="icon reset-btn" data-editor="console"/>
-            </div>
+            <div id="console" class="console-display"></div>
           </div>
-          <div id="console" class="console-display"></div>
-        </div>
       </div>
     `;
   }
