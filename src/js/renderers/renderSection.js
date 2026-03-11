@@ -192,6 +192,7 @@ export function renderSections(sections) {
                       ${config.html ? "html" : ""}
                       ${config.css ? "css" : ""}
                       ${config.js ? "js" : ""}
+                      ${config.console ? "console" : ""}
                     >
                     </wc-sandbox>
                     `,

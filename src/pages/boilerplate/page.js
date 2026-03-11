@@ -124,6 +124,7 @@ class Boilerplate extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
+                    console: true
                   },
                 ],
               },

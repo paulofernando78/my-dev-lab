@@ -6,14 +6,16 @@ import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
+import "@/js/components/molecules/Topic.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
 import "@/js/components/pages/html/module-2/Headings.js"
@@ -54,21 +56,46 @@ class ModuleTwo extends HTMLElement {
               <p>They range from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p>
               <p>Search engines and assistive technologies use headings to understand the structure of the document.</p>
             `,
-            cardCodes: [
+            //! Topic
+            topics: [
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
                 `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-html-module-2-headings></wc-html-module-2-headings>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                  },
+                ],
               },
             ],
-            preview: /* html */ `
-              <wc-html-module-2-headings></wc-html-module-2-headings>
-            `,
+            cardCodes: [
+              {
+                cardLabel: "HTML",
+                language: "html",
+                code: /* html */ `
+
+                `,
+              },
+            ],
           },
           {
             subSectionId: "paragraph",
@@ -79,21 +106,35 @@ class ModuleTwo extends HTMLElement {
               <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
               <p>Paragraphs are used to group related sentences into blocks of content.</p>
             `,
-            cardCodes: [
+                        //! Topic
+            topics: [
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                notes: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
 <p>This is a paragraph.</p>
                 `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-html-module-2-paragraph></wc-html-module-2-paragraph>
-            `,
-            sandbox: [
-              {
-                html: true,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-html-module-2-paragraph></wc-html-module-2-paragraph>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                  },
+                ],
               },
             ],
           },

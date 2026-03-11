@@ -68,6 +68,29 @@ class ModuleEight extends HTMLElement {
               `,
             //! Topic
             topics: [
+              //! window
+              {
+                topicId: "window",
+                topicLabel: "window",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  <p>...</p>
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+console.log(window);
+                `,
+                  },
+                ],
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
               //! window.innerWidth
               {
                 topicId: "window-innerWidth",
@@ -101,34 +124,15 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-
+console.log(window.innerHeight);
                 `,
                   },
                 ],
-                preview: /* html */ `
-                  <wc-demo></wc-demo>
-                `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -143,20 +147,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -165,12 +155,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -184,20 +172,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -206,12 +180,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -237,20 +209,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -259,12 +217,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -279,18 +235,30 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
                 `,
                   },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
                   {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
+                    js: true,
                   },
+                ],
+              },
+              //! window.setInterval()
+              {
+                topicId: "window-setInterval()",
+                topicLabel: "window.setInterval( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -299,12 +267,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -319,18 +285,30 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
                 `,
                   },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
                   {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
+                    js: true,
                   },
+                ],
+              },
+              //! window.scrollTo()
+              {
+                topicId: "window-scrollTo()",
+                topicLabel: "window.scrollTo( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -339,12 +317,35 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! window.scrollBy()
+              {
+                topicId: "window-scrollBy()",
+                topicLabel: "window.scrollBy( )",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -361,9 +362,6 @@ console.log(window.innerWidth);
         description: /* html */ `
           <p>...</p>
         `,
-        notes: /* html */ `
-          <p>...</p>
-        `,
         subSections: [
           //! Selecting Elements
           {
@@ -374,29 +372,15 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+               //! document.getElementByTagName()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "document-getElementByTagName()",
+                topicLabel: "document.getElementByTagName()",
+                topicAriaLabel: "document.getElementByTagName()",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -406,38 +390,22 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! document.getElementByClassName()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "document-getElementByClassName()",
+                topicLabel: "document.getElementByClassName()",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -446,12 +414,82 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! document.getElementById()
+              {
+                topicId: "document-getElementById()",
+                topicLabel: "document.getElementById()",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! document.querySelector()
+              {
+                topicId: "document-querySelector()",
+                topicLabel: "document.querySelector()",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! document.querySelectorAll()
+              {
+                topicId: "document-querySelectorAll()",
+                topicLabel: "document.querySelectorAll()",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -467,30 +505,16 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! document.createElement()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "document-createElement()",
+                topicLabel: "document.createElement()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -499,37 +523,48 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! element.textContent
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "element-textContent",
+                topicLabel: "element.textContent",
+                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
                 `,
                   },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
                   {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
+                    js: true,
                   },
+                ],
+              },
+              //! element.innerHTML
+              {
+                topicId: "element-innerHTML",
+                topicLabel: "element.innerHTML",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -538,12 +573,110 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! element.appendChild()
+              {
+                topicId: "element-appendChild()",
+                topicLabel: "element.appendChild()",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! element.remove()
+              {
+                topicId: "element-remove()",
+                topicLabel: "element.remove()",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! element.classList
+              {
+                topicId: "element-classList",
+                topicLabel: "element.classList",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! element.setAttribute()
+              {
+                topicId: "element-setAttribute()",
+                topicLabel: "element.setAttribute()",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -560,9 +693,6 @@ console.log(window.innerWidth);
         description: /* html */ `
           <p>...</p>
         `,
-        notes: /* html */ `
-          <p>...</p>
-        `,
         subSections: [
           //! History Properties
           {
@@ -572,37 +702,57 @@ console.log(window.innerWidth);
             description: /* html */ `
                 ...
               `,
-            cardCodes: [
+              topics: [
+              //! history.length
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-
-                  `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
+                topicId: "history-length",
+                topicLabel: "history.length",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
 
                 `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
               },
+              //! history.state
               {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-
-                  `,
-              },
-            ],
-            preview: /* html */ `
-                <wc-></wc->
-              `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
+                topicId: "history-state",
+                topicLabel: "history.state",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
               },
             ],
           },
@@ -615,29 +765,15 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! history.back()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "history-back()",
+                topicLabel: "history.back()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -647,38 +783,23 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! history.forward()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "history-forward()",
+                topicLabel: "history.forward()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -687,12 +808,35 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! history.go()
+              {
+                topicId: "history-go()",
+                topicLabel: "history.go()",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -708,29 +852,15 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! history.pushState()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "history-pushState()",
+                topicLabel: "history.pushState()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -740,38 +870,23 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! history.replaceState()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "history-replaceState()",
+                topicLabel: "history.replaceState()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -780,12 +895,35 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! popstate event
+              {
+                topicId: "popstate-event",
+                topicLabel: "popstate event",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -802,9 +940,6 @@ console.log(window.innerWidth);
         description: /* html */ `
           <p>...</p>
         `,
-        notes: /* html */ `
-          <p>...</p>
-        `,
         subSections: [
           //! Location Properties
           {
@@ -815,29 +950,15 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! location.href
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "location-href",
+                topicLabel: "location.href",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -847,38 +968,23 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! location.pathname
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "location-pathname",
+                topicLabel: "location.pathname",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -887,12 +993,60 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! location.search
+              {
+                topicId: "location-search",
+                topicLabel: "location.search",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    js: true,
+                  },
+                ],
+              },
+              //! location.hash
+              {
+                topicId: "location-hash",
+                topicLabel: "location.hash",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -908,29 +1062,15 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! location.reload()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "location-reload()",
+                topicLabel: "location.reload()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -940,38 +1080,23 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
+              //! location.assign()
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "location-assign()",
+                topicLabel: "location.assign()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -980,12 +1105,35 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+              //! location.replace()
+              {
+                topicId: "location-replace()",
+                topicLabel: "location.replace()",
+                topicAriaLabel: "",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
                     js: true,
                   },
                 ],
@@ -1002,9 +1150,6 @@ console.log(window.innerWidth);
         description: /* html */ `
           <p>...</p>
         `,
-        notes: /* html */ `
-          <p>...</p>
-        `,
         subSections: [
           //! Using contenteditable
           {
@@ -1015,10 +1160,10 @@ console.log(window.innerWidth);
                 ...
               `,
             topics: [
-              //! Topic
+              //! contenteditable attribute
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "contenteditable-attribute",
+                topicLabel: "contenteditable attribute",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
@@ -1027,58 +1172,29 @@ console.log(window.innerWidth);
                   {
                     cardLabel: "HTML",
                     language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
                     code: /* js */ `
-
+<div contenteditable="true">Edit me</div>
                 `,
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
                     html: true,
-                    css: true,
-                    js: true,
                   },
                 ],
               },
-              //! Topic
+              //! element.contentEditable
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "element-contentEditable",
+                topicLabel: "element.contentEditable",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
                   {
                     cardLabel: "Javascript",
                     language: "js",
@@ -1087,12 +1203,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -1118,20 +1232,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -1140,12 +1240,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -1160,19 +1258,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -1180,12 +1265,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -1211,20 +1294,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -1233,12 +1302,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],
@@ -1253,19 +1320,6 @@ console.log(window.innerWidth);
                 `,
                 cardCodes: [
                   {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                 
-                `,
-                  },
-                  {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
@@ -1273,12 +1327,10 @@ console.log(window.innerWidth);
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
-                    html: true,
-                    css: true,
                     js: true,
                   },
                 ],

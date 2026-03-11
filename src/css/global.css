@@ -45,12 +45,12 @@ body {
 }
 
 .layout {
-  min-height: 100dvh;
-  padding: var(--p5);
-
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  
+  height: 100dvh;
+  padding: var(--p5);
 }
 
 header {
@@ -78,20 +78,24 @@ header {
 }
 
 .nav-main {
-  display: flex;
   position: relative;
+  display: flex;
   min-height: 0;
   width: 100%;
-  flex: 1;
-  
 }
 
 main {
   flex: 1;
   min-width: 0;
   min-height: 0;
-  
+  overflow-y: auto;
+
   transition: margin-left 0.5s ease;
+}
+
+main {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-6) transparent;
 }
 
 #app {
@@ -147,8 +151,8 @@ td {
 
 wc-icon[name="scrollToTop"] {
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 20px;
+  bottom: 5px;
   cursor: pointer;
   background-color: white;
   border-radius: 50%;
