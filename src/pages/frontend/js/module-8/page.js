@@ -43,7 +43,10 @@ class ModuleEight extends HTMLElement {
         sectionLabel: "Window Object",
         sectionAriaLabel: "Window Object",
         description: /* html */ `
-          <p>...</p>
+          <p>
+          The <code>window</code> object represents the browser window or tab in which a web page is loaded. It is the global object in the browser environment, giving scripts access to browser APIs such as <code>document</code>, <code>location</code>, <code>history</code>, and <code>screen</code>, as well as information about the viewport — its width, height, and scroll position.
+          </p>
+          <p>Because it is the global object, its properties and methods can be accessed without explicitly writing <code>window</code>. For example, <code>window.innerWidth</code> and <code>innerWidth</code> refer to the same value.</p>
         `,
         subSections: [
           //! Window Properties
