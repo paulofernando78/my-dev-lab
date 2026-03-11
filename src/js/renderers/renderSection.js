@@ -1,6 +1,5 @@
 const style = /* css */ `
   wc-section, wc-sub-section {
-    margin-top: 1.5rem
   }
 
   .imgs-wrapper {
@@ -36,9 +35,7 @@ export function renderSections(sections) {
     </style>
 
     <!--section -->
-    ${sections
-      .map(
-        (section) => /* html */ `
+    ${sections.map((section) => /* html */ `
     <wc-section
       id="${section.sectionId}"
       label="${section.sectionLabel}"
@@ -53,27 +50,28 @@ export function renderSections(sections) {
       ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
       <!-- imgs -->
       ${section.imgs?.length
-          ? /* html */ `
-          <div class="imgs-wrapper">
-          ${section.imgs
-            .map(
-              (img) => /* html */ `
-              ${
-                img.imgSrc
-                  ? /* html*/ `
-                <wc-card-code
-                  CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
-                  <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
-                </wc-card-code>
+        ? /* html */ 
+        `
+        <div class="imgs-wrapper">
+        ${section.imgs.map((img) => /* html */
+          `
+            ${img.imgSrc
+              ? /* html*/
               `
-                  : ""
-              }
-            `,
-            )
-            .join("")}
-          </div>`
-          :
-          ""
+              <wc-card-code
+                CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
+                <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
+              </wc-card-code>
+              `
+              :
+              ""
+            }
+          `,
+          ).join("")}
+        </div>
+        `
+        :
+        ""
       }
       
       <!-- subSections -->

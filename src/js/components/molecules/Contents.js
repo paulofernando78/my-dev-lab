@@ -31,8 +31,7 @@ const style = /* css */ `
 
   .section::before,
   .content::before,
-  .topic::before,
-  {
+  .topic::before {
     content: "";
     display: inline-block;
     width: 24px;
@@ -43,6 +42,7 @@ const style = /* css */ `
 
   .section::before {
     background: url("/assets/images/icons/section.svg");
+    margin-right: 2px
   }
 
   .content::before {
@@ -50,7 +50,7 @@ const style = /* css */ `
   }
 
   .topic::before {
-    background: url("/assets/images/icons/sub-section.svg");
+    background: url("/assets/images/icons/topic.svg");
   }
 
 `;
@@ -70,12 +70,7 @@ class Contents extends HTMLElement {
         ${componentStyles}
         ${style}
       </style>
-
-      <div class="flex-align-center">
-        <img src="/assets/images/icons/contents.svg" />
-        <span class="contents-navbar-title">Table of Contents</span>
-      </div>
-
+      <span class="contents-navbar-title">Table of Contents</span>
       <nav class="contents-navbar">
         <ul>
           ${contents.map((section) => /* html */ `

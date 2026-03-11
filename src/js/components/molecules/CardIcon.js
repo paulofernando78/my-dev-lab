@@ -2,7 +2,7 @@ import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
   :host {
-    background-color: var(--slate-7);
+    background-color: var(--slate-8);
     border-radius: var(--border-radius);
   }
 

@@ -52,7 +52,16 @@ class ModuleEight extends HTMLElement {
             subSectionLabel: "Window Properties",
             subSectionAriaLabel: "Window Properties",
             description: /* html */ `
-                ...
+                <p>
+                  Window properties provide information about the current browser window and the user's viewport. 
+                  They allow you to access values such as the width and height of the visible area of the page 
+                  and the current scroll position.
+                  </p>
+
+                  <p>
+                  These properties are commonly used to build responsive layouts, detect viewport changes, 
+                  and react to user scrolling.
+                </p>
               `,
             //! Topic
             topics: [

@@ -15,17 +15,13 @@ import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
+
 `;
 
-class ModuleTwelve extends HTMLElement {
+class JSModuleTwelve extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -35,35 +31,74 @@ class ModuleTwelve extends HTMLElement {
     this.render();
   }
 
+  disconnectedCallback() {
+    // cleanup (events, intervals, observers)
+  }
+
   render() {
     const sections = [
+      //! Section
       {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
-        description: /* html */ `
-            <p>Description</p>
-            <p>Description</p>
-        `,
-      },
-      {
-        sectionId: "javascript",
-        sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
-        cardCodes: [
+        sectionId: "deployment",
+        sectionLabel: "Deployment",
+        sectionAriaLabel: "Deployment",
+        //! Sub Section
+        subSections: [
           {
-            type: "code",
-            cardLabel: "Javascript",
-            language: "js",
-            code: `
-console.log(...)
-            `,
-            preview: () => /* js */ `
-              console.log(...)
-            `,
-            notes: /* html */ `
-              <p>Notes</p>
-            `,
+            subSectionId: "vercel",
+            subSectionLabel: "Vercel",
+            subSectionAriaLabel: "Vercel",
+            //! Topic
+            topics: [
+              {
+                topicId: "routing",
+                topicLabel: "Routing",
+                topicAriaLabel: "Routing",
+                description: /* html */ `
+                  <p>When deploying a Single Page Application (SPA) to Vercel,  you need to rewrite all incoming routes to index.html.
+                  This ensures that your client-side router (like router.js) can handle navigation instead of the server returning a 404 error.</p>
+                  <p>Add a file named vercel.json to the root of your project with the following content:</p>
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! Resources
+      {
+        sectionId: "resources",
+        sectionLabel: "Resources",
+        sectionAriaLabel: "Resources",
+        links: [
+          {
+            href: "https://www.google.com/",
+            label: "link",
           },
         ],
       },
@@ -74,18 +109,9 @@ console.log(...)
         ${styleImports}
         ${style}
       </style>
-
-      <wc-page-header
-        category="Javascript"
-        page="Module 12"
-        unit="SPA & Application Architecture"
-        aria-label="..."
-      ></wc-page-header>
-
+      <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
@@ -93,5 +119,5 @@ console.log(...)
   }
 }
 
-customElements.define("wc-frontend-js-module-12", ModuleTwelve);
-export default ModuleTwelve;
+customElements.define("wc-frontend-js-module-12", JSModuleTwelve);
+export default JSModuleTwelve;

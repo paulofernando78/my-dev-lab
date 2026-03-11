@@ -84,10 +84,11 @@ const style = /* css */ `
     display: grid;
     grid-template-rows: auto 1fr;
   }
-
+  
   .output iframe {
     width: 100%;
     height: 100%;
+    border: 0
   }
 
   .console {
@@ -102,7 +103,6 @@ const style = /* css */ `
   }
 
   .console-display {
-    border: 1px solid var(--slate-5);
     border-radius: 0 0 5px 5px;
     background: #0D0F12;
     color: #8BE9FD;
@@ -115,6 +115,22 @@ const style = /* css */ `
 
   .console-line {
     white-space: pre-wrap;
+  }
+
+  .console-log {
+    color: #E6E6E6;
+  }
+
+  .console-warn {
+    color: #F1FA8C;
+  }
+
+  .console-error {
+    color: #FF5555;
+  }
+
+  .console-info {
+    color: #50FA7B;
   }
 
   @media (width < 876px) {
@@ -259,16 +275,29 @@ class Sandbox extends HTMLElement {
 
     this.consoleEl = this.shadowRoot.querySelector("#console");
 
-    window.addEventListener("message", (event) => {
+    this.messageHandler = (event) => {
       if (!event.data || event.data.type !== "sandbox-console") return;
+
+      if (event.source !== this.iframe.contentWindow) return;
+
+      if (event.data.level === "clear") {
+        this.consoleEl.innerHTML = "";
+        return;
+      }
 
       const line = document.createElement("div");
       line.className = "console-line";
-      line.textContent = event.data.message;
-      this.consoleEl.appendChild(line);
+      line.classList.add(`console-${event.data.level}`);
 
+      const time = new Date().toLocaleTimeString();
+
+      line.textContent = `[${time}] [${event.data.level}] ${event.data.message}`;
+
+      this.consoleEl.appendChild(line);
       this.consoleEl.scrollTop = this.consoleEl.scrollHeight;
-    });
+    };
+
+    window.addEventListener("message", this.messageHandler);
 
     // click reset
     // ↓
@@ -318,6 +347,10 @@ class Sandbox extends HTMLElement {
     this.updateOutput();
   }
 
+  disconnectedCallback() {
+    window.removeEventListener("message", this.messageHandler);
+  }
+
   render() {
     const enableHTML = this.hasAttribute("html");
     const enableCSS = this.hasAttribute("css");
@@ -329,11 +362,6 @@ class Sandbox extends HTMLElement {
         ${monacoCss}
         ${style}
       </style>
-
-      <div class="sandbox-container">
-      
-      </div>
-
       
       <div class="sandbox">
         <div class="header flex-align-center">
@@ -342,8 +370,9 @@ class Sandbox extends HTMLElement {
         </div>
 
         <div class="editors">
-          ${enableHTML
-            ? /* html */ `
+          ${
+            enableHTML
+              ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/html5.svg" class="icon"/>
@@ -351,24 +380,26 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="html-editor"></div>
             </div>`
-            : ""
+              : ""
           }
 
-          ${enableCSS
-            ? /* html */ `
-            <div>
-              <div class="editors-header">
-                <img src="/assets/images/icons/css.svg" class="icon"/>
-                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
+          ${
+            enableCSS
+              ? /* html */ `
+              <div>
+                <div class="editors-header">
+                  <img src="/assets/images/icons/css.svg" class="icon"/>
+                  <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="css"/>
+                </div>
+                <div id="css-editor"></div>
               </div>
-              <div id="css-editor"></div>
-            </div>
-            `
-            : ""
+              `
+              : ""
           }
 
-          ${enableJS
-            ? /* html */ `
+          ${
+            enableJS
+              ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/javascript.svg" class="icon"/>
@@ -377,7 +408,7 @@ class Sandbox extends HTMLElement {
               <div id="js-editor"></div>
             </div>
             `
-            : ""
+              : ""
           }
 
           </div>
@@ -434,17 +465,48 @@ class Sandbox extends HTMLElement {
       <body>
         ${html}
         <script>
-          const send = (msg) => {
+
+          const send = (type, msg) => {
             parent.postMessage({
               type: "sandbox-console",
+              level: type,
               message: msg
             }, "*");
           };
 
+          function formatArg(arg) {
+
+            if (arg === undefined) return "undefined";
+            if (arg === null) return "null";
+            if (typeof arg === "string") return arg;
+            if (typeof arg === "number") return arg.toString();
+            if (typeof arg === "boolean") return arg.toString();
+
+            if (Array.isArray(arg)) {
+              return JSON.stringify(arg);
+            }
+
+            if (typeof arg === "object") {
+              try {
+                return JSON.stringify(arg, null, 2);
+              } catch {
+                return "[object]";
+              }
+            }
+
+            return String(arg);
+          }
+
           const intercept = (type) => {
             const original = console[type];
+
             console[type] = (...args) => {
-              send(\`[\${type}] \` + args.join(" "));
+              const message = args
+                .map(formatArg)
+                .join(" ");
+
+              send(type, message);
+
               original(...args);
             };
           };
@@ -454,10 +516,22 @@ class Sandbox extends HTMLElement {
           intercept("warn");
           intercept("info");
 
+          window.onerror = function(message, source, lineno, colno, error) {
+            send("error", message);
+          };
+
+          window.onunhandledrejection = function(event) {
+            send("error", event.reason ? event.reason.toString() : "Unhandled Promise rejection");
+          };
+
+          console.clear = () => {
+            send("clear", "");
+          };
+
           try {
             ${js}
           } catch (err) {
-            send(err.toString());
+            send("error", err.toString());
           }
         </script>
       </body>
