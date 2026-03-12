@@ -73,6 +73,10 @@ class Resources extends HTMLElement {
             label: "Exercism",
           },
           {
+            href: "https://web.dev/",
+            label: "Web Dev | Google Chrome Developers",
+          },
+          {
             href: "https://scratch.mit.edu/",
             label: "Scratch MIT",
           },
@@ -86,10 +90,6 @@ class Resources extends HTMLElement {
           {
             href: "https://www.coursera.org/professional-certificates/meta-front-end-developer/",
             label: "Coursera | Meta Front-End Developer",
-          },
-          {
-            href: "https://web.dev/",
-            label: "Web Dev | Google Chrome Developers",
           },
           {
             href: "https://frontendmasters.com/",
@@ -136,6 +136,14 @@ class Resources extends HTMLElement {
           {
             href: "https://codepen.io/",
             label: "CodePen",
+          },
+          {
+            href: "https://www.codewars.com/",
+            label: "codewars | Achieve mastery through coding practice and developer mentorship",
+          },
+          {
+            href: "https://www.hackerrank.com/",
+            label: "HackerRank | Online Coding Tests and Technical Interviews",
           },
         ],
       },

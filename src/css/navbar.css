@@ -1,18 +1,19 @@
 .navbar {
-  /* min-width: 125px; */
-  width: 145px;
+  grid-area: nav;
+
   height: 100%;
+  padding: 5px;
+  
+  background-color: var(--background-color);
   border: 1px solid var(--gray-4);
-  padding: var(--p5);
   border-radius: var(--border-radius);
+  
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.4rem;
   overflow-y: auto;
-  background-color: var(--background-color);
   z-index: 1;
 
   transition: margin-left 0.5s ease;
-  position: absolute;
 }
 
 .navbar__icon__alignement {
@@ -118,6 +119,8 @@ img[src*="ide.svg"] {
 @media (max-width: 700px) {
   .navbar {
     margin-left: -150px;
+    position: absolute;
+    top: 40px
   }
 
   .navbar.visible {

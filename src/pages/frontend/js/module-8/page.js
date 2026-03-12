@@ -88,6 +88,7 @@ console.log(window);
                 sandbox: [
                   {
                     js: true,
+                    console: true,
                   },
                 ],
               },
@@ -372,7 +373,7 @@ console.log(window.innerHeight);
                 ...
               `,
             topics: [
-               //! document.getElementByTagName()
+              //! document.getElementByTagName()
               {
                 topicId: "document-getElementByTagName()",
                 topicLabel: "document.getElementByTagName()",
@@ -702,7 +703,7 @@ console.log(window.innerHeight);
             description: /* html */ `
                 ...
               `,
-              topics: [
+            topics: [
               //! history.length
               {
                 topicId: "history-length",
@@ -1356,7 +1357,7 @@ console.log(window.innerHeight);
               //! Topic
               {
                 topicId: "document-designMode",
-                topicLabel: "document.designMode = \"on\" / \"off\"",
+                topicLabel: 'document.designMode = "on" / "off"',
                 topicAriaLabel: "",
                 cardCodes: [
                   {

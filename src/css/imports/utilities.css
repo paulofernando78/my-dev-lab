@@ -33,3 +33,7 @@ hr {
   border-color: var(--slate-5);
   margin: 15px
 }
+
+.cursor-pointer {
+    cursor: pointer
+  }

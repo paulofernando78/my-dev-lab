@@ -11,11 +11,6 @@ const style = /* css */ `
     width: var(--icon);
   }
 
-  .visibility-toggle {
-    cursor: pointer
-  }
-
-
   .label {
     display: flex;
     align-items: center;
@@ -81,7 +76,8 @@ class CardCode extends HTMLElement {
             ${cardLabelAttr}
           </div>
           <div class="flex-align-center">
-            <img src="/assets/images/icons/visibility-off.svg" class="icon visibility-toggle"/>
+          <img src="/assets/images/icons/visibility-off.svg" class="icon cursor-pointer" data-visibility-toggle/>
+          <img src="/assets/images/icons/copy.svg" class="icon cursor-pointer" data-copy/>
           </div>
         </div>`
           : ""
@@ -91,8 +87,11 @@ class CardCode extends HTMLElement {
       </div>
     `;
 
-    const visibility = this.shadowRoot.querySelector(".visibility-toggle");
     const code = this.querySelector("wc-code");
+    const visibility = this.shadowRoot.querySelector(
+      "[data-visibility-toggle]",
+    );
+    const copy = this.shadowRoot.querySelector("[data-copy]")
 
     if (visibility && code) {
       visibility.addEventListener("click", () => {
@@ -103,6 +102,20 @@ class CardCode extends HTMLElement {
       });
     } else {
       visibility.remove();
+    }
+
+
+    if (copy && code) {
+      copy.addEventListener("click", async () => {
+        try {
+          const codeEl = code.shadowRoot.querySelector("code")
+          const text = codeEl ? codeEl.textContent : ""
+
+          await navigator.clipboard.writeText(text)
+        } catch (err) {
+          console.error("Clipboard copy failed:", err)
+        }
+      });
     }
   }
 }

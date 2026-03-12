@@ -9,16 +9,15 @@
   --icon-invert: 0;
 
   /* Spacing */
-  --p3: 0.1875rem;
-  --p5: 0.3125rem;
-  --gap: 0.3125rem;
+  --padding: 5px;
+  --gap: 5px;
 
   /* Borders */
   --border: 1px solid rgb(203, 203, 203);
   --border-radius: 5px;
   --box-shadow: 0 0 2px rgba(0, 0, 0, 0.342);
 
-  --icon: 21px
+  --icon: 21px;
 }
 
 /* Dark Mode */
@@ -39,21 +38,29 @@ html, body {
 }
 
 body {
-  background-color: var(--background-color);
   max-width: 1100px;
   margin: 0 auto;
+  background-color: var(--background-color);
 }
 
 .layout {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-  
   height: 100dvh;
-  padding: var(--p5);
+  padding: var(--padding);
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--gap);
+
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
 }
 
 header {
+  grid-area: header;
+
   border: 1px solid var(--gray-4);
   border-radius: var(--border-radius);
   display: flex;
@@ -77,29 +84,21 @@ header {
   margin-left: 4px;
 }
 
-.nav-main {
-  position: relative;
-  display: flex;
-  min-height: 0;
-  width: 100%;
-}
-
 main {
-  flex: 1;
+  grid-area: main;
+  
   min-width: 0;
-  min-height: 0;
   overflow-y: auto;
-
+  
   transition: margin-left 0.5s ease;
 }
 
-main {
-  scrollbar-width: thin;
-  scrollbar-color: var(--gray-6) transparent;
+main.has-scroll {
+  padding-right: 5px;
 }
 
 #app {
- height: 100%;
+  height: 100%;
 }
 
 #app > .page {
@@ -113,9 +112,10 @@ main {
 
 footer {
   grid-area: footer;
+
   border: 1px solid var(--gray-4);
-  padding: var(--padding);
   border-radius: var(--border-radius);
+  padding: var(--padding);
   text-align: center;
 }
 
@@ -129,11 +129,11 @@ input {
 
 code {
   border: 1px solid var(--slate-3);
-  background-color: var(--slate-9);
   border-radius: var(--border-radius);
-  padding: 1px 5px;
+  padding: 0 1px;
   font-family: "Courier New", Courier, monospace;
-  color: white;
+  background-color: var(--slate-1);
+  color: var(--surface-text-color);
   border-radius: var(--border-radius);
 }
 
@@ -172,9 +172,5 @@ wc-icon[name="scrollToTop"].visible {
 @media (width > 701px) {
   #menu {
     display: none;
-  }
-
-  main {
-    margin-left: 150px;
   }
 }

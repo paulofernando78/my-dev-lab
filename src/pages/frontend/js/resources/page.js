@@ -35,8 +35,8 @@ class Resources extends HTMLElement {
         sectionAriaLabel: "Sites",
         links: [
           {
-            href: "",
-            label: "",
+            href: "https://jsoncrack.com/",
+            label: "JSON CRACK | Online JSON Viewer",
           },
         ],
       },
@@ -52,6 +52,10 @@ class Resources extends HTMLElement {
           {
             href: "https://firt.dev/vanilla-js/",
             label: "Vanilla-JS, You Might Not Need a Framework",
+          },
+          {
+            href: "https://www.codingame.com/start/",
+            label: "CodinGame | Programmig Challenges",
           },
         ],
       },
