@@ -11,7 +11,7 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.4rem;
   overflow-y: auto;
-  z-index: 1;
+  z-index: 99;
 
   transition: margin-left 0.5s ease;
 }
@@ -120,7 +120,7 @@ img[src*="ide.svg"] {
   .navbar {
     margin-left: -150px;
     position: absolute;
-    top: 40px
+    top: 45px
   }
 
   .navbar.visible {

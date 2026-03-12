@@ -138,10 +138,10 @@ console.log(window.innerHeight);
                   },
                 ],
               },
-              //! window.scrollX
+              //! window.scrollX & scrollY
               {
-                topicId: "window-scroll-x",
-                topicLabel: "window.scrollX",
+                topicId: "window-scroll-x-scroll-y",
+                topicLabel: "window.scrollX & scrollY",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
@@ -161,33 +161,9 @@ console.log(window.innerHeight);
                 sandbox: [
                   {
                     html: true,
+                    css: true,
                     js: true,
-                    console: true
-                  },
-                ],
-              },
-              //! window.scrollY
-              {
-                topicId: "window-scroll-y",
-                topicLabel: "window.scrollY",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    js: true,
+                    console: true,
                   },
                 ],
               },

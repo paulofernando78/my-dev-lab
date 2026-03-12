@@ -37,15 +37,37 @@ function initTheme() {
   });
 }
 
+function closeAllDetails(nav) {
+  if (!nav) return;
+  // Search for all <details> inside nav
+  nav.querySelectorAll("details").forEach((d) => {
+    d.removeAttribute("open");
+  });
+}
+
 function initMenu() {
   const menuBtn = document.querySelector("wc-button[icon='menu']");
   const nav = document.querySelector("nav");
-
   if (!menuBtn || !nav) return;
+
+
+  // Quando clica no hamburger
+// 1️⃣ visible é adicionada ao <nav>
+// 2️⃣ toggle() retorna true
+// 3️⃣ toggleHamIcon(true)
+// 4️⃣ true  → menu aberto → X
+
+// Quando clica no X
+// 1️⃣ visible é removida
+// 2️⃣ toggle() retorna false
+// 3️⃣ toggleHamIcon(false)
+// 4️⃣ false → menu fechado → ☰
 
   menuBtn.addEventListener("nav-click", () => {
     const isOpen = nav.classList.toggle("visible");
     menuBtn.toggleHamIcon(isOpen);
+
+    if (!isOpen) closeAllDetails(nav);
   });
 
   // Event Delegation
@@ -53,19 +75,28 @@ function initMenu() {
     if (e.target.tagName === "A") {
       nav.classList.remove("visible");
       menuBtn.toggleHamIcon(false);
+      closeAllDetails(nav);
     }
   });
 }
 
 function initBreakpoints() {
   const nav = document.querySelector("nav");
-  if (!nav) return;
+  const menuBtn = document.querySelector("wc-button[icon='menu']");
+  if (!nav || !menuBtn) return;
 
   const mq = window.matchMedia("(max-width: 700px)");
 
+  // mq.matches === true  → tela ≤ 700px  (mobile)
+  // mq.matches === false → tela > 700px  (desktop)
+
   function handleBreakpoint(e) {
-    if (e.matches) {
+    // When leaving the mobile breakpoint (>700px),
+    // force menu to close and reset the hamburger icon
+    if (!e.matches) {
       nav.classList.remove("visible");
+      menuBtn.toggleHamIcon(false);
+      closeAllDetails(nav);
     }
   }
 

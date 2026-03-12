@@ -516,8 +516,8 @@ class Sandbox extends HTMLElement {
             :
             ""
           }
-
           </div>
+
           <div class="output">
             <div class="output-header flex-align-center">
               <img src="/assets/images/icons/output.svg" class="icon"/>
@@ -527,20 +527,20 @@ class Sandbox extends HTMLElement {
           </div>
 
           ${enableConsole
-            ? /* html */`
+            ? /* html */ `
             <div class="console">
-            <div class="console-header flex-space-between">
-              <div class="flex-align-center">
-                <img src="/assets/images/icons/console.svg" class="icon"/>
-                <span><b>Console</b></span>
+              <div class="console-header flex-space-between">
+                <div class="flex-align-center">
+                  <img src="/assets/images/icons/console.svg" class="icon"/>
+                  <span><b>Console</b></span>
+                </div>
+                <div class="flex-align-center">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
+                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="console"/>
+                </div>
               </div>
-              <div class="flex-align-center">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
-              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="console"/>
-              </div>
+              <div id="console" class="console-display"></div>
             </div>
-            <div id="console" class="console-display"></div>
-          </div>
             `
             :
             ""
@@ -564,12 +564,13 @@ class Sandbox extends HTMLElement {
         <style>
           html, body {
             margin: 0;
-            padding: 10px;
+            padding: 0;
             background: white !important;
             color: black !important;
             color-scheme: light;
             font-family: "Roboto", sans-serif;
           }
+          ${styleImports}
           ${css}
         </style>
       </head>
@@ -671,7 +672,10 @@ class Sandbox extends HTMLElement {
           };
 
           try {
-            ${js}
+            const userCode = ${JSON.stringify(js)};
+            if (userCode && userCode.trim()) {
+              new Function(userCode)();
+            }
           } catch (err) {
             send("error", [err.toString()]);
           }
