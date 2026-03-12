@@ -17,15 +17,8 @@ import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
-// Previews
-import "@/js/components/pages/js/module-7/Toggle.js";
-
 const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
+
 `;
 
 class JSModuleSeven extends HTMLElement {
@@ -38,310 +31,148 @@ class JSModuleSeven extends HTMLElement {
     this.render();
   }
 
+  disconnectedCallback() {
+    // cleanup (events, intervals, observers)
+  }
+
   render() {
     const sections = [
-      //! What's it?
+      //! Section
       {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
+        sectionId: "Section",
+        sectionLabel: "Section",
+        sectionAriaLabel: "...",
         description: /* html */ `
-          <p>...</p>
+          ...
         `,
-      },
-      //! Event Basics
-      {
-        sectionId: "event-basics",
-        sectionLabel: "Event Basics",
-        sectionAriaLabel: "Event Basics",
-        description: /* html */ `
-          <p>...</p>
+        sampleAnswer: /* html */ `
+          
         `,
+        notes: /* html */ `
+          ...
+        `,
+        imgs: [
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Headings example",
+          },
+        ],
+        //! Sub Section
         subSections: [
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
-            description: /* html */ `
-              ...aaa
-            `,
-            notes: /* html */ `
-              ...aaa
-            `,
-            cardCodes: [
-              {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-                  <h1>...</h1>
-                `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-                  console.log()
-                `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
-              },
-            ],
-          },
-        ],
-      },
-      //! Event Listeners
-      {
-        sectionId: "event-listeners",
-        sectionLabel: "Event Listeners",
-        sectionAriaLabel: "Event Listeners",
-        description: /* html */ `
-          <p>...</p>
-        `,
-        subSections: [
-          {
-            subSectionId: "toggle",
-            subSectionLabel: "Toggle",
-            subSectionAriaLabel: "Toggle",
+            subSectionAriaLabel: "...",
             description: /* html */ `
               ...
             `,
-            cardCodes: [
+            notes: /* html */ `
+              ...
+            `,
+            imgs: [
               {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-<button>Show message</button>
-<span class="hidden">Hidden message</span>
-                `,
+                imgSrc: "/assets/images/semantic.jpg",
+                alt: "Headings example",
               },
+            ],
+            //! Topic
+            topics: [
               {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-                button {
-display: block;
-margin-bottom: 0.5rem
-}  
-
-.hidden {
-display: none
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                notes: /* html */ `
+                  ...
+                `,
+                imgs: [
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Headings example",
+                  },
+                ],
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+<h1>Hello World!</h1>
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+h1 {
+  display: block;
+  margin-bottom: 1rem
 }
 
-.hidden.show {
-display: block
+div {
+  width: 50px;
+  height: 50px;
+  animation: roll 2s infinite alternate;
+  margin-bottom: 10px
 }
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-const button = document.querySelector("button");
-const span = document.querySelector("span");
 
-button.addEventListener("click", () => {
-  span.classList.toggle("show")
-});
+@keyframes roll {
+  0% {
+      transform: translateX(0) rotate(0deg);
+      background-color: green;
+      border-radius: 0
+  }
+  33% {
+    transform: translateX(50px) rotate(360deg);
+    background-color: red;
+    border-radius: 0%
+  }
+  66% {
+    transform: translateX(66px) rotate(0deg);
+    background-color: orange;
+    border-radius: 50%
+  }
+  100% {
+    transform: translateX(100px) rotate(360deg);
+    background-color: blue;
+    border-radius: 0%
+  }
+}
                 `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-js-module-7-toggle></wc-js-module-7-toggle>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+console.log("Hello World")
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-demo></wc-demo>
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
               },
             ],
           },
         ],
       },
-      //! Event Object
+      //! Resources
       {
-        sectionId: "event-object",
-        sectionLabel: "Event Object",
-        sectionAriaLabel: "Event Object",
-        description: /* html */ `
-          <p>...</p>
-        `,
-        subSections: [
-          {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
-            description: /* html */ `
-              ...aaa
-            `,
-            notes: /* html */ `
-              ...aaa
-            `,
-            cardCodes: [
-              {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-                  <h1>...</h1>
-                `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-                  console.log()
-                `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
-              },
-            ],
-          },
-        ],
-      },
-      //! Event Propagation
-      {
-        sectionId: "event-propagation",
-        sectionLabel: "Event Propagation",
-        sectionAriaLabel: "Event Propagation",
-        description: /* html */ `
-          <p>...</p>
-        `,
-        subSections: [
-          {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
-            description: /* html */ `
-              ...aaa
-            `,
-            notes: /* html */ `
-              ...aaa
-            `,
-            cardCodes: [
-              {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-                  <h1>...</h1>
-                `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-                  console.log()
-                `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
-              },
-            ],
-          },
-        ],
-      },
-      //! Event Delegation
-      {
-        sectionId: "event-delegation",
-        sectionLabel: "Event Delegation",
-        sectionAriaLabel: "Event Delegation",
-        description: /* html */ `
-          <p>...</p>
-        `,
-        subSections: [
-          {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "Sub Section",
-            description: /* html */ `
-              ...aaa
-            `,
-            notes: /* html */ `
-              ...aaa
-            `,
-            cardCodes: [
-              {
-                cardLabel: "HTML",
-                language: "html",
-                code: /* html */ `
-                  <h1>...</h1>
-                `,
-              },
-              {
-                cardLabel: "CSS",
-                language: "css",
-                code: /* css */ `
-              `,
-              },
-              {
-                cardLabel: "Javascript",
-                language: "js",
-                code: /* js */ `
-                  console.log()
-                `,
-              },
-            ],
-            preview: /* html */ `
-              <wc-demo></wc-demo>
-            `,
-            sandbox: [
-              {
-                html: true,
-                css: true,
-                js: true,
-              },
-            ],
-          },
-        ],
-      },
-      //! Links
-      {
-        sectionId: "links",
-        sectionLabel: "Links",
-        sectionAriaLabel: "Links",
+        sectionId: "resources",
+        sectionLabel: "Resources",
+        sectionAriaLabel: "Resources",
         links: [
           {
-            href: "www.google.com",
+            href: "https://www.google.com/",
             label: "link",
           },
         ],

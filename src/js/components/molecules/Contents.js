@@ -109,7 +109,7 @@ class Contents extends HTMLElement {
         const id = link.dataset.target;
         const root = this.getRootNode();
         const target = root.querySelector(`#${id}`);
-        console.log(target);
+        // console.log(target);
 
         target?.scrollIntoView({
           behavior: "smooth",

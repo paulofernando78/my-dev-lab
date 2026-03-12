@@ -160,7 +160,9 @@ console.log(window.innerHeight);
                 `,
                 sandbox: [
                   {
+                    html: true,
                     js: true,
+                    console: true
                   },
                 ],
               },

@@ -45,7 +45,7 @@ function checkScroll() {
 
   const hasScroll = main.scrollHeight > main.clientHeight;
   // Debug: prints whether a scrollbar is currently needed
-  console.log(hasScroll)
+  // console.log(hasScroll)
 
   if (hasScroll) {
     main.classList.add("has-scroll");
