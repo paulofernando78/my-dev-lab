@@ -91,7 +91,7 @@ class CardCode extends HTMLElement {
     const visibility = this.shadowRoot.querySelector(
       "[data-visibility-toggle]",
     );
-    const copy = this.shadowRoot.querySelector("[data-copy]")
+    const copy = this.shadowRoot.querySelector("[data-copy]");
 
     if (visibility && code) {
       visibility.addEventListener("click", () => {
@@ -104,18 +104,21 @@ class CardCode extends HTMLElement {
       visibility.remove();
     }
 
-
     if (copy && code) {
       copy.addEventListener("click", async () => {
         try {
-          const codeEl = code.shadowRoot.querySelector("code")
-          const text = codeEl ? codeEl.textContent : ""
+          const codeEl = code.shadowRoot.querySelector("code");
+          const text = codeEl ? codeEl.textContent : "";
 
-          await navigator.clipboard.writeText(text)
+          await navigator.clipboard.writeText(text);
+          alert("Copied to clipboard");
         } catch (err) {
-          console.error("Clipboard copy failed:", err)
+          console.error("Clipboard copy failed:", err);
+          copy.remove();
         }
       });
+    } else if (copy) {
+      copy.remove();
     }
   }
 }
