@@ -49,5 +49,5 @@ class JsModuleSevenToggle extends HTMLElement {
   }
 }
 
-customElements.define("wc-js-module-7-toggle", JsModuleSevenToggle);
+customElements.define("wc-js-module-6-toggle", JsModuleSevenToggle);
 export default JsModuleSevenToggle;
