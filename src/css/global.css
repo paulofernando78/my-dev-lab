@@ -151,8 +151,8 @@ td {
 
 wc-icon[name="scrollToTop"] {
   position: fixed;
-  right: 20px;
-  bottom: 5px;
+  right: 30px;
+  top: 50px;
   cursor: pointer;
   background-color: white;
   border-radius: 50%;

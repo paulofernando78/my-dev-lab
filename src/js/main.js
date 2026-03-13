@@ -50,24 +50,28 @@ function initMenu() {
   const nav = document.querySelector("nav");
   if (!menuBtn || !nav) return;
 
+  // Menu toggle logic
+  // When the hamburger button is clicked:
+  // 1. nav.classList.toggle("visible") adds the "visible" class to <nav>.
+  //    → CSS uses this class to show the navigation menu.
+  // 2. toggle() returns true because the class was added.
+  // 3. navOpen receives this value (true).
+  // 4. menuBtn.toggleHamIcon(true) changes the icon to "X"
+  //    to indicate that the menu is currently open.
 
-  // Quando clica no hamburger
-// 1️⃣ visible é adicionada ao <nav>
-// 2️⃣ toggle() retorna true
-// 3️⃣ toggleHamIcon(true)
-// 4️⃣ true  → menu aberto → X
-
-// Quando clica no X
-// 1️⃣ visible é removida
-// 2️⃣ toggle() retorna false
-// 3️⃣ toggleHamIcon(false)
-// 4️⃣ false → menu fechado → ☰
+  // When the "X" icon is clicked:
+  // 1. nav.classList.toggle("visible") removes the "visible" class.
+  //    → CSS hides the navigation menu.
+  // 2. toggle() returns false because the class was removed.
+  // 3. navOpen becomes false.
+  // 4. menuBtn.toggleHamIcon(false) switches the icon back to
+  //    the hamburger icon to indicate the menu is closed.
 
   menuBtn.addEventListener("nav-click", () => {
-    const isOpen = nav.classList.toggle("visible");
-    menuBtn.toggleHamIcon(isOpen);
+    const navOpen = nav.classList.toggle("visible");
+    menuBtn.toggleHamIcon(navOpen);
 
-    if (!isOpen) closeAllDetails(nav);
+    if (!navOpen) closeAllDetails(nav);
   });
 
   // Event Delegation
@@ -108,23 +112,24 @@ initTheme();
 initMenu();
 initBreakpoints();
 
+const main = document.querySelector("main");
 const scrollToTop = document.querySelector("wc-icon[name='scrollToTop']");
 
 function handleScroll() {
   if (!scrollToTop) return;
 
-  if (window.scrollY > 300) {
+  if (main.scrollTop > 300) {
     scrollToTop.classList.add("visible");
   } else {
     scrollToTop.classList.remove("visible");
   }
 }
 
-window.addEventListener("scroll", handleScroll);
+main.addEventListener("scroll", handleScroll);
 handleScroll();
 
 scrollToTop?.addEventListener("click", () => {
-  window.scrollTo({
+  main.scrollTo({
     top: 0,
     behavior: "smooth",
   });

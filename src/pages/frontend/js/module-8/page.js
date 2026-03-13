@@ -74,8 +74,35 @@ class ModuleEight extends HTMLElement {
                 topicLabel: "window",
                 topicAriaLabel: "",
                 description: /* html */ `
-                  <p>...</p>
-                `,
+  <p>
+    The <code>window</code> object represents the browser window or tab where the current web page is loaded.
+    It is the <strong>global object</strong> in the browser environment, which means that many variables,
+    functions, and browser APIs are attached to it.
+  </p>
+
+  <p>
+    Because <code>window</code> is the global object, its properties and methods can usually be accessed
+    without writing <code>window</code>. For example:
+    <code>window.innerWidth</code> and <code>innerWidth</code> refer to the same value.
+  </p>
+
+  <p>
+    The <code>window</code> object provides access to important browser features such as:
+  </p>
+
+  <ul>
+    <li><code>document</code> – the DOM of the page</li>
+    <li><code>location</code> – information about the current URL</li>
+    <li><code>history</code> – the browser session history</li>
+    <li><code>innerWidth</code> and <code>innerHeight</code> – the viewport size</li>
+    <li><code>scrollX</code> and <code>scrollY</code> – the current scroll position</li>
+  </ul>
+
+  <p>
+    In practice, developers rarely interact with the <code>window</code> object directly,
+    but many commonly used APIs are actually properties of <code>window</code>.
+  </p>
+`,
                 cardCodes: [
                   {
                     cardLabel: "Javascript",
@@ -92,49 +119,29 @@ console.log(window);
                   },
                 ],
               },
-              //! window.innerWidth
+              //! window.innerWidth & innerHeight
               {
                 topicId: "window-innerWidth",
                 topicLabel: "window.innerWidth",
                 topicAriaLabel: "",
                 description: /* html */ `
-                  <p>Returns the width of the browser viewport in pixels.</p>
+                  <p><code>window.innerWidth</code> returns the width of the browser viewport in pixels.</p>
+                  <p><code>window.innerHeight</code> returns the height of the browser viewport in pixels.</p>
                 `,
                 cardCodes: [
                   {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-console.log(window.innerWidth);
+console.log("Width:", window.innerWidth);
+console.log("Height:", window.innerHeight);
                 `,
                   },
                 ],
                 sandbox: [
                   {
                     js: true,
-                  },
-                ],
-              },
-              //! window.innerHeight
-              {
-                topicId: "window-innerHeight",
-                topicLabel: "window.innerHeight",
-                topicAriaLabel: "",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-console.log(window.innerHeight);
-                `,
-                  },
-                ],
-                sandbox: [
-                  {
-                    js: true,
+                    console: true
                   },
                 ],
               },
@@ -144,20 +151,34 @@ console.log(window.innerHeight);
                 topicLabel: "window.scrollX & scrollY",
                 topicAriaLabel: "",
                 description: /* html */ `
-                  ...
-                `,
+  <p>
+    <code>window.scrollX</code> and <code>window.scrollY</code> return the number of pixels that the document
+    has been scrolled horizontally and vertically.
+  </p>
+
+  <p>
+    <code>scrollX</code> represents the horizontal scroll position (left ↔ right),
+    while <code>scrollY</code> represents the vertical scroll position (top ↕ bottom).
+  </p>
+
+  <p>
+    These properties are commonly used when reacting to user scrolling, such as
+    implementing sticky elements, scroll animations, or detecting how far the user
+    has moved down the page.
+  </p>
+`,
                 cardCodes: [
                   {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-
+window.addEventListener("scroll", () => {
+  console.log("X:", window.scrollX)
+  console.log("Y:", window.scrollY)
+})
                 `,
                   },
                 ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
                 sandbox: [
                   {
                     html: true,
@@ -180,8 +201,8 @@ console.log(window.innerHeight);
             topics: [
               //! window.alert()
               {
-                topicId: "window-alert()",
-                topicLabel: "window.alert( )",
+                topicId: "window-alert",
+                topicLabel: "window.alert()",
                 topicAriaLabel: "",
                 description: /* html */ `
                   ...
