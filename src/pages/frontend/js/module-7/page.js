@@ -37,7 +37,488 @@ class JSModuleSeven extends HTMLElement {
 
   render() {
     const sections = [
-      //! Section
+      //! 7.1 Event Fundamentals
+      {
+        sectionId: "event-fundamentals",
+        sectionLabel: "7.1 Event Fundamentals",
+        sectionAriaLabel: "7.1 Event Fundamentals",
+        description: /* html */ `
+          ...
+        `,
+        sampleAnswer: /* html */ `
+          
+        `,
+        subSections: [
+          //! Event Listeners
+          {
+            subSectionId: "event-listeners",
+            subSectionLabel: "Event Listeners",
+            subSectionAriaLabel: "Event Listeners",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! addEventListener()
+              {
+                topicId: "add-event-listener",
+                topicLabel: "addEventListener()",
+                topicAriaLabel: "addEventListener()",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! removeEventListener()
+              {
+                topicId: "remove-event-listener",
+                topicLabel: "removeEventListener()",
+                topicAriaLabel: "removeEventListener()",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! Event hander vs Event listener
+              {
+                topicId: "event-hander-vs-event-listener",
+                topicLabel: "Event hander vs Event listener",
+                topicAriaLabel: "Event hander vs Event listener",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! Event object (event)
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+          //! Event Types
+          {
+            subSectionId: "even-types",
+            subSectionLabel: "Event Types",
+            subSectionAriaLabel: "Event Types",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! click
+              {
+                topicId: "click",
+                topicLabel: "click",
+                topicAriaLabel: "click",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! dblclick
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! contenxtmenu
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! scroll
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+              //! resize
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.2 Mouse Events
+      {
+        sectionId: "mouse-events",
+        sectionLabel: "7.2 Mouse Events",
+        sectionAriaLabel: "7.2 Mouse Events",
+        description: /* html */ `
+          ...
+        `,
+        sampleAnswer: /* html */ `
+          
+        `,
+        subSections: [
+          //! Mouse Interactions
+          {
+            subSectionId: "mouse-interactions",
+            subSectionLabel: "Mouse Interactions",
+            subSectionAriaLabel: "Mouse Interactions",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! Topic
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.3 Keyboard Events
       {
         sectionId: "Section",
         sectionLabel: "Section",
@@ -48,17 +529,8 @@ class JSModuleSeven extends HTMLElement {
         sampleAnswer: /* html */ `
           
         `,
-        notes: /* html */ `
-          ...
-        `,
-        imgs: [
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Headings example",
-          },
-        ],
-        //! Sub Section
         subSections: [
+          //! Sub Section
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
@@ -66,17 +538,8 @@ class JSModuleSeven extends HTMLElement {
             description: /* html */ `
               ...
             `,
-            notes: /* html */ `
-              ...
-            `,
-            imgs: [
-              {
-                imgSrc: "/assets/images/semantic.jpg",
-                alt: "Headings example",
-              },
-            ],
-            //! Topic
             topics: [
+              //! Topic
               {
                 topicId: "topic",
                 topicLabel: "Topic",
@@ -84,73 +547,231 @@ class JSModuleSeven extends HTMLElement {
                 description: /* html */ `
                   ...
                 `,
-                notes: /* html */ `
-                  ...
-                `,
-                imgs: [
-                  {
-                    imgSrc: "/assets/images/semantic.jpg",
-                    alt: "Headings example",
-                  },
-                ],
                 cardCodes: [
                   {
                     cardLabel: "HTML",
                     language: "html",
                     code: /* html */ `
-<h1>Hello World!</h1>
+
                 `,
                   },
                   {
                     cardLabel: "CSS",
                     language: "css",
                     code: /* css */ `
-h1 {
-  display: block;
-  margin-bottom: 1rem
-}
 
-div {
-  width: 50px;
-  height: 50px;
-  animation: roll 2s infinite alternate;
-  margin-bottom: 10px
-}
-
-@keyframes roll {
-  0% {
-      transform: translateX(0) rotate(0deg);
-      background-color: green;
-      border-radius: 0
-  }
-  33% {
-    transform: translateX(50px) rotate(360deg);
-    background-color: red;
-    border-radius: 0%
-  }
-  66% {
-    transform: translateX(66px) rotate(0deg);
-    background-color: orange;
-    border-radius: 50%
-  }
-  100% {
-    transform: translateX(100px) rotate(360deg);
-    background-color: blue;
-    border-radius: 0%
-  }
-}
                 `,
                   },
                   {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-console.log("Hello World")
                 `,
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.4 Form Events
+      {
+        sectionId: "Section",
+        sectionLabel: "Section",
+        sectionAriaLabel: "...",
+        description: /* html */ `
+          ...
+        `,
+        sampleAnswer: /* html */ `
+          
+        `,
+        subSections: [
+          //! Sub Section
+          {
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "...",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! Topic
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.5 Event Flow
+      {
+        sectionId: "Section",
+        sectionLabel: "Section",
+        sectionAriaLabel: "...",
+        description: /* html */ `
+          ...
+        `,
+        sampleAnswer: /* html */ `
+          
+        `,
+        subSections: [
+          //! Sub Section
+          {
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "...",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! Topic
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.6 Event Pattern
+      {
+        sectionId: "Section",
+        sectionLabel: "Section",
+        sectionAriaLabel: "...",
+        description: /* html */ `
+          ...
+        `,
+        sampleAnswer: /* html */ `
+          
+        `,
+        subSections: [
+          //! Sub Section
+          {
+            subSectionId: "sub-section",
+            subSectionLabel: "Sub Section",
+            subSectionAriaLabel: "...",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! Topic
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {

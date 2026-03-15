@@ -39,7 +39,8 @@ class Resources extends HTMLElement {
           },
           {
             href: "https://www.landingfolio.com/",
-            label: "Landing Folio | The Best Landing Page Design Inspiration, Templates and More",
+            label:
+              "Landing Folio | The Best Landing Page Design Inspiration, Templates and More",
           },
           {
             href: "https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",
@@ -57,7 +58,7 @@ class Resources extends HTMLElement {
       },
       {
         sectionId: "free-courses",
-        sectionLabel: "Free Courses",
+        sectionLabel: "Free Courses (English)",
         sectionAriaLabel: "Free Courses",
         links: [
           {
@@ -83,18 +84,10 @@ class Resources extends HTMLElement {
         ],
       },
       {
-        sectionId: "paid-courses",
-        sectionLabel: "Paid Courses",
-        sectionAriaLabel: "Best Paid Courses",
+        sectionId: "free-courses",
+        sectionLabel: "Free Trial Courses (English)",
+        sectionAriaLabel: "Free Courses",
         links: [
-          {
-            href: "https://www.coursera.org/professional-certificates/meta-front-end-developer/",
-            label: "Coursera | Meta Front-End Developer",
-          },
-          {
-            href: "https://frontendmasters.com/",
-            label: "Frontend Masters",
-          },
           {
             href: "https://www.boot.dev/",
             label: "Boot.Dev",
@@ -102,6 +95,41 @@ class Resources extends HTMLElement {
           {
             href: "https://scrimba.com/home",
             label: "Scrimba",
+          },
+        ],
+      },
+      {
+        sectionId: "paid-courses",
+        sectionLabel: "Paid Courses (English)",
+        sectionAriaLabel: "Paid Courses",
+        links: [
+          {
+            href: "https://www.coursera.org/professional-certificates/meta-front-end-developer/",
+            label: "Coursera | Meta Front-End Developer",
+          },
+          {
+            href: "https://www.rocketseat.com.br/",
+            label: "Rocketseat",
+          },
+          {
+            href: "https://frontendmasters.com/",
+            label: "Frontend Masters",
+          },
+
+          {
+            href: "https://www.origamid.com/",
+            label: "Origamid | BR",
+          },
+        ],
+      },
+      {
+        sectionId: "paid-courses",
+        sectionLabel: "Paid Courses (Portuguese)",
+        sectionAriaLabel: "Paid Courses",
+        links: [
+          {
+            href: "https://www.rocketseat.com.br/",
+            label: "Rocketseat",
           },
           {
             href: "https://www.origamid.com/",
@@ -116,11 +144,13 @@ class Resources extends HTMLElement {
         links: [
           {
             href: "https://www.youtube.com/watch?v=zutb5Clb_0Y",
-            label: "Future Fullstack | HTML Full Course Tutorial for Beginners - Learn EVERYTHING You Need to Know in Detail (5:25: 52)",
+            label:
+              "Future Fullstack | HTML Full Course Tutorial for Beginners - Learn EVERYTHING You Need to Know in Detail (5:25: 52)",
           },
           {
             href: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
-            label: "SuperSimpleDev | HTML & CSS Full Course - Beginner to Pro (6:31:23)",
+            label:
+              "SuperSimpleDev | HTML & CSS Full Course - Beginner to Pro (6:31:23)",
           },
           {
             href: "https://www.youtube.com/watch?v=G3e-cpL7ofc",
@@ -139,7 +169,8 @@ class Resources extends HTMLElement {
           },
           {
             href: "https://www.codewars.com/",
-            label: "codewars | Achieve mastery through coding practice and developer mentorship",
+            label:
+              "codewars | Achieve mastery through coding practice and developer mentorship",
           },
           {
             href: "https://www.hackerrank.com/",
