@@ -1,16 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-  .wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 1;
-  }
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 class SvgCustomPath extends HTMLElement {
@@ -40,7 +31,7 @@ class SvgCustomPath extends HTMLElement {
             d="M0,100 C100,20 200,180 300,100 S500,20 600,100 S700,180 800,100"
             fill="none"
             stroke="black"
-            stroke-width="3"
+            stroke-width="2"
           />
 
           <circle r="15" fill="red">

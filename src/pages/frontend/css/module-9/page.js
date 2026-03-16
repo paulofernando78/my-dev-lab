@@ -74,21 +74,23 @@ class ModuleNine extends HTMLElement {
                     cardLabel: "HTML",
                     language: "html",
                     code: /* html */ `
+<div class="wrapper">
+  <svg viewBox="0 0 800 200">
+    <path
+      id="path"
+      d="M0,100 C100,20 200,180 300,100 S500,20 600,100 S700,180 800,100"
+      fill="none"
+      stroke="black"
+      stroke-width="2"
+    />
 
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                    
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-
+    <circle r="15" fill="red">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#path"></mpath>
+      </animateMotion>
+    </circle>
+  </svg>
+</div>
                 `,
                   },
                 ],
@@ -98,8 +100,6 @@ class ModuleNine extends HTMLElement {
                 sandbox: [
                   {
                     html: true,
-                    css: true,
-                    js: true,
                     console: true
                   },
                 ],
