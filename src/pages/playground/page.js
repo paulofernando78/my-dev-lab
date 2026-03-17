@@ -66,6 +66,7 @@ class Playground extends HTMLElement {
                     language: "html",
                     code: /* html */ `
 <h1>Hello World!</h1>
+<div></div>
                 `,
                   },
                   {
@@ -112,7 +113,7 @@ div {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-console.("Hello World")
+console.log("Hello World")
                 `,
                   },
                 ],

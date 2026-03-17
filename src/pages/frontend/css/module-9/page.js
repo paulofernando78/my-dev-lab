@@ -18,13 +18,13 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
-import "@/js/components/pages/css/module-9/SvgCustomPath.js"
+
 
 const style = /* css */ `
 
 `;
 
-class ModuleNine extends HTMLElement {
+class CSSModuleNine extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -42,8 +42,8 @@ class ModuleNine extends HTMLElement {
     const sections = [
       //! Section
       {
-        sectionId: "Random Animations",
-        sectionLabel: "Random Animations",
+        sectionId: "...",
+        sectionLabel: "...",
         sectionAriaLabel: "...",
         description: /* html */ `
           ...
@@ -54,18 +54,18 @@ class ModuleNine extends HTMLElement {
         //! Sub Section
         subSections: [
           {
-            subSectionId: "svg",
-            subSectionLabel: "SVG",
-            subSectionAriaLabel: "SVG",
+            subSectionId: "...",
+            subSectionLabel: "...",
+            subSectionAriaLabel: "...",
             description: /* html */ `
               ...
             `,
             //! Topic
             topics: [
               {
-                topicId: "svg-custom-path",
-                topicLabel: "SVG Custom Path",
-                topicAriaLabel: "SVG Custom Path",
+                topicId: "...",
+                topicLabel: "...",
+                topicAriaLabel: "...",
                 description: /* html */ `
                   ...
                 `,
@@ -74,28 +74,12 @@ class ModuleNine extends HTMLElement {
                     cardLabel: "HTML",
                     language: "html",
                     code: /* html */ `
-<div class="wrapper">
-  <svg viewBox="0 0 800 200">
-    <path
-      id="path"
-      d="M0,100 C100,20 200,180 300,100 S500,20 600,100 S700,180 800,100"
-      fill="none"
-      stroke="black"
-      stroke-width="2"
-    />
 
-    <circle r="15" fill="red">
-      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
-        <mpath href="#path"></mpath>
-      </animateMotion>
-    </circle>
-  </svg>
-</div>
                 `,
                   },
                 ],
                 preview: /* html */ `
-                  <wc-css-svg-custom-path></wc-css-svg-custom-path>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {
@@ -137,5 +121,5 @@ class ModuleNine extends HTMLElement {
   }
 }
 
-customElements.define("wc-frontend-css-module-9", ModuleNine);
-export default ModuleNine;
+customElements.define("wc-frontend-css-module-9", CSSModuleNine);
+export default CSSModuleNine;

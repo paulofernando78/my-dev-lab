@@ -31,7 +31,7 @@ const style = /* css */ `
 
 `;
 
-class ModuleSix extends HTMLElement {
+class HTMLModuleSix extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -327,5 +327,5 @@ class ModuleSix extends HTMLElement {
   }
 }
 
-customElements.define("wc-frontend-html-module-6", ModuleSix);
-export default ModuleSix;
+customElements.define("wc-frontend-html-module-6", HTMLModuleSix);
+export default HTMLModuleSix;

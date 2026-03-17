@@ -16,7 +16,7 @@ const style = /* css */ `
   
 `;
 
-class Resources extends HTMLElement {
+class CSSResources extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -117,5 +117,5 @@ class Resources extends HTMLElement {
   }
 }
 
-customElements.define("wc-frontend-css-resources", Resources);
-export default Resources;
+customElements.define("wc-frontend-css-resources", CSSResources);
+export default CSSResources;

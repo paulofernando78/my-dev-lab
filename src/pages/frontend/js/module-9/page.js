@@ -25,7 +25,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleNine extends HTMLElement {
+class JSModuleNine extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -93,5 +93,5 @@ console.log(...)
   }
 }
 
-customElements.define("wc-frontend-js-module-9", ModuleNine);
-export default ModuleNine;
+customElements.define("wc-frontend-js-module-9", JSModuleNine);
+export default JSModuleNine;

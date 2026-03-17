@@ -59,8 +59,8 @@ class Boilerplate extends HTMLElement {
             alt: "Headings example",
           },
         ],
-        //! Sub Section
         subSections: [
+          //! Sub Section
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
@@ -77,8 +77,8 @@ class Boilerplate extends HTMLElement {
                 alt: "Headings example",
               },
             ],
-            //! Topic
             topics: [
+              //! Topic
               {
                 topicId: "topic",
                 topicLabel: "Topic",
@@ -119,7 +119,7 @@ class Boilerplate extends HTMLElement {
                   },
                 ],
                 preview: /* html */ `
-                  <wc-demo></wc-demo>
+                  <wc-></wc->
                 `,
                 sandbox: [
                   {

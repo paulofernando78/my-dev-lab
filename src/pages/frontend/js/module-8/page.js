@@ -25,7 +25,7 @@ const style = /* css */ `
   }
 `;
 
-class ModuleEight extends HTMLElement {
+class JSModuleEight extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -1067,5 +1067,5 @@ document.designMode = "on";
   }
 }
 
-customElements.define("wc-frontend-js-module-8", ModuleEight);
-export default ModuleEight;
+customElements.define("wc-frontend-js-module-8", JSModuleEight);
+export default JSModuleEight;

@@ -158,8 +158,5 @@ ul.innerHTML = /* html */ `
       .filter((section) => section.section)
       .map((section) => renderSection(section, "flex-align-center"))
       .join("")}
-
-    
-
   </div>
 `;

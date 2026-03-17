@@ -54,6 +54,12 @@ export const fullstackRoadmap = [
             description:
               "Learn how to build accessible webpages using semantic HTML, ARIA roles, and SEO best practices to improve usability, discoverability, and overall user experience.",
           },
+          {
+            href: "/frontend/html/module-8",
+            module: "SVG",
+            description:
+              "",
+          },
         ],
       },
       // CSS

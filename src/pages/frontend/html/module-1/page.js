@@ -15,7 +15,7 @@ import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
-class ModuleOne extends HTMLElement {
+class HTMLModuleOne extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -127,5 +127,5 @@ class ModuleOne extends HTMLElement {
   }
 }
 
-customElements.define("wc-frontend-html-module-1", ModuleOne);
-export default ModuleOne;
+customElements.define("wc-frontend-html-module-1", HTMLModuleOne);
+export default HTMLModuleOne;

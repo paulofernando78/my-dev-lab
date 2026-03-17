@@ -19,7 +19,7 @@ const style = /* css */ `
 
 `;
 
-class ModuleSeven extends HTMLElement {
+class HTMLModuleSeven extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -205,5 +205,5 @@ class ModuleSeven extends HTMLElement {
   }
 }
 
-customElements.define("wc-frontend-html-module-7", ModuleSeven);
-export default ModuleSeven;
+customElements.define("wc-frontend-html-module-7", HTMLModuleSeven);
+export default HTMLModuleSeven;
