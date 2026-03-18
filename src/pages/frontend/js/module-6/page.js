@@ -18,7 +18,7 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Preview
-import "@/js/components/pages/js/module-6/Toggle.js"
+import "@/js/components/pages/frontend/js/module-6/Toggle.js"
 
 
 const style = /* css */ `
