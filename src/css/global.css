@@ -87,6 +87,7 @@ header {
 
 .main-shell {
   grid-area: main;
+  min-width: 0;
   min-height: 0;
 
   position: relative;
