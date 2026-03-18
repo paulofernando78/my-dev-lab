@@ -423,7 +423,15 @@ class JSModuleSeven extends HTMLElement {
                     code: /* css */ `
 body {
   display: grid;
-  place-items: center
+  place-items: center;
+}
+
+#x {
+  align-self: end;
+}
+
+#y {
+  align-self: start;
 }                    
                     `,
                   },

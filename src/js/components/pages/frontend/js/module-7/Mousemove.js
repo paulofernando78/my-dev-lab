@@ -6,21 +6,18 @@ const style = /* css */ `
 }
 
 .preview {
-  position: relative;
-  width: 100%;
   min-height: 160px;
   display: grid;
   place-items: center;
 }
 
+#x {
+  align-self: end;
+}
 
-  #x {
-    align-self: end;
-  }
-
-  #y {
-    align-self: start;
-  }
+#y {
+  align-self: start;
+}
 `;
 
 class JSModuleSevenMousemove extends HTMLElement {
