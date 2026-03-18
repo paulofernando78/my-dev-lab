@@ -17,6 +17,9 @@ import "@/js/components/molecules/LessonNav.js";
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
+// Preview
+import "@/js/components/pages/frontend/js/module-7/Mousemove.js";
+
 const style = /* css */ `
 
 `;
@@ -44,9 +47,6 @@ class JSModuleSeven extends HTMLElement {
         sectionAriaLabel: "7.1 Event Fundamentals",
         description: /* html */ `
           ...
-        `,
-        sampleAnswer: /* html */ `
-          
         `,
         subSections: [
           //! Event Listeners
@@ -96,7 +96,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -138,14 +138,14 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
-              //! Event hander vs Event listener
+              //! Event handler vs Event listener
               {
-                topicId: "event-hander-vs-event-listener",
-                topicLabel: "Event hander vs Event listener",
+                topicId: "event-handler-vs-event-listener",
+                topicLabel: "Event handler vs Event listener",
                 topicAriaLabel: "Event hander vs Event listener",
                 description: /* html */ `
                   ...
@@ -180,15 +180,15 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
               //! Event object (event)
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
+                topicId: "event-object",
+                topicLabel: "Event Object",
+                topicAriaLabel: "Event Object",
                 description: /* html */ `
                   ...
                 `,
@@ -222,228 +222,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
-                  },
-                ],
-              },
-            ],
-          },
-          //! Event Types
-          {
-            subSectionId: "even-types",
-            subSectionLabel: "Event Types",
-            subSectionAriaLabel: "Event Types",
-            description: /* html */ `
-              ...
-            `,
-            topics: [
-              //! click
-              {
-                topicId: "click",
-                topicLabel: "click",
-                topicAriaLabel: "click",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    html: true,
-                    css: true,
-                    js: true,
-                    console: true
-                  },
-                ],
-              },
-              //! dblclick
-              {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    html: true,
-                    css: true,
-                    js: true,
-                    console: true
-                  },
-                ],
-              },
-              //! contenxtmenu
-              {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    html: true,
-                    css: true,
-                    js: true,
-                    console: true
-                  },
-                ],
-              },
-              //! scroll
-              {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    html: true,
-                    css: true,
-                    js: true,
-                    console: true
-                  },
-                ],
-              },
-              //! resize
-              {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    html: true,
-                    css: true,
-                    js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -459,10 +238,159 @@ class JSModuleSeven extends HTMLElement {
         description: /* html */ `
           ...
         `,
-        sampleAnswer: /* html */ `
-          
-        `,
         subSections: [
+          //! Mouse Events (Base)
+          {
+            subSectionId: "mouse-events-basic",
+            subSectionLabel: "Mouse Events",
+            subSectionAriaLabel: "Mouse Events",
+            description: /* html */ `
+            <p>Mouse events allow you to respond to user interactions such as clicks and button presses.</p>
+            `,
+            topics: [
+              //! click
+              {
+                topicId: "click-event",
+                topicLabel: "click",
+                topicAriaLabel: "click",
+                description: /* html */ `
+                <p>The <code>click</code> event is triggered when a user clicks on an element. It is one of the most commonly used events for creating interactivity.</p>
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true,
+                  },
+                ],
+              },
+              //! mousedown & mouseup
+              {
+                topicId: "mousedown-mouseup",
+                topicLabel: "mousedown & mouseup",
+                topicAriaLabel: "mousedown and mouseup",
+                description: /* html */ `
+                <p>The <code>mousedown</code> event is triggered when the mouse button is pressed,
+                  and <code>mouseup</code> when it is released. These events are useful for detecting press and hold interactions.</p>
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true,
+                  },
+                ],
+              },
+            ],
+          },
+          //! Hover Events
+          {
+            subSectionId: "hover-events",
+            subSectionLabel: "Hover Events",
+            subSectionAriaLabel: "Hover Events",
+            description: /* html */ `
+            <p>Hover events allow you to detect when the mouse enters or leaves an element.</p>
+            `,
+            topics: [
+              //! mouseenter & mouseleave
+              {
+                topicId: "mouseenter-mouseleave",
+                topicLabel: "mouseenter & mouseleave",
+                topicAriaLabel: "mouseenter and mouseleave",
+                description: /* html */ `
+                <p>The <code>mouseenter</code> event is triggered when the mouse enters an element, and <code>mouseleave</code> when it leaves.These are commonly used for hover effects and UI interactions.</p>
+                  
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true,
+                  },
+                ],
+              },
+            ],
+          },
           //! Mouse Interactions
           {
             subSectionId: "mouse-interactions",
@@ -472,11 +400,11 @@ class JSModuleSeven extends HTMLElement {
               ...
             `,
             topics: [
-              //! Topic
+              //! mousemove (Tracking Mouse Position)
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
+                topicId: "mousemove",
+                topicLabel: "mousemove (Tracking Mouse Position)",
+                topicAriaLabel: "mousemove (Tracking Mouse Position)",
                 description: /* html */ `
                   ...
                 `,
@@ -485,32 +413,46 @@ class JSModuleSeven extends HTMLElement {
                     cardLabel: "HTML",
                     language: "html",
                     code: /* html */ `
-
-                `,
+<span id="x"></span>
+<span id="y"></span>
+                    `,
                   },
                   {
                     cardLabel: "CSS",
                     language: "css",
                     code: /* css */ `
-
-                `,
+body {
+  display: grid;
+  place-items: center
+}                    
+                    `,
                   },
                   {
                     cardLabel: "Javascript",
                     language: "js",
                     code: /* js */ `
-                `,
+const spanX = document.querySelector("#x")
+const spanY = document.querySelector("#y")
+
+  window.addEventListener("mousemove", (event) => {
+  spanX.textContent = "x: " + event.clientX
+  spanY.textContent = "y: " + event.clientY
+
+  console.log(event.clientX)
+  console.log(event.clientY)
+})
+                    `,
                   },
                 ],
                 preview: /* html */ `
-                  <wc-></wc->
+                  <wc-frontend-js-module-7-mousemove></wc-frontend-js-module-7-mousemove>
                 `,
                 sandbox: [
                   {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -520,30 +462,27 @@ class JSModuleSeven extends HTMLElement {
       },
       //! 7.3 Keyboard Events
       {
-        sectionId: "Section",
-        sectionLabel: "Section",
-        sectionAriaLabel: "...",
+        sectionId: "keyboard-events",
+        sectionLabel: "7.3 Keyboard Events",
+        sectionAriaLabel: "7.3 Keyboard Events",
         description: /* html */ `
           ...
         `,
-        sampleAnswer: /* html */ `
-          
-        `,
         subSections: [
-          //! Sub Section
+          //! Keyboard Events
           {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "...",
+            subSectionId: "keyboard-events-basic",
+            subSectionLabel: "Keyboard Events",
+            subSectionAriaLabel: "Keyboard Events",
             description: /* html */ `
               ...
             `,
             topics: [
-              //! Topic
+              //! keydown & keyup
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
+                topicId: "keydown-keyup",
+                topicLabel: "keydown & keyup",
+                topicAriaLabel: "keydown and keyup",
                 description: /* html */ `
                   ...
                 `,
@@ -577,7 +516,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -587,29 +526,90 @@ class JSModuleSeven extends HTMLElement {
       },
       //! 7.4 Form Events
       {
-        sectionId: "Section",
-        sectionLabel: "Section",
-        sectionAriaLabel: "...",
+        sectionId: "form-events",
+        sectionLabel: "7.4 Form Events",
+        sectionAriaLabel: "7.4 Form Events",
         description: /* html */ `
           ...
         `,
-        sampleAnswer: /* html */ `
-          
+        subSections: [
+          //! Form Events
+          {
+            subSectionId: "form-events-basic",
+            subSectionLabel: "Form Events",
+            subSectionAriaLabel: "Form Events",
+            description: /* html */ `
+              ...
+            `,
+            topics: [
+              //! submit, input & change
+              {
+                topicId: "form-events-core",
+                topicLabel: "submit, input & change",
+                topicAriaLabel: "submit input change",
+                description: /* html */ `
+                  ...
+                `,
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+                `,
+                  },
+                ],
+                preview: /* html */ `
+                  <wc-></wc->
+                `,
+                sandbox: [
+                  {
+                    html: true,
+                    css: true,
+                    js: true,
+                    console: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      //! 7.5 Window and Globall Events
+      {
+        sectionId: "...",
+        sectionLabel: "7.5 Event Flow",
+        sectionAriaLabel: "7.5 Event Flow",
+        description: /* html */ `
+          ...
         `,
         subSections: [
-          //! Sub Section
+          //! ...
           {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
+            subSectionId: "...",
+            subSectionLabel: "...",
             subSectionAriaLabel: "...",
             description: /* html */ `
               ...
             `,
             topics: [
-              //! Topic
+              //! ...
               {
-                topicId: "topic",
-                topicLabel: "Topic",
+                topicId: "...",
+                topicLabel: "...",
                 topicAriaLabel: "...",
                 description: /* html */ `
                   ...
@@ -644,7 +644,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -654,30 +654,27 @@ class JSModuleSeven extends HTMLElement {
       },
       //! 7.5 Event Flow
       {
-        sectionId: "Section",
-        sectionLabel: "Section",
-        sectionAriaLabel: "...",
+        sectionId: "event-flow",
+        sectionLabel: "7.5 Event Flow",
+        sectionAriaLabel: "7.5 Event Flow",
         description: /* html */ `
           ...
         `,
-        sampleAnswer: /* html */ `
-          
-        `,
         subSections: [
-          //! Sub Section
+          //! Event Flow
           {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "...",
+            subSectionId: "event-flow-basics",
+            subSectionLabel: "Event Flow",
+            subSectionAriaLabel: "Event Flow",
             description: /* html */ `
               ...
             `,
             topics: [
-              //! Topic
+              //! ...
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
+                topicId: "bubbling-capturing",
+                topicLabel: "Bubbling & Capturing",
+                topicAriaLabel: "Bubbling and Capturing",
                 description: /* html */ `
                   ...
                 `,
@@ -711,7 +708,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
@@ -721,30 +718,27 @@ class JSModuleSeven extends HTMLElement {
       },
       //! 7.6 Event Pattern
       {
-        sectionId: "Section",
-        sectionLabel: "Section",
-        sectionAriaLabel: "...",
+        sectionId: "event-patterns",
+        sectionLabel: "7.6 Event Patterns",
+        sectionAriaLabel: "7.6 Event Patterns",
         description: /* html */ `
           ...
         `,
-        sampleAnswer: /* html */ `
-          
-        `,
         subSections: [
-          //! Sub Section
+          //! Event Patterns
           {
-            subSectionId: "sub-section",
-            subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "...",
+            subSectionId: "event-patterns-core",
+            subSectionLabel: "Event Patterns",
+            subSectionAriaLabel: "Event Patterns",
             description: /* html */ `
               ...
             `,
             topics: [
-              //! Topic
+              //! Event Delegation
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "...",
+                topicId: "event-delegation",
+                topicLabel: "Event Delegation",
+                topicAriaLabel: "Event Delegation",
                 description: /* html */ `
                   ...
                 `,
@@ -778,7 +772,7 @@ class JSModuleSeven extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
                   },
                 ],
               },
