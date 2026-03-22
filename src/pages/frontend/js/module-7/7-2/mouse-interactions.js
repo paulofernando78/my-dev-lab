@@ -63,5 +63,59 @@ window.addEventListener("mousemove", (event) => {
       `,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },
+    //! mousemove (Tracking circle)
+    {
+      topicId: "mousemove-circle",
+      topicLabel: "mousemove (Tracking Mouse circle)",
+      topicAriaLabel: "mousemove (Tracking Mouse circle)",
+      cardCodes: [
+        {
+          cardLabel: "HTML",
+          language: "html",
+          code: /* html */ `
+<span id="x"></span>
+<span id="y"></span>
+          `,
+        },
+        {
+          cardLabel: "CSS",
+          language: "css",
+          code: /* css */ `
+body {
+  display: grid;
+  place-items: center;
+}
+
+#x {
+  align-self: end;
+}
+
+#y {
+  align-self: start;
+}
+          `,
+        },
+        {
+          cardLabel: "Javascript",
+          language: "js",
+          code: /* js */ `
+const spanX = document.querySelector("#x")
+const spanY = document.querySelector("#y")
+
+window.addEventListener("mousemove", (event) => {
+  spanX.textContent = "x: " + event.clientX
+  spanY.textContent = "y: " + event.clientY
+
+  console.log(event.clientX)
+  console.log(event.clientY)
+})
+          `,
+        },
+      ],
+      preview: /* html */ `
+        <wc-mousemove></wc-mousemove>
+      `,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    }
   ],
 };
