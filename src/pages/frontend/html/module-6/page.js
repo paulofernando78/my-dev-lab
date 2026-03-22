@@ -17,15 +17,15 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
-import "@/js/components/pages/html/module-6/Text.js";
-import "@/js/components/pages/html/module-6/Email.js";
-import "@/js/components/pages/html/module-6/Password.js";
-import "@/js/components/pages/html/module-6/Number.js";
-import "@/js/components/pages/html/module-6/Radio.js";
-import "@/js/components/pages/html/module-6/Checkbox.js";
-import "@/js/components/pages/html/module-6/Option.js";
-import "@/js/components/pages/html/module-6/File.js";
-import "@/js/components/pages/html/module-6/Textarea.js";
+import "@/js/components/pages/frontend/html/module-6/Text.js";
+import "@/js/components/pages/frontend/html/module-6/Email.js";
+import "@/js/components/pages/frontend/html/module-6/Password.js";
+import "@/js/components/pages/frontend/html/module-6/Number.js";
+import "@/js/components/pages/frontend/html/module-6/Radio.js";
+import "@/js/components/pages/frontend/html/module-6/Checkbox.js";
+import "@/js/components/pages/frontend/html/module-6/Option.js";
+import "@/js/components/pages/frontend/html/module-6/File.js";
+import "@/js/components/pages/frontend/html/module-6/Textarea.js";
 
 const style = /* css */ `
 
