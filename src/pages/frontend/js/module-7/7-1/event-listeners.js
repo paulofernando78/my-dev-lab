@@ -85,21 +85,15 @@ button.addEventListener('click', anotherFunction)
       topicAriaLabel: "Event Object",
       description: /* html */ `
         <p>When an event fires, the browser automatically passes an <strong>event object</strong> to the callback function. This object contains useful information such as the target element, mouse coordinates, and the key that was pressed.</p>
-      `,
-      cardCodes: [
-        {
-          cardLabel: "Javascript",
-          language: "js",
-          code: /* js */ `
-  element.addEventListener("click", (event) => {
+        <wc-code language="js">
+element.addEventListener("click", (event) => {
   console.log(event.type)      // "click"
   console.log(event.target)    // the clicked element
   console.log(event.clientX)   // mouse X position
   console.log(event.key)       // key pressed (keydown)
 })
-          `,
-        },
-      ],
+        </wc-code>
+      `,
     },
   ],
 };
