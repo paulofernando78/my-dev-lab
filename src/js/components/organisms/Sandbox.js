@@ -478,8 +478,9 @@ class Sandbox extends HTMLElement {
         </div>
 
         <div class="editors">
-          ${enableHTML
-            ? /* html */ `
+          ${
+            enableHTML
+              ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/html5.svg" class="icon"/>
@@ -487,12 +488,12 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="html-editor"></div>
             </div>`
-            :
-            ""
+              : ""
           }
 
-          ${enableCSS
-            ? /* html */ `
+          ${
+            enableCSS
+              ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/css.svg" class="icon"/>
@@ -500,12 +501,12 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="css-editor"></div>
             </div>`
-            :
-            ""
+              : ""
           }
 
-          ${enableJS
-            ? /* html */ `
+          ${
+            enableJS
+              ? /* html */ `
             <div>
               <div class="editors-header">
                 <img src="/assets/images/icons/javascript.svg" class="icon"/>
@@ -513,8 +514,7 @@ class Sandbox extends HTMLElement {
               </div>
               <div id="js-editor"></div>
             </div>`
-            :
-            ""
+              : ""
           }
           </div>
 
@@ -526,8 +526,9 @@ class Sandbox extends HTMLElement {
             <iframe id="output"></iframe>
           </div>
 
-          ${enableConsole
-            ? /* html */ `
+          ${
+            enableConsole
+              ? /* html */ `
             <div class="console">
               <div class="console-header flex-space-between">
                 <div class="flex-align-center">
@@ -542,8 +543,7 @@ class Sandbox extends HTMLElement {
               <div id="console" class="console-display"></div>
             </div>
             `
-            :
-            ""
+              : ""
           }   
       </div>
     `;
@@ -563,7 +563,7 @@ class Sandbox extends HTMLElement {
       <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <style>
           html, body {
-            margin: 0;
+            margin: 10px 9px;
             padding: 0;
             background: white !important;
             color: black !important;
@@ -577,7 +577,6 @@ class Sandbox extends HTMLElement {
       <body>
         ${html}
         <script>
-
           const sanitize = (value, depth = 0) => {
             if (depth > 2) return "[Object]";
           

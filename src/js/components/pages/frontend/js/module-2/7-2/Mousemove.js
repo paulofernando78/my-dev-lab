@@ -20,7 +20,7 @@ const style = /* css */ `
 }
 `;
 
-class JSModuleSevenMousemove extends HTMLElement {
+class Mousemove extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -63,7 +63,7 @@ class JSModuleSevenMousemove extends HTMLElement {
 }
 
 customElements.define(
-  "wc-frontend-js-module-7-mousemove",
-  JSModuleSevenMousemove,
+  "wc-mousemove",
+  Mousemove,
 );
-export default JSModuleSevenMousemove;
+export default Mousemove;

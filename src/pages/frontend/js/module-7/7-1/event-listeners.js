@@ -15,12 +15,25 @@ export const eventListeners = {
         <p>The <code>addEventListener()</code> method attaches an event handler to an element. It is the recommended way to listen for events, as it allows multiple handlers on the same element without overwriting each other.</p>
       `,
       cardCodes: [
-        { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "CSS", language: "css", code: /* css */ `` },
-        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+        { cardLabel: "HTML", language: "html", code: /* html */ `
+<button>Button</button>
+          `
+        },
+        {
+          cardLabel: "Javascript",
+          language: "js",
+          code: /* js */ `
+// Select button
+const button = document.querySelector("button")
+
+button.addEventListener("EVENT_NAME", () => {
+console.log("Something happened!")
+})
+          `
+        },
       ],
-      preview: /* html */ `<wc-></wc->`,
-      sandbox: [{ html: true, css: true, js: true, console: true }],
+      preview: /* html */ `<wc-add-event-listener></wc-add-event-listener>`,
+      sandbox: [{ html: true, js: true, console: true }],
     },
     //! removeEventListener()
     {
@@ -32,11 +45,10 @@ export const eventListeners = {
       `,
       cardCodes: [
         { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "CSS", language: "css", code: /* css */ `` },
         { cardLabel: "Javascript", language: "js", code: /* js */ `` },
       ],
       preview: /* html */ `<wc-></wc->`,
-      sandbox: [{ html: true, css: true, js: true, console: true }],
+      sandbox: [{ html: true, js: true, console: true }],
     },
     //! Event handler vs Event listener
     {

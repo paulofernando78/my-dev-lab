@@ -22,7 +22,8 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Preview
-import "@/js/components/pages/frontend/js/module-7/Mousemove.js";
+import "@/js/components/pages/frontend/js/module-7/7-1/AddEventListener.js";
+import "@/js/components/pages/frontend/js/module-2/7-2/Mousemove.js";
 
 class JSModuleSeven extends HTMLElement {
   constructor() {

@@ -1,4 +1,4 @@
-export const mouseEvents = {
+export const clickEvents = {
   subSectionId: "click-events",
   subSectionLabel: "Click Events",
   subSectionAriaLabel: "Click Events",

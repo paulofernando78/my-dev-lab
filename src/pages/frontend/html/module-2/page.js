@@ -18,8 +18,8 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
-import "@/js/components/pages/html/module-2/Headings.js"
-import "@/js/components/pages/html/module-2/Paragraph.js"
+import "@/js/components/pages/frontend/html/module-2/Headings.js"
+import "@/js/components/pages/frontend/html/module-2/Paragraph.js"
 
 const style = /* css */ `
 
