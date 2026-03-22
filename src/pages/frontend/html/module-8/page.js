@@ -18,7 +18,7 @@ import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
-import "@/js/components/pages/html/module-8/SvgCustomPath.js"
+import "@/js/components/pages/frontend/html/module-8/SvgCustomPath.js"
 
 const style = /* css */ `
 
