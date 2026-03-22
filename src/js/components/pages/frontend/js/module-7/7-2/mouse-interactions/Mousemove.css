@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  height: 150px
+}
+
+.preview {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+}
+
+#x {
+  align-self: end;
+}
+
+#y {
+  align-self: start;
+}

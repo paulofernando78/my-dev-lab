@@ -1,26 +1,7 @@
 import styleImports from "@css/styles.css?inline";
+import styles from "./Mousemove.css?inline";
 
-const style = /* css */ `
-  :host {
-  display: block;
-}
-
-.preview {
-  min-height: 160px;
-  display: grid;
-  place-items: center;
-}
-
-#x {
-  align-self: end;
-}
-
-#y {
-  align-self: start;
-}
-`;
-
-class Mousemove extends HTMLElement {
+class WcJSm72Mousemove extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -52,7 +33,7 @@ class Mousemove extends HTMLElement {
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
+        ${styles}
       </style>
       <div class="preview">
         <span id="x"></span>
@@ -63,7 +44,7 @@ class Mousemove extends HTMLElement {
 }
 
 customElements.define(
-  "wc-mousemove",
-  Mousemove,
+  "wc-js-m-7-2-mousemove",
+  WcJSm72Mousemove,
 );
-export default Mousemove;
+export default WcJSm72Mousemove;

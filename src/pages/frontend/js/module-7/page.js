@@ -17,13 +17,21 @@ import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/atoms/Spacer.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
 
-// Preview
-import "@/js/components/pages/frontend/js/module-7/7-1/AddEventListener.js";
-import "@/js/components/pages/frontend/js/module-2/7-2/Mousemove.js";
+//! 7.1 Event Fundamentals
+
+//! 7.2 Mouse Events
+// Click Events
+import "@/js/components/pages/frontend/js/module-7/7-2/click-events/Click.js";
+import "@/js/components/pages/frontend/js/module-7/7-2/click-events/MousedownMouseup.js";
+// Hover Events
+import "@/js/components/pages/frontend/js/module-7/7-2/hover-events/MouseenterMouseleave.js";
+// Mouse Interactions
+import "@/js/components/pages/frontend/js/module-7/7-2/mouse-interactions/Mousemove.js";
 
 class JSModuleSeven extends HTMLElement {
   constructor() {

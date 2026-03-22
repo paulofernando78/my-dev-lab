@@ -59,7 +59,7 @@ window.addEventListener("mousemove", (event) => {
         },
       ],
       preview: /* html */ `
-        <wc-mousemove></wc-mousemove>
+        <wc-js-m-7-2-mousemove></wc-js-m-7-2-mousemove>
       `,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },

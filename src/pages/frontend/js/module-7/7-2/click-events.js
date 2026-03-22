@@ -22,12 +22,13 @@ export const clickEvents = {
           const button = document.querySelector("button")
 
 button.addEventListener("click", (e) => {
-console.log(e)
 console.log("clicked:", button)
 })
           ` },
       ],
-      preview: /* html */ ``,
+      preview: /* html */ `
+        <wc-js-m-7-2-click></wc-js-m-7-2-click>
+      `,
       sandbox: [{ html: true, js: true, console: true }],
     },
     //! mousedown & mouseup
@@ -55,7 +56,9 @@ button.addEventListener("mouseup", () => {
 })          
           ` },
       ],
-      preview: /* html */ ``,
+      preview: /* html */ `
+        <wc-js-m-7-2-mousedown-mouseup></wc-js-m-7-2-mousedown-mouseup>
+      `,
       sandbox: [{ html: true, js: true, console: true }],
     },
   ],

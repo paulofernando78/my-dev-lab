@@ -24,7 +24,7 @@ const button = document.querySelector("button")
 button.addEventListener("EVENT_NAME", () => {
 console.log("Something happened!")
 })
-          `
+          `,
         },
       ],
     },
@@ -44,6 +44,38 @@ console.log("Something happened!")
       topicAriaLabel: "Event handler vs Event listener",
       description: /* html */ `
         <p>An <strong>event handler</strong> is a property like <code>onclick</code> that can hold only one function at a time. An <strong>event listener</strong> uses <code>addEventListener()</code> and supports multiple callbacks for the same event without overwriting previous ones.</p>
+      `,
+      notes: /* html */ `
+      <p>There are 3 ways to handle events:</p>
+      <ul>
+        <li>
+          <span>1. Inline HTML attribute</span>
+          <wc-spacer></wc-spacer>
+            <wc-code language="html">
+<button onclick="myFunction()">Click</button>
+            </wc-code>
+        </li>
+        <wc-spacer></wc-spacer>
+        <li>
+          <span> 2. DOM property (Event Handler)</span>
+          <wc-spacer></wc-spacer>
+            <wc-code language="js">
+button.onclick = function() { ... }
+            </wc-code>
+        </li>
+        <wc-spacer></wc-spacer>
+        <p>Both above support only one function at a time — assigning another one overwrites the previous.</p>
+        <li>
+        <wc-spacer></wc-spacer>
+        <span> 3. Event Listener</span>
+        <wc-spacer></wc-spacer>
+          <wc-code language="js">
+button.addEventListener('click', function() { ... })
+button.addEventListener('click', anotherFunction)
+// stacks, does not overwrite
+          </wc-code>
+        </li>
+      </ul>
       `,
     },
     //! Event object (event)
@@ -65,7 +97,7 @@ console.log("Something happened!")
   console.log(event.clientX)   // mouse X position
   console.log(event.key)       // key pressed (keydown)
 })
-          `
+          `,
         },
       ],
     },

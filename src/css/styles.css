@@ -2,9 +2,5 @@
 @import "./imports/colors.css";
 @import "./imports/typography.css";
 @import "./imports/utilities.css";
-
 @import "./global.css";
 @import "./navbar.css";
-
-/* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
