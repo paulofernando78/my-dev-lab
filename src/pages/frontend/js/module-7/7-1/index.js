@@ -7,5 +7,7 @@ export const section71 = {
   description: /* html */ `
     <p>Events are the foundation of interactivity in JavaScript. This section introduces how to attach and remove event listeners, understand the event object, and distinguish between event handlers and event listeners.</p>
   `,
-  subSections: [eventListeners],
+  subSections: [
+    eventListeners,
+  ],
 };

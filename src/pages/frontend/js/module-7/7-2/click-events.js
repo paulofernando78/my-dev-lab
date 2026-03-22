@@ -16,11 +16,10 @@ export const clickEvents = {
       `,
       cardCodes: [
         { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "CSS", language: "css", code: /* css */ `` },
         { cardLabel: "Javascript", language: "js", code: /* js */ `` },
       ],
       preview: /* html */ ``,
-      sandbox: [{ html: true, css: true, js: true, console: true }],
+      sandbox: [{ html: true, js: true, console: true }],
     },
     //! mousedown & mouseup
     {

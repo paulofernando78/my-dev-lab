@@ -68,8 +68,6 @@ console.log("Something happened!")
           `
         },
       ],
-      preview: /* html */ `<wc-></wc->`,
-      sandbox: [{ html: true, css: true, js: true, console: true }],
     },
   ],
 };
