@@ -65,8 +65,8 @@ class JSResources extends HTMLElement {
         sectionAriaLabel: "Youtube Channels",
         links: [
           {
-            href: "",
-            label: "",
+            href: "https://www.youtube.com/watch?v=lfmg-EJ8gm4",
+            label: "Bro Code | JavaScript Full Course (12:00:00)",
           },
         ],
       },
