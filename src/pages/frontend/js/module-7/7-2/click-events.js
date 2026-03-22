@@ -15,8 +15,17 @@ export const clickEvents = {
         <p>The <code>click</code> event is triggered when a user clicks on an element. It is one of the most commonly used events for creating interactivity.</p>
       `,
       cardCodes: [
-        { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+        { cardLabel: "HTML", language: "html", code: /* html */ `
+<button>Button</button>
+          ` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `
+          const button = document.querySelector("button")
+
+button.addEventListener("click", (e) => {
+console.log(e)
+console.log("clicked:", button)
+})
+          ` },
       ],
       preview: /* html */ ``,
       sandbox: [{ html: true, js: true, console: true }],
@@ -31,8 +40,20 @@ export const clickEvents = {
         and <code>mouseup</code> when it is released. These events are useful for detecting press and hold interactions.</p>
       `,
       cardCodes: [
-        { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+        { cardLabel: "HTML", language: "html", code: /* html */ `
+<button>Button</button>
+          ` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `
+const button = document.querySelector("button")
+
+button.addEventListener("mousedown", () => {
+  console.log("mousedown:", button)
+})
+
+button.addEventListener("mouseup", () => {
+  console.log("mouseup:", button)
+})          
+          ` },
       ],
       preview: /* html */ ``,
       sandbox: [{ html: true, js: true, console: true }],

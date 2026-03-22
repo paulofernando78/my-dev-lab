@@ -16,9 +16,30 @@ export const hoverEvents = {
         These are commonly used for hover effects and UI interactions.</p>
       `,
       cardCodes: [
-        { cardLabel: "HTML", language: "html", code: /* html */ `` },
-        { cardLabel: "CSS", language: "css", code: /* css */ `` },
-        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+        { cardLabel: "HTML", language: "html", code: /* html */ `
+<div></div>
+        `
+        },
+        { cardLabel: "CSS", language: "css", code: /* css */ `
+div {
+  width: 100px;
+  height: 100px;
+  background-color: black
+}
+        `
+        },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `
+const div = document.querySelector("div")
+
+div.addEventListener("mouseleave", () => {
+  console.log("mouseleave:", div)
+})
+
+div.addEventListener("mouseenter", () => {
+  console.log("mouseenter:", div)
+})          
+        `
+      },
       ],
       preview: /* html */ ``,
       sandbox: [{ html: true, css: true, js: true, console: true }],
