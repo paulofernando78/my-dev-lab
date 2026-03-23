@@ -1,0 +1,154 @@
+.sandbox-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5px;
+  }
+
+
+
+  .header {
+    border-radius: 5px 5px 0 0;
+    background-color: #374152;
+    background-color: var(--slate-7);
+    padding: 1px 4px;
+    color: #fff;
+    grid-column: 1 / -1;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .header::before {
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../../../../public/assets/images/icons/arrow-forward.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  details[open] > .header::before {
+    transform: rotate(90deg);
+  }
+
+  .title {
+    font-weight: bold;
+    padding-block: 5px
+  }
+  .editors {
+    display: grid;
+    gap: 5px
+  }
+  
+  .editors,
+  .editors > div,
+  #html-editor,
+  #css-editor,
+  #js-editor {
+    min-width: 0;
+  }
+
+  #html-editor,
+  #css-editor,
+  #js-editor {
+    height: 200px;
+  }
+  
+  .editors-header {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--slate-7);
+    padding: 5px
+  }
+
+  .icon {
+    width: var(--icon)
+  }
+
+  .reset-btn,
+  .run-btn {
+    background-color: var(--slate-7);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 19px;
+    height: 19px
+  }
+
+   .monaco-editor {
+    overflow: hidden;
+  }
+
+  .output {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .output iframe {
+    width: 100%;
+    height: 100%;
+    border: 0
+  }
+
+  .console {
+   grid-column: 1 / -1
+  }
+
+  .console-header,
+  .output-header {
+    background-color: #374152;
+    background-color: var(--slate-7);
+    padding: 5px;
+  }
+
+  .console-display {
+    border-radius: 0 0 5px 5px;
+    background: #1E1E1E;
+    color: #8BE9FD;
+    font-family: monospace;
+    font-size: 13.5px;
+    padding: 8px;
+    height: 150px;
+    overflow: auto;
+  }
+  
+  .console-line {
+    white-space: pre-wrap;
+  }
+  
+  .console-display *,
+  .console-display summary,
+  .console-object-row {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+
+  .console-object-row {
+    padding-left: 14px;
+  }
+
+  .console-log {
+    color: #E6E6E6;
+  }
+
+  .console-warn {
+    color: #F1FA8C;
+  }
+
+  .console-error {
+    color: #FF5555;
+  }
+
+  .console-info {
+    color: #50FA7B;
+  }
+
+  @media (width < 876px) {
+      .sandbox-body {
+        grid-template-columns: 1fr;
+      }
+    }

@@ -1,4 +1,5 @@
 import styleImports from "@css/styles.css?inline";
+import styles from "./Sandbox.css?inline";
 
 import * as monaco from "monaco-editor";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
@@ -15,142 +16,6 @@ self.MonacoEnvironment = {
     return new editorWorker();
   },
 };
-
-const style = /* css */ `  
-  .sandbox {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 5px;
-  }
-
-  .header {
-    border-radius: 5px 5px 0 0;
-    background-color: #374152;
-    background-color: var(--slate-7);
-    padding: 1px 4px;
-    color: #fff;
-    grid-column: 1 / -1
-  }
-
-  .title {
-    font-weight: bold;
-    padding-block: 5px
-  }
-  .editors {
-    display: grid;
-    gap: 5px
-  }
-  
-  .editors,
-  .editors > div,
-  #html-editor,
-  #css-editor,
-  #js-editor {
-    min-width: 0;
-  }
-
-  #html-editor,
-  #css-editor,
-  #js-editor {
-    height: 200px;
-  }
-  
-  .editors-header {
-    display: flex;
-    justify-content: space-between;
-
-    background-color: var(--slate-7);
-    padding: 5px
-  }
-
-  .icon {
-    width: var(--icon)
-  }
-
-  .reset-btn,
-  .run-btn {
-    background-color: var(--slate-7);
-    border-radius: 50%;
-    cursor: pointer;
-    width: 19px;
-    height: 19px
-  }
-
-   .monaco-editor {
-    overflow: hidden;
-  }
-
-  .output {
-    display: grid;
-    grid-template-rows: auto 1fr;
-  }
-  
-  .output iframe {
-    width: 100%;
-    height: 100%;
-    border: 0
-  }
-
-  .console {
-   grid-column: 1 / -1
-  }
-
-  .console-header,
-  .output-header {
-    background-color: #374152;
-    background-color: var(--slate-7);
-    padding: 5px;
-  }
-
-  .console-display {
-    border-radius: 0 0 5px 5px;
-    background: #1E1E1E;
-    color: #8BE9FD;
-    font-family: monospace;
-    font-size: 13.5px;
-    padding: 8px;
-    height: 150px;
-    overflow: auto;
-  }
-  
-  .console-line {
-    white-space: pre-wrap;
-  }
-  
-  .console-display *,
-  .console-display summary,
-  .console-object-row {
-    font-size: inherit;
-    font-family: inherit;
-    line-height: 1.4;
-  }
-
-  .console-object-row {
-    padding-left: 14px;
-  }
-
-  .console-log {
-    color: #E6E6E6;
-  }
-
-  .console-warn {
-    color: #F1FA8C;
-  }
-
-  .console-error {
-    color: #FF5555;
-  }
-
-  .console-info {
-    color: #50FA7B;
-  }
-
-  @media (width < 876px) {
-      .sandbox {
-        grid-template-columns: 1fr;
-      }
-    }
-`;
 
 class Sandbox extends HTMLElement {
   constructor() {
@@ -468,18 +333,18 @@ class Sandbox extends HTMLElement {
       <style>
         ${styleImports}
         ${monacoCss}
-        ${style}
+        ${styles}
       </style>
       
       <div class="sandbox">
-        <div class="header flex-align-center">
-          <img src="/assets/images/icons/practice.svg" class="icon"/>
-          <span class="title">Practice</span>
-        </div>
-
+      <details>
+      <summary class="header flex-align-center">
+        <img src="/assets/images/icons/practice.svg" class="icon"/>
+        <span class="title">Practice</span>
+      </summary>
+      <div class="sandbox-body">
         <div class="editors">
-          ${
-            enableHTML
+          ${enableHTML
               ? /* html */ `
             <div>
               <div class="editors-header">
@@ -490,9 +355,7 @@ class Sandbox extends HTMLElement {
             </div>`
               : ""
           }
-
-          ${
-            enableCSS
+          ${enableCSS
               ? /* html */ `
             <div>
               <div class="editors-header">
@@ -503,9 +366,7 @@ class Sandbox extends HTMLElement {
             </div>`
               : ""
           }
-
-          ${
-            enableJS
+          ${enableJS
               ? /* html */ `
             <div>
               <div class="editors-header">
@@ -516,36 +377,38 @@ class Sandbox extends HTMLElement {
             </div>`
               : ""
           }
-          </div>
+        </div>
 
-          <div class="output">
-            <div class="output-header flex-align-center">
-              <img src="/assets/images/icons/output.svg" class="icon"/>
-              <span><b>Output</b></span>  
-            </div>
-            <iframe id="output"></iframe>
+        <div class="output">
+          <div class="output-header flex-align-center">
+            <img src="/assets/images/icons/output.svg" class="icon"/>
+            <span><b>Output</b></span>  
           </div>
+          <iframe id="output"></iframe>
+        </div>
 
-          ${
-            enableConsole
-              ? /* html */ `
-            <div class="console">
-              <div class="console-header flex-space-between">
-                <div class="flex-align-center">
-                  <img src="/assets/images/icons/console.svg" class="icon"/>
-                  <span><b>Console</b></span>
-                </div>
-                <div class="flex-align-center">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
-                <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="console"/>
-                </div>
+        ${enableConsole
+            ? /* html */ `
+          <div class="console">
+            <div class="console-header flex-space-between">
+              <div class="flex-align-center">
+                <img src="/assets/images/icons/console.svg" class="icon"/>
+                <span><b>Console</b></span>
               </div>
-              <div id="console" class="console-display"></div>
+              <div class="flex-align-center">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999999"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z" class="run-btn"/></svg>
+              <img src="/assets/images/icons/reset.svg" class="icon reset-btn" data-editor="console"/>
+              </div>
             </div>
-            `
-              : ""
-          }   
+            <div id="console" class="console-display"></div>
+          </div>
+          `
+            : ""
+        }
       </div>
+      </div>
+      </details>
+      
     `;
   }
 
