@@ -4,8 +4,11 @@ import "@/js/components/organisms/Sandbox.js";
 
 const style = /* css */ `
   :host {
-    scroll-margin-top: 5px
-  }  
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    scroll-margin-top: 5px;
+  }
 
   .icon {
     width: var(--icon);
@@ -48,7 +51,7 @@ const style = /* css */ `
 
   pre {
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow-x: auto;
   }
 `;
 

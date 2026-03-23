@@ -58,6 +58,14 @@ class Boilerplate extends HTMLElement {
             imgSrc: "/assets/images/semantic.jpg",
             alt: "Headings example",
           },
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Headings example",
+          },
+          {
+            imgSrc: "/assets/images/semantic.jpg",
+            alt: "Headings example",
+          },
         ],
         subSections: [
           //! Sub Section

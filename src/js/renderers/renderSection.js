@@ -1,37 +1,9 @@
-const style = /* css */ `
-  wc-section, wc-sub-section {
-  }
-
-  .imgs-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 3fr));
-    gap: 10px;
-  }
-
-  .cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px
-  }
-
-  .preview-container {
-    color: #000;
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    padding: 5px
-  }
-
-  @media (width < 900px) {
-    .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  }
-`;
+import styles from "./renderSection.css?inline"
 
 export function renderSections(sections) {
   return /* html */ `
     <style>
-      ${style}
+      ${styles}
     </style>
 
     <!--section -->

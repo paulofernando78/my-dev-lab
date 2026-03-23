@@ -1,0 +1,19 @@
+.imgs-wrapper,
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: 5px;
+}
+
+.preview-container {
+  color: #000;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 5px;
+}
+
+@media (width < 1000px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
