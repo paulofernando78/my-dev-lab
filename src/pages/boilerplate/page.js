@@ -58,14 +58,6 @@ class Boilerplate extends HTMLElement {
             imgSrc: "/assets/images/semantic.jpg",
             alt: "Headings example",
           },
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Headings example",
-          },
-          {
-            imgSrc: "/assets/images/semantic.jpg",
-            alt: "Headings example",
-          },
         ],
         subSections: [
           //! Sub Section
@@ -84,6 +76,10 @@ class Boilerplate extends HTMLElement {
                 imgSrc: "/assets/images/semantic.jpg",
                 alt: "Headings example",
               },
+              {
+                imgSrc: "/assets/images/semantic.jpg",
+                alt: "Headings example",
+              },
             ],
             topics: [
               //! Topic
@@ -98,6 +94,14 @@ class Boilerplate extends HTMLElement {
                   ...
                 `,
                 imgs: [
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Headings example",
+                  },
+                  {
+                    imgSrc: "/assets/images/semantic.jpg",
+                    alt: "Headings example",
+                  },
                   {
                     imgSrc: "/assets/images/semantic.jpg",
                     alt: "Headings example",
@@ -134,7 +138,73 @@ class Boilerplate extends HTMLElement {
                     html: true,
                     css: true,
                     js: true,
-                    console: true
+                    console: true,
+                  },
+                ],
+              },
+              //! Topic 2
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                ],
+              },
+              //! Topic 3
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                    
+                `,
+                  },
+                ],
+              },
+              //! Topic 4
+              {
+                topicId: "topic",
+                topicLabel: "Topic",
+                topicAriaLabel: "...",
+                cardCodes: [
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+                    
+                `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                `,
                   },
                 ],
               },
