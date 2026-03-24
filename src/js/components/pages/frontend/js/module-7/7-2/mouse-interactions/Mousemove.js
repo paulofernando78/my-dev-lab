@@ -22,6 +22,9 @@ class WcJSm72Mousemove extends HTMLElement {
 
       spanX.textContent = "x: " + x;
       spanY.textContent = "y: " + y;
+
+      console.log(spanX)
+      console.log(spanY)
     });
   }
 

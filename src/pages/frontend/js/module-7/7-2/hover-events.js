@@ -43,6 +43,7 @@ div.addEventListener("mouseenter", () => {
       ],
       preview: /* html */ `
         <wc-js-m-7-2-mouseenter-mouseleave></wc-js-m-7-2-mouseenter-mouseleave>
+        <wc-check-console></wc-check-console>
       `,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },

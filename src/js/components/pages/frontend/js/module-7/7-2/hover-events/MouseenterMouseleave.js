@@ -32,7 +32,6 @@ class WcJSm72Mousemove extends HTMLElement {
         ${styles}
       </style>
       <div></div>
-      <wc-check-console>
     `;
   }
 }

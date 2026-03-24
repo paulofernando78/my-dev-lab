@@ -113,6 +113,7 @@ window.addEventListener("mousemove", (event) => {
       ],
       preview: /* html */ `
         <wc-js-m-7-2-mousemove-circle></wc-js-m-7-2-mousemove-circle>
+        <wc-check-console></wc-check-console>
       `,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     }

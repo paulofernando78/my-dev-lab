@@ -28,6 +28,7 @@ console.log("clicked:", button)
       ],
       preview: /* html */ `
         <wc-js-m-7-2-click></wc-js-m-7-2-click>
+        <wc-check-console></wc-check-console>
       `,
       sandbox: [{ html: true, js: true, console: true }],
     },
@@ -58,6 +59,7 @@ button.addEventListener("mouseup", () => {
       ],
       preview: /* html */ `
         <wc-js-m-7-2-mousedown-mouseup></wc-js-m-7-2-mousedown-mouseup>
+        <wc-check-console></wc-check-console>
       `,
       sandbox: [{ html: true, js: true, console: true }],
     },

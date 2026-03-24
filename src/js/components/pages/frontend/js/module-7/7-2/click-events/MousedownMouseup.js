@@ -30,7 +30,6 @@ class WcJSm72MousedownMouseup extends HTMLElement {
         ${styleImports}
       </style>
       <button>Button</button>
-      <span>*Check console</span>
     `;
   }
 }

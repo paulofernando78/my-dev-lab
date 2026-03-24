@@ -17,6 +17,7 @@ import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/atoms/CheckConsole.js";
 import "@/js/components/atoms/Spacer.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";

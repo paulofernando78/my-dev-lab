@@ -21,6 +21,8 @@ class WcJSm72MousemoveCircle extends HTMLElement {
       
       circle.style.left = x + "px";
       circle.style.top = y + "px";
+
+      console.log(circle)
     }
 
     preview.addEventListener("mousemove", followMouse);
