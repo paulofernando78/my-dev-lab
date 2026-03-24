@@ -73,8 +73,7 @@ window.addEventListener("mousemove", (event) => {
           cardLabel: "HTML",
           language: "html",
           code: /* html */ `
-<span id="x"></span>
-<span id="y"></span>
+<div></div>
           `,
         },
         {
@@ -113,7 +112,7 @@ window.addEventListener("mousemove", (event) => {
         },
       ],
       preview: /* html */ `
-        <wc-mousemove></wc-mousemove>
+        <wc-js-m-7-2-mousemove-circle></wc-js-m-7-2-mousemove-circle>
       `,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     }

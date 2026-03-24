@@ -22,5 +22,31 @@ export const eventPatterns = {
       preview: /* html */ `<wc-></wc->`,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },
+    //! { once: true }
+    {
+      topicId: "once-option",
+      topicLabel: "{ once: true }",
+      topicAriaLabel: "once option",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
+    //! Debounce & Throttle
+    {
+      topicId: "debounce-throttle",
+      topicLabel: "Debounce & Throttle",
+      topicAriaLabel: "Debounce and Throttle",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
   ],
 };

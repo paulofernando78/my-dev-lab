@@ -22,5 +22,31 @@ export const formEvents = {
       preview: /* html */ `<wc-></wc->`,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },
+    //! focus & blur
+    {
+      topicId: "focus-blur",
+      topicLabel: "focus & blur",
+      topicAriaLabel: "focus and blur",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
+    //! preventDefault()
+    {
+      topicId: "prevent-default",
+      topicLabel: "preventDefault()",
+      topicAriaLabel: "preventDefault",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
   ],
 };

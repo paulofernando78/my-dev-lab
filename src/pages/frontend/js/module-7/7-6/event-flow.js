@@ -22,5 +22,18 @@ export const eventFlow = {
       preview: /* html */ `<wc-></wc->`,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },
+    //! stopPropagation()
+    {
+      topicId: "stop-propagation",
+      topicLabel: "stopPropagation()",
+      topicAriaLabel: "stopPropagation",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
   ],
 };
