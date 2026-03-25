@@ -1,5 +1,13 @@
 import styles from "./renderSection.css?inline"
 
+function escapeAttribute(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
 export function renderSections(sections) {
   return /* html */ `
     <style>
@@ -9,9 +17,9 @@ export function renderSections(sections) {
     <!--section -->
     ${sections.map((section) => /* html */ `
     <wc-section
-      id="${section.sectionId}"
-      label="${section.sectionLabel}"
-      aria-label="${section.sectionAriaLabel}"
+      id="${escapeAttribute(section.sectionId)}"
+      label="${escapeAttribute(section.sectionLabel)}"
+      aria-label="${escapeAttribute(section.sectionAriaLabel)}"
       class="line-break"
       >
       <!-- description -->
@@ -51,9 +59,9 @@ export function renderSections(sections) {
         section.subSections
           ? section.subSections.map((subSection) => /* html */ `
           <wc-sub-section
-            id="${subSection.subSectionId}"
-            label="${subSection.subSectionLabel}"
-            aria-label="${subSection.subSectionAriaLabel}"
+            id="${escapeAttribute(subSection.subSectionId)}"
+            label="${escapeAttribute(subSection.subSectionLabel)}"
+            aria-label="${escapeAttribute(subSection.subSectionAriaLabel)}"
             class="line-break"
             >
             <!-- description -->
@@ -89,9 +97,9 @@ export function renderSections(sections) {
               ${subSection.topics
                 ? subSection.topics.map((topic) => /* html */ `
                 <wc-topic
-                  id="${topic.topicId}"
-                  label="${topic.topicLabel}"
-                  aria-label="${topic.topicAriaLabel}"
+                  id="${escapeAttribute(topic.topicId)}"
+                  label="${escapeAttribute(topic.topicLabel)}"
+                  aria-label="${escapeAttribute(topic.topicAriaLabel)}"
                   class="line-break"
                   >
                   <!-- description -->
@@ -130,10 +138,10 @@ export function renderSections(sections) {
                       topic.cardCodes.map((cardCode, index) => /* html */
                       `
                       <wc-card-code
-                        cardLabel="${cardCode.cardLabel}"
+                        cardLabel="${escapeAttribute(cardCode.cardLabel)}"
                         cardLabelIcon="/assets/images/icons/code.svg"
-                        id="${section.sectionId}-${topic.topicId}-code-${index}">
-                          <wc-code language="${cardCode.language}">
+                        id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-code-${index}`)}">
+                          <wc-code language="${escapeAttribute(cardCode.language)}">
                           ${cardCode.code ?? ""}
                           </wc-code>
                       </wc-card-code>
@@ -160,7 +168,7 @@ export function renderSections(sections) {
                     topic.sandbox.map((config, index /* html */) =>
                     /* html */`
                     <wc-sandbox
-                      id="${section.sectionId}-${topic.topicId}-sandbox-${index}"
+                      id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-sandbox-${index}`)}"
                       ${config.html ? "html" : ""}
                       ${config.css ? "css" : ""}
                       ${config.js ? "js" : ""}
