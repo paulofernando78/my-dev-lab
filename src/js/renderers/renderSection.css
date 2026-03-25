@@ -5,7 +5,7 @@
 }
 
 .imgs-wrapper > :only-child {
-  padding-inline: clamp(0px, calc(34vw - 158px), 150px);
+  padding-inline: clamp(0px, calc(34vw - 160px), 150px);
 }
 
 .cards-wrapper {

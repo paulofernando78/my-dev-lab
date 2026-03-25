@@ -13,6 +13,7 @@ import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/atoms/Spacer.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection.js";
@@ -35,13 +36,76 @@ class JSModuleEight extends HTMLElement {
     this.render();
   }
 
+  disconnectedCallback() {
+    // cleanup (events, intervals, observers)
+  }
+
   render() {
     const sections = [
-      //! 8.1 Window Object
+      //! 8.1 The Event Loop
       {
-        sectionId: "8-1-window-object",
-        sectionLabel: "8.1 Window Object",
-        sectionAriaLabel: "8.1 Window Object",
+        sectionId: "the-event-loop",
+        sectionLabel: "8.1 The Event Loop",
+        sectionAriaLabel: "8.1 The Event Loop",
+        subSections: [
+          {
+            subSectionId: "call-stack",
+            subSectionLabel: "Call Stack",
+            subSectionAriaLabel: "Call Stack",
+            topics: [
+              {
+                topicId: "what-is-the-call-stack",
+                topicLabel: "What is the Call Stack?",
+                topicAriaLabel: "What is the Call Stack?",
+              },
+              {
+                topicId: "how-the-stack-works",
+                topicLabel: "How the Stack Works",
+                topicAriaLabel: "How the Stack Works",
+              },
+            ],
+          },
+          {
+            subSectionId: "web-apis-task-queue",
+            subSectionLabel: "Web APIs & Task Queue",
+            subSectionAriaLabel: "Web APIs and Task Queue",
+            topics: [
+              {
+                topicId: "web-apis",
+                topicLabel: "Web APIs",
+                topicAriaLabel: "Web APIs",
+              },
+              {
+                topicId: "task-queue",
+                topicLabel: "Task Queue",
+                topicAriaLabel: "Task Queue",
+              },
+            ],
+          },
+          {
+            subSectionId: "event-loop",
+            subSectionLabel: "The Event Loop",
+            subSectionAriaLabel: "The Event Loop",
+            topics: [
+              {
+                topicId: "how-the-event-loop-works",
+                topicLabel: "How the Event Loop Works",
+                topicAriaLabel: "How the Event Loop Works",
+              },
+              {
+                topicId: "sync-vs-async",
+                topicLabel: "Sync vs Async",
+                topicAriaLabel: "Sync vs Async",
+              },
+            ],
+          },
+        ],
+      },
+      //! 8.2 Window Object
+      {
+        sectionId: "8-2-window-object",
+        sectionLabel: "8.2 Window Object",
+        sectionAriaLabel: "8.2 Window Object",
         description: /* html */ `
           <p>
           The <code>window</code> object represents the browser window or tab in which a web page is loaded. It is the global object in the browser environment, giving scripts access to browser APIs such as <code>document</code>, <code>location</code>, <code>history</code>, and <code>screen</code>, as well as information about the viewport — its width, height, and scroll position.
@@ -225,56 +289,6 @@ window.addEventListener("scroll", () => {
                   },
                 ],
               },
-              //! window.setTimeout()
-              {
-                topicId: "window-setTimeout()",
-                topicLabel: "window.setTimeout( )",
-                topicAriaLabel: "",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    js: true,
-                  },
-                ],
-              },
-              //! window.setInterval()
-              {
-                topicId: "window-setInterval()",
-                topicLabel: "window.setInterval( )",
-                topicAriaLabel: "",
-                description: /* html */ `
-                  ...
-                `,
-                cardCodes: [
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-                `,
-                  },
-                ],
-                preview: /* html */ `
-                  <wc-></wc->
-                `,
-                sandbox: [
-                  {
-                    js: true,
-                  },
-                ],
-              },
               //! window.open()
               {
                 topicId: "window-open()",
@@ -357,8 +371,8 @@ window.addEventListener("scroll", () => {
       //! History API
       {
         sectionId: "history-api",
-        sectionLabel: "History API",
-        sectionAriaLabel: "History API",
+        sectionLabel: "8.3 History API",
+        sectionAriaLabel: "8.3 History API",
         description: /* html */ `
           <p>...</p>
         `,
@@ -604,8 +618,8 @@ window.addEventListener("scroll", () => {
       //! Location Object
       {
         sectionId: "location-object",
-        sectionLabel: "Location Object",
-        sectionAriaLabel: "Location Object",
+        sectionLabel: "8.4 Location Object",
+        sectionAriaLabel: "8.4 Location Object",
         description: /* html */ `
           <p>...</p>
         `,
@@ -814,8 +828,8 @@ window.addEventListener("scroll", () => {
       //! ContentEditable
       {
         sectionId: "content-editable",
-        sectionLabel: "ContentEditable",
-        sectionAriaLabel: "ContentEditable",
+        sectionLabel: "8.5 ContentEditable",
+        sectionAriaLabel: "8.5 ContentEditable",
         description: /* html */ `
           <p>...</p>
         `,
@@ -891,11 +905,10 @@ window.addEventListener("scroll", () => {
                 ...
               `,
             topics: [
-              //! Topic
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "reading-textcontent",
+                topicLabel: "Reading with textContent",
+                topicAriaLabel: "Reading with textContent",
                 description: /* html */ `
                   ...
                 `,
@@ -913,15 +926,15 @@ window.addEventListener("scroll", () => {
                 `,
                 sandbox: [
                   {
+                    html: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "reading-innerhtml",
+                topicLabel: "Reading with innerHTML",
+                topicAriaLabel: "Reading with innerHTML",
                 description: /* html */ `
                   ...
                 `,
@@ -938,6 +951,7 @@ window.addEventListener("scroll", () => {
                 `,
                 sandbox: [
                   {
+                    html: true,
                     js: true,
                   },
                 ],
@@ -953,11 +967,10 @@ window.addEventListener("scroll", () => {
                 ...
               `,
             topics: [
-              //! Topic
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "enabling-via-js",
+                topicLabel: "Enabling via Javascript",
+                topicAriaLabel: "Enabling via Javascript",
                 description: /* html */ `
                   ...
                 `,
@@ -975,15 +988,15 @@ window.addEventListener("scroll", () => {
                 `,
                 sandbox: [
                   {
+                    html: true,
                     js: true,
                   },
                 ],
               },
-              //! Topic
               {
-                topicId: "topic",
-                topicLabel: "Topic",
-                topicAriaLabel: "",
+                topicId: "is-content-editable",
+                topicLabel: "element.isContentEditable",
+                topicAriaLabel: "element.isContentEditable",
                 description: /* html */ `
                   ...
                 `,
@@ -1000,6 +1013,7 @@ window.addEventListener("scroll", () => {
                 `,
                 sandbox: [
                   {
+                    html: true,
                     js: true,
                   },
                 ],
@@ -1011,8 +1025,8 @@ window.addEventListener("scroll", () => {
       //! Design Mode
       {
         sectionId: "design-mode",
-        sectionLabel: "Design Mode",
-        sectionAriaLabel: "Design Mode",
+        sectionLabel: "8.6 Design Mode",
+        sectionAriaLabel: "8.6 Design Mode",
         description: /* html */ `
           <p>The <code>document.designMode</code> property in HTML allows for making the entire document editable within the browser. This property can be set to either "on" or "off".</p>
         `,

@@ -16,6 +16,15 @@ const style = /* css */ `
   }
 `;
 
+function escapeHtml(value = "") {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 class Section extends HTMLElement {
   constructor() {
     super();
@@ -27,7 +36,7 @@ class Section extends HTMLElement {
   }
 
   render() {
-    const labelAttr = this.getAttribute("label");
+    const labelAttr = this.getAttribute("label") ?? "";
     const ariaAttr = this.getAttribute("aria-label");
 
     this.shadowRoot.innerHTML = /* HTML */ `
@@ -36,7 +45,7 @@ class Section extends HTMLElement {
         ${style}
       </style>
       <section ${ariaAttr ? `aria-label="${ariaAttr}"` : ""} class="line-break">
-        <span class="label">${labelAttr}</span>
+        <span class="label">${escapeHtml(labelAttr)}</span>
         <slot></slot>
       </section>
     `;

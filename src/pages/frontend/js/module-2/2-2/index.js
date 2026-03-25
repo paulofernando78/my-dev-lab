@@ -1,7 +1,7 @@
 import { forLoop } from "./for.js";
 import { whileLoops } from "./while.js";
-import { forOfForIn } from "./for-of-for-in.js";
 import { breakContinue } from "./break-continue.js";
+import { forOfForIn } from "./for-of-for-in.js";
 
 export const section22 = {
   sectionId: "loops",
@@ -10,7 +10,7 @@ export const section22 = {
   subSections: [
     forLoop,
     whileLoops,
-    forOfForIn,
     breakContinue,
+    forOfForIn,
   ],
 };

@@ -1,13 +1,10 @@
-import { section11 } from "./section11.js";
+import { introduction } from "./introduction.js";
 
 export const section11 = {
-  sectionId: "...",
-  sectionLabel: "1.1 ...",
-  sectionAriaLabel: "1.1 ...",
-  description: /* html */ `
-    <p>...</p>
-  `,
+  sectionId: "introduction",
+  sectionLabel: "1.1 Introduction",
+  sectionAriaLabel: "1.1 Introduction",
   subSections: [
-    section11,
+    introduction,
   ],
 };

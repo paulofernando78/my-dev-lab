@@ -22,5 +22,18 @@ export const keyboardEvents = {
       preview: /* html */ `<wc-></wc->`,
       sandbox: [{ html: true, css: true, js: true, console: true }],
     },
+    //! event.key vs event.code
+    {
+      topicId: "event-key-vs-code",
+      topicLabel: "event.key vs event.code",
+      topicAriaLabel: "event key vs event code",
+      cardCodes: [
+        { cardLabel: "HTML", language: "html", code: /* html */ `` },
+        { cardLabel: "CSS", language: "css", code: /* css */ `` },
+        { cardLabel: "Javascript", language: "js", code: /* js */ `` },
+      ],
+      preview: /* html */ `<wc-></wc->`,
+      sandbox: [{ html: true, css: true, js: true, console: true }],
+    },
   ],
 };

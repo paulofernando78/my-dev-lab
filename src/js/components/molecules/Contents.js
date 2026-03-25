@@ -55,6 +55,15 @@ const style = /* css */ `
 
 `;
 
+function escapeHtml(value = "") {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 class Contents extends HTMLElement {
   constructor() {
     super();
@@ -75,18 +84,18 @@ class Contents extends HTMLElement {
         <ul>
           ${contents.map((section) => /* html */ `
               <li class="section">
-                  <a data-target="${section.id}">${section.sectionLabel}</a>
+                  <a data-target="${section.id}">${escapeHtml(section.sectionLabel)}</a>
                 <ul>
                   ${section.content
                     ? section.content
                       .filter((subSection) => subSection.subSectionLabel)
                       .map((subSection) => /* html */ `
                         <li class="content">
-                          <a data-target="${subSection.id}">${subSection.subSectionLabel}</a>
+                          <a data-target="${subSection.id}">${escapeHtml(subSection.subSectionLabel)}</a>
                           <ul>
                             ${(subSection.topics || []).map((topic) => /* html */ `
                               <li class="topic">
-                                <a data-target="${topic.id}">${topic.topicLabel}</a>
+                                <a data-target="${topic.id}">${escapeHtml(topic.topicLabel)}</a>
                               </li>
                             `).join("")}
                           </ul>

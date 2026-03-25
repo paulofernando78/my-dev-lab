@@ -6,7 +6,7 @@ class WcJSm72MousemoveCircle extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
   }
-
+ 
   connectedCallback() {
     this.render();
 

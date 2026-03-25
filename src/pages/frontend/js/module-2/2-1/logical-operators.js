@@ -1,7 +1,7 @@
-export const shortCircuit = {
-  subSectionId: "short-circuit",
-  subSectionLabel: "Short-circuit Evaluation",
-  subSectionAriaLabel: "Short-circuit Evaluation",
+export const logicalOperators = {
+  subSectionId: "logical-operators",
+  subSectionLabel: "Logical Operators",
+  subSectionAriaLabel: "Logical Operators",
   topics: [
     {
       topicId: "logical-not",

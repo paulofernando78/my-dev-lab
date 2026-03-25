@@ -1,4 +1,8 @@
 import styleImports from "@css/styles.css?inline";
+
+// Sections
+import { sections } from "./module-11-data.js";
+
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
@@ -13,17 +17,10 @@ import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
+import "@/js/components/atoms/Spacer.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
-
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 class JSModuleEleven extends HTMLElement {
   constructor() {
@@ -35,57 +32,18 @@ class JSModuleEleven extends HTMLElement {
     this.render();
   }
 
-  render() {
-    const sections = [
-      {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
-        description: /* html */ `
-            <p>Description</p>
-            <p>Description</p>
-        `,
-      },
-      {
-        sectionId: "javascript",
-        sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
-        cardCodes: [
-          {
-            type: "code",
-            cardLabel: "Javascript",
-            language: "js",
-            code: `
-console.log(...)
-            `,
-            preview: () => /* js */ `
-              console.log(...)
-            `,
-            notes: /* html */ `
-              <p>Notes</p>
-            `,
-          },
-        ],
-      },
-    ];
+  disconnectedCallback() {
+    // cleanup (events, intervals, observers)
+  }
 
+  render() {
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
-
-      <wc-page-header
-        category="Javascript"
-        page="Module 11"
-        unit="Module 11 • State & Architecture"
-        aria-label="..."
-      ></wc-page-header>
-
+      <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 

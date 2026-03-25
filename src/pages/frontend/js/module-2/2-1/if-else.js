@@ -13,10 +13,5 @@ export const ifElse = {
       topicLabel: "else if / else",
       topicAriaLabel: "else if else",
     },
-    {
-      topicId: "truthy-falsy",
-      topicLabel: "Truthy & Falsy",
-      topicAriaLabel: "Truthy and Falsy",
-    },
   ],
 };

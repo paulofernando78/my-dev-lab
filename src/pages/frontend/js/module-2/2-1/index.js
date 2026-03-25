@@ -1,8 +1,10 @@
 import { ifElse } from "./if-else.js";
-import { shortCircuit } from "./short-circuit.js";
-import { switchStatement } from "./switch.js";
+import { truthyFalsy } from "./truthy-falsy.js";
 import { ternary } from "./ternary.js";
+import { switchStatement } from "./switch.js";
+import { logicalOperators } from "./logical-operators.js";
 import { nullishCoalescing } from "./nullish-coalescing.js";
+import { optionalChaining } from "./optional-chaining.js";
 
 export const section21 = {
   sectionId: "conditionals",
@@ -10,9 +12,11 @@ export const section21 = {
   sectionAriaLabel: "2.1 Conditionals",
   subSections: [
     ifElse,
-    shortCircuit,
-    switchStatement,
+    truthyFalsy,
     ternary,
+    switchStatement,
+    logicalOperators,
     nullishCoalescing,
+    optionalChaining,
   ],
 };

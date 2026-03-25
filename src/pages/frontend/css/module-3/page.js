@@ -1,23 +1,25 @@
 import styleImports from "@css/styles.css?inline";
+
+import { sections } from "./module-3-data.js";
+
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
-import "@/js/components/atoms/CardCode.js";
+import "@/js/components/molecules/SubSection.js";
 import "@/js/components/atoms/Wrapper.js";
+import "@/js/components/atoms/Image.js";
+import "@/js/components/molecules/Topic.js";
+import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
+import "@/js/components/molecules/Demo.js";
+import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
-import { setupContents } from "@/js/utils/setupContents.js";
-import { renderSections } from "@/js/renderers/renderSection";
+import "@/js/components/atoms/Spacer.js";
 
-const style = /* css */ `
-  .box {
-    background-color: blue;
-    width: 100px;
-    height: 100px
-  }
-`;
+import { setupContents } from "@/js/utils/setupContents.js";
+import { renderSections } from "@/js/renderers/renderSection.js";
 
 class CSSModuleThree extends HTMLElement {
   constructor() {
@@ -30,68 +32,13 @@ class CSSModuleThree extends HTMLElement {
   }
 
   render() {
-    const sections = [
-      {
-        sectionId: "whats-it",
-        sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
-        description: /* html */ `
-            <p>Description</p>
-            <p>Description</p>
-        `,
-      },
-      {
-        sectionId: "css",
-        sectionLabel: "CSS",
-        sectionAriaLabel: "CSS block",
-        cardCodes: [
-          {
-            type: "code",
-            cardLabel: "CSS",
-            language: "css",
-            code: `
-.box {
-  background-color: blue;
-  width: 100px;
-  height: 100px
-}
-            `,
-            preview: () => /* html */ `
-              <div class="box">
-              </div>
-            `,
-            notes: /* html */ `
-              <p>Notes</p>
-            `,
-          },
-        ],
-      },
-      //! Links
-      {
-        sectionId: "links",
-        sectionLabel: "Links",
-        sectionAriaLabel: "Links",
-        links: [
-          {
-            href: "https://gwfh.mranftl.com/fonts",
-            label: "Mario Ranftl google webfonts helper",
-          },
-        ],
-      },
-    ];
-
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
-
       <wc-page-header></wc-page-header>
-
       <wc-contents></wc-contents>
-
       <div class="line-break">${renderSections(sections)}</div>
-
       <wc-lesson-nav></wc-lesson-nav>
     `;
 
