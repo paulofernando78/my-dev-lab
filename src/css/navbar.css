@@ -1,7 +1,9 @@
 .navbar {
   grid-area: nav;
 
+  box-sizing: border-box;
   height: 100%;
+  min-height: 0;
   padding: 5px;
   
   background-color: var(--background-color);
@@ -118,9 +120,13 @@ img[src*="ide.svg"] {
 
 @media (max-width: 700px) {
   .navbar {
-    margin-left: -150px;
-    position: absolute;
-    top: 45px
+    margin-left: -265px;
+    position: fixed;
+    top: 45px;
+    bottom: 5px;
+    width: min(260px, calc(100vw - 10px));
+    height: auto;
+    max-height: none;
   }
 
   .navbar.visible {

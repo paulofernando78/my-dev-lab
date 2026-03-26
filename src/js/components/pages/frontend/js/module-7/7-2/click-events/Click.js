@@ -11,8 +11,8 @@ class WcJSm72Click extends HTMLElement {
     
     const button = this.shadowRoot.querySelector("button");
 
-    button.addEventListener("click", () => {
-      console.log("clicked", button);
+    button.addEventListener("click", (e) => {
+      console.log("clicked", e);
     });
   }
 

@@ -22,7 +22,7 @@ export const clickEvents = {
           const button = document.querySelector("button")
 
 button.addEventListener("click", (e) => {
-console.log("clicked:", button)
+console.log("clicked:", e)
 })
           ` },
       ],

@@ -11,12 +11,12 @@ class WcJSm72MousedownMouseup extends HTMLElement {
 
     const button = this.shadowRoot.querySelector("button");
 
-    button.addEventListener("mousedown", () => {
-      console.log("mousedown:", button);
+    button.addEventListener("mousedown", (e) => {
+      console.log("mousedown:", e);
     });
 
-    button.addEventListener("mouseup", () => {
-      console.log("mouseup:", button);
+    button.addEventListener("mouseup", (e) => {
+      console.log("mouseup:", e);
     });
   }
 

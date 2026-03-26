@@ -31,12 +31,12 @@ div {
         { cardLabel: "Javascript", language: "js", code: /* js */ `
 const div = document.querySelector("div")
 
-div.addEventListener("mouseleave", () => {
-  console.log("mouseleave:", div)
+div.addEventListener("mouseleave", (e) => {
+  console.log("mouseleave:", e)
 })
 
-div.addEventListener("mouseenter", () => {
-  console.log("mouseenter:", div)
+div.addEventListener("mouseenter", (e) => {
+  console.log("mouseenter:", e)
 })          
         `
       },

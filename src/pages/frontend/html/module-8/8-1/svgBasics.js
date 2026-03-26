@@ -1,51 +1,32 @@
-export const section81 = {
-  sectionId: "svg-basics",
-  sectionLabel: "8.1 SVG Basics",
-  sectionAriaLabel: "8.1 SVG Basics",
-  subSections: [
+export const svgBasics = {
+  subSectionId: "svg-vs-raster",
+  subSectionLabel: "SVG vs raster images",
+  subSectionAriaLabel: "SVG vs raster images",
+  description: /* html */ `
+            <p><strong>SVG</strong> images are vector-based. They are built from shapes, lines, and paths, so they can scale up or down without losing quality.</p>
+            <p><strong>Raster</strong> images are made of pixels. They look good at their intended size, but if you enlarge them too much, they can become blurry or blocky.</p>
+            <p>Common raster formats include <code>JPG</code>, <code>PNG</code>, <code>GIF</code>, and pixel-based <code>WebP</code> images.</p>
+          `,
+  notes: /* html */ `
+            <p>Use SVG for icons, logos, and simple illustrations. Use raster images for photos and detailed pixel-based artwork.</p>
+          `,
+  imgs: [
     {
-      subSectionId: "intro",
-      subSectionLabel: "Introduction",
-      subSectionAriaLabel: "Introduction",
-      topics: [
-        {
-          topicId: "what-is-svg",
-          topicLabel: "What SVG is",
-          topicAriaLabel: "What SVG is",
-        },
-        {
-          topicId: "svg-vs-raster",
-          topicLabel: "SVG vs raster images",
-          topicAriaLabel: "SVG vs raster images",
-        },
-        {
-          topicId: "when-to-use-svg",
-          topicLabel: "When to use SVG",
-          topicAriaLabel: "When to use SVG",
-        },
-      ],
+      imgSrc: "/assets/images/html/svg-raster.png",
+      alt: "SVG vs. Raster",
     },
+  ],
+  cardCodes: [
     {
-      subSectionId: "using-svg",
-      subSectionLabel: "Using SVG",
-      subSectionAriaLabel: "Using SVG",
-      topics: [
-        {
-          topicId: "inline-svg",
-          topicLabel: "Inline SVG",
-          topicAriaLabel: "Inline SVG",
-        },
-        {
-          topicId: "svg-in-img",
-          topicLabel: "SVG in <img>",
-          topicAriaLabel: "SVG in <img>",
-        },
-        {
-          topicId: "svg-in-css",
-          topicLabel: "SVG in CSS",
-          topicAriaLabel: "SVG in CSS",
-        },
-      ],
+      cardLabel: "Comparison",
+      language: "html",
+      code: /* html */ `
+<!-- SVG: scales cleanly -->
+<img src="logo.svg" alt="Logo">
+
+<!-- Raster: can lose quality when enlarged -->
+<img src="photo.png" alt="Photo">
+              `,
     },
   ],
 };

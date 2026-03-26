@@ -12,12 +12,12 @@ class WcJSm72Mousemove extends HTMLElement {
 
     const div = this.shadowRoot.querySelector("div");
 
-    div.addEventListener("mouseleave", () => {
-      console.log("mouseleave:", div);
+    div.addEventListener("mouseleave", (e) => {
+      console.log("mouseleave:", e);
     });
 
-    div.addEventListener("mouseenter", () => {
-      console.log("mouseenter:", div);
+    div.addEventListener("mouseenter", (e) => {
+      console.log("mouseenter:", e);
     });
   }
 
