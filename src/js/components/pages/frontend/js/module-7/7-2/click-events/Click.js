@@ -9,15 +9,17 @@ class WcJSm72Click extends HTMLElement {
   connectedCallback() {
     this.render();
     
-    const button = this.shadowRoot.querySelector("button");
+    this._button = this.shadowRoot.querySelector("button");
 
-    button.addEventListener("click", (e) => {
+    this._onClick = (e) => {
       console.log("clicked", e);
-    });
+    };
+
+    this._button.addEventListener("click", this._onClick);
   }
 
   disconnectedCallback() {
-    // cleanup (events, intervals, observers)
+    this._button.removeEventListener("click", this._onClick)
   }
 
   render() {

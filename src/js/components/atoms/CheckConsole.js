@@ -2,7 +2,7 @@ import styleImports from "@css/styles.css?inline";
 
 const styles = /* css */ `
   div {
-    margin-top: 1.5rem
+    margin-top: 1rem
   }
 `;
 

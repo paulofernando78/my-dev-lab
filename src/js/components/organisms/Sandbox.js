@@ -308,12 +308,15 @@ class Sandbox extends HTMLElement {
       });
     }
 
+    this._disposables = [];
+
     Object.entries(this.editors).forEach(([key, editor]) => {
-      editor.onDidChangeModelContent(() => {
+      const disposable = editor.onDidChangeModelContent(() => {
         const value = editor.getValue();
         this.saveDebounced(key, value);
         this.updateOutputDebounced();
       });
+      this._disposables.push(disposable);
     });
 
     this.updateOutput();
@@ -321,6 +324,12 @@ class Sandbox extends HTMLElement {
 
   disconnectedCallback() {
     window.removeEventListener("message", this.messageHandler);
+
+    this._disposables?.forEach(d => d.dispose());
+    this._disposables = [];
+
+    Object.values(this.editors || {}).forEach(editor => editor.dispose());
+    this.editors = null;
   }
 
   render() {

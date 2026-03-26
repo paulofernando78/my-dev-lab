@@ -10,12 +10,12 @@ class WcJSm72Mousemove extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    const preview = this.shadowRoot.querySelector(".preview");
+    this._preview = this.shadowRoot.querySelector(".preview");
     const spanX = this.shadowRoot.querySelector("#x");
     const spanY = this.shadowRoot.querySelector("#y");
 
-    preview.addEventListener("mousemove", (event) => {
-      const rect = preview.getBoundingClientRect();
+    this._onMousemove = (event) => {
+      const rect = this._preview.getBoundingClientRect();
 
       const x = Math.floor(event.clientX - rect.left);
       const y = Math.floor(event.clientY - rect.top);
@@ -23,13 +23,15 @@ class WcJSm72Mousemove extends HTMLElement {
       spanX.textContent = "x: " + x;
       spanY.textContent = "y: " + y;
 
-      console.log(spanX)
-      console.log(spanY)
-    });
+      console.log(spanX);
+      console.log(spanY);
+    };
+
+    this._preview.addEventListener("mousemove", this._onMousemove);
   }
 
   disconnectedCallback() {
-    // cleanup (events, intervals, observers)
+    this._preview.removeEventListener("mousemove", this._onMousemove);
   }
 
   render() {
@@ -46,8 +48,5 @@ class WcJSm72Mousemove extends HTMLElement {
   }
 }
 
-customElements.define(
-  "wc-js-m-7-2-mousemove",
-  WcJSm72Mousemove,
-);
+customElements.define("wc-js-m-7-2-mousemove", WcJSm72Mousemove);
 export default WcJSm72Mousemove;

@@ -9,19 +9,22 @@ class WcJSm72MousedownMouseup extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    const button = this.shadowRoot.querySelector("button");
+    this._button = this.shadowRoot.querySelector("button");
 
-    button.addEventListener("mousedown", (e) => {
+    this._onMousedown = (e) => {
       console.log("mousedown:", e);
-    });
-
-    button.addEventListener("mouseup", (e) => {
+    };
+    this._onMouseup = (e) => {
       console.log("mouseup:", e);
-    });
+    };
+
+    this._button.addEventListener("mousedown", this._onMousedown);
+    this._button.addEventListener("mouseup", this._onMouseup);
   }
 
   disconnectedCallback() {
-    // cleanup (events, intervals, observers)
+    this._button.removeEventListener("mousedown", this._onMousedown);
+    this._button.removeEventListener("mouseup", this._onMouseup);
   }
 
   render() {

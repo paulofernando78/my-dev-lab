@@ -1,59 +1,7 @@
 import componentStyles from "@css/imports/component.css?inline";
+import styles from "./CardCode.css?inline";
 
 import "@/js/components/organisms/Sandbox.js";
-
-const style = /* css */ `
-  :host {
-    display: block;
-    min-width: 0;
-    max-width: 100%;
-    scroll-margin-top: 5px;
-  }
-
-  .icon {
-    width: var(--icon);
-  }
-
-  .label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-
-    
-    padding: 5px 5px 0 5px;
-    font-weight: bold;
-
-    color: #fff;
-    background-color: var(--gray-7);
-    border-radius: 5px 5px 0 0;
-    border-bottom: 0px;
-  }
-
-  .card-container {
-    padding: 5px;
-
-    color: #fff;
-    background-color: var(--gray-7);
-    border-radius: 0 0 5px 5px;
-  }
-
-  .hljs * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .hljs {
-    padding: 0.8rem;
-    font-size: 0.9rem;
-    white-space: pre-wrap;
-  }
-
-  pre {
-    border-radius: var(--border-radius);
-    overflow-x: auto;
-  }
-`;
 
 class CardCode extends HTMLElement {
   constructor() {
@@ -68,7 +16,7 @@ class CardCode extends HTMLElement {
     this.shadowRoot.innerHTML = /* html */ `
       <style>
         ${componentStyles}
-        ${style}
+        ${styles}
       </style>
       ${
         cardLabelAttr

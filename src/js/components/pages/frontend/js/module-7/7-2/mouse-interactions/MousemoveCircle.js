@@ -10,11 +10,11 @@ class WcJSm72MousemoveCircle extends HTMLElement {
   connectedCallback() {
     this.render();
 
-    const preview = this.shadowRoot.querySelector(".preview");
+    this._preview = this.shadowRoot.querySelector(".preview");
     const circle = this.shadowRoot.querySelector(".circle");
 
-    function followMouse(e) {
-      const rect = preview.getBoundingClientRect();
+    this._followMouse = (e) => {
+      const rect = this._preview.getBoundingClientRect();
 
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -25,11 +25,11 @@ class WcJSm72MousemoveCircle extends HTMLElement {
       console.log(circle)
     }
 
-    preview.addEventListener("mousemove", followMouse);
+    this._preview.addEventListener("mousemove", this._followMouse);
   }
-
+  
   disconnectedCallback() {
-    // cleanup (events, intervals, observers)
+    this._preview.removeEventListener("mousemove", this._followMouse);
   }
 
   render() {
