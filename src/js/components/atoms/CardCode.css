@@ -31,19 +31,3 @@
   background-color: var(--gray-7);
   border-radius: 0 0 5px 5px;
 }
-
-.hljs * {
-  margin: 0;
-  padding: 0;
-}
-
-.hljs {
-  padding: 0.8rem;
-  font-size: 0.9rem;
-  white-space: pre-wrap;
-}
-
-pre {
-  border-radius: var(--border-radius);
-  overflow-x: auto;
-}

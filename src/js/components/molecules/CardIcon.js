@@ -7,32 +7,25 @@ const style = /* css */ `
   }
 
   :host([variant="notes"]) img {
-  filter: invert(24%) sepia(94%) saturate(7000%)
-          hue-rotate(350deg) brightness(95%) contrast(120%);
+  filter:
+  invert(24%)
+  sepia(94%)
+  saturate(7000%)
+  hue-rotate(350deg)
+  brightness(95%)
+  contrast(120%);
   }
   
   .container {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     padding: 10px 9px;
     color: #fff;
   }
 
-  img {
-    grid-column: 1;
-    grid-row: 1
-  }
-
-  span {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center
-  }
-
   .content {
-    grid-column: 2;
-    grid-row: 2
+    padding: 5px
   }
 `;
 
@@ -80,8 +73,10 @@ class CardIcon extends HTMLElement {
         ${style}
       </style>
       <div class="container">
-        <img src="${icon}" alt="${variant} icon" />
-        <span><b>${label}</b></span>
+        <div class="flex-align-center">
+          <img src="${icon}" alt="${variant} icon" />
+          <span><b>${label}</b></span>
+        </div>
         <div class="content line-break">
           <slot></slot>
         </div>

@@ -10,66 +10,54 @@ export const truthyFalsy = {
   topics: [
     //! Truthy Values
     {
-      topicId: "truthy-values",
-      topicLabel: "Truthy Values",
-      topicAriaLabel: "Truthy Values",
+      topicId: "values",
+      topicLabel: "Values",
+      topicAriaLabel: "Values",
       description: /* html */ `
         <p>A <strong>truthy</strong> value is any value that evaluates to <code>true</code> in a boolean context. Most values in JavaScript are truthy.</p>
 
-        <p>Common truthy values:</p>
+        <p>A <strong>falsy</strong> value is any value that evaluates to <code>false</code> in a boolean context. There are only a few falsy values in JavaScript: <code>false</code>, <code>0</code>, <code>""</code>, <code>null</code>, <code>undefined</code>, and <code>NaN</code>.</p>
 
-        <ul>
-          <li>Non-empty strings — <code>"hello"</code></li>
-          <li>Non-zero numbers — <code>1</code>, <code>-1</code>, <code>3.14</code></li>
-          <li>Arrays — <code>[]</code> (even empty ones)</li>
-          <li>Objects — <code>{}</code> (even empty ones)</li>
-          <li><code>true</code></li>
-        </ul>
+        <p>Common truthy/falsy values:</p>
 
-        <wc-card-code
-          cardLabel="JavaScript"
-          cardLabelIcon="/assets/images/icons/code.svg"
-        >
+        <wc-column header-1="Truthy" header-2="Falsy">
+        <div slot="col-1">
           <wc-code language="js">
-Boolean("hello")  // true
-Boolean(1)        // true
-Boolean([])       // true
-Boolean({})       // true
-          </wc-code>
-        </wc-card-code>
-      `,
-      sandbox: [{ js: true, console: true }],
-    },
-    //! Falsy Values
-    {
-      topicId: "falsy-values",
-      topicLabel: "Falsy Values",
-      topicAriaLabel: "Falsy Values",
-      description: /* html */ `
-        <p>A <strong>falsy</strong> value is any value that evaluates to <code>false</code> in a boolean context. There are only a few falsy values in JavaScript:</p>
+Boolean(true)
 
-        <ul>
-          <li><code>false</code></li>
-          <li><code>0</code> and <code>-0</code></li>
-          <li><code>""</code> — empty string</li>
-          <li><code>null</code></li>
-          <li><code>undefined</code></li>
-          <li><code>NaN</code></li>
-        </ul>
+// Non-empty strings
+Boolean("hello") // true
 
-        <wc-card-code
-          cardLabel="JavaScript"
-          cardLabelIcon="/assets/images/icons/code.svg"
-        >
-          <wc-code language="js">
-Boolean(false)     // false
-Boolean(0)         // false
-Boolean("")        // false
-Boolean(null)      // false
+// Non-zero numbers 
+Boolean(1) // true
+Boolean(-1) // true
+Boolean(3.14) // true
+
+// Arrays (even empty ones)
+Boolean([])
+
+// Objects (even empty ones)
+Boolean({})
+</wc-code>
+      </div>
+
+      <div slot="col-2">
+      <wc-code language="js">
+Boolean(false)
+
+// Empty strings
+Boolean("") // false
+
+// Zero number
+Boolean(0) // false
+
+// null / undefined / NaN
+Boolean(null) // false
 Boolean(undefined) // false
-Boolean(NaN)       // false
+Boolean(NaN) // false
           </wc-code>
-        </wc-card-code>
+        </div>
+      </wc-column>
       `,
       sandbox: [{ js: true, console: true }],
     },

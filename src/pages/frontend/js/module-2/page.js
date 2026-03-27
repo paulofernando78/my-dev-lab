@@ -8,12 +8,12 @@ import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
 import "@/js/components/molecules/CardIcon.js";
 import "@/js/components/molecules/SubSection.js";
+import "@/js/components/molecules/Column.js";
 import "@/js/components/atoms/Wrapper.js";
 import "@/js/components/atoms/Image.js";
 import "@/js/components/molecules/Topic.js";
 import "@/js/components/atoms/CardCode.js";
 import "@/js/components/molecules/Code.js";
-import "@/js/components/molecules/Demo.js";
 import "@/js/components/organisms/Sandbox.js";
 import "@/js/components/molecules/Links.js";
 import "@/js/components/molecules/LessonNav.js";
@@ -30,10 +30,6 @@ class JSModuleTwo extends HTMLElement {
 
   connectedCallback() {
     this.render();
-  }
-
-  disconnectedCallback() {
-    // cleanup (events, intervals, observers)
   }
 
   render() {

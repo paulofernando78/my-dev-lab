@@ -3,11 +3,14 @@ import hljs from "highlight.js";
 import hljsTheme from "highlight.js/styles/vs2015.css?inline";
 
 const style = /* css */ `
+  :host {
+    display: block;
+  }
+
   pre {
-    position: relative;
     margin: 0;
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: auto;
   }
   
   .blur-overlay {
@@ -30,8 +33,6 @@ const style = /* css */ `
   
   .hljs {
     display: block;
-    margin: 0;
-    padding: 0.8rem;
     font-size: 0.9rem;
     white-space: pre-wrap;
     border-radius: inherit;

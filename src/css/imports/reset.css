@@ -40,6 +40,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding-left: 18px;
+}
+
 /* :focus {
   outline: 2px solid #000;
   outline-offset: 2px;

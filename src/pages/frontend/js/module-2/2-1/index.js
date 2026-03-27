@@ -1,5 +1,5 @@
-import { ifElse } from "./if-else.js";
 import { truthyFalsy } from "./truthy-falsy.js";
+import { ifElse } from "./if-else.js";
 import { ternary } from "./ternary.js";
 import { switchStatement } from "./switch.js";
 import { logicalOperators } from "./logical-operators.js";
@@ -27,8 +27,8 @@ export const section21 = {
     </ul>
   `,
   subSections: [
-    ifElse,
     truthyFalsy,
+    ifElse,
     ternary,
     switchStatement,
     logicalOperators,

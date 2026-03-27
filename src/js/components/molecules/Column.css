@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 10px;
+  padding: 5px 8px 6px 5px;
+  border: 1px solid var(--slate-7);
+  border-radius: 5px;
+}
+
+.container > div {
+  min-width: 0;
+  overflow: auto;
+}
+
+.header {
+  display: block;
+  margin: 5px;
+}

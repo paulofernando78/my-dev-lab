@@ -19,16 +19,12 @@ export const ifElse = {
       topicAriaLabel: "if",
       description: /* html */`
         <p>The <code>if</code> statement runs a block of code only when its condition evaluates to <code>true</code>. If the condition is <code>false</code>, the block is skipped entirely.</p>
-        <wc-card-code
-          cardLabel="JavaScript"
-          cardLabelIcon="/assets/images/icons/code.svg"
-        >
+        
           <wc-code language="js">
 if (condition) {
   // runs if condition is true
 }
           </wc-code>
-        </wc-card-code>
       `,
     },
     //! if / else
@@ -38,10 +34,7 @@ if (condition) {
       topicAriaLabel: "if / else",
       description: /* html */`
         <p>Adding <code>else</code> provides a fallback block that runs when the <code>if</code> condition is <code>false</code>. One of the two branches will always execute.</p>
-        <wc-card-code
-          cardLabel="JavaScript"
-          cardLabelIcon="/assets/images/icons/code.svg"
-        >
+
           <wc-code language="js">
 if (condition) {
   // runs if condition is true
@@ -49,7 +42,6 @@ if (condition) {
   // runs if condition is false
 }
           </wc-code>
-        </wc-card-code>
       `,
     },
     //! if / else if / else
@@ -59,10 +51,7 @@ if (condition) {
       topicAriaLabel: "else if else",
       description: /* html */`
         <p>Use <code>else if</code> to check additional conditions in sequence. Only the first matching branch executes — the rest are skipped. The final <code>else</code> is optional and acts as a catch-all.</p>
-        <wc-card-code
-          cardLabel="JavaScript"
-          cardLabelIcon="/assets/images/icons/code.svg"
-        >
+
           <wc-code language="js">
 if (condition) {
   // runs if condition is true
@@ -72,7 +61,6 @@ if (condition) {
   // runs if none of the above matched
 }
           </wc-code>
-        </wc-card-code>
       `,
     },
   ],
