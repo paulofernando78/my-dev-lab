@@ -98,16 +98,16 @@ button {
           `,
         },
         { js: /* js */ `
-const btn = this.shadowRoot.querySelector("button");
+const btn = document.querySelector("button");
 
 if (btn) {
   btn.addEventListener("click", () => {
-    const counter = this.shadowRoot.querySelector("#counter");
+    const counter = document.querySelector("#counter");
     const total = Number(counter.textContent) + 1;
     if (total <= 5) {
       counter.textContent = total;
     } else {
-      const msg = this.shadowRoot.querySelector("#msg");
+      const msg = document.querySelector("#msg");
       msg.innerText = "You've reached max items per person."
     }
   });
@@ -120,6 +120,8 @@ if (btn) {
                 `,
       sandbox: [
         {
+          html: true,
+          css: true,
           js: true,
           console: true,
         },
