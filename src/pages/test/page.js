@@ -1,7 +1,6 @@
 import styleImports from "@css/styles.css?inline";
 
-import "@/js/components/molecules/Column.js";
-import "@/js/components/molecules/Code.js";
+import "@/js/components/pages/frontend/js/module-2/2-1/ifSum.js"
 
 class Test extends HTMLElement {
   constructor() {
@@ -18,18 +17,7 @@ class Test extends HTMLElement {
       <style>
         ${styleImports}
       </style>
-      <wc-column header-1="Truthy" header-2="Falsy">
-        <div slot="col-1">
-          <wc-code language="js">
-            console.log()
-          </wc-code>
-        </div>
-        <div slot="col-2">
-          <wc-code language="js">
-            console.log()
-          </wc-code>
-        </div>
-      </wc-column>
+      <wc-if-sum></wc-if-sum>
     `;
 
   }

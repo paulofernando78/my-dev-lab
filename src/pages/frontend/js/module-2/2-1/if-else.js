@@ -17,7 +17,7 @@ export const ifElse = {
       topicId: "if",
       topicLabel: "if",
       topicAriaLabel: "if",
-      description: /* html */`
+      description: /* html */ `
         <p>The <code>if</code> statement runs a block of code only when its condition evaluates to <code>true</code>. If the condition is <code>false</code>, the block is skipped entirely.</p>
         
           <wc-code language="js">
@@ -26,13 +26,42 @@ if (condition) {
 }
           </wc-code>
       `,
+      sandbox: [
+        {
+          js: true,
+          console: true,
+        },
+      ],
+    },
+    //! if + sum
+    {
+      topicId: "if-sum",
+      topicLabel: "if + sum",
+      topicAriaLabel: "if",
+      description: /* html */ `
+        <p>...</p>
+        <wc-code language="js">
+if (condition) {
+  // runs if condition is true
+}
+        </wc-code>
+      `,
+      preview: /* html */ `
+        <wc-if-sum></wc-if-sum>
+                `,
+      sandbox: [
+        {
+          js: true,
+          console: true,
+        },
+      ],
     },
     //! if / else
     {
       topicId: "if-else",
       topicLabel: "if / else",
       topicAriaLabel: "if / else",
-      description: /* html */`
+      description: /* html */ `
         <p>Adding <code>else</code> provides a fallback block that runs when the <code>if</code> condition is <code>false</code>. One of the two branches will always execute.</p>
 
           <wc-code language="js">
@@ -49,7 +78,7 @@ if (condition) {
       topicId: "else-if-else",
       topicLabel: "else if / else",
       topicAriaLabel: "else if else",
-      description: /* html */`
+      description: /* html */ `
         <p>Use <code>else if</code> to check additional conditions in sequence. Only the first matching branch executes — the rest are skipped. The final <code>else</code> is optional and acts as a catch-all.</p>
 
           <wc-code language="js">

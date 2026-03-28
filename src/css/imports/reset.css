@@ -40,8 +40,12 @@ a {
   text-decoration: none;
 }
 
-ul {
+/* ul {
   padding-left: 18px;
+} */
+
+button {
+  padding: 5px;
 }
 
 /* :focus {

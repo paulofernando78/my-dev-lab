@@ -58,6 +58,16 @@ Boolean(NaN) // false
           </wc-code>
         </div>
       </wc-column>
+      <p>Now practice it by writing different values. Follow the example below.</p>
+      <wc-code language="js">
+const result = Boolean(value);
+console.log(result)
+      </wc-code>
+      <p>It's also possible to write:</p>
+        <wc-code language="js">
+const result = value;
+console.log(Boolean(result))
+        </wc-code>
       `,
       sandbox: [{ js: true, console: true }],
     },

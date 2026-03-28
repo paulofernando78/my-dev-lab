@@ -19,10 +19,6 @@ import { renderSections } from "@/js/renderers/renderSection.js";
 
 // Previews
 
-const style = /* css */ `
-
-`;
-
 class Boilerplate extends HTMLElement {
   constructor() {
     super();
@@ -229,7 +225,6 @@ class Boilerplate extends HTMLElement {
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${styleImports}
-        ${style}
       </style>
       <wc-page-header></wc-page-header>
       <wc-contents></wc-contents>
