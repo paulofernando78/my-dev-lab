@@ -7,25 +7,21 @@ import { resources } from "./resources.js";
 const callbacks = {
   ...section92,
   sectionLabel: "9.2 Callbacks",
-  sectionAriaLabel: "9.2 Callbacks",
 };
 
 const timers = {
   ...section93,
   sectionLabel: "9.1 Timers",
-  sectionAriaLabel: "9.1 Timers",
 };
 
 const promises = {
   ...section94,
   sectionLabel: "9.3 Promises",
-  sectionAriaLabel: "9.3 Promises",
 };
 
 const asyncAwait = {
   ...section95,
   sectionLabel: "9.4 async / await",
-  sectionAriaLabel: "9.4 async await",
 };
 
 export const sections = [

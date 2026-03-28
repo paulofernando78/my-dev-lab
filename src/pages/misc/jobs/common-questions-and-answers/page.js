@@ -27,7 +27,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q1",
         sectionLabel: "1. Tell me about yourself",
-        sectionAriaLabel: "Tell me about yourself interview question",
         description: /* html */ `
           <p>
             This question is used as an icebreaker and to evaluate how clearly you summarize your professional story.
@@ -49,7 +48,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q2",
         sectionLabel: "2. Why do you want to work here?",
-        sectionAriaLabel: "Why do you want to work here interview question",
         description: /* html */ `
           <p>
             This question evaluates your motivation and whether you researched the company and understand its values and goals.
@@ -75,7 +73,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q3",
         sectionLabel: "3. What are your strengths?",
-        sectionAriaLabel: "Strengths interview question",
         description: /* html */ `
           <p>
             The interviewer wants to understand what you do best and how your strengths contribute to the role.
@@ -100,7 +97,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q4",
         sectionLabel: "4. What is your biggest weakness?",
-        sectionAriaLabel: "Weakness interview question",
         description: /* html */ `
           <p>
             This question assesses self-awareness and your ability to improve over time.
@@ -125,7 +121,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q5",
         sectionLabel: "5. Why should we hire you?",
-        sectionAriaLabel: "Why should we hire you interview question",
         description: /* html */ `
           <p>
             This question evaluates your value proposition and how well you match the company’s needs.
@@ -150,7 +145,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q6",
         sectionLabel: "6. Describe a challenge you faced",
-        sectionAriaLabel: "Challenge interview question",
         description: /* html */ `
           <p>
             Interviewers use this question to understand your problem-solving process and resilience.
@@ -176,7 +170,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q7",
         sectionLabel: "7. Where do you see yourself in five years?",
-        sectionAriaLabel: "Career goals interview question",
         description: /* html */ `
           <p>
             This question evaluates ambition, planning, and alignment with the company’s long-term opportunities.
@@ -200,7 +193,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "q8",
         sectionLabel: "8. Do you have any questions for us?",
-        sectionAriaLabel: "Questions for interviewer",
         description: /* html */ `
           <p>
             This question measures curiosity and engagement. Asking thoughtful questions shows genuine interest.
@@ -223,7 +215,6 @@ class CommonQuestionsAndAnswers extends HTMLElement {
       {
         sectionId: "youtube",
         sectionLabel: "Youtube",
-        sectionAriaLabel: "Youtube",
         links: [
           {
             href: "https://www.youtube.com/@TheCompaniesExpert",

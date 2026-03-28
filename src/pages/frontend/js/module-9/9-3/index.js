@@ -5,7 +5,6 @@ import { timeoutVsInterval } from "./settimeout-vs-setinterval.js";
 export const section93 = {
   sectionId: "timers",
   sectionLabel: "9.3 Timers",
-  sectionAriaLabel: "9.3 Timers",
   subSections: [
     setTimeoutSection,
     setIntervalSection,

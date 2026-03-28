@@ -1,44 +1,36 @@
 export const section85 = {
   sectionId: "svg-animation",
   sectionLabel: "8.5 SVG Animation",
-  sectionAriaLabel: "8.5 SVG Animation",
   subSections: [
     {
       subSectionId: "motion-basics",
       subSectionLabel: "Motion Basics",
-      subSectionAriaLabel: "Motion Basics",
       topics: [
         {
           topicId: "animate",
           topicLabel: "<animate>",
-          topicAriaLabel: "<animate>",
         },
         {
           topicId: "animatetransform",
           topicLabel: "<animateTransform>",
-          topicAriaLabel: "<animateTransform>",
         },
         {
           topicId: "animatemotion",
           topicLabel: "<animateMotion>",
-          topicAriaLabel: "<animateMotion>",
         },
       ],
     },
     {
       subSectionId: "motion-paths",
       subSectionLabel: "Motion Paths",
-      subSectionAriaLabel: "Motion Paths",
       topics: [
         {
           topicId: "mpath",
           topicLabel: "<mpath>",
-          topicAriaLabel: "<mpath>",
         },
         {
           topicId: "animation-along-a-path",
           topicLabel: "Animation Along a Path",
-          topicAriaLabel: "Animation Along a Path",
           description: /* html */ `
             <p>SVG allows elements to move along complex paths using <code>&lt;animateMotion&gt;</code>. Instead of animating with simple x and y values, we define a <code>&lt;path&gt;</code> and attach it to the animation using <code>&lt;mpath&gt;</code>.</p>
             <p>The moving element follows the exact shape of the path, which is useful for motion graphics and interactive UI patterns.</p>

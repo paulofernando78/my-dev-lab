@@ -1,7 +1,6 @@
 export const section72 = {
     sectionId: "seo",
     sectionLabel: "SEO",
-    sectionAriaLabel: "SEO",
     description: /* html */ `
       <p>SEO (Search Engine Optimization) helps search engines understand and rank your page. Good HTML structure is the foundation of good SEO.</p>
     `,
@@ -9,7 +8,6 @@ export const section72 = {
       {
         subSectionId: "meta-tags",
         subSectionLabel: "Meta Tags",
-        subSectionAriaLabel: "Meta Tags",
         description: /* html */ `
           <p>Meta tags in the <code>&lt;head&gt;</code> provide information to search engines and social media platforms.</p>
         `,
@@ -25,7 +23,6 @@ export const section72 = {
       {
         subSectionId: "headings-structure",
         subSectionLabel: "Headings Structure",
-        subSectionAriaLabel: "Headings Structure",
         description: /* html */ `
           <p>Search engines use heading hierarchy to understand content structure. There should be only one <code>&lt;h1&gt;</code> per page, followed by <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> in order.</p>
         `,
@@ -41,7 +38,6 @@ export const section72 = {
       {
         subSectionId: "semantic-seo",
         subSectionLabel: "Semantic & SEO",
-        subSectionAriaLabel: "Semantic and SEO",
         description: /* html */ `
           <p>Semantic elements also help SEO by giving search engines context about your content.</p>
           <ul>

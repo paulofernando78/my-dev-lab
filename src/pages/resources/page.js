@@ -31,7 +31,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "sites",
         sectionLabel: "Sites",
-        sectionAriaLabel: "Sites",
         links: [
           {
             href: "https://developer.mozilla.org/en-US/",
@@ -59,7 +58,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "free-courses",
         sectionLabel: "Free Courses (English)",
-        sectionAriaLabel: "Free Courses",
         links: [
           {
             href: "https://www.freecodecamp.org/",
@@ -86,7 +84,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "free-courses",
         sectionLabel: "Free Trial Courses (English)",
-        sectionAriaLabel: "Free Courses",
         links: [
           {
             href: "https://www.boot.dev/",
@@ -101,7 +98,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "paid-courses",
         sectionLabel: "Paid Courses (English)",
-        sectionAriaLabel: "Paid Courses",
         links: [
           {
             href: "https://www.coursera.org/professional-certificates/meta-front-end-developer/",
@@ -125,7 +121,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "paid-courses",
         sectionLabel: "Paid Courses (Portuguese)",
-        sectionAriaLabel: "Paid Courses",
         links: [
           {
             href: "https://www.rocketseat.com.br/",
@@ -140,7 +135,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "youtube-channels",
         sectionLabel: "Youtube Channels",
-        sectionAriaLabel: "Youtube Channels",
         links: [
           {
             href: "https://www.youtube.com/watch?v=zutb5Clb_0Y",
@@ -161,7 +155,6 @@ class Resources extends HTMLElement {
       {
         sectionId: "practice",
         sectionLabel: "Practice",
-        sectionAriaLabel: "Practice",
         links: [
           {
             href: "https://codepen.io/",

@@ -5,6 +5,5 @@ import { inheritance } from "./inheritance.js";
 export const section53 = {
   sectionId: "classes",
   sectionLabel: "5.3 Classes",
-  sectionAriaLabel: "5.3 Classes",
   subSections: [classSyntax, classMethods, inheritance],
 };

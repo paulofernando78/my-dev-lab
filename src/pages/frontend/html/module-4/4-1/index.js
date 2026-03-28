@@ -1,7 +1,6 @@
 export const section41 = {
         sectionId: "tags",
         sectionLabel: "Tags",
-        sectionAriaLabel: "Tags",
         description: /* html */ `
           <p>HTML provides several semantic elements that define the structure of a webpage. These elements describe the role of each part of the layout instead of just grouping content.</p>
 
@@ -23,7 +22,6 @@ export const section41 = {
           {
             subSectionId: "header",
             subSectionLabel: "Header",
-            subSectionAriaLabel: "Header",
             description: /* html */ `
               <p>The <code>&lt;header&gt;</code> element represents introductory content for a page or section.</p>
 
@@ -42,7 +40,6 @@ export const section41 = {
           {
             subSectionId: "navigation",
             subSectionLabel: "Navigation",
-            subSectionAriaLabel: "Navigation",
             description: /* html */ `
               <p>The <code>&lt;nav&gt;</code> element defines a section that contains navigation links.</p>
 
@@ -60,7 +57,6 @@ export const section41 = {
           {
             subSectionId: "main",
             subSectionLabel: "Main",
-            subSectionAriaLabel: "Main",
             description: /* html */ `
               <p>The <code>&lt;main&gt;</code> element represents the primary content of a webpage.</p>
 
@@ -78,7 +74,6 @@ export const section41 = {
           {
             subSectionId: "section",
             subSectionLabel: "Section",
-            subSectionAriaLabel: "Section",
             description: /* html */ `
               <p>The <code>&lt;section&gt;</code> element represents a thematic grouping of content.</p>
 
@@ -96,7 +91,6 @@ export const section41 = {
           {
             subSectionId: "article",
             subSectionLabel: "Article",
-            subSectionAriaLabel: "Article",
             description: /* html */ `
               <p>The <code>&lt;article&gt;</code> element represents independent, self-contained content.</p>
 
@@ -115,7 +109,6 @@ export const section41 = {
           {
             subSectionId: "aside",
             subSectionLabel: "Aside",
-            subSectionAriaLabel: "Aside",
             description: /* html */ `
               <p>The <code>&lt;aside&gt;</code> element contains content that is related to the main content but not essential to it.</p>
 
@@ -132,7 +125,6 @@ export const section41 = {
           {
             subSectionId: "footer",
             subSectionLabel: "Footer",
-            subSectionAriaLabel: "Footer",
             description: /* html */ `
               <p>The <code>&lt;footer&gt;</code> element represents the footer for a page or section.</p>
 

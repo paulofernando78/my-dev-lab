@@ -8,7 +8,6 @@ import { someEvery } from "./some-every.js";
 export const section43 = {
   sectionId: "iteration-methods",
   sectionLabel: "4.3 Iteration Methods",
-  sectionAriaLabel: "4.3 Iteration Methods",
   subSections: [
     forEach,
     map,

@@ -34,7 +34,6 @@ class ModuleOne extends HTMLElement {
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
         description: /* html */ `
             <p>Description</p>
         `,
@@ -42,7 +41,6 @@ class ModuleOne extends HTMLElement {
       {
         sectionId: "javascript",
         sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
         cardCodes: [
           {
             type: "code",

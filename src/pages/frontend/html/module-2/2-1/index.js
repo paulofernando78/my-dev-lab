@@ -1,7 +1,6 @@
 export const section21 = {
         sectionId: "text-and-content-structure",
         sectionLabel: "Text and Content Structure",
-        sectionAriaLabel: "Text and Content Structure",
         description: /* html */ `
           <p>HTML provides elements that define the structure and organization of textual content on a webpage.</p>
           <p>Elements such as <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> and <code>&lt;p&gt;</code> help organize information into meaningful sections and paragraphs.</p>
@@ -11,7 +10,6 @@ export const section21 = {
           {
             subSectionId: "headings",
             subSectionLabel: "Headings",
-            subSectionAriaLabel: "Headings",
             description: /* html */ `
               <p>Headings define the structure and hierarchy of a page.</p>
               <p>They range from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important).</p>
@@ -21,7 +19,6 @@ export const section21 = {
               {
                 topicId: "heading-levels",
                 topicLabel: "Heading Levels",
-                topicAriaLabel: "Heading Levels",
                 description: /* html */ `
                   <p>Headings should be used in order to reflect the structure of the content, not just to make text look bigger.</p>
                   <p>A page normally starts with one <code>&lt;h1&gt;</code>, then uses <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, and so on for nested sections.</p>
@@ -52,7 +49,6 @@ export const section21 = {
           {
             subSectionId: "paragraph",
             subSectionLabel: "Paragraph",
-            subSectionAriaLabel: "Paragraph",
             description: /* html */ `
               <p>The <code>&lt;p&gt;</code> element represents a paragraph of text.</p>
               <p>Browsers automatically add spacing before and after paragraphs to improve readability.</p>
@@ -62,7 +58,6 @@ export const section21 = {
               {
                 topicId: "paragraph-basics",
                 topicLabel: "Paragraph Basics",
-                topicAriaLabel: "Paragraph Basics",
                 description: /* html */ `
                   <p>Paragraphs group related sentences into readable blocks of text.</p>
                   <p>Use a new paragraph when the idea changes, instead of using multiple line breaks for spacing.</p>

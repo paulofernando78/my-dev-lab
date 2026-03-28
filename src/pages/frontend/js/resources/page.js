@@ -32,7 +32,6 @@ class JSResources extends HTMLElement {
       {
         sectionId: "sites",
         sectionLabel: "Sites",
-        sectionAriaLabel: "Sites",
         links: [
           {
             href: "https://jsoncrack.com/",
@@ -43,7 +42,6 @@ class JSResources extends HTMLElement {
       {
         sectionId: "paid-courses",
         sectionLabel: "Paid Courses",
-        sectionAriaLabel: "Best Paid Courses",
         links: [
           {
             href: "https://www.jschallenger.com/",
@@ -62,7 +60,6 @@ class JSResources extends HTMLElement {
       {
         sectionId: "youtube-channels",
         sectionLabel: "Youtube Channels",
-        sectionAriaLabel: "Youtube Channels",
         links: [
           {
             href: "https://www.youtube.com/watch?v=lfmg-EJ8gm4",
@@ -73,7 +70,6 @@ class JSResources extends HTMLElement {
       {
         sectionId: "practice",
         sectionLabel: "Practice",
-        sectionAriaLabel: "Practice",
         links: [
           {
             href: "https://runjs.app/play",

@@ -6,7 +6,6 @@ import { forOfForIn } from "./for-of-for-in.js";
 export const section22 = {
   sectionId: "loops",
   sectionLabel: "2.2 Loops",
-  sectionAriaLabel: "2.2 Loops",
   subSections: [
     forLoop,
     whileLoops,

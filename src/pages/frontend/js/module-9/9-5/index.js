@@ -6,7 +6,6 @@ import { asyncVsPromises } from "./async-vs-promises.js";
 export const section95 = {
   sectionId: "async-await",
   sectionLabel: "9.5 async / await",
-  sectionAriaLabel: "9.5 async await",
   subSections: [
     asyncFunctions,
     awaitKeyword,

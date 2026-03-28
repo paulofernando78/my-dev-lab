@@ -1,7 +1,6 @@
 export const section42 = {
         sectionId: "layouts",
         sectionLabel: "Layouts",
-        sectionAriaLabel: "Layouts",
         description: /* html */ `
           <p>Semantic layouts help both humans and machines understand how the page is organized.</p>
         `,
@@ -9,7 +8,6 @@ export const section42 = {
           {
             subSectionId: "basic",
             subSectionLabel: "Basic",
-            subSectionAriaLabel: "Basic",
             description: /* html */ `
     <p>This is the most common semantic page structure.</p>
 
@@ -58,7 +56,6 @@ export const section42 = {
           {
             subSectionId: "article-layout",
             subSectionLabel: "Article Layout",
-            subSectionAriaLabel: "Article Layout",
             description: /* html */ `
               <p>This layout is commonly used for blogs and news websites.</p>
 
@@ -101,7 +98,6 @@ export const section42 = {
           {
             subSectionId: "documentation-layout",
             subSectionLabel: "Documentation Layout",
-            subSectionAriaLabel: "Documentation Layout",
             description: /* html */ `
               <p>This layout is common in developer documentation and course websites.</p>
 
@@ -147,7 +143,6 @@ export const section42 = {
           {
             subSectionId: "dashboard-layout",
             subSectionLabel: "Dashboard Layout",
-            subSectionAriaLabel: "Dashboard Layout",
             description: /* html */ `
               <p>This layout is often used in web applications and admin panels.</p>
 

@@ -1,7 +1,6 @@
 export const section71 = {
     sectionId: "accessibility",
     sectionLabel: "Accessibility",
-    sectionAriaLabel: "Accessibility",
     description: /* html */ `
       <p>Accessibility (a11y) means building web pages that everyone can use, including people who rely on screen readers, keyboard navigation, or other assistive technologies.</p>
     `,
@@ -9,7 +8,6 @@ export const section71 = {
       {
         subSectionId: "semantic-html",
         subSectionLabel: "Semantic HTML",
-        subSectionAriaLabel: "Semantic HTML",
         description: /* html */ `
           <p>Using the right HTML elements for the right purpose is the foundation of accessibility. Screen readers rely on semantic elements to understand page structure.</p>
         `,
@@ -26,7 +24,6 @@ export const section71 = {
       {
         subSectionId: "aria",
         subSectionLabel: "ARIA",
-        subSectionAriaLabel: "ARIA",
         description: /* html */ `
           <p>ARIA (Accessible Rich Internet Applications) attributes add extra meaning to elements when semantic HTML alone isn't enough.</p>
           <ul>
@@ -47,7 +44,6 @@ export const section71 = {
       {
         subSectionId: "alt-text",
         subSectionLabel: "Alt Text",
-        subSectionAriaLabel: "Alt Text",
         description: /* html */ `
           <p>The <code>alt</code> attribute on images describes the image for screen readers and displays when the image fails to load.</p>
           <ul>
@@ -68,7 +64,6 @@ export const section71 = {
       {
         subSectionId: "keyboard-navigation",
         subSectionLabel: "Keyboard Navigation",
-        subSectionAriaLabel: "Keyboard Navigation",
         description: /* html */ `
           <p>All interactive elements should be reachable and usable with a keyboard alone. Native HTML elements like <code>&lt;button&gt;</code>, <code>&lt;a&gt;</code>, and <code>&lt;input&gt;</code> handle this automatically.</p>
           <ul>

@@ -34,7 +34,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
-        sectionAriaLabel: "What’s it?",
         description: /* html */ `
           <p>...</p>
         `,
@@ -48,7 +47,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "html",
         sectionLabel: "HTML",
-        sectionAriaLabel: "HTML block",
         cardCodes: [
           {
             type: "code",
@@ -70,7 +68,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "css",
         sectionLabel: "CSS",
-        sectionAriaLabel: "CSS block",
         cardCodes: [
           {
             type: "code",
@@ -96,7 +93,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "javascript",
         sectionLabel: "Javascript",
-        sectionAriaLabel: "Javascript block",
         cardCodes: [
           {
             type: "code",
@@ -117,7 +113,6 @@ console.log(...)
       {
         sectionId: "snippet",
         sectionLabel: "Snippet",
-        sectionAriaLabel: "...",
         cardCodes: [
           {
             type: "snippet",
@@ -132,7 +127,6 @@ console.log(...)
       {
         sectionId: "links",
         sectionLabel: "Links",
-        sectionAriaLabel: "Links",
         links: [
           {
             href: "www.google.com",

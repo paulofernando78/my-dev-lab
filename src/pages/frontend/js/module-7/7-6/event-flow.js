@@ -1,7 +1,6 @@
 export const eventFlow = {
   subSectionId: "event-propagation",
   subSectionLabel: "Event Propagation",
-  subSectionAriaLabel: "Event Propagation",
   description: /* html */ `
     <p>Event propagation describes the journey an event takes through the DOM tree, from the root to the target element and back.</p>
   `,
@@ -10,7 +9,6 @@ export const eventFlow = {
     {
       topicId: "bubbling-capturing",
       topicLabel: "Bubbling & Capturing",
-      topicAriaLabel: "Bubbling and Capturing",
       description: /* html */ `
         <p>When an event fires, it travels through the DOM in three phases: <strong>capturing</strong> (from the root down to the target), the <strong>target</strong> phase, and <strong>bubbling</strong> (from the target back up to the root). By default, most event listeners use the bubbling phase. Use <code>stopPropagation()</code> to prevent further propagation.</p>
       `,
@@ -26,7 +24,6 @@ export const eventFlow = {
     {
       topicId: "stop-propagation",
       topicLabel: "stopPropagation()",
-      topicAriaLabel: "stopPropagation",
       cardCodes: [
         { cardLabel: "HTML", language: "html", code: /* html */ `` },
         { cardLabel: "CSS", language: "css", code: /* css */ `` },

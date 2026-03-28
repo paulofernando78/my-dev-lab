@@ -65,7 +65,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "whats-it",
         sectionLabel: "What’s it?",
-        sectionAriaLabel: "What is Atomic Design?",
         description: /* html */ `
             <p><strong>Atomic Design</strong> is a methodology for building user interfaces by breaking them into small, reusable components.</p>
 
@@ -76,7 +75,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "why",
         sectionLabel: "Why use it?",
-        sectionAriaLabel: "Why use Atomic Design",
         description: /* html */ `
             <p>Atomic Design helps create consistent interfaces, improves reusability, and makes large applications easier to maintain.</p>
 
@@ -87,7 +85,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "atoms",
         sectionLabel: "Atoms",
-        sectionAriaLabel: "Atoms in Atomic Design",
         description: /* html */ `
             <p>Atoms are the smallest building blocks of an interface. They cannot be broken down further without losing meaning.</p>
 
@@ -120,7 +117,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "molecules",
         sectionLabel: "Molecules",
-        sectionAriaLabel: "Molecules in Atomic Design",
         description: /* html */ `
             <p>Molecules are groups of atoms working together as a single functional unit.</p>
 
@@ -149,7 +145,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "organisms",
         sectionLabel: "Organisms",
-        sectionAriaLabel: "Organisms in Atomic Design",
         description: /* html */ `
             <p>Organisms are complex components made from molecules and atoms combined together.</p>
 
@@ -184,7 +179,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "templates",
         sectionLabel: "Templates",
-        sectionAriaLabel: "Templates in Atomic Design",
         description: /* html */ `
             <p>Templates define page structure and layout without real content.</p>
 
@@ -219,7 +213,6 @@ class AtomicDesign extends HTMLElement {
       {
         sectionId: "pages",
         sectionLabel: "Pages",
-        sectionAriaLabel: "Pages in Atomic Design",
         description: /* html */ `
             <p>Pages are specific instances of templates filled with real content.</p>
 

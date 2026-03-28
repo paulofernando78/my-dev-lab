@@ -1,7 +1,6 @@
 export const mouseInteractions = {
   subSectionId: "mouse-interactions",
   subSectionLabel: "Mouse Interactions",
-  subSectionAriaLabel: "Mouse Interactions",
   description: /* html */ `
     <p>Mouse interaction events track the movement and position of the cursor on the page, enabling dynamic and position-aware UI behaviors.</p>
   `,
@@ -10,7 +9,6 @@ export const mouseInteractions = {
     {
       topicId: "mousemove",
       topicLabel: "mousemove (Tracking Mouse Position)",
-      topicAriaLabel: "mousemove (Tracking Mouse Position)",
       description: /* html */ `
         <p>The <code>mousemove</code> event fires continuously as the mouse moves across the page. It provides the current cursor coordinates via <code>event.clientX</code> and <code>event.clientY</code>, making it useful for tracking mouse position in real time.</p>
       `,
@@ -67,7 +65,6 @@ window.addEventListener("mousemove", (event) => {
     {
       topicId: "mousemove-circle",
       topicLabel: "mousemove (Tracking Mouse circle)",
-      topicAriaLabel: "mousemove (Tracking Mouse circle)",
       cardCodes: [
         {
           cardLabel: "HTML",

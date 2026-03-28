@@ -5,7 +5,6 @@ import { typeofOperator } from "./typeof.js";
 export const section12 = {
   sectionId: "variables-data-types",
   sectionLabel: "1.2 Variables & Data Types",
-  sectionAriaLabel: "1.2 Variables and Data Types",
   subSections: [
     variables,
     dataTypes,

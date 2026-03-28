@@ -39,12 +39,11 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "Section",
         sectionLabel: "Section",
-        sectionAriaLabel: "...",
         description: /* html */ `
           ...
         `,
         sampleAnswer: /* html */ `
-          
+
         `,
         notes: /* html */ `
           ...
@@ -60,7 +59,6 @@ class Boilerplate extends HTMLElement {
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "...",
             description: /* html */ `
               ...
             `,
@@ -82,7 +80,6 @@ class Boilerplate extends HTMLElement {
               {
                 topicId: "topic",
                 topicLabel: "Topic",
-                topicAriaLabel: "...",
                 description: /* html */ `
                   ...
                 `,
@@ -104,27 +101,9 @@ class Boilerplate extends HTMLElement {
                   },
                 ],
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                    
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-
-                `,
-                  },
+                  { html: /* html */ `` },
+                  { css: /* css */ `` },
+                  { js: /* js */ `` },
                 ],
                 preview: /* html */ `
                   <wc-></wc->
@@ -142,66 +121,27 @@ class Boilerplate extends HTMLElement {
               {
                 topicId: "topic",
                 topicLabel: "Topic",
-                topicAriaLabel: "...",
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
+                  { html: /* html */ `` },
                 ],
               },
               //! Topic 3
               {
                 topicId: "topic",
                 topicLabel: "Topic",
-                topicAriaLabel: "...",
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                    
-                `,
-                  },
+                  { html: /* html */ `` },
+                  { css: /* css */ `` },
                 ],
               },
               //! Topic 4
               {
                 topicId: "topic",
                 topicLabel: "Topic",
-                topicAriaLabel: "...",
                 cardCodes: [
-                  {
-                    cardLabel: "HTML",
-                    language: "html",
-                    code: /* html */ `
-
-                `,
-                  },
-                  {
-                    cardLabel: "CSS",
-                    language: "css",
-                    code: /* css */ `
-                    
-                `,
-                  },
-                  {
-                    cardLabel: "Javascript",
-                    language: "js",
-                    code: /* js */ `
-
-                `,
-                  },
+                  { html: /* html */ `` },
+                  { css: /* css */ `` },
+                  { js: /* js */ `` },
                 ],
               },
             ],
@@ -212,7 +152,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "resources",
         sectionLabel: "Resources",
-        sectionAriaLabel: "Resources",
         links: [
           {
             href: "https://www.google.com/",

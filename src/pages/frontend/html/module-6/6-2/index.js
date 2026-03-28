@@ -1,7 +1,6 @@
 export const section62 = {
         sectionId: "input-types",
         sectionLabel: "Input Types",
-        sectionAriaLabel: "Input Types",
         description: /* html */ `
   <p>The <code>&lt;input&gt;</code> element is one of the most important parts of HTML forms. By changing the <code>type</code> attribute, the same element can behave in many different ways.</p>
 
@@ -14,7 +13,6 @@ export const section62 = {
           {
             subSectionId: "text",
             subSectionLabel: "text",
-            subSectionAriaLabel: "text",
             description: /* html */ `
               <p>The most basic input type. Accepts any single-line text value such as names, usernames, or search queries.</p>
             `,
@@ -34,7 +32,6 @@ export const section62 = {
           {
             subSectionId: "email",
             subSectionLabel: "email",
-            subSectionAriaLabel: "email",
             description: /* html */ `
               <p>Validates that the value follows an email format (e.g. <code>user@example.com</code>). On mobile devices, it triggers a keyboard optimized for email input.</p>
             `,
@@ -54,7 +51,6 @@ export const section62 = {
           {
             subSectionId: "password",
             subSectionLabel: "password",
-            subSectionAriaLabel: "password",
             description: /* html */ `
               <p>Masks the characters as the user types, hiding sensitive input like passwords. The value is still sent as plain text unless the form uses HTTPS.</p>
             `,
@@ -74,7 +70,6 @@ export const section62 = {
           {
             subSectionId: "number",
             subSectionLabel: "number",
-            subSectionAriaLabel: "number",
             description: /* html */ `
               <p>Only accepts numeric values. Renders with increment/decrement arrows and supports <code>min</code>, <code>max</code>, and <code>step</code> attributes to control the allowed range.</p>
             `,
@@ -94,7 +89,6 @@ export const section62 = {
           {
             subSectionId: "radio",
             subSectionLabel: "radio",
-            subSectionAriaLabel: "radio",
             description: /* html */ `
               <p>Allows the user to select <strong>one option</strong> from a group. All radio buttons in the same group must share the same <code>name</code> attribute — this is what links them together so selecting one deselects the others.</p>
             `,
@@ -121,7 +115,6 @@ export const section62 = {
           {
             subSectionId: "checkbox",
             subSectionLabel: "checkbox",
-            subSectionAriaLabel: "checkbox",
             description: /* html */ `
               <p>Allows the user to toggle an option on or off. Unlike radio buttons, checkboxes are independent — <strong>multiple can be selected</strong> at the same time.</p>
             `,
@@ -149,7 +142,6 @@ export const section62 = {
           {
             subSectionId: "option",
             subSectionLabel: "option",
-            subSectionAriaLabel: "option",
             description: /* html */ `
               <p>The <code>&lt;select&gt;</code> element creates a dropdown menu. Each <code>&lt;option&gt;</code> inside it represents a choice. The <code>name</code> attribute goes on <code>&lt;select&gt;</code> and the <code>value</code> on each <code>&lt;option&gt;</code>.</p>
             `,
@@ -175,7 +167,6 @@ export const section62 = {
           {
             subSectionId: "file",
             subSectionLabel: "file",
-            subSectionAriaLabel: "file",
             description: /* html */ `
               <p>Opens a file picker dialog, allowing the user to upload files. Use the <code>accept</code> attribute to restrict file types and <code>multiple</code> to allow more than one file. When used inside a form, the form must include <code>enctype="multipart/form-data"</code>.</p>
             `,
@@ -195,7 +186,6 @@ export const section62 = {
           {
             subSectionId: "textarea",
             subSectionLabel: "textarea",
-            subSectionAriaLabel: "textarea",
             description: /* html */ `
               <p>A multiline text input, ideal for longer content like messages or comments.</p>
               <p>Supports the following attributes:</p>

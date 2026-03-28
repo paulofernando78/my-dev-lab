@@ -37,8 +37,8 @@ class ifSum extends HTMLElement {
         ${styles}
       </style>
       <div>
-      <span>Apples on sale.</span>
-      <span>Max 5 per person.</span>
+        <span>Apples on sale.</span>
+        <span>Max 5 per person.</span>
         <div class="inner-container">
           <image
             src="/assets/images/apple.png"

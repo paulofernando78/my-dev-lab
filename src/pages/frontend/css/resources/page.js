@@ -31,7 +31,6 @@ class CSSResources extends HTMLElement {
       {
         sectionId: "sites",
         sectionLabel: "Sites",
-        sectionAriaLabel: "Sites",
         links: [
           {
             href: "https://www.joshwcomeau.com/",
@@ -50,7 +49,6 @@ class CSSResources extends HTMLElement {
       {
         sectionId: "youtube-channels",
         sectionLabel: "Youtube Channels",
-        sectionAriaLabel: "Youtube Channels",
         links: [
           {
             href: "https://www.youtube.com/watch?v=kINNs4uYYnY&list=PLj-4DlPRT48kQD-jzqfkutO5OvMUXLcNP",
@@ -69,7 +67,6 @@ class CSSResources extends HTMLElement {
       {
         sectionId: "practice",
         sectionLabel: "Practice",
-        sectionAriaLabel: "Practice",
         links: [
           {
             href: "https://cssbattle.dev/",

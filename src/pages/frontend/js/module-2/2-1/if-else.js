@@ -1,7 +1,6 @@
 export const ifElse = {
   subSectionId: "if-else",
   subSectionLabel: "if • if  / else • if / else if / else",
-  subSectionAriaLabel: "if • if  / else • if / else if / else",
   description: /* html */ `
     <p>The <code>if</code> statement is the most basic conditional. It runs a block of code only when a condition evaluates to <code>true</code>.</p>
 
@@ -16,7 +15,6 @@ export const ifElse = {
     {
       topicId: "if",
       topicLabel: "if",
-      topicAriaLabel: "if",
       description: /* html */ `
         <p>The <code>if</code> statement runs a block of code only when its condition evaluates to <code>true</code>. If the condition is <code>false</code>, the block is skipped entirely.</p>
         
@@ -33,34 +31,10 @@ if (condition) {
         },
       ],
     },
-    //! if + sum
-    {
-      topicId: "if-sum",
-      topicLabel: "if + sum",
-      topicAriaLabel: "if",
-      description: /* html */ `
-        <p>...</p>
-        <wc-code language="js">
-if (condition) {
-  // runs if condition is true
-}
-        </wc-code>
-      `,
-      preview: /* html */ `
-        <wc-if-sum></wc-if-sum>
-                `,
-      sandbox: [
-        {
-          js: true,
-          console: true,
-        },
-      ],
-    },
     //! if / else
     {
       topicId: "if-else",
       topicLabel: "if / else",
-      topicAriaLabel: "if / else",
       description: /* html */ `
         <p>Adding <code>else</code> provides a fallback block that runs when the <code>if</code> condition is <code>false</code>. One of the two branches will always execute.</p>
 
@@ -73,11 +47,88 @@ if (condition) {
           </wc-code>
       `,
     },
+    //! if + sum
+    {
+      topicId: "add-apples",
+      topicLabel: "add apples",
+      cardCodes: [
+        {
+          html: /* html */ `
+<div>
+  <span>Apples on sale.</span>
+  <span>Max 5 per person.</span>
+  <div class="inner-container">
+    <image
+      src="/assets/images/apple.png"
+      alt="apple icon"
+      class="apple"
+    ></image>
+    <button>Add</button>
+    <div id="counter">0</div>
+  </div>
+  <span id="msg"></span>
+</div>
+      `,
+        },
+        {
+          css: /* css */ `
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: max-content;
+  margin-block: 1rem;
+  padding-inline: 1rem;
+}
+
+.apple {
+  width: 24px;
+}
+
+span {
+  display: block;
+}
+
+button {
+  width: max-content;
+}
+  
+          `,
+        },
+        { js: /* js */ `
+const btn = this.shadowRoot.querySelector("button");
+
+if (btn) {
+  btn.addEventListener("click", () => {
+    const counter = this.shadowRoot.querySelector("#counter");
+    const total = Number(counter.textContent) + 1;
+    if (total <= 5) {
+      counter.textContent = total;
+    } else {
+      const msg = this.shadowRoot.querySelector("#msg");
+      msg.innerText = "You've reached max items per person."
+    }
+  });
+}         
+          `
+        },
+      ],
+      preview: /* html */ `
+        <wc-if-sum></wc-if-sum>
+                `,
+      sandbox: [
+        {
+          js: true,
+          console: true,
+        },
+      ],
+    },
     //! if / else if / else
     {
-      topicId: "else-if-else",
-      topicLabel: "else if / else",
-      topicAriaLabel: "else if else",
+      topicId: "if-else-if-else",
+      topicLabel: "if / else if / else",
       description: /* html */ `
         <p>Use <code>else if</code> to check additional conditions in sequence. Only the first matching branch executes — the rest are skipped. The final <code>else</code> is optional and acts as a catch-all.</p>
 

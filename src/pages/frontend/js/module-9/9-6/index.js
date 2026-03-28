@@ -6,7 +6,6 @@ import { fetchAsyncAwait } from "./fetch-async-await.js";
 export const section96 = {
   sectionId: "fetch-api",
   sectionLabel: "9.6 Fetch API",
-  sectionAriaLabel: "9.6 Fetch API",
   subSections: [
     fetchBasics,
     handlingResponses,

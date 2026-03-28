@@ -41,19 +41,16 @@ class Playground extends HTMLElement {
       {
         sectionId: "Section",
         sectionLabel: "Section",
-        sectionAriaLabel: "...",
         //! Sub Section
         subSections: [
           {
             subSectionId: "sub-section",
             subSectionLabel: "Sub Section",
-            subSectionAriaLabel: "...",
             //! Topic
             topics: [
               {
                 topicId: "topic",
                 topicLabel: "Topic",
-                topicAriaLabel: "...",
                 description: /* html */ `
                   ...
                 `,
@@ -137,7 +134,6 @@ console.log("Hello World")
       {
         sectionId: "resources",
         sectionLabel: "Resources",
-        sectionAriaLabel: "Resources",
         links: [
           {
             href: "https://www.google.com/",

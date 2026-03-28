@@ -1,7 +1,6 @@
 export const section61 = {
         sectionId: "forms",
         sectionLabel: "Forms",
-        sectionAriaLabel: "Forms",
         description: /* html */ `
   <p>The <code>&lt;form&gt;</code> element groups input controls and allows users to submit data to a server.</p>
 
@@ -13,7 +12,6 @@ export const section61 = {
           {
             subSectionId: "form-structure",
             subSectionLabel: "Form Structure",
-            subSectionAriaLabel: "Form Structure",
             description: /* html */ `
               <p>A basic form starts with a <code>&lt;form&gt;</code> element and contains controls that the user can fill out.</p>
               <p>The <code>action</code> attribute tells the browser where to send the data, and <code>method</code> defines how it is sent.</p>
@@ -36,7 +34,6 @@ export const section61 = {
           {
             subSectionId: "form-accessibility",
             subSectionLabel: "Labels & Submission",
-            subSectionAriaLabel: "Labels and Submission",
             description: /* html */ `
               <p>Every input should have a clear label so users and assistive technologies understand what information is expected.</p>
               <p>Buttons inside forms should use the right type, especially <code>type="submit"</code> for sending the form.</p>

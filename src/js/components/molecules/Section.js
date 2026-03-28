@@ -37,14 +37,13 @@ class Section extends HTMLElement {
 
   render() {
     const labelAttr = this.getAttribute("label") ?? "";
-    const ariaAttr = this.getAttribute("aria-label");
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
         ${componentStyles}
         ${style}
       </style>
-      <section ${ariaAttr ? `aria-label="${ariaAttr}"` : ""} class="line-break">
+      <section class="line-break">
         <span class="label">${escapeHtml(labelAttr)}</span>
         <slot></slot>
       </section>

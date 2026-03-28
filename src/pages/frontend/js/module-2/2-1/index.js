@@ -9,7 +9,6 @@ import { optionalChaining } from "./optional-chaining.js";
 export const section21 = {
   sectionId: "conditionals",
   sectionLabel: "2.1 Conditionals",
-  sectionAriaLabel: "2.1 Conditionals",
   description: /* html */ `
     <p>Conditionals allow a program to make decisions and execute different code based on whether a condition is <code>true</code> or <code>false</code>.</p>
 

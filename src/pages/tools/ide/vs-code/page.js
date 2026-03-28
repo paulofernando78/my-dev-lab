@@ -30,7 +30,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "keyboard-shortcuts",
         sectionLabel: "Keyboard shortcuts",
-        sectionAriaLabel: "Keyboard shortcuts",
         description: /* html */ `
             <style>
               td:first-child {
@@ -63,7 +62,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "settings",
         sectionLabel: "Settings",
-        sectionAriaLabel: "Settings",
         description: /* html */ `
           <p>Recommended VS Code settings for a cleaner, smoother, and more productive coding experience.</p>
           <wc-spacer></wc-spacer>
@@ -80,7 +78,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "extensions",
         sectionLabel: "Extensions",
-        sectionAriaLabel: "Extensions",
         description: /* html */ `
         <p>Mac: ⇧ Cmd + ⌘ Shift + X</p>
         <p>Windows: Crtl + Shift + X</p>
@@ -108,7 +105,6 @@ class Boilerplate extends HTMLElement {
       {
         sectionId: "links",
         sectionLabel: "Links",
-        sectionAriaLabel: "Links",
         links: [
           {
             href: "https://code.visualstudio.com/",

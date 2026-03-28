@@ -1,7 +1,6 @@
 export const truthyFalsy = {
   subSectionId: "truthy-falsy",
   subSectionLabel: "Truthy & Falsy",
-  subSectionAriaLabel: "Truthy and Falsy",
   description: /* html */ `
     <p>In JavaScript, every value is either <strong>truthy</strong> or <strong>falsy</strong>. When a value is used in a condition, JavaScript automatically converts it to a boolean.</p>
 
@@ -12,7 +11,6 @@ export const truthyFalsy = {
     {
       topicId: "values",
       topicLabel: "Values",
-      topicAriaLabel: "Values",
       description: /* html */ `
         <p>A <strong>truthy</strong> value is any value that evaluates to <code>true</code> in a boolean context. Most values in JavaScript are truthy.</p>
 

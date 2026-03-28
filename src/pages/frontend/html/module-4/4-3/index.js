@@ -1,7 +1,6 @@
 export const section43 = {
         sectionId: "why",
         sectionLabel: "Why is it important?",
-        sectionAriaLabel: "Why is it important?",
         description: /* html */ `
           <p><strong>Semantic HTML tags</strong> describe the meaning and purpose of content, not just its appearance. They help browsers, search engines, and assistive technologies understand the structure of a page.</p>
 

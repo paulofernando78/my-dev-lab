@@ -6,7 +6,6 @@ import { promiseMethods } from "./promise-methods.js";
 export const section94 = {
   sectionId: "promises",
   sectionLabel: "9.4 Promises",
-  sectionAriaLabel: "9.4 Promises",
   subSections: [
     promiseBasics,
     thenCatchFinally,

@@ -1,7 +1,6 @@
 export const formEvents = {
   subSectionId: "form-input-events",
   subSectionLabel: "Form Input Events",
-  subSectionAriaLabel: "Form Input Events",
   description: /* html */ `
     <p>These core form events cover the most common ways users interact with inputs, selects, and form submissions.</p>
   `,
@@ -10,7 +9,6 @@ export const formEvents = {
     {
       topicId: "form-events-core",
       topicLabel: "submit, input & change",
-      topicAriaLabel: "submit input change",
       description: /* html */ `
         <p>The <code>submit</code> event fires when a form is submitted. The <code>input</code> event fires on every keystroke or value change in real time, while <code>change</code> fires only when the element loses focus after its value has changed.</p>
       `,
@@ -26,7 +24,6 @@ export const formEvents = {
     {
       topicId: "focus-blur",
       topicLabel: "focus & blur",
-      topicAriaLabel: "focus and blur",
       cardCodes: [
         { cardLabel: "HTML", language: "html", code: /* html */ `` },
         { cardLabel: "CSS", language: "css", code: /* css */ `` },
@@ -39,7 +36,6 @@ export const formEvents = {
     {
       topicId: "prevent-default",
       topicLabel: "preventDefault()",
-      topicAriaLabel: "preventDefault",
       cardCodes: [
         { cardLabel: "HTML", language: "html", code: /* html */ `` },
         { cardLabel: "CSS", language: "css", code: /* css */ `` },

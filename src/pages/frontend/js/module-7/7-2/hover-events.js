@@ -1,7 +1,6 @@
 export const hoverEvents = {
   subSectionId: "hover-events",
   subSectionLabel: "Hover Events",
-  subSectionAriaLabel: "Hover Events",
   description: /* html */ `
     <p>Hover events allow you to detect when the mouse enters or leaves an element.</p>
   `,
@@ -10,7 +9,6 @@ export const hoverEvents = {
     {
       topicId: "mouseenter-mouseleave",
       topicLabel: "mouseenter & mouseleave",
-      topicAriaLabel: "mouseenter and mouseleave",
       description: /* html */ `
         <p>The <code>mouseenter</code> event is triggered when the mouse enters an element, and <code>mouseleave</code> when it leaves.
         These are commonly used for hover effects and UI interactions.</p>

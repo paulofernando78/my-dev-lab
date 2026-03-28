@@ -31,7 +31,6 @@ class HTMLResources extends HTMLElement {
       {
         sectionId: "links",
         sectionLabel: "Links",
-        sectionAriaLabel: "Links",
         links: [
           {
             href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
@@ -58,7 +57,6 @@ class HTMLResources extends HTMLElement {
       {
         sectionId: "youtube-channels",
         sectionLabel: "Youtube Channels",
-        sectionAriaLabel: "Youtube Channels",
         links: [
           {
             href: "https://www.youtube.com/watch?v=HD13eq_Pmp8",

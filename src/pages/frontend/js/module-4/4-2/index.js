@@ -6,7 +6,6 @@ import { sortReverse } from "./sort-reverse.js";
 export const section42 = {
   sectionId: "mutating-methods",
   sectionLabel: "4.2 Mutating Methods",
-  sectionAriaLabel: "4.2 Mutating Methods",
   subSections: [
     pushPop,
     shiftUnshift,

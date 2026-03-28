@@ -1,7 +1,6 @@
 export const section11 = {
         sectionId: "basic-html",
         sectionLabel: "Basic HTML",
-        sectionAriaLabel: "Basic HTML",
         description: /* html */ `
           <p>This is the minimal structure of a valid HTML document.</p>
         `,
@@ -15,7 +14,6 @@ export const section11 = {
           {
             subSectionId: "doc-type",
             subSectionLabel: "!DOCTYPE html",
-            subSectionAriaLabel: "DOCTYPE",
             description: /* html */ `
               <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration tells the browser which version of HTML the document uses. In modern web development it indicates that the page follows the HTML5 standard.</p>
               <p>It must always appear as the very first line of the document so the browser renders the page in <strong>standards mode</strong> instead of compatibility mode.</p>
@@ -25,7 +23,6 @@ export const section11 = {
           {
             subSectionId: "html",
             subSectionLabel: "html",
-            subSectionAriaLabel: "html",
             description: /* html */ `
               <p>The <code>&lt;html&gt;</code> element is the <strong>root element</strong> of every HTML document. All other elements must be placed inside it.</p>
               <p>The <code>lang</code> attribute specifies the language of the page, which helps screen readers, translation tools, and search engines correctly interpret the content.</p>
@@ -34,7 +31,6 @@ export const section11 = {
           {
             subSectionId: "head",
             subSectionLabel: "head",
-            subSectionAriaLabel: "head",
             description: /* html */ `
               <p>The <code>&lt;head&gt;</code> element contains metadata and configuration for the document. Information inside the head is not rendered as visible page content.</p>
               <p>Typical elements placed inside the head include:</p>
@@ -49,7 +45,6 @@ export const section11 = {
           {
             subSectionId: "meta",
             subSectionLabel: "meta",
-            subSectionAriaLabel: "meta",
             description: /* html */ `
               <p>The <code>&lt;meta&gt;</code> element provides metadata about the HTML document. Metadata is information about the page rather than visible content.</p>
               <p>A common example is defining the character encoding:</p>
@@ -62,7 +57,6 @@ export const section11 = {
           {
             subSectionId: "title",
             subSectionLabel: "title",
-            subSectionAriaLabel: "title",
             description: /* html */ `
               <p>The <code>&lt;title&gt;</code> element defines the title of the document.</p>
               <p>This title appears in the browser tab, bookmarks, and search engine results.</p>
@@ -73,7 +67,6 @@ export const section11 = {
           {
             subSectionId: "body",
             subSectionLabel: "body",
-            subSectionAriaLabel: "body",
             description: /* html */ `
               <p>The <code>&lt;body&gt;</code> element contains all the content that is visible in the browser.</p>
               <p>This includes text, headings, images, links, lists, forms, and any other elements that make up the page interface.</p>

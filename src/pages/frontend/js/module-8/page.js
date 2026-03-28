@@ -46,56 +46,46 @@ class JSModuleEight extends HTMLElement {
       {
         sectionId: "the-event-loop",
         sectionLabel: "8.1 The Event Loop",
-        sectionAriaLabel: "8.1 The Event Loop",
         subSections: [
           {
             subSectionId: "call-stack",
             subSectionLabel: "Call Stack",
-            subSectionAriaLabel: "Call Stack",
             topics: [
               {
                 topicId: "what-is-the-call-stack",
                 topicLabel: "What is the Call Stack?",
-                topicAriaLabel: "What is the Call Stack?",
               },
               {
                 topicId: "how-the-stack-works",
                 topicLabel: "How the Stack Works",
-                topicAriaLabel: "How the Stack Works",
               },
             ],
           },
           {
             subSectionId: "web-apis-task-queue",
             subSectionLabel: "Web APIs & Task Queue",
-            subSectionAriaLabel: "Web APIs and Task Queue",
             topics: [
               {
                 topicId: "web-apis",
                 topicLabel: "Web APIs",
-                topicAriaLabel: "Web APIs",
               },
               {
                 topicId: "task-queue",
                 topicLabel: "Task Queue",
-                topicAriaLabel: "Task Queue",
               },
             ],
           },
           {
             subSectionId: "event-loop",
             subSectionLabel: "The Event Loop",
-            subSectionAriaLabel: "The Event Loop",
             topics: [
               {
                 topicId: "how-the-event-loop-works",
                 topicLabel: "How the Event Loop Works",
-                topicAriaLabel: "How the Event Loop Works",
               },
               {
                 topicId: "sync-vs-async",
                 topicLabel: "Sync vs Async",
-                topicAriaLabel: "Sync vs Async",
               },
             ],
           },
@@ -105,7 +95,6 @@ class JSModuleEight extends HTMLElement {
       {
         sectionId: "8-2-window-object",
         sectionLabel: "8.2 Window Object",
-        sectionAriaLabel: "8.2 Window Object",
         description: /* html */ `
           <p>
           The <code>window</code> object represents the browser window or tab in which a web page is loaded. It is the global object in the browser environment, giving scripts access to browser APIs such as <code>document</code>, <code>location</code>, <code>history</code>, and <code>screen</code>, as well as information about the viewport — its width, height, and scroll position.
@@ -117,7 +106,6 @@ class JSModuleEight extends HTMLElement {
           {
             subSectionId: "window-properties",
             subSectionLabel: "Window Properties",
-            subSectionAriaLabel: "Window Properties",
             description: /* html */ `
                 <p>
                   Window properties provide information about the current browser window and the user's viewport. 
@@ -136,7 +124,6 @@ class JSModuleEight extends HTMLElement {
               {
                 topicId: "window",
                 topicLabel: "window",
-                topicAriaLabel: "",
                 description: /* html */ `
   <p>
     The <code>window</code> object represents the browser window or tab where the current web page is loaded.
@@ -187,7 +174,6 @@ console.log(window);
               {
                 topicId: "window-innerWidth",
                 topicLabel: "window.innerWidth",
-                topicAriaLabel: "",
                 description: /* html */ `
                   <p><code>window.innerWidth</code> returns the width of the browser viewport in pixels.</p>
                   <p><code>window.innerHeight</code> returns the height of the browser viewport in pixels.</p>
@@ -213,7 +199,6 @@ console.log("Height:", window.innerHeight);
               {
                 topicId: "window-scroll-x-scroll-y",
                 topicLabel: "window.scrollX & scrollY",
-                topicAriaLabel: "",
                 description: /* html */ `
   <p>
     <code>window.scrollX</code> and <code>window.scrollY</code> return the number of pixels that the document
@@ -258,7 +243,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "window-methods",
             subSectionLabel: "Window Methods",
-            subSectionAriaLabel: "Window Methods",
             description: /* html */ `
                 ...
               `,
@@ -267,7 +251,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "window-alert",
                 topicLabel: "window.alert()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -293,7 +276,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "window-open()",
                 topicLabel: "window.open( )",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -318,7 +300,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "window-scrollTo()",
                 topicLabel: "window.scrollTo( )",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -343,7 +324,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "window-scrollBy()",
                 topicLabel: "window.scrollBy( )",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -372,7 +352,6 @@ window.addEventListener("scroll", () => {
       {
         sectionId: "history-api",
         sectionLabel: "8.3 History API",
-        sectionAriaLabel: "8.3 History API",
         description: /* html */ `
           <p>...</p>
         `,
@@ -381,7 +360,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "history-properties",
             subSectionLabel: "History Properties",
-            subSectionAriaLabel: "History Properties",
             description: /* html */ `
                 ...
               `,
@@ -390,7 +368,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-length",
                 topicLabel: "history.length",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -416,7 +393,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-state",
                 topicLabel: "history.state",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -443,7 +419,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "navigation-methods",
             subSectionLabel: "Navigation Methods",
-            subSectionAriaLabel: "Navigation Methods",
             description: /* html */ `
                 ...
               `,
@@ -452,7 +427,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-back()",
                 topicLabel: "history.back()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -478,7 +452,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-forward()",
                 topicLabel: "history.forward()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -503,7 +476,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-go()",
                 topicLabel: "history.go()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -530,7 +502,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "pushstate-replacestate",
             subSectionLabel: "pushState / replaceState",
-            subSectionAriaLabel: "pushState / replaceState",
             description: /* html */ `
                 ...
               `,
@@ -539,7 +510,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-pushState()",
                 topicLabel: "history.pushState()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -565,7 +535,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "history-replaceState()",
                 topicLabel: "history.replaceState()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -590,7 +559,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "popstate-event",
                 topicLabel: "popstate event",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -619,7 +587,6 @@ window.addEventListener("scroll", () => {
       {
         sectionId: "location-object",
         sectionLabel: "8.4 Location Object",
-        sectionAriaLabel: "8.4 Location Object",
         description: /* html */ `
           <p>...</p>
         `,
@@ -628,7 +595,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "location-properties",
             subSectionLabel: "Location Properties",
-            subSectionAriaLabel: "Location Properties",
             description: /* html */ `
                 ...
               `,
@@ -637,7 +603,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-href",
                 topicLabel: "location.href",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -663,7 +628,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-pathname",
                 topicLabel: "location.pathname",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -688,7 +652,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-search",
                 topicLabel: "location.search",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -713,7 +676,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-hash",
                 topicLabel: "location.hash",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -740,7 +702,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "location-methods",
             subSectionLabel: "Location Methods",
-            subSectionAriaLabel: "Location Methods",
             description: /* html */ `
                 ...
               `,
@@ -749,7 +710,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-reload()",
                 topicLabel: "location.reload()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -775,7 +735,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-assign()",
                 topicLabel: "location.assign()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -800,7 +759,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "location-replace()",
                 topicLabel: "location.replace()",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -829,7 +787,6 @@ window.addEventListener("scroll", () => {
       {
         sectionId: "content-editable",
         sectionLabel: "8.5 ContentEditable",
-        sectionAriaLabel: "8.5 ContentEditable",
         description: /* html */ `
           <p>...</p>
         `,
@@ -838,7 +795,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "using-contenteditable",
             subSectionLabel: "Using contenteditable",
-            subSectionAriaLabel: "Using contenteditable",
             description: /* html */ `
                 ...
               `,
@@ -847,7 +803,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "contenteditable-attribute",
                 topicLabel: "contenteditable attribute",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -873,7 +828,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "element-contentEditable",
                 topicLabel: "element.contentEditable",
-                topicAriaLabel: "",
                 description: /* html */ `
                   ...
                 `,
@@ -900,7 +854,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "reading-edited-content",
             subSectionLabel: "Reading Edited Content",
-            subSectionAriaLabel: "Reading Edited Content",
             description: /* html */ `
                 ...
               `,
@@ -908,7 +861,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "reading-textcontent",
                 topicLabel: "Reading with textContent",
-                topicAriaLabel: "Reading with textContent",
                 description: /* html */ `
                   ...
                 `,
@@ -934,7 +886,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "reading-innerhtml",
                 topicLabel: "Reading with innerHTML",
-                topicAriaLabel: "Reading with innerHTML",
                 description: /* html */ `
                   ...
                 `,
@@ -962,7 +913,6 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "controlling-with-javascript",
             subSectionLabel: "Controlling with Javascript",
-            subSectionAriaLabel: "Controlling with Javascript",
             description: /* html */ `
                 ...
               `,
@@ -970,7 +920,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "enabling-via-js",
                 topicLabel: "Enabling via Javascript",
-                topicAriaLabel: "Enabling via Javascript",
                 description: /* html */ `
                   ...
                 `,
@@ -996,7 +945,6 @@ window.addEventListener("scroll", () => {
               {
                 topicId: "is-content-editable",
                 topicLabel: "element.isContentEditable",
-                topicAriaLabel: "element.isContentEditable",
                 description: /* html */ `
                   ...
                 `,
@@ -1026,7 +974,6 @@ window.addEventListener("scroll", () => {
       {
         sectionId: "design-mode",
         sectionLabel: "8.6 Design Mode",
-        sectionAriaLabel: "8.6 Design Mode",
         description: /* html */ `
           <p>The <code>document.designMode</code> property in HTML allows for making the entire document editable within the browser. This property can be set to either "on" or "off".</p>
         `,
@@ -1034,13 +981,11 @@ window.addEventListener("scroll", () => {
           {
             subSectionId: "enabling-design-mode",
             subSectionLabel: "Enabling Design Mode",
-            subSectionAriaLabel: "Enabling Design Mode",
             topics: [
               //! Topic
               {
                 topicId: "document-designMode",
                 topicLabel: 'document.designMode = "on" / "off"',
-                topicAriaLabel: "",
                 cardCodes: [
                   {
                     cardLabel: "Javascript",

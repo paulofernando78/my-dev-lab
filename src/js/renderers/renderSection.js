@@ -1,5 +1,7 @@
 import styles from "./renderSection.css?inline"
 
+const langLabelMap = { html: "HTML", css: "CSS", js: "Javascript" };
+
 function escapeAttribute(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -19,7 +21,6 @@ export function renderSections(sections) {
     <wc-section
       id="${escapeAttribute(section.sectionId)}"
       label="${escapeAttribute(section.sectionLabel)}"
-      aria-label="${escapeAttribute(section.sectionAriaLabel)}"
       class="line-break"
       >
       <!-- description -->
@@ -61,7 +62,6 @@ export function renderSections(sections) {
           <wc-sub-section
             id="${escapeAttribute(subSection.subSectionId)}"
             label="${escapeAttribute(subSection.subSectionLabel)}"
-            aria-label="${escapeAttribute(subSection.subSectionAriaLabel)}"
             class="line-break"
             >
             <!-- description -->
@@ -99,7 +99,6 @@ export function renderSections(sections) {
                 <wc-topic
                   id="${escapeAttribute(topic.topicId)}"
                   label="${escapeAttribute(topic.topicLabel)}"
-                  aria-label="${escapeAttribute(topic.topicAriaLabel)}"
                   class="line-break"
                   >
                   <!-- description -->
@@ -135,18 +134,20 @@ export function renderSections(sections) {
                   <div class="cards-wrapper">
                     ${topic.cardCodes
                       ?
-                      topic.cardCodes.map((cardCode, index) => /* html */
-                      `
+                      topic.cardCodes.map((cardCode, index) => {
+                        const language = Object.keys(cardCode)[0];
+                        const code = cardCode[language];
+                        return /* html */`
                       <wc-card-code
-                        cardLabel="${escapeAttribute(cardCode.cardLabel)}"
+                        cardLabel="${langLabelMap[language] ?? language}"
                         cardLabelIcon="/assets/images/icons/code.svg"
                         id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-code-${index}`)}">
-                          <wc-code language="${escapeAttribute(cardCode.language)}">
-                          ${cardCode.code ?? ""}
+                          <wc-code language="${escapeAttribute(language)}">
+                          ${code ?? ""}
                           </wc-code>
                       </wc-card-code>
-                      `,
-                      ).join("") : ""}
+                      `;
+                      }).join("") : ""}
                   </div>
                   <!-- preview  -->
                   ${topic.preview
