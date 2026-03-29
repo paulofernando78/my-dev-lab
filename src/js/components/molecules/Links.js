@@ -1,13 +1,12 @@
 import styleImports from "@css/styles.css?inline";
 
 const style = /* css */ `
-  li {
-    margin-bottom: 0.4rem
+  ul {
+    padding-left: 1.23rem
   }
 
   a {
     text-decoration: none;
-    padding-left: 2px;
     color: var(--text-color);
   }
 `;

@@ -85,6 +85,10 @@ class CSSResources extends HTMLElement {
             label: "Grid Garden",
           },
           {
+            href: "https://www.playcss.app/",
+            label: "Play CSS",
+          },
+          {
             href: "https://codepen.io/challenges",
             label: "CODEPEN Challenges",
           },

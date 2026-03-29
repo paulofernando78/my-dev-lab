@@ -101,9 +101,27 @@ class Boilerplate extends HTMLElement {
                   },
                 ],
                 cardCodes: [
-                  { html: /* html */ `` },
-                  { css: /* css */ `` },
-                  { js: /* js */ `` },
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ `
+
+                  `,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ `
+
+                  `,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ `
+
+                  `,
+                  },
                 ],
                 preview: /* html */ `
                   <wc-></wc->
@@ -122,7 +140,11 @@ class Boilerplate extends HTMLElement {
                 topicId: "topic",
                 topicLabel: "Topic",
                 cardCodes: [
-                  { html: /* html */ `` },
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ ``,
+                  },
                 ],
               },
               //! Topic 3
@@ -130,8 +152,16 @@ class Boilerplate extends HTMLElement {
                 topicId: "topic",
                 topicLabel: "Topic",
                 cardCodes: [
-                  { html: /* html */ `` },
-                  { css: /* css */ `` },
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ ``,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ ``,
+                  },
                 ],
               },
               //! Topic 4
@@ -139,9 +169,21 @@ class Boilerplate extends HTMLElement {
                 topicId: "topic",
                 topicLabel: "Topic",
                 cardCodes: [
-                  { html: /* html */ `` },
-                  { css: /* css */ `` },
-                  { js: /* js */ `` },
+                  {
+                    cardLabel: "HTML",
+                    language: "html",
+                    code: /* html */ ``,
+                  },
+                  {
+                    cardLabel: "CSS",
+                    language: "css",
+                    code: /* css */ ``,
+                  },
+                  {
+                    cardLabel: "Javascript",
+                    language: "js",
+                    code: /* js */ ``,
+                  },
                 ],
               },
             ],

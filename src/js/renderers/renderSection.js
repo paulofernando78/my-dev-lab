@@ -1,6 +1,4 @@
-import styles from "./renderSection.css?inline"
-
-const langLabelMap = { html: "HTML", css: "CSS", js: "Javascript" };
+import styles from "./renderSection.css?inline";
 
 function escapeAttribute(value = "") {
   return String(value)
@@ -17,7 +15,9 @@ export function renderSections(sections) {
     </style>
 
     <!--section -->
-    ${sections.map((section) => /* html */ `
+    ${sections
+      .map(
+        (section) => /* html */ `
     <wc-section
       id="${escapeAttribute(section.sectionId)}"
       label="${escapeAttribute(section.sectionLabel)}"
@@ -30,35 +30,40 @@ export function renderSections(sections) {
       <!-- notes -->
       ${section.notes ? /* html*/ `<wc-card-icon variant="notes">${section.notes}</wc-card-icon>` : ""}
       <!-- imgs -->
-      ${section.imgs?.length
-        ? /* html */ 
-        `
+      ${
+        section.imgs?.length
+          ? /* html */
+            `
         <div class="imgs-wrapper">
-        ${section.imgs.map((img) => /* html */
-          `
-            ${img.imgSrc
-              ? /* html*/
+        ${section.imgs
+          .map(
+            (img /* html */) =>
               `
+            ${
+              img.imgSrc
+                ? /* html*/
+                  `
               <wc-card-code
                 CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
                 <wc-image src="${img.imgSrc}" alt="${img.alt ?? ""}" class="card-img"></wc-image>
               </wc-card-code>
               `
-              :
-              ""
+                : ""
             }
           `,
-          ).join("")}
+          )
+          .join("")}
         </div>
         `
-        :
-        ""
+          : ""
       }
       
       <!-- subSections -->
       ${
         section.subSections
-          ? section.subSections.map((subSection) => /* html */ `
+          ? section.subSections
+              .map(
+                (subSection) => /* html */ `
           <wc-sub-section
             id="${escapeAttribute(subSection.subSectionId)}"
             label="${escapeAttribute(subSection.subSectionLabel)}"
@@ -69,8 +74,9 @@ export function renderSections(sections) {
             <!-- notes -->
             ${subSection.notes ? /* html*/ `<wc-card-icon variant="notes">${subSection.notes}</wc-card-icon>` : ""}
 
-            ${subSection.imgs?.length
-                    ? /* html */ `
+            ${
+              subSection.imgs?.length
+                ? /* html */ `
                     <div class="imgs-wrapper">
                     ${subSection.imgs
                       .map(
@@ -89,13 +95,15 @@ export function renderSections(sections) {
                       )
                       .join("")}
                     </div>`
-                    :
-                    ""
-                  }
+                : ""
+            }
 
               <!-- topics -->
-              ${subSection.topics
-                ? subSection.topics.map((topic) => /* html */ `
+              ${
+                subSection.topics
+                  ? subSection.topics
+                      .map(
+                        (topic) => /* html */ `
                 <wc-topic
                   id="${escapeAttribute(topic.topicId)}"
                   label="${escapeAttribute(topic.topicLabel)}"
@@ -106,8 +114,9 @@ export function renderSections(sections) {
                   <!-- notes -->
                   ${topic.notes ? /* html*/ `<wc-card-icon variant="notes">${topic.notes}</wc-card-icon>` : ""}
 
-                  ${topic.imgs?.length
-                    ? /* html */ `
+                  ${
+                    topic.imgs?.length
+                      ? /* html */ `
                     <div class="imgs-wrapper">
                     ${topic.imgs
                       .map(
@@ -126,33 +135,34 @@ export function renderSections(sections) {
                       )
                       .join("")}
                     </div>`
-                    :
-                    ""
+                      : ""
                   }
 
                   <!-- languages -->
-                  <div class="cards-wrapper">
-                    ${topic.cardCodes
-                      ?
-                      topic.cardCodes.map((cardCode, index) => {
-                        const language = Object.keys(cardCode)[0];
-                        const code = cardCode[language];
-                        return /* html */`
-                      <wc-card-code
-                        cardLabel="${langLabelMap[language] ?? language}"
-                        cardLabelIcon="/assets/images/icons/code.svg"
-                        id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-code-${index}`)}">
-                          <wc-code language="${escapeAttribute(language)}">
-                          ${code ?? ""}
-                          </wc-code>
-                      </wc-card-code>
-                      `;
-                      }).join("") : ""}
-                  </div>
+                  ${topic.cardCodes?.length
+                    ? /* html */ `
+                      <div class="cards-wrapper">
+                        ${topic.cardCodes.map((cardCode, index /* html */) => `
+                              <wc-card-code
+                                cardLabel="${escapeAttribute(cardCode.cardLabel)}"
+                                cardLabelIcon="/assets/images/icons/code.svg"
+                                id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-code-${index}`)}">
+                                  <wc-code language="${escapeAttribute(cardCode.language)}">
+                                  ${cardCode.code ?? ""}
+                                  </wc-code>
+                              </wc-card-code>
+                              `,
+                            ).join("")}
+                      </div>
+                      `
+                    : ""
+                  }
+                  
                   <!-- preview  -->
-                  ${topic.preview
-                    ? /* html */
-                    `
+                  ${
+                    topic.preview
+                      ? /* html */
+                        `
                     <wc-card-code
                       cardLabelIcon="/assets/images/icons/preview.svg" cardLabel="Preview">
                       <div class="preview-container">
@@ -160,14 +170,14 @@ export function renderSections(sections) {
                       </div>
                     </wc-card-code>
                     `
-                    :
-                    ""
+                      : ""
                   }
                   <!-- sanbox -->
-                  ${topic.sandbox
-                    ?
-                    topic.sandbox.map((config, index /* html */) =>
-                    /* html */`
+                  ${
+                    topic.sandbox
+                      ? topic.sandbox
+                          .map(
+                            (config, index /* html */) => /* html */ `
                     <wc-sandbox
                       id="${escapeAttribute(`${section.sectionId}-${topic.topicId}-sandbox-${index}`)}"
                       ${config.html ? "html" : ""}
@@ -177,15 +187,25 @@ export function renderSections(sections) {
                     >
                     </wc-sandbox>
                     `,
-                    ).join("")
-                    : ""
+                          )
+                          .join("")
+                      : ""
+                  }
+                   <!-- links -->
+                  ${
+                    topic.links
+                      ? /* html*/ `
+                    <wc-card-icon variant="links">
+                      <wc-links data-links="${encodeURIComponent(JSON.stringify(topic.links))}"></wc-links>
+                    </wc-card-icon>`
+                      : ""
                   }
                 </wc-topic>
                 
                   `,
-                    ).join("")
-                  :
-                  ""
+                      )
+                      .join("")
+                  : ""
               }   
           </wc-sub-section>
       `,

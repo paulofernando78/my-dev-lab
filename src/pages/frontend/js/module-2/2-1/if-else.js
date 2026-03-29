@@ -53,7 +53,9 @@ if (condition) {
       topicLabel: "add apples",
       cardCodes: [
         {
-          html: /* html */ `
+          cardLabel: "HTML",
+          language: "html",
+          code: /* html */ `
 <div>
   <span>Apples on sale.</span>
   <span>Max 5 per person.</span>
@@ -71,7 +73,9 @@ if (condition) {
       `,
         },
         {
-          css: /* css */ `
+          cardLabel: "CSS",
+          language: "css",
+          code: /* css */ `
 .inner-container {
   display: flex;
   flex-direction: column;
@@ -97,7 +101,10 @@ button {
   
           `,
         },
-        { js: /* js */ `
+        {
+          cardLabel: "Javascript",
+          language: "js",
+          code: /* js */ `
 const btn = document.querySelector("button");
 
 if (btn) {
@@ -112,7 +119,7 @@ if (btn) {
     }
   });
 }         
-          `
+          `,
         },
       ],
       preview: /* html */ `

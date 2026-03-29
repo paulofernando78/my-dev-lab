@@ -1,23 +1,13 @@
-.imgs-wrapper {
+.imgs-wrapper,
+.cards-wrapper  {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 5px;
 }
 
-.imgs-wrapper > :only-child {
+.imgs-wrapper > :only-child,
+.cards-wrapper  > :only-child {
   padding-inline: clamp(0px, calc(34vw - 160px), 150px);
-}
-
-.cards-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-}
-
-@media (max-width: 1000px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr
-  }
 }
 
 .preview-container {

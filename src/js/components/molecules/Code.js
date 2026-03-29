@@ -8,16 +8,15 @@ const style = /* css */ `
   }
 
   pre {
+    position: relative;
     margin: 0;
     border-radius: var(--border-radius);
     overflow: auto;
   }
   
   .blur-overlay {
-    margin: 5px;
     position: absolute;
-    
-    inset: 0;
+    inset: 5px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     background: rgba(20,20,20,.35);

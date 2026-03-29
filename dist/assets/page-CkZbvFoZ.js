@@ -1,0 +1,16 @@
+import{s as t}from"./index-WhkxeUrP.js";import"./PageHeader-Bcrc5fxd.js";import{r as o,s}from"./renderSection-DkGTr7g2.js";import"./CardCode-DTGEN7ch.js";import"./Links-jNmpqXk5.js";import"./Code-D-Sdk-Zj.js";import"./LessonNav-C8O3cQxq.js";const r=`
+  
+`;class a extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){this.render()}render(){const e=[{sectionId:"sites",sectionLabel:"Sites",links:[{href:"https://developer.mozilla.org/en-US/",label:"MDN Web Docs | HTML: HyperText Markup Language | MDN"},{href:"https://www.landingfolio.com/",label:"Landing Folio | The Best Landing Page Design Inspiration, Templates and More"},{href:"https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",label:"Daily Dev | Where developers suffer together"},{href:"https://drive.google.com/drive/u/0/folders/1A7hWfkd7FAP1ukkw2l404C2wk0NsbmeR",label:"Google Drive | PDF Books"},{href:"https://caniuse.com/",label:"Can I use...?"}]},{sectionId:"free-courses",sectionLabel:"Free Courses (English)",links:[{href:"https://www.freecodecamp.org/",label:"Free Code Camp"},{href:"https://www.theodinproject.com/",label:"The Odin Project"},{href:"https://exercism.org/",label:"Exercism"},{href:"https://web.dev/",label:"Web Dev | Google Chrome Developers"},{href:"https://scratch.mit.edu/",label:"Scratch MIT"}]},{sectionId:"free-courses",sectionLabel:"Free Trial Courses (English)",links:[{href:"https://www.boot.dev/",label:"Boot.Dev"},{href:"https://scrimba.com/home",label:"Scrimba"}]},{sectionId:"paid-courses",sectionLabel:"Paid Courses (English)",links:[{href:"https://www.coursera.org/professional-certificates/meta-front-end-developer/",label:"Coursera | Meta Front-End Developer"},{href:"https://www.rocketseat.com.br/",label:"Rocketseat"},{href:"https://frontendmasters.com/",label:"Frontend Masters"},{href:"https://www.origamid.com/",label:"Origamid | BR"}]},{sectionId:"paid-courses",sectionLabel:"Paid Courses (Portuguese)",links:[{href:"https://www.rocketseat.com.br/",label:"Rocketseat"},{href:"https://www.origamid.com/",label:"Origamid | BR"}]},{sectionId:"youtube-channels",sectionLabel:"Youtube Channels",links:[{href:"https://www.youtube.com/watch?v=zutb5Clb_0Y",label:"Future Fullstack | HTML Full Course Tutorial for Beginners - Learn EVERYTHING You Need to Know in Detail (5:25: 52)"},{href:"https://www.youtube.com/watch?v=G3e-cpL7ofc",label:"SuperSimpleDev | HTML & CSS Full Course - Beginner to Pro (6:31:23)"},{href:"https://www.youtube.com/watch?v=G3e-cpL7ofc",label:"Boot dev | Math Every Programmer ACTUALLY Needs (21:56)"}]},{sectionId:"practice",sectionLabel:"Practice",links:[{href:"https://codepen.io/",label:"CodePen"},{href:"https://www.codewars.com/",label:"codewars | Achieve mastery through coding practice and developer mentorship"},{href:"https://www.hackerrank.com/",label:"HackerRank | Online Coding Tests and Technical Interviews"}]}];this.shadowRoot.innerHTML=`
+      <style>
+        ${t}
+        ${r}
+      </style>
+
+      <wc-page-header></wc-page-header>
+
+      <wc-contents></wc-contents>
+
+      <div class="line-break">${o(e)}</div>
+
+      <wc-lesson-nav></wc-lesson-nav>
+    `,s(this.shadowRoot,e)}}customElements.define("wc-resources",a);export{a as default};

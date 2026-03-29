@@ -5,3 +5,5 @@ customElements.define("wc-icon", Icon);
 
 import Button from "../components/atoms/Button";
 customElements.define("wc-button", Button);
+
+import "../components/atoms/Component.js";

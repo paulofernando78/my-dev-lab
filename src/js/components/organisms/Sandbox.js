@@ -158,6 +158,8 @@ class Sandbox extends HTMLElement {
 
       if (event.source !== this.iframe.contentWindow) return;
 
+      if (!this.consoleEl) return;
+
       if (event.data.level === "clear") {
         this.consoleEl.innerHTML = "";
         return;

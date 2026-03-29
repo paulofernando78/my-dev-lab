@@ -70,11 +70,6 @@ class HTMLResources extends HTMLElement {
             href: "https://www.youtube.com/watch?v=mJgBOIoGihA",
             label: "Dave Gray HTML Full Course for Beginners | Complete All-in-One Tutoria… (4:07:33)",
           },
-          
-          {
-            href: "",
-            label: "",
-          },
         ],
       },
     ];

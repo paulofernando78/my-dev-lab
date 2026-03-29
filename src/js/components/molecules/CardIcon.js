@@ -23,10 +23,6 @@ const style = /* css */ `
     padding: 10px 9px;
     color: #fff;
   }
-
-  .content {
-    padding: 5px
-  }
 `;
 
 class CardIcon extends HTMLElement {
@@ -61,6 +57,10 @@ class CardIcon extends HTMLElement {
       case "notes":
         icon = "/assets/images/icons/notes.svg";
         label = "Notes";
+        break;
+      case "links":
+        icon = "/assets/images/icons/links.svg";
+        label = "Links";
         break;
       default:
         icon = "";
