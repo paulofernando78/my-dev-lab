@@ -24,3 +24,11 @@
     padding-inline: clamp(0px, calc(34vw - 160px), 150px);
   }
 }
+
+@media (width <= 765px) {
+  .imgs-wrapper:has(> :nth-child(2)),
+  .cards-wrapper:has(> :nth-child(2)) {
+    grid-template-columns: 1fr;
+    padding-inline: clamp(0px, calc(34vw - 160px), 150px);
+  }
+}
