@@ -1,13 +1,13 @@
+.imgs-wrapper > :only-child,
+.cards-wrapper > :only-child {
+  padding-inline: clamp(0px, calc(34vw - 160px), 150px);
+}
+
 .imgs-wrapper,
-.cards-wrapper  {
+.cards-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 5px;
-}
-
-.imgs-wrapper > :only-child,
-.cards-wrapper  > :only-child {
-  padding-inline: clamp(0px, calc(34vw - 160px), 150px);
 }
 
 .preview-container {
@@ -17,4 +17,10 @@
   padding: 5px;
 }
 
-
+@media (width <= 1075px) {
+  .imgs-wrapper:has(> :nth-child(3)),
+  .cards-wrapper:has(> :nth-child(3)) {
+    grid-template-columns: 1fr;
+    padding-inline: clamp(0px, calc(34vw - 160px), 150px);
+  }
+}

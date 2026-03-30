@@ -14,7 +14,7 @@ export function renderSections(sections) {
       ${styles}
     </style>
 
-    <!--section -->
+    <!--SECTION -->
     ${sections
       .map(
         (section) => /* html */ `
@@ -58,7 +58,7 @@ export function renderSections(sections) {
           : ""
       }
       
-      <!-- subSections -->
+      <!-- SUBSECTIONS -->
       ${
         section.subSections
           ? section.subSections
@@ -78,11 +78,8 @@ export function renderSections(sections) {
               subSection.imgs?.length
                 ? /* html */ `
                     <div class="imgs-wrapper">
-                    ${subSection.imgs
-                      .map(
-                        (img) => /* html */ `
-                        ${
-                          img.imgSrc
+                    ${subSection.imgs.map((img) => /* html */ `
+                        ${img.imgSrc
                             ? /* html*/ `
                           <wc-card-code
                             CardLabelIcon="/assets/images/icons/image.svg" CardLabel="Image">
@@ -98,12 +95,9 @@ export function renderSections(sections) {
                 : ""
             }
 
-              <!-- topics -->
+              <!-- TOPICS -->
               ${
-                subSection.topics
-                  ? subSection.topics
-                      .map(
-                        (topic) => /* html */ `
+                subSection.topics ? subSection.topics.map((topic) => /* html */ `
                 <wc-topic
                   id="${escapeAttribute(topic.topicId)}"
                   label="${escapeAttribute(topic.topicLabel)}"
@@ -118,9 +112,7 @@ export function renderSections(sections) {
                     topic.imgs?.length
                       ? /* html */ `
                     <div class="imgs-wrapper">
-                    ${topic.imgs
-                      .map(
-                        (img) => /* html */ `
+                    ${topic.imgs.map((img) => /* html */ `
                         ${
                           img.imgSrc
                             ? /* html*/ `
@@ -138,11 +130,11 @@ export function renderSections(sections) {
                       : ""
                   }
 
-                  <!-- languages -->
+                  <!-- CARD-CODES LANGUAGES -->
                   ${topic.cardCodes?.length
                     ? /* html */ `
                       <div class="cards-wrapper">
-                        ${topic.cardCodes.map((cardCode, index /* html */) => `
+                        ${topic.cardCodes.map((cardCode, index ) => /* html */`
                               <wc-card-code
                                 cardLabel="${escapeAttribute(cardCode.cardLabel)}"
                                 cardLabelIcon="/assets/images/icons/code.svg"

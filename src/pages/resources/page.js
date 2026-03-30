@@ -2,10 +2,10 @@ import styleImports from "@css/styles.css?inline";
 import "@/js/components/molecules/PageHeader.js";
 import "@/js/components/molecules/Contents.js";
 import "@/js/components/molecules/Section.js";
-import "@/js/components/atoms/CardCode.js";
+import "@/js/components/molecules/CardCode.js";
 import "@/js/components/atoms/Wrapper.js";
 
-import "@/js/components/molecules/Code.js";
+import "@/js/components/atoms/Code.js";
 import "@/js/components/molecules/Links.js";
 
 import "@/js/components/molecules/LessonNav.js";

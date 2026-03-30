@@ -5,7 +5,7 @@ import "@/js/components/molecules/Section.js";
 import "@/js/components/atoms/Card.js";
 import "@/js/components/atoms/Wrapper.js";
 
-import "@/js/components/molecules/Code.js";
+import "@/js/components/atoms/Code.js";
 
 import { setupContents } from "@/js/utils/setupContents.js";
 import { renderSections } from "@/js/renderers/renderSection";
